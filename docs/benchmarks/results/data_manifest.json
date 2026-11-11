@@ -1,0 +1,20 @@
+{
+  "images": 8,
+  "annotated_boxes": 30,
+  "classes": {
+    "bowl": 3,
+    "broccoli": 1,
+    "orange": 4,
+    "giraffe": 2,
+    "potted plant": 2,
+    "vase": 1,
+    "zebra": 1,
+    "umbrella": 1,
+    "person": 10,
+    "dog": 1,
+    "horse": 2,
+    "elephant": 2
+  },
+  "cup_annotations": 0,
+  "scope": "COCO8, COCO train2017 photos. Expected training leakage, no temporal or cafe labels."
+}

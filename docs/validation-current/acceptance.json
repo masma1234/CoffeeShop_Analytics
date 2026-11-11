@@ -1,0 +1,181 @@
+{
+  "test_exit_code": 0,
+  "commands": [
+    {
+      "arguments": [
+        "doctor"
+      ],
+      "exit_code": 0,
+      "expected": 0
+    },
+    {
+      "arguments": [
+        "make-demo",
+        "--directory",
+        "<temporary-workdir>\\demo"
+      ],
+      "exit_code": 0,
+      "expected": 0
+    },
+    {
+      "arguments": [
+        "import-pos",
+        "--file",
+        "<temporary-workdir>\\demo\\orders.json"
+      ],
+      "exit_code": 0,
+      "expected": 0
+    },
+    {
+      "arguments": [
+        "replay",
+        "--source",
+        "<temporary-workdir>\\demo\\fixture.avi",
+        "--camera",
+        "shop",
+        "--run-id",
+        "demo",
+        "--start",
+        "2026-01-01T09:00:00Z",
+        "--fixture-detections",
+        "<temporary-workdir>\\demo\\detections.json"
+      ],
+      "exit_code": 0,
+      "expected": 0
+    },
+    {
+      "arguments": [
+        "reconcile"
+      ],
+      "exit_code": 0,
+      "expected": 0
+    },
+    {
+      "arguments": [
+        "report",
+        "--date",
+        "2026-01-01"
+      ],
+      "exit_code": 0,
+      "expected": 0
+    },
+    {
+      "arguments": [
+        "export-predictions",
+        "--run-id",
+        "demo",
+        "--camera",
+        "shop"
+      ],
+      "exit_code": 0,
+      "expected": 0
+    },
+    {
+      "arguments": [
+        "evaluate",
+        "--truth",
+        "<temporary-workdir>\\demo\\ground-truth.json",
+        "--predictions",
+        "<temporary-workdir>\\predictions.json"
+      ],
+      "exit_code": 0,
+      "expected": 0
+    },
+    {
+      "arguments": [
+        "replay",
+        "--source",
+        "<temporary-workdir>\\demo\\fixture.avi",
+        "--camera",
+        "shop",
+        "--run-id",
+        "demo",
+        "--start",
+        "2026-01-01T09:00:00Z",
+        "--fixture-detections",
+        "<temporary-workdir>\\demo\\detections.json"
+      ],
+      "exit_code": 0,
+      "expected": 0
+    },
+    {
+      "arguments": [
+        "reconcile"
+      ],
+      "exit_code": 0,
+      "expected": 0
+    },
+    {
+      "arguments": [
+        "report",
+        "--date",
+        "2026-01-01"
+      ],
+      "exit_code": 0,
+      "expected": 0
+    },
+    {
+      "arguments": [
+        "replay",
+        "--source",
+        "<temporary-workdir>\\demo\\fixture.avi",
+        "--camera",
+        "shop",
+        "--run-id",
+        "weights-missing",
+        "--start",
+        "2026-01-01T09:00:00Z"
+      ],
+      "exit_code": 2,
+      "expected": 2
+    },
+    {
+      "arguments": [
+        "import-pos",
+        "--file",
+        "<temporary-workdir>\\missing.csv"
+      ],
+      "exit_code": 2,
+      "expected": 2
+    }
+  ],
+  "repeated_replay_identical_daily_report": true,
+  "backend": {
+    "status": "ok",
+    "torch": "2.9.0+cpu",
+    "torchvision": "0.24.0+cpu",
+    "cpu_nms": "passed",
+    "cuda_available": false,
+    "scope": "Native backend compatibility only; no model accuracy tested"
+  },
+  "environment": {
+    "python": "3.13.2",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "packages": {
+      "ultralytics": "8.3.163",
+      "opencv-python": "4.11.0.86",
+      "numpy": "2.2.5",
+      "scipy": "1.15.2",
+      "PyYAML": "6.0.2",
+      "psutil": "7.0.0",
+      "torch": "2.9.0+cpu",
+      "torchvision": "0.24.0+cpu"
+    }
+  },
+  "verified": [
+    "unit/integration/failure/concurrency rules",
+    "actual CPU model adapter with untrained test weights",
+    "MJPG video replay with explicit fixture detections",
+    "POS reconciliation",
+    "persistent daily aggregates",
+    "repeat replay idempotence",
+    "failure exit codes"
+  ],
+  "unverified": [
+    "real trained-model accuracy",
+    "real CPU model inference throughput",
+    "live cameras/RTSP",
+    "GPU acceleration",
+    "long-duration deployment"
+  ]
+}

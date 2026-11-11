@@ -1,0 +1,208 @@
+{
+  "version": "1",
+  "classes": [
+    {
+      "id": 0,
+      "name": "person",
+      "kind": "person",
+      "threshold": 0.5,
+      "enabled": true
+    },
+    {
+      "id": 1,
+      "name": "coffee_cup",
+      "kind": "product",
+      "threshold": 0.5,
+      "enabled": true
+    },
+    {
+      "id": 2,
+      "name": "table",
+      "kind": "fixture",
+      "threshold": 0.5,
+      "enabled": true
+    }
+  ],
+  "cameras": [
+    {
+      "id": "shop",
+      "width": 320,
+      "height": 240,
+      "sample_every": 1,
+      "motion_threshold": 0.15,
+      "thresholds": {},
+      "zones": [
+        {
+          "id": "T1",
+          "kind": "table",
+          "capacity": 2,
+          "polygon": [
+            [
+              0,
+              0
+            ],
+            [
+              150,
+              0
+            ],
+            [
+              150,
+              125
+            ],
+            [
+              0,
+              125
+            ]
+          ]
+        },
+        {
+          "id": "shelf",
+          "kind": "shelf",
+          "polygon": [
+            [
+              0,
+              140
+            ],
+            [
+              80,
+              140
+            ],
+            [
+              80,
+              240
+            ],
+            [
+              0,
+              240
+            ]
+          ]
+        },
+        {
+          "id": "counter",
+          "kind": "counter",
+          "polygon": [
+            [
+              90,
+              140
+            ],
+            [
+              180,
+              140
+            ],
+            [
+              180,
+              240
+            ],
+            [
+              90,
+              240
+            ]
+          ]
+        },
+        {
+          "id": "exit",
+          "kind": "exit",
+          "polygon": [
+            [
+              230,
+              0
+            ],
+            [
+              320,
+              0
+            ],
+            [
+              320,
+              240
+            ],
+            [
+              230,
+              240
+            ]
+          ]
+        },
+        {
+          "id": "queue",
+          "kind": "queue",
+          "polygon": [
+            [
+              160,
+              0
+            ],
+            [
+              220,
+              0
+            ],
+            [
+              220,
+              125
+            ],
+            [
+              160,
+              125
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "model": {
+    "version": "shop-v1",
+    "weights": "../models/shop-v1.pt",
+    "metadata": "../models/shop-v1.json",
+    "device": "cpu",
+    "load_timeout_seconds": 60,
+    "inference_timeout_seconds": 10
+  },
+  "tracker": {
+    "max_age_seconds": 2,
+    "max_distance_pixels": 100,
+    "min_hits": 2,
+    "max_tracks": 128,
+    "max_detections": 128
+  },
+  "rules": {
+    "occupy_seconds": 1,
+    "empty_seconds": 2,
+    "movement_seconds": 1,
+    "disappear_seconds": 3,
+    "long_occupancy_seconds": 3600,
+    "alert_cooldown_seconds": 60,
+    "low_confidence": 0.4,
+    "instability_ratio": 0.6,
+    "queue_limit": 4,
+    "authorized_product_zones": {
+      "coffee_cup": [
+        "shelf",
+        "counter",
+        "T1"
+      ]
+    }
+  },
+  "pos": {
+    "mode": "file",
+    "window_seconds": 120,
+    "min_confidence": 0.7,
+    "quantity_tolerance": 0,
+    "sku_classes": {
+      "COFFEE": "coffee_cup"
+    }
+  },
+  "storage": {
+    "path": "../var/operations.sqlite3"
+  },
+  "evidence": {
+    "capture": false,
+    "directory": "../var/evidence",
+    "retention_days": 7
+  },
+  "promotion": {
+    "detection.precision": 0.9,
+    "detection.recall": 0.8,
+    "detection.mAP50": 0.8,
+    "detection.mAP50_95": 0.5,
+    "tracking.IDF1": 0.8,
+    "occupancy.accuracy": 0.9,
+    "reconciliation.confirmed_sale_precision": 0.98
+  }
+}

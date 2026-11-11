@@ -1,0 +1,117 @@
+{
+  "notebook": "notebooks\\cafe_model_benchmark.ipynb",
+  "schema_valid": true,
+  "default_kernel_execution": true,
+  "smoke_only": true,
+  "accuracy_claims": false,
+  "models": {
+    "yolo11s": {
+      "training_and_reload_passed": true,
+      "test_and_export_passed": true,
+      "elapsed_seconds": 32.94366240000818,
+      "checkpoint_sha256": "9a2e01a5d69189ee3ef66a36984ef008a165a9046d92a91c41cb4ff770fdc9ea",
+      "validation_images": 1,
+      "finite_metrics": true
+    },
+    "yolo26s": {
+      "training_and_reload_passed": true,
+      "test_and_export_passed": true,
+      "elapsed_seconds": 8.182328099996084,
+      "checkpoint_sha256": "f76afe663422750faf8b4a8dea4a2831ab8d3e048971492332dcb08c97895e80",
+      "validation_images": 1,
+      "finite_metrics": true
+    },
+    "rtdetr_v2_r18": {
+      "training_and_reload_passed": true,
+      "test_and_export_passed": true,
+      "elapsed_seconds": 8.594878999996581,
+      "checkpoint_sha256": "af6175ace25e4a44a3f8c18068c6fef838b4ed37fb7b7b412a779073e1e3706e",
+      "validation_images": 1,
+      "finite_metrics": true
+    }
+  },
+  "dataset_audit": {
+    "images": {
+      "train": 6,
+      "val": 1,
+      "test": 1
+    },
+    "boxes": {
+      "train": {
+        "person": 1
+      },
+      "val": {
+        "person": 6
+      },
+      "test": {
+        "person": 3
+      }
+    },
+    "warnings": [
+      "train: person has only 1 boxes",
+      "val: person has only 6 boxes",
+      "test: person has only 3 boxes"
+    ],
+    "real_cafe_data": false,
+    "negative_images": {
+      "train": 5,
+      "val": 0,
+      "test": 0
+    },
+    "small_boxes_under_32px": {
+      "train": 0,
+      "val": 4,
+      "test": 0
+    },
+    "near_duplicates_checked": false,
+    "promotion_eligible": false
+  },
+  "environment": {
+    "versions": {
+      "torch": "2.9.0+cu128",
+      "torchvision": "0.24.0+cu128",
+      "ultralytics": "8.4.204",
+      "transformers": "4.57.6",
+      "datasets": "4.8.5",
+      "torchmetrics": "1.9.0",
+      "faster-coco-eval": "1.8.0",
+      "Pillow": "13.0.0",
+      "numpy": "2.2.5",
+      "kagglehub": "1.0.3"
+    },
+    "device": "cuda:0",
+    "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+    "image_size": 512,
+    "amp": true
+  },
+  "review_date": "2026-11-07",
+  "notebook_sha256": "b96e09211c359999f826f299e851572117d34e34266b7aa26cce82dcdac6552b",
+  "smoke_outputs_retained": false,
+  "smoke_fixture": "COCO8 eight public photos; repartitioned 6 train / 1 val / 1 test; person-only, one epoch",
+  "application_tests": {
+    "run": 126,
+    "passed": 125,
+    "skipped": 1,
+    "skip_reason": "Optional ijson unavailable in application environment"
+  },
+  "notebook_tests": {
+    "run": 16,
+    "passed": 16,
+    "skipped": 0,
+    "environment": ".venv-notebook"
+  },
+  "source_checks": {
+    "kaggle_cup": {
+      "downloaded_images": 4,
+      "downloaded_labels": 4,
+      "imported_boxes": 8,
+      "source_class_id": 31,
+      "audit_passed": true
+    },
+    "hf_coco": {
+      "first_rows_api_passed": true,
+      "rows_api": "500: Parquet scan-size limit",
+      "streaming": "Attempted; stalled locally; interrupted. Not verified end-to-end."
+    }
+  }
+}

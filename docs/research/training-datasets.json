@@ -1,0 +1,316 @@
+{
+  "review_date": "2026-11-07",
+  "checks": {
+    "view:samuelayman/cup-dataset": {
+      "url": "https://www.kaggle.com/api/v1/datasets/view/samuelayman/cup-dataset",
+      "data": {
+        "title": "Cup dataset",
+        "totalBytes": 163348224,
+        "licenseName": "Apache 2.0",
+        "currentVersionNumber": 1,
+        "lastUpdated": "2025-04-14T20:55:37.373Z"
+      }
+    },
+    "view:awsaf49/coco-2017-dataset": {
+      "url": "https://www.kaggle.com/api/v1/datasets/view/awsaf49/coco-2017-dataset",
+      "data": {
+        "title": "COCO 2017 Dataset",
+        "totalBytes": 27603146598,
+        "licenseName": "CC BY-SA 4.0",
+        "currentVersionNumber": 2,
+        "lastUpdated": "2020-09-04T05:05:02.617Z"
+      }
+    },
+    "view:rahulsonboro/mall-surveillance-object-detection": {
+      "url": "https://www.kaggle.com/api/v1/datasets/view/rahulsonboro/mall-surveillance-object-detection",
+      "data": {
+        "title": "Mall_Surveillance_Object_Detection",
+        "totalBytes": 206457601,
+        "licenseName": "Other (specified in description)",
+        "currentVersionNumber": 1,
+        "lastUpdated": "2026-06-20T18:27:07.3Z"
+      }
+    },
+    "view:thedatasith/sku110k-annotations": {
+      "url": "https://www.kaggle.com/api/v1/datasets/view/thedatasith/sku110k-annotations",
+      "data": {
+        "title": "SKU110K Dataset",
+        "totalBytes": 15101053361,
+        "licenseName": "Attribution-NonCommercial-ShareAlike 3.0 IGO (CC BY-NC-SA 3.0 IGO)",
+        "currentVersionNumber": 14,
+        "lastUpdated": "2022-06-09T14:02:32.163Z"
+      }
+    },
+    "files:samuelayman/cup-dataset": {
+      "url": "https://www.kaggle.com/api/v1/datasets/list/samuelayman/cup-dataset",
+      "data": {
+        "sample_files": [
+          {
+            "name": "cup/31_10.jpg",
+            "totalBytes": 106267
+          },
+          {
+            "name": "cup/31_1000.jpg",
+            "totalBytes": 262546
+          },
+          {
+            "name": "cup/31_1001.jpg",
+            "totalBytes": 177044
+          },
+          {
+            "name": "cup/31_1002.jpg",
+            "totalBytes": 195269
+          },
+          {
+            "name": "cup/31_1003.jpg",
+            "totalBytes": 144215
+          },
+          {
+            "name": "cup/31_1004.jpg",
+            "totalBytes": 229659
+          }
+        ],
+        "paginated": true
+      }
+    },
+    "files:awsaf49/coco-2017-dataset": {
+      "url": "https://www.kaggle.com/api/v1/datasets/list/awsaf49/coco-2017-dataset",
+      "data": {
+        "sample_files": [
+          {
+            "name": "coco2017/annotations/captions_train2017.json",
+            "totalBytes": 91865115
+          },
+          {
+            "name": "coco2017/annotations/captions_val2017.json",
+            "totalBytes": 3872473
+          },
+          {
+            "name": "coco2017/annotations/instances_train2017.json",
+            "totalBytes": 469785474
+          },
+          {
+            "name": "coco2017/annotations/instances_val2017.json",
+            "totalBytes": 19987840
+          },
+          {
+            "name": "coco2017/annotations/person_keypoints_train2017.json",
+            "totalBytes": 238884731
+          },
+          {
+            "name": "coco2017/annotations/person_keypoints_val2017.json",
+            "totalBytes": 10020657
+          }
+        ],
+        "paginated": true
+      }
+    },
+    "files:rahulsonboro/mall-surveillance-object-detection": {
+      "url": "https://www.kaggle.com/api/v1/datasets/list/rahulsonboro/mall-surveillance-object-detection",
+      "data": {
+        "sample_files": [
+          {
+            "name": "mall products.v1i.yolov8/README.dataset.txt",
+            "totalBytes": 151
+          },
+          {
+            "name": "mall products.v1i.yolov8/README.roboflow.txt",
+            "totalBytes": 988
+          },
+          {
+            "name": "mall products.v1i.yolov8/data.yaml",
+            "totalBytes": 303
+          },
+          {
+            "name": "mall products.v1i.yolov8/test/test/images/six156_jpg.rf.4a1083a4f018ff8c85b299257907ec0d.jpg",
+            "totalBytes": 140459
+          },
+          {
+            "name": "mall products.v1i.yolov8/test/test/images/six157_jpg.rf.970eab58bb0caaaf88d4552a3e7483e7.jpg",
+            "totalBytes": 141207
+          },
+          {
+            "name": "mall products.v1i.yolov8/test/test/images/six159_jpg.rf.ccf42a7edc413fe6c4d1013b7c3d5057.jpg",
+            "totalBytes": 137823
+          }
+        ],
+        "paginated": true
+      }
+    },
+    "files:thedatasith/sku110k-annotations": {
+      "url": "https://www.kaggle.com/api/v1/datasets/list/thedatasith/sku110k-annotations",
+      "data": {
+        "sample_files": [
+          {
+            "name": "README.md",
+            "totalBytes": 1972
+          },
+          {
+            "name": "SKU110K_fixed/images/test/test_0.jpg",
+            "totalBytes": 858599
+          },
+          {
+            "name": "SKU110K_fixed/images/test/test_1.jpg",
+            "totalBytes": 555817
+          },
+          {
+            "name": "SKU110K_fixed/images/test/test_10.jpg",
+            "totalBytes": 2224871
+          },
+          {
+            "name": "SKU110K_fixed/images/test/test_100.jpg",
+            "totalBytes": 701049
+          },
+          {
+            "name": "SKU110K_fixed/images/test/test_1000.jpg",
+            "totalBytes": 1055822
+          }
+        ],
+        "paginated": true
+      }
+    },
+    "hf:coco": {
+      "url": "https://huggingface.co/api/datasets/detection-datasets/coco",
+      "data": {
+        "sha": "cf0b22332314a937e9dc8a1957b21725430bb41d",
+        "gated": false,
+        "cardData": {
+          "task_categories": [
+            "object-detection"
+          ],
+          "language": [
+            "en"
+          ]
+        }
+      }
+    },
+    "hf:retail": {
+      "url": "https://huggingface.co/api/datasets/standard-cognition/RetailAction",
+      "data": {
+        "sha": "49cb590723db921a4bd5a38adea92f6abd3f7a00",
+        "gated": false,
+        "cardData": {
+          "task_categories": [
+            "video-classification"
+          ],
+          "language": [
+            "en"
+          ],
+          "tags": [
+            "Retail",
+            "Action",
+            "Video",
+            "ICCV",
+            "Multi-View",
+            "Spatio-Temporal",
+            "Localization",
+            "Interactions"
+          ],
+          "size_categories": [
+            "10K<n<100K"
+          ],
+          "license": "other"
+        }
+      }
+    },
+    "hf:barista": {
+      "url": "https://huggingface.co/api/datasets/ramblr/BARISTA",
+      "data": {
+        "sha": "236cfba2f05b7dec6177cbf2179e6beaf2aafec9",
+        "gated": false,
+        "cardData": {
+          "license": "cc-by-nc-4.0",
+          "viewer": false,
+          "task_categories": [
+            "video-classification",
+            "object-detection",
+            "visual-question-answering"
+          ],
+          "language": [
+            "en"
+          ],
+          "tags": [
+            "egocentric-video",
+            "activity-recognition",
+            "hand-object-interaction",
+            "segmentation",
+            "relation-extraction",
+            "vision-language-models",
+            "benchmark",
+            "coffee"
+          ],
+          "pretty_name": "BARISTA",
+          "size_categories": [
+            "100<n<1K"
+          ]
+        }
+      }
+    },
+    "hf:cupunknown": {
+      "url": "https://huggingface.co/api/datasets/keremberke/coffee-cup-object-detection",
+      "data": {},
+      "error": "HTTP Error 401: Unauthorized"
+    }
+  },
+  "kaggle_cup_sample_check": {
+    "version": 1,
+    "source_class_ids": [
+      31
+    ],
+    "source_mapping": {
+      "31": "cup"
+    },
+    "images_checked": 4,
+    "boxes_imported": 8,
+    "split_audit_passed": true,
+    "visual_review": "31_1001.jpg: dining-table scene with cups, not overhead cafe; annotation completeness not established",
+    "files": [
+      {
+        "name": "cup/31_10.jpg",
+        "bytes": 106267,
+        "sha256": "fe648ce25488a65c4a8afbf18edf26c424b7acfa58b18459384da2511899fa07"
+      },
+      {
+        "name": "cup/31_1000.jpg",
+        "bytes": 262546,
+        "sha256": "60878a72282d60a8aa9f8552ec6af5586ef562adadedd390c0da7533dd6f87eb"
+      },
+      {
+        "name": "cup/31_1001.jpg",
+        "bytes": 177044,
+        "sha256": "0f8a7fac77c7ba4c53336bd797d8730625ac5ed1e27f24477b8dd6f43e67ec44"
+      },
+      {
+        "name": "cup/31_1002.jpg",
+        "bytes": 195269,
+        "sha256": "7141329e042c38283153e6a56f138fe5643a9570e59bf8401ee0b061cd26df82"
+      },
+      {
+        "name": "cup/labels/31_10.txt",
+        "bytes": 42,
+        "sha256": "c49a4b0548e148477033a6592765dbb9e028507b07f4855eebb90da6521689ba"
+      },
+      {
+        "name": "cup/labels/31_1000.txt",
+        "bytes": 85,
+        "sha256": "48e6be9006242a01149c0b922377c674e33d04cffc2a0b6597a7685d81cbcb0a"
+      },
+      {
+        "name": "cup/labels/31_1001.txt",
+        "bytes": 164,
+        "sha256": "dc54e74335309d7ce314160fe233bf660b07fb1add674d562d43ec3b40525c45"
+      },
+      {
+        "name": "cup/labels/31_1002.txt",
+        "bytes": 38,
+        "sha256": "d04da4a4e521d2713fb3d1cda8606169739117ed8e85c6da0656c2ec8d598d4f"
+      }
+    ]
+  },
+  "hf_download_check": {
+    "rows_api_status": 500,
+    "reason": "Parquet row-group scan 484726918 bytes exceeds viewer limit 300000000 bytes",
+    "first_rows_api_status": 200,
+    "pinned_stream_attempt": "First row-group download stalled locally and was interrupted; not verified end-to-end."
+  }
+}

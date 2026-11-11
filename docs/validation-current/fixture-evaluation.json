@@ -1,0 +1,89 @@
+{
+  "provenance": {
+    "kind": "synthetic_logic_fixture"
+  },
+  "frames": 12,
+  "detection": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "mAP50": 1.0,
+    "mAP50_95": 1.0,
+    "calibration_ece": 0.07222222222222241,
+    "per_class": {
+      "0": {
+        "tp": 10,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "mAP50": 1.0,
+        "mAP50_95": 1.0
+      },
+      "1": {
+        "tp": 5,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "mAP50": 1.0,
+        "mAP50_95": 1.0
+      },
+      "2": {
+        "tp": 12,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "mAP50": 1.0,
+        "mAP50_95": 1.0
+      }
+    }
+  },
+  "tracking": {
+    "IDF1": 1.0,
+    "MOTA": 1.0,
+    "HOTA": null,
+    "ID_switches": 0,
+    "fragmentation": 0,
+    "mean_track_lifetime_seconds": 8.0
+  },
+  "occupancy": {
+    "accuracy": 0.6666666666666666,
+    "empty_table_precision": 1.0,
+    "occupied_table_recall": 0.7142857142857143,
+    "mean_time_to_detection_seconds": 2.0,
+    "false_occupancy_seconds": 2.0
+  },
+  "counting": {
+    "absolute_error": 0,
+    "percentage_error": 0.0,
+    "overcount_rate": 0.0,
+    "undercount_rate": 0.0,
+    "event_precision": 1.0,
+    "event_recall": 1.0,
+    "duplicate_event_rate": 0.0
+  },
+  "reconciliation": {
+    "confirmed_sale_precision": 1.0,
+    "unmatched_event_rate": 0.0,
+    "false_alert_rate": null,
+    "missed_sale_rate": 0.0
+  },
+  "runtime": {
+    "average_latency_ms": 2.4988250006572343,
+    "cpu_usage": 24.01294316952144,
+    "fps": 46.1462142821659,
+    "gpu_usage": null,
+    "latency_window": 12,
+    "memory_bytes": 88924160,
+    "p95_latency_ms": 3.553894998185569,
+    "resource_scope": "orchestrator process; detector/decoder child resources excluded"
+  },
+  "limitations": [
+    "Detection AP uses 101-point interpolation; compare model.val separately.",
+    "HOTA and GPU utilization are not implemented.",
+    "No real-world accuracy can be inferred from logic fixtures."
+  ],
+  "ground_truth_sha256": "ac833bc39b56b3e7469da01a7b24a3d77645c5d407a6ae58d406ae48b088a418",
+  "predictions_sha256": "2a557bf864c2ea55b920e55405e2170425206b6e60d7401bd209369811ec37f5",
+  "model_sha256": null,
+  "dataset_manifest_sha256": null
+}

@@ -1,0 +1,78 @@
+{
+  "purpose": "synthetic_robustness_characterization_not_model_accuracy",
+  "ledger": [
+    {
+      "orders": 1000,
+      "events": 100,
+      "import_seconds": 0.13751709999633022,
+      "reconcile_seconds": 0.034031499992124736,
+      "repeat_reconcile_seconds": 0.0010153000039281324,
+      "events_per_second": 2938.4540799888664,
+      "python_peak_allocated_bytes": 210967,
+      "confirmed_allocations": 100,
+      "idempotency": "passed"
+    },
+    {
+      "orders": 10000,
+      "events": 1000,
+      "import_seconds": 1.4956435000058264,
+      "reconcile_seconds": 0.37210459999914747,
+      "repeat_reconcile_seconds": 0.009151000005658716,
+      "events_per_second": 2687.416387763793,
+      "python_peak_allocated_bytes": 758996,
+      "confirmed_allocations": 1000,
+      "idempotency": "passed"
+    }
+  ],
+  "tracking": [
+    {
+      "scenario": "smooth_two_person_crossing",
+      "IDF1": 1.0,
+      "MOTA": 1.0,
+      "HOTA": null,
+      "ID_switches": 0,
+      "fragmentation": 0,
+      "mean_track_lifetime_seconds": 4.0
+    },
+    {
+      "scenario": "temporary_occlusion_within_expiry",
+      "IDF1": 1.0,
+      "MOTA": 1.0,
+      "HOTA": null,
+      "ID_switches": 0,
+      "fragmentation": 0,
+      "mean_track_lifetime_seconds": 2.0
+    },
+    {
+      "scenario": "occlusion_beyond_expiry",
+      "IDF1": 0.5,
+      "MOTA": 0.5,
+      "HOTA": null,
+      "ID_switches": 1,
+      "fragmentation": 0,
+      "mean_track_lifetime_seconds": 0.0
+    },
+    {
+      "scenario": "movement_beyond_distance_gate",
+      "IDF1": 0.3333333333333333,
+      "MOTA": 0.33333333333333337,
+      "HOTA": null,
+      "ID_switches": 2,
+      "fragmentation": 0,
+      "mean_track_lifetime_seconds": 0.0
+    }
+  ],
+  "tracking_expiry_stress": {
+    "frames": 5000,
+    "max_active_tracks": 3,
+    "python_peak_allocated_bytes": 9176,
+    "elapsed_seconds": 1.1093411999900127,
+    "expiry_bound": "passed"
+  },
+  "measurement_scope": "Single local process, SQLite on local disk. Python allocation peaks exclude native/OS memory. Tracemalloc affects timings.",
+  "limitations": [
+    "SQLite has one writer; distributed scale is untested.",
+    "Identity is lost after long occlusions or movement outside the gate.",
+    "No appearance recognition, real video accuracy, or production load claim."
+  ]
+}

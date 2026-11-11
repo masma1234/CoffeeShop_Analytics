@@ -1,0 +1,203 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:coffee-ops:event-annotations:1",
+  "title": "Single-camera event annotation clip, version 1",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "clip_id",
+    "camera_id",
+    "recording_group",
+    "annotation_version",
+    "time_origin_utc",
+    "duration_seconds",
+    "scored_event_kinds",
+    "events"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "clip_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "camera_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "recording_group": {
+      "type": "string",
+      "minLength": 1
+    },
+    "annotation_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "time_origin_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "duration_seconds": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "scored_event_kinds": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "event_tolerance_seconds": {
+      "type": "number",
+      "minimum": 0
+    },
+    "event_tolerances_seconds": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number",
+        "minimum": 0
+      }
+    },
+    "difficulty_tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "provenance": {
+      "type": "object"
+    },
+    "unscored_intervals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "start_seconds",
+          "end_seconds",
+          "reason"
+        ],
+        "properties": {
+          "start_seconds": {
+            "type": "number",
+            "minimum": 0
+          },
+          "end_seconds": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "reason": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "kind",
+          "seconds",
+          "status"
+        ],
+        "properties": {
+          "kind": {
+            "type": "string",
+            "minLength": 1
+          },
+          "seconds": {
+            "type": "number",
+            "minimum": 0
+          },
+          "start_seconds": {
+            "type": "number",
+            "minimum": 0
+          },
+          "end_seconds": {
+            "type": "number",
+            "minimum": 0
+          },
+          "status": {
+            "enum": [
+              "observed",
+              "confirmed",
+              "review_required",
+              "uncertain",
+              "unobservable",
+              "abstained",
+              "candidate"
+            ]
+          },
+          "camera_id": {
+            "type": "string"
+          },
+          "line_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "product_class": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "source_zone": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "destination_zone": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "track_refs": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "minimum": 0
+            }
+          },
+          "visibility": {
+            "enum": [
+              "clear",
+              "partial",
+              "unobservable"
+            ]
+          },
+          "confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "reviewer": {
+            "type": "string"
+          },
+          "adjudication_note": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "annotation_status": {
+      "enum": [
+        "unreviewed",
+        "reviewed"
+      ]
+    },
+    "source_identity": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  }
+}

@@ -1,0 +1,11 @@
+# Direct runtime dependencies pinned for reproducible installs.
+ultralytics==8.3.163
+opencv-python==4.11.0.86
+numpy==2.2.5
+PyYAML==6.0.2
+scipy==1.15.2
+psutil==7.0.0
+tzdata==2026.6
+# Keep the native operator libraries paired. Install CPU wheels first (README).
+torch==2.9.0
+torchvision==0.24.0

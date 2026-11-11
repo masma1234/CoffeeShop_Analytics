@@ -1,0 +1,1576 @@
+{
+  "review_date": "2026-11-07",
+  "scope": "software foundation and synthetic event semantics; no cafe accuracy or production capacity claim",
+  "baseline_tests": {
+    "run": 126,
+    "seconds": 18.215,
+    "skipped": 1,
+    "passed": 125,
+    "success": true
+  },
+  "final_tests": {
+    "run": 161,
+    "seconds": 14.467,
+    "skipped": 1,
+    "passed": 160,
+    "success": true
+  },
+  "acceptance": {
+    "commands": [
+      {
+        "arguments": [
+          "doctor"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "make-demo",
+          "--directory",
+          "<temporary-workdir>\\demo"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "import-pos",
+          "--file",
+          "<temporary-workdir>\\demo\\orders.json"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "replay",
+          "--source",
+          "<temporary-workdir>\\demo\\fixture.avi",
+          "--camera",
+          "shop",
+          "--run-id",
+          "demo",
+          "--start",
+          "2026-01-01T09:00:00Z",
+          "--fixture-detections",
+          "<temporary-workdir>\\demo\\detections.json"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "reconcile"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "report",
+          "--date",
+          "2026-01-01"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "export-predictions",
+          "--run-id",
+          "demo",
+          "--camera",
+          "shop"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "evaluate",
+          "--truth",
+          "<temporary-workdir>\\demo\\ground-truth.json",
+          "--predictions",
+          "<temporary-workdir>\\predictions.json"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "replay",
+          "--source",
+          "<temporary-workdir>\\demo\\fixture.avi",
+          "--camera",
+          "shop",
+          "--run-id",
+          "demo",
+          "--start",
+          "2026-01-01T09:00:00Z",
+          "--fixture-detections",
+          "<temporary-workdir>\\demo\\detections.json"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "reconcile"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "report",
+          "--date",
+          "2026-01-01"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "replay",
+          "--source",
+          "<temporary-workdir>\\demo\\fixture.avi",
+          "--camera",
+          "shop",
+          "--run-id",
+          "weights-missing",
+          "--start",
+          "2026-01-01T09:00:00Z"
+        ],
+        "exit_code": 2,
+        "expected": 2
+      },
+      {
+        "arguments": [
+          "import-pos",
+          "--file",
+          "<temporary-workdir>\\missing.csv"
+        ],
+        "exit_code": 2,
+        "expected": 2
+      },
+      {
+        "arguments": [
+          "replay",
+          "--source",
+          "<temporary-workdir>\\traffic.avi",
+          "--camera",
+          "shop",
+          "--run-id",
+          "traffic",
+          "--start",
+          "2026-01-01T23:00:00Z",
+          "--fixture-detections",
+          "<temporary-workdir>\\traffic-detections.json"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "business-report",
+          "--date",
+          "2026-01-02",
+          "--timezone",
+          "Africa/Tunis",
+          "--camera",
+          "shop",
+          "--run-id",
+          "traffic"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "export-predictions",
+          "--run-id",
+          "traffic",
+          "--camera",
+          "shop",
+          "--all-events"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "evaluate-events",
+          "--truth",
+          "<temporary-workdir>\\traffic-truth.json",
+          "--predictions",
+          "<temporary-workdir>\\traffic-predictions.json"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "review-crossing",
+          "--event-id",
+          "d21080fcd5df2a9d31518e3420e7178d",
+          "--decision",
+          "rejected",
+          "--note",
+          "Synthetic review workflow check"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "business-report",
+          "--date",
+          "2026-01-02",
+          "--timezone",
+          "Africa/Tunis",
+          "--camera",
+          "shop",
+          "--run-id",
+          "traffic"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "replay",
+          "--source",
+          "<temporary-workdir>\\traffic.avi",
+          "--camera",
+          "shop",
+          "--run-id",
+          "traffic",
+          "--start",
+          "2026-01-01T23:00:00Z",
+          "--fixture-detections",
+          "<temporary-workdir>\\traffic-detections.json"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "business-report",
+          "--date",
+          "2026-01-02",
+          "--timezone",
+          "Africa/Tunis",
+          "--camera",
+          "shop",
+          "--run-id",
+          "traffic"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      }
+    ],
+    "all_expected": true,
+    "backend": {
+      "status": "ok",
+      "torch": "2.9.0+cpu",
+      "torchvision": "0.24.0+cpu",
+      "cpu_nms": "passed",
+      "cuda_available": false,
+      "scope": "Native backend compatibility only; no model accuracy tested"
+    },
+    "environment": {
+      "python": "3.13.2",
+      "platform": "Windows-11-10.0.26300-SP0",
+      "packages": {
+        "ultralytics": "8.3.163",
+        "opencv-python": "4.11.0.86",
+        "numpy": "2.2.5",
+        "scipy": "1.15.2",
+        "PyYAML": "6.0.2",
+        "psutil": "7.0.0",
+        "torch": "2.9.0+cpu",
+        "torchvision": "0.24.0+cpu"
+      }
+    }
+  },
+  "ledger_before": {
+    "purpose": "synthetic_robustness_characterization_not_model_accuracy",
+    "ledger": [
+      {
+        "orders": 1000,
+        "events": 100,
+        "import_seconds": 0.10909779999929015,
+        "reconcile_seconds": 0.031118099999730475,
+        "repeat_reconcile_seconds": 0.0010260999988531694,
+        "events_per_second": 3213.5638101576296,
+        "python_peak_allocated_bytes": 211151,
+        "confirmed_allocations": 100,
+        "idempotency": "passed"
+      },
+      {
+        "orders": 10000,
+        "events": 1000,
+        "import_seconds": 1.2472372999909567,
+        "reconcile_seconds": 0.2914684999996098,
+        "repeat_reconcile_seconds": 0.008858700006385334,
+        "events_per_second": 3430.9024817479035,
+        "python_peak_allocated_bytes": 765096,
+        "confirmed_allocations": 1000,
+        "idempotency": "passed"
+      }
+    ],
+    "tracking": [
+      {
+        "scenario": "smooth_two_person_crossing",
+        "IDF1": 1.0,
+        "MOTA": 1.0,
+        "HOTA": null,
+        "ID_switches": 0,
+        "fragmentation": 0,
+        "mean_track_lifetime_seconds": 4.0
+      },
+      {
+        "scenario": "temporary_occlusion_within_expiry",
+        "IDF1": 1.0,
+        "MOTA": 1.0,
+        "HOTA": null,
+        "ID_switches": 0,
+        "fragmentation": 0,
+        "mean_track_lifetime_seconds": 2.0
+      },
+      {
+        "scenario": "occlusion_beyond_expiry",
+        "IDF1": 0.5,
+        "MOTA": 0.5,
+        "HOTA": null,
+        "ID_switches": 1,
+        "fragmentation": 0,
+        "mean_track_lifetime_seconds": 0.0
+      },
+      {
+        "scenario": "movement_beyond_distance_gate",
+        "IDF1": 0.3333333333333333,
+        "MOTA": 0.33333333333333337,
+        "HOTA": null,
+        "ID_switches": 2,
+        "fragmentation": 0,
+        "mean_track_lifetime_seconds": 0.0
+      }
+    ],
+    "tracking_expiry_stress": {
+      "frames": 5000,
+      "max_active_tracks": 3,
+      "python_peak_allocated_bytes": 9176,
+      "elapsed_seconds": 0.8810462999972515,
+      "expiry_bound": "passed"
+    },
+    "measurement_scope": "Single local process, SQLite on local disk. Python allocation peaks exclude native/OS memory. Tracemalloc affects timings.",
+    "limitations": [
+      "SQLite has one writer; distributed scale is untested.",
+      "Identity is lost after long occlusions or movement outside the gate.",
+      "No appearance recognition, real video accuracy, or production load claim."
+    ]
+  },
+  "ledger_after": {
+    "purpose": "synthetic_robustness_characterization_not_model_accuracy",
+    "ledger": [
+      {
+        "orders": 1000,
+        "events": 100,
+        "import_seconds": 0.11144579999381676,
+        "reconcile_seconds": 0.03233869999530725,
+        "repeat_reconcile_seconds": 0.0010577000066405162,
+        "events_per_second": 3092.2702524996753,
+        "python_peak_allocated_bytes": 211185,
+        "confirmed_allocations": 100,
+        "idempotency": "passed"
+      },
+      {
+        "orders": 10000,
+        "events": 1000,
+        "import_seconds": 1.2874329999904148,
+        "reconcile_seconds": 0.3028779000014765,
+        "repeat_reconcile_seconds": 0.009067700011655688,
+        "events_per_second": 3301.6605041012403,
+        "python_peak_allocated_bytes": 759246,
+        "confirmed_allocations": 1000,
+        "idempotency": "passed"
+      }
+    ],
+    "tracking": [
+      {
+        "scenario": "smooth_two_person_crossing",
+        "IDF1": 1.0,
+        "MOTA": 1.0,
+        "HOTA": null,
+        "ID_switches": 0,
+        "fragmentation": 0,
+        "mean_track_lifetime_seconds": 4.0
+      },
+      {
+        "scenario": "temporary_occlusion_within_expiry",
+        "IDF1": 1.0,
+        "MOTA": 1.0,
+        "HOTA": null,
+        "ID_switches": 0,
+        "fragmentation": 0,
+        "mean_track_lifetime_seconds": 2.0
+      },
+      {
+        "scenario": "occlusion_beyond_expiry",
+        "IDF1": 0.5,
+        "MOTA": 0.5,
+        "HOTA": null,
+        "ID_switches": 1,
+        "fragmentation": 0,
+        "mean_track_lifetime_seconds": 0.0
+      },
+      {
+        "scenario": "movement_beyond_distance_gate",
+        "IDF1": 0.3333333333333333,
+        "MOTA": 0.33333333333333337,
+        "HOTA": null,
+        "ID_switches": 2,
+        "fragmentation": 0,
+        "mean_track_lifetime_seconds": 0.0
+      }
+    ],
+    "tracking_expiry_stress": {
+      "frames": 5000,
+      "max_active_tracks": 3,
+      "python_peak_allocated_bytes": 9176,
+      "elapsed_seconds": 0.9543947000056505,
+      "expiry_bound": "passed"
+    },
+    "measurement_scope": "Single local process, SQLite on local disk. Python allocation peaks exclude native/OS memory. Tracemalloc affects timings.",
+    "limitations": [
+      "SQLite has one writer; distributed scale is untested.",
+      "Identity is lost after long occlusions or movement outside the gate.",
+      "No appearance recognition, real video accuracy, or production load claim."
+    ]
+  },
+  "exploratory_index_run": {
+    "retained": false,
+    "note": "Additional report index removed; exploratory timing did not establish read benefit",
+    "ledger": [
+      {
+        "orders": 1000,
+        "events": 100,
+        "import_seconds": 0.1268965999915963,
+        "reconcile_seconds": 0.0338536000053864,
+        "repeat_reconcile_seconds": 0.0010380000021541491,
+        "events_per_second": 2953.8955970440115,
+        "python_peak_allocated_bytes": 211111,
+        "confirmed_allocations": 100,
+        "idempotency": "passed"
+      },
+      {
+        "orders": 10000,
+        "events": 1000,
+        "import_seconds": 1.409393399997498,
+        "reconcile_seconds": 0.3530097999901045,
+        "repeat_reconcile_seconds": 0.00940229999832809,
+        "events_per_second": 2832.782546059718,
+        "python_peak_allocated_bytes": 768376,
+        "confirmed_allocations": 1000,
+        "idempotency": "passed"
+      }
+    ]
+  },
+  "event_sampling": {
+    "purpose": "synthetic_event_semantics_and_sampling_not_real_camera_accuracy",
+    "environment": {
+      "platform": "Windows-11-10.0.26300-SP0",
+      "python": "3.13.2"
+    },
+    "measurement_scope": "Fixture detections, tracker, events and SQLite commits; no model inference or video decoding",
+    "source_sha256": {
+      "coffee_ops/traffic.py": "4d647237b1760c8646d7903daec3372556d1b4f24b9059e0745acc5f7aacd2d1",
+      "coffee_ops/pipeline.py": "9aad872549103fdcd000b3907e249a77734ee74b76a2d00c28c0e41ccf105763",
+      "coffee_ops/event_evaluation.py": "a7930240ffc797aec8e95d361a71bb752f60808962dd1e8629dfd4caef317f89",
+      "scripts/benchmark_events.py": "0cf36b8e739129ce1fd62696dabacb9e03c2989a945677fea96801e33653ff3b"
+    },
+    "experiments": [
+      {
+        "scenario": "short_visit",
+        "sample_every": 1,
+        "source_fps": 10,
+        "processed_frames": 60,
+        "elapsed_seconds": 0.12695340000209399,
+        "config_hash": "0fdcb6580283955d3b570ef2e9de6ee8",
+        "runtime": {
+          "fps": 464.1602529221993,
+          "average_latency_ms": 2.102569999988191,
+          "p95_latency_ms": 3.3929899989743713,
+          "p50_latency_ms": 1.6635999927530065,
+          "p99_latency_ms": 7.853139997168874,
+          "stage_latency_ms": {
+            "tracking": {
+              "samples": 60,
+              "p50": 0.09494999540038407,
+              "p95": 0.12376000740914604
+            },
+            "events": {
+              "samples": 60,
+              "p50": 0.04134999471716583,
+              "p95": 0.06053499528206885
+            },
+            "storage": {
+              "samples": 60,
+              "p50": 1.4421000014408492,
+              "p95": 3.174059995217249
+            }
+          },
+          "latency_window": 60,
+          "gpu_usage": null,
+          "cpu_usage": 24.073497738545306,
+          "memory_bytes": 86937600,
+          "resource_scope": "orchestrator process; detector/decoder child resources excluded"
+        },
+        "events": {
+          "tp": 2,
+          "fp": 0,
+          "fn": 0,
+          "event_precision": 1.0,
+          "event_recall": 1.0,
+          "event_f1": 1.0,
+          "absolute_error": 0,
+          "signed_count_bias": 0,
+          "percentage_error": 0.0,
+          "overcount_rate": 0.0,
+          "undercount_rate": 0.0,
+          "false_events_per_hour": 0.0,
+          "missed_events_per_hour": 0.0,
+          "per_class": {
+            "person_entered": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "event_precision": 1.0,
+              "event_recall": 1.0,
+              "event_f1": 1.0,
+              "absolute_error": 0,
+              "signed_count_bias": 0,
+              "percentage_error": 0.0,
+              "overcount_rate": 0.0,
+              "undercount_rate": 0.0,
+              "false_events_per_hour": 0.0,
+              "missed_events_per_hour": 0.0
+            },
+            "person_exited": {
+              "tp": 1,
+              "fp": 0,
+              "fn": 0,
+              "event_precision": 1.0,
+              "event_recall": 1.0,
+              "event_f1": 1.0,
+              "absolute_error": 0,
+              "signed_count_bias": 0,
+              "percentage_error": 0.0,
+              "overcount_rate": 0.0,
+              "undercount_rate": 0.0,
+              "false_events_per_hour": 0.0,
+              "missed_events_per_hour": 0.0
+            }
+          },
+          "timestamp_mae_seconds": 0.0,
+          "duplicate_event_rate": 0.0,
+          "annotated_exposure_seconds": 6.0,
+          "excluded": {},
+          "abstention_rate": 0.0,
+          "matching_policy": "scope-exact maximum-cardinality assignment, then minimum timestamp error",
+          "provenance": {
+            "kind": "synthetic_logic_fixture"
+          },
+          "uncertainty": "No population confidence interval inferred from one clip."
+        }
+      },
+      {
+        "scenario": "short_visit",
+        "sample_every": 2,
+        "source_fps": 10,
+        "processed_frames": 30,
+        "elapsed_seconds": 0.07346129999496043,
+        "config_hash": "0fdcb6580283955d3b570ef2e9de6ee8",
+        "runtime": {
+          "fps": 394.95822660208125,
+          "average_latency_ms": 2.4247599998489022,
+          "p95_latency_ms": 4.103939998458372,
+          "p50_latency_ms": 2.2207000001799315,
+          "p99_latency_ms": 4.261923999438295,
+          "stage_latency_ms": {
+            "tracking": {
+              "samples": 30,
+              "p50": 0.12520000018412247,
+              "p95": 0.16166499844985074
+            },
+            "events": {
+              "samples": 30,
+              "p50": 0.050749993533827364,
+              "p95": 0.07155999846872874
+            },
+            "storage": {
+              "samples": 30,
+              "p50": 1.9052000061492436,
+              "p95": 3.8092000031610946
+            }
+          },
+          "latency_window": 30,
+          "gpu_usage": null,
+          "cpu_usage": 20.44967025672162,
+          "memory_bytes": 86974464,
+          "resource_scope": "orchestrator process; detector/decoder child resources excluded"
+        },
+        "events": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 2,
+          "event_precision": null,
+          "event_recall": 0.0,
+          "event_f1": 0.0,
+          "absolute_error": 2,
+          "signed_count_bias": -2,
+          "percentage_error": 100.0,
+          "overcount_rate": 0.0,
+          "undercount_rate": 1.0,
+          "false_events_per_hour": 0.0,
+          "missed_events_per_hour": 1200.0,
+          "per_class": {
+            "person_entered": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 1,
+              "event_precision": null,
+              "event_recall": 0.0,
+              "event_f1": 0.0,
+              "absolute_error": 1,
+              "signed_count_bias": -1,
+              "percentage_error": 100.0,
+              "overcount_rate": 0.0,
+              "undercount_rate": 1.0,
+              "false_events_per_hour": 0.0,
+              "missed_events_per_hour": 600.0
+            },
+            "person_exited": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 1,
+              "event_precision": null,
+              "event_recall": 0.0,
+              "event_f1": 0.0,
+              "absolute_error": 1,
+              "signed_count_bias": -1,
+              "percentage_error": 100.0,
+              "overcount_rate": 0.0,
+              "undercount_rate": 1.0,
+              "false_events_per_hour": 0.0,
+              "missed_events_per_hour": 600.0
+            }
+          },
+          "timestamp_mae_seconds": null,
+          "duplicate_event_rate": null,
+          "annotated_exposure_seconds": 6.0,
+          "excluded": {},
+          "abstention_rate": null,
+          "matching_policy": "scope-exact maximum-cardinality assignment, then minimum timestamp error",
+          "provenance": {
+            "kind": "synthetic_logic_fixture"
+          },
+          "uncertainty": "No population confidence interval inferred from one clip."
+        }
+      },
+      {
+        "scenario": "short_visit",
+        "sample_every": 4,
+        "source_fps": 10,
+        "processed_frames": 15,
+        "elapsed_seconds": 0.03011200000764802,
+        "config_hash": "0fdcb6580283955d3b570ef2e9de6ee8",
+        "runtime": {
+          "fps": 459.96044352010097,
+          "average_latency_ms": 1.9928733342870448,
+          "p95_latency_ms": 3.2359099976019934,
+          "p50_latency_ms": 1.8297000060556456,
+          "p99_latency_ms": 3.275501989410259,
+          "stage_latency_ms": {
+            "tracking": {
+              "samples": 15,
+              "p50": 0.09770000178832561,
+              "p95": 0.14737000310560683
+            },
+            "events": {
+              "samples": 15,
+              "p50": 0.04530001024249941,
+              "p95": 0.06584000220755115
+            },
+            "storage": {
+              "samples": 15,
+              "p50": 1.6382000030716881,
+              "p95": 3.0447099983575754
+            }
+          },
+          "latency_window": 15,
+          "gpu_usage": null,
+          "cpu_usage": 47.0738871848577,
+          "memory_bytes": 86978560,
+          "resource_scope": "orchestrator process; detector/decoder child resources excluded"
+        },
+        "events": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 2,
+          "event_precision": null,
+          "event_recall": 0.0,
+          "event_f1": 0.0,
+          "absolute_error": 2,
+          "signed_count_bias": -2,
+          "percentage_error": 100.0,
+          "overcount_rate": 0.0,
+          "undercount_rate": 1.0,
+          "false_events_per_hour": 0.0,
+          "missed_events_per_hour": 1200.0,
+          "per_class": {
+            "person_entered": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 1,
+              "event_precision": null,
+              "event_recall": 0.0,
+              "event_f1": 0.0,
+              "absolute_error": 1,
+              "signed_count_bias": -1,
+              "percentage_error": 100.0,
+              "overcount_rate": 0.0,
+              "undercount_rate": 1.0,
+              "false_events_per_hour": 0.0,
+              "missed_events_per_hour": 600.0
+            },
+            "person_exited": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 1,
+              "event_precision": null,
+              "event_recall": 0.0,
+              "event_f1": 0.0,
+              "absolute_error": 1,
+              "signed_count_bias": -1,
+              "percentage_error": 100.0,
+              "overcount_rate": 0.0,
+              "undercount_rate": 1.0,
+              "false_events_per_hour": 0.0,
+              "missed_events_per_hour": 600.0
+            }
+          },
+          "timestamp_mae_seconds": null,
+          "duplicate_event_rate": null,
+          "annotated_exposure_seconds": 6.0,
+          "excluded": {},
+          "abstention_rate": null,
+          "matching_policy": "scope-exact maximum-cardinality assignment, then minimum timestamp error",
+          "provenance": {
+            "kind": "synthetic_logic_fixture"
+          },
+          "uncertainty": "No population confidence interval inferred from one clip."
+        }
+      },
+      {
+        "scenario": "simultaneous",
+        "sample_every": 1,
+        "source_fps": 10,
+        "processed_frames": 60,
+        "elapsed_seconds": 0.12845869999728166,
+        "config_hash": "0fdcb6580283955d3b570ef2e9de6ee8",
+        "runtime": {
+          "fps": 457.2222831613847,
+          "average_latency_ms": 2.1234883339881585,
+          "p95_latency_ms": 3.482760001497808,
+          "p50_latency_ms": 1.863249999587424,
+          "p99_latency_ms": 4.573698000167493,
+          "stage_latency_ms": {
+            "tracking": {
+              "samples": 60,
+              "p50": 0.1494999960414134,
+              "p95": 0.1918900023156309
+            },
+            "events": {
+              "samples": 60,
+              "p50": 0.06535000284202397,
+              "p95": 0.09865500542218794
+            },
+            "storage": {
+              "samples": 60,
+              "p50": 1.567749997775536,
+              "p95": 3.1431350005732375
+            }
+          },
+          "latency_window": 60,
+          "gpu_usage": null,
+          "cpu_usage": 35.60150016187878,
+          "memory_bytes": 87035904,
+          "resource_scope": "orchestrator process; detector/decoder child resources excluded"
+        },
+        "events": {
+          "tp": 4,
+          "fp": 0,
+          "fn": 0,
+          "event_precision": 1.0,
+          "event_recall": 1.0,
+          "event_f1": 1.0,
+          "absolute_error": 0,
+          "signed_count_bias": 0,
+          "percentage_error": 0.0,
+          "overcount_rate": 0.0,
+          "undercount_rate": 0.0,
+          "false_events_per_hour": 0.0,
+          "missed_events_per_hour": 0.0,
+          "per_class": {
+            "person_entered": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "event_precision": 1.0,
+              "event_recall": 1.0,
+              "event_f1": 1.0,
+              "absolute_error": 0,
+              "signed_count_bias": 0,
+              "percentage_error": 0.0,
+              "overcount_rate": 0.0,
+              "undercount_rate": 0.0,
+              "false_events_per_hour": 0.0,
+              "missed_events_per_hour": 0.0
+            },
+            "person_exited": {
+              "tp": 2,
+              "fp": 0,
+              "fn": 0,
+              "event_precision": 1.0,
+              "event_recall": 1.0,
+              "event_f1": 1.0,
+              "absolute_error": 0,
+              "signed_count_bias": 0,
+              "percentage_error": 0.0,
+              "overcount_rate": 0.0,
+              "undercount_rate": 0.0,
+              "false_events_per_hour": 0.0,
+              "missed_events_per_hour": 0.0
+            }
+          },
+          "timestamp_mae_seconds": 0.0,
+          "duplicate_event_rate": 0.0,
+          "annotated_exposure_seconds": 6.0,
+          "excluded": {},
+          "abstention_rate": 0.0,
+          "matching_policy": "scope-exact maximum-cardinality assignment, then minimum timestamp error",
+          "provenance": {
+            "kind": "synthetic_logic_fixture"
+          },
+          "uncertainty": "No population confidence interval inferred from one clip."
+        }
+      },
+      {
+        "scenario": "simultaneous",
+        "sample_every": 2,
+        "source_fps": 10,
+        "processed_frames": 30,
+        "elapsed_seconds": 0.057328599999891594,
+        "config_hash": "0fdcb6580283955d3b570ef2e9de6ee8",
+        "runtime": {
+          "fps": 504.29999796575925,
+          "average_latency_ms": 1.894479999221706,
+          "p95_latency_ms": 3.2484349976584777,
+          "p50_latency_ms": 1.7123500074376352,
+          "p99_latency_ms": 3.3902019950619433,
+          "stage_latency_ms": {
+            "tracking": {
+              "samples": 30,
+              "p50": 0.14814999303780496,
+              "p95": 0.1811749956686981
+            },
+            "events": {
+              "samples": 30,
+              "p50": 0.06114999996498227,
+              "p95": 0.1001350094156804
+            },
+            "storage": {
+              "samples": 30,
+              "p50": 1.4206999985617585,
+              "p95": 2.9774999966321043
+            }
+          },
+          "latency_window": 30,
+          "gpu_usage": null,
+          "cpu_usage": 52.17603275076053,
+          "memory_bytes": 87060480,
+          "resource_scope": "orchestrator process; detector/decoder child resources excluded"
+        },
+        "events": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 4,
+          "event_precision": null,
+          "event_recall": 0.0,
+          "event_f1": 0.0,
+          "absolute_error": 4,
+          "signed_count_bias": -4,
+          "percentage_error": 100.0,
+          "overcount_rate": 0.0,
+          "undercount_rate": 1.0,
+          "false_events_per_hour": 0.0,
+          "missed_events_per_hour": 2400.0,
+          "per_class": {
+            "person_entered": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 2,
+              "event_precision": null,
+              "event_recall": 0.0,
+              "event_f1": 0.0,
+              "absolute_error": 2,
+              "signed_count_bias": -2,
+              "percentage_error": 100.0,
+              "overcount_rate": 0.0,
+              "undercount_rate": 1.0,
+              "false_events_per_hour": 0.0,
+              "missed_events_per_hour": 1200.0
+            },
+            "person_exited": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 2,
+              "event_precision": null,
+              "event_recall": 0.0,
+              "event_f1": 0.0,
+              "absolute_error": 2,
+              "signed_count_bias": -2,
+              "percentage_error": 100.0,
+              "overcount_rate": 0.0,
+              "undercount_rate": 1.0,
+              "false_events_per_hour": 0.0,
+              "missed_events_per_hour": 1200.0
+            }
+          },
+          "timestamp_mae_seconds": null,
+          "duplicate_event_rate": null,
+          "annotated_exposure_seconds": 6.0,
+          "excluded": {},
+          "abstention_rate": null,
+          "matching_policy": "scope-exact maximum-cardinality assignment, then minimum timestamp error",
+          "provenance": {
+            "kind": "synthetic_logic_fixture"
+          },
+          "uncertainty": "No population confidence interval inferred from one clip."
+        }
+      },
+      {
+        "scenario": "simultaneous",
+        "sample_every": 4,
+        "source_fps": 10,
+        "processed_frames": 15,
+        "elapsed_seconds": 0.03158969999640249,
+        "config_hash": "0fdcb6580283955d3b570ef2e9de6ee8",
+        "runtime": {
+          "fps": 441.26212744433917,
+          "average_latency_ms": 2.090086668613367,
+          "p95_latency_ms": 3.1332800004747696,
+          "p50_latency_ms": 1.9300000130897388,
+          "p99_latency_ms": 3.18121599877486,
+          "stage_latency_ms": {
+            "tracking": {
+              "samples": 15,
+              "p50": 0.12759999663103372,
+              "p95": 0.20233999966876562
+            },
+            "events": {
+              "samples": 15,
+              "p50": 0.05849999433849007,
+              "p95": 0.10472999856574454
+            },
+            "storage": {
+              "samples": 15,
+              "p50": 1.6538000054424629,
+              "p95": 2.8600199962966144
+            }
+          },
+          "latency_window": 15,
+          "gpu_usage": null,
+          "cpu_usage": 45.29274331574791,
+          "memory_bytes": 87068672,
+          "resource_scope": "orchestrator process; detector/decoder child resources excluded"
+        },
+        "events": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 4,
+          "event_precision": null,
+          "event_recall": 0.0,
+          "event_f1": 0.0,
+          "absolute_error": 4,
+          "signed_count_bias": -4,
+          "percentage_error": 100.0,
+          "overcount_rate": 0.0,
+          "undercount_rate": 1.0,
+          "false_events_per_hour": 0.0,
+          "missed_events_per_hour": 2400.0,
+          "per_class": {
+            "person_entered": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 2,
+              "event_precision": null,
+              "event_recall": 0.0,
+              "event_f1": 0.0,
+              "absolute_error": 2,
+              "signed_count_bias": -2,
+              "percentage_error": 100.0,
+              "overcount_rate": 0.0,
+              "undercount_rate": 1.0,
+              "false_events_per_hour": 0.0,
+              "missed_events_per_hour": 1200.0
+            },
+            "person_exited": {
+              "tp": 0,
+              "fp": 0,
+              "fn": 2,
+              "event_precision": null,
+              "event_recall": 0.0,
+              "event_f1": 0.0,
+              "absolute_error": 2,
+              "signed_count_bias": -2,
+              "percentage_error": 100.0,
+              "overcount_rate": 0.0,
+              "undercount_rate": 1.0,
+              "false_events_per_hour": 0.0,
+              "missed_events_per_hour": 1200.0
+            }
+          },
+          "timestamp_mae_seconds": null,
+          "duplicate_event_rate": null,
+          "annotated_exposure_seconds": 6.0,
+          "excluded": {},
+          "abstention_rate": null,
+          "matching_policy": "scope-exact maximum-cardinality assignment, then minimum timestamp error",
+          "provenance": {
+            "kind": "synthetic_logic_fixture"
+          },
+          "uncertainty": "No population confidence interval inferred from one clip."
+        }
+      },
+      {
+        "scenario": "standing",
+        "sample_every": 1,
+        "source_fps": 10,
+        "processed_frames": 60,
+        "elapsed_seconds": 0.12060820001352113,
+        "config_hash": "0fdcb6580283955d3b570ef2e9de6ee8",
+        "runtime": {
+          "fps": 488.0278631337366,
+          "average_latency_ms": 1.995208333149397,
+          "p95_latency_ms": 3.3305400051176544,
+          "p50_latency_ms": 1.782499995897524,
+          "p99_latency_ms": 3.6033100006170566,
+          "stage_latency_ms": {
+            "tracking": {
+              "samples": 60,
+              "p50": 0.0882500025909394,
+              "p95": 0.1278700081456918
+            },
+            "events": {
+              "samples": 60,
+              "p50": 0.041250001231674105,
+              "p95": 0.0786399992648512
+            },
+            "storage": {
+              "samples": 60,
+              "p50": 1.57460000627907,
+              "p95": 3.0998199930763803
+            }
+          },
+          "latency_window": 60,
+          "gpu_usage": null,
+          "cpu_usage": 12.64300758718909,
+          "memory_bytes": 87101440,
+          "resource_scope": "orchestrator process; detector/decoder child resources excluded"
+        },
+        "events": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "event_precision": null,
+          "event_recall": null,
+          "event_f1": null,
+          "absolute_error": 0,
+          "signed_count_bias": 0,
+          "percentage_error": null,
+          "overcount_rate": null,
+          "undercount_rate": null,
+          "false_events_per_hour": 0.0,
+          "missed_events_per_hour": 0.0,
+          "per_class": {},
+          "timestamp_mae_seconds": null,
+          "duplicate_event_rate": null,
+          "annotated_exposure_seconds": 6.0,
+          "excluded": {},
+          "abstention_rate": null,
+          "matching_policy": "scope-exact maximum-cardinality assignment, then minimum timestamp error",
+          "provenance": {
+            "kind": "synthetic_logic_fixture"
+          },
+          "uncertainty": "No population confidence interval inferred from one clip."
+        }
+      },
+      {
+        "scenario": "standing",
+        "sample_every": 2,
+        "source_fps": 10,
+        "processed_frames": 30,
+        "elapsed_seconds": 0.053419899995788,
+        "config_hash": "0fdcb6580283955d3b570ef2e9de6ee8",
+        "runtime": {
+          "fps": 539.96846585292,
+          "average_latency_ms": 1.7684066673003447,
+          "p95_latency_ms": 3.000155000336235,
+          "p50_latency_ms": 1.5807500021765009,
+          "p99_latency_ms": 3.205337997787865,
+          "stage_latency_ms": {
+            "tracking": {
+              "samples": 30,
+              "p50": 0.0902499959920533,
+              "p95": 0.10528999846428631
+            },
+            "events": {
+              "samples": 30,
+              "p50": 0.04090000584255904,
+              "p95": 0.05702499838662329
+            },
+            "storage": {
+              "samples": 30,
+              "p50": 1.3858999955118634,
+              "p95": 2.7475100017909426
+            }
+          },
+          "latency_window": 30,
+          "gpu_usage": null,
+          "cpu_usage": 111.67454641982603,
+          "memory_bytes": 87109632,
+          "resource_scope": "orchestrator process; detector/decoder child resources excluded"
+        },
+        "events": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "event_precision": null,
+          "event_recall": null,
+          "event_f1": null,
+          "absolute_error": 0,
+          "signed_count_bias": 0,
+          "percentage_error": null,
+          "overcount_rate": null,
+          "undercount_rate": null,
+          "false_events_per_hour": 0.0,
+          "missed_events_per_hour": 0.0,
+          "per_class": {},
+          "timestamp_mae_seconds": null,
+          "duplicate_event_rate": null,
+          "annotated_exposure_seconds": 6.0,
+          "excluded": {},
+          "abstention_rate": null,
+          "matching_policy": "scope-exact maximum-cardinality assignment, then minimum timestamp error",
+          "provenance": {
+            "kind": "synthetic_logic_fixture"
+          },
+          "uncertainty": "No population confidence interval inferred from one clip."
+        }
+      },
+      {
+        "scenario": "standing",
+        "sample_every": 4,
+        "source_fps": 10,
+        "processed_frames": 15,
+        "elapsed_seconds": 0.02817940000386443,
+        "config_hash": "0fdcb6580283955d3b570ef2e9de6ee8",
+        "runtime": {
+          "fps": 494.0044329989244,
+          "average_latency_ms": 1.8653199988572549,
+          "p95_latency_ms": 3.376499989826697,
+          "p50_latency_ms": 1.593599998159334,
+          "p99_latency_ms": 3.820579989405814,
+          "stage_latency_ms": {
+            "tracking": {
+              "samples": 15,
+              "p50": 0.08779999916441739,
+              "p95": 0.11785000388044863
+            },
+            "events": {
+              "samples": 15,
+              "p50": 0.040099999750964344,
+              "p95": 0.06603000510949636
+            },
+            "storage": {
+              "samples": 15,
+              "p50": 1.3827000075252727,
+              "p95": 3.1811099921469568
+            }
+          },
+          "latency_window": 15,
+          "gpu_usage": null,
+          "cpu_usage": 101.56491216433983,
+          "memory_bytes": 87121920,
+          "resource_scope": "orchestrator process; detector/decoder child resources excluded"
+        },
+        "events": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "event_precision": null,
+          "event_recall": null,
+          "event_f1": null,
+          "absolute_error": 0,
+          "signed_count_bias": 0,
+          "percentage_error": null,
+          "overcount_rate": null,
+          "undercount_rate": null,
+          "false_events_per_hour": 0.0,
+          "missed_events_per_hour": 0.0,
+          "per_class": {},
+          "timestamp_mae_seconds": null,
+          "duplicate_event_rate": null,
+          "annotated_exposure_seconds": 6.0,
+          "excluded": {},
+          "abstention_rate": null,
+          "matching_policy": "scope-exact maximum-cardinality assignment, then minimum timestamp error",
+          "provenance": {
+            "kind": "synthetic_logic_fixture"
+          },
+          "uncertainty": "No population confidence interval inferred from one clip."
+        }
+      },
+      {
+        "scenario": "boundary_jitter",
+        "sample_every": 1,
+        "source_fps": 10,
+        "processed_frames": 60,
+        "elapsed_seconds": 0.11977619999379385,
+        "config_hash": "0fdcb6580283955d3b570ef2e9de6ee8",
+        "runtime": {
+          "fps": 491.5691789044651,
+          "average_latency_ms": 1.9830083343549632,
+          "p95_latency_ms": 3.232805002335226,
+          "p50_latency_ms": 1.7994000008911826,
+          "p99_latency_ms": 3.35967099366826,
+          "stage_latency_ms": {
+            "tracking": {
+              "samples": 60,
+              "p50": 0.08099999104160815,
+              "p95": 0.15572500487905924
+            },
+            "events": {
+              "samples": 60,
+              "p50": 0.03975000436184928,
+              "p95": 0.05695999570889398
+            },
+            "storage": {
+              "samples": 60,
+              "p50": 1.584349993208889,
+              "p95": 3.047535002406221
+            }
+          },
+          "latency_window": 60,
+          "gpu_usage": null,
+          "cpu_usage": 38.27383571760031,
+          "memory_bytes": 87146496,
+          "resource_scope": "orchestrator process; detector/decoder child resources excluded"
+        },
+        "events": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "event_precision": null,
+          "event_recall": null,
+          "event_f1": null,
+          "absolute_error": 0,
+          "signed_count_bias": 0,
+          "percentage_error": null,
+          "overcount_rate": null,
+          "undercount_rate": null,
+          "false_events_per_hour": 0.0,
+          "missed_events_per_hour": 0.0,
+          "per_class": {},
+          "timestamp_mae_seconds": null,
+          "duplicate_event_rate": null,
+          "annotated_exposure_seconds": 6.0,
+          "excluded": {},
+          "abstention_rate": null,
+          "matching_policy": "scope-exact maximum-cardinality assignment, then minimum timestamp error",
+          "provenance": {
+            "kind": "synthetic_logic_fixture"
+          },
+          "uncertainty": "No population confidence interval inferred from one clip."
+        }
+      },
+      {
+        "scenario": "boundary_jitter",
+        "sample_every": 2,
+        "source_fps": 10,
+        "processed_frames": 30,
+        "elapsed_seconds": 0.0688096000085352,
+        "config_hash": "0fdcb6580283955d3b570ef2e9de6ee8",
+        "runtime": {
+          "fps": 423.02377395030015,
+          "average_latency_ms": 2.2743233343741545,
+          "p95_latency_ms": 3.3244550068047825,
+          "p50_latency_ms": 2.1020499989390373,
+          "p99_latency_ms": 4.469852998299758,
+          "stage_latency_ms": {
+            "tracking": {
+              "samples": 30,
+              "p50": 0.11800000356743112,
+              "p95": 0.15760999885969795
+            },
+            "events": {
+              "samples": 30,
+              "p50": 0.0509000092279166,
+              "p95": 0.06496999849332495
+            },
+            "storage": {
+              "samples": 30,
+              "p50": 1.8244000020786189,
+              "p95": 3.0703400050697383
+            }
+          },
+          "latency_window": 30,
+          "gpu_usage": null,
+          "cpu_usage": 43.81414390416267,
+          "memory_bytes": 87154688,
+          "resource_scope": "orchestrator process; detector/decoder child resources excluded"
+        },
+        "events": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "event_precision": null,
+          "event_recall": null,
+          "event_f1": null,
+          "absolute_error": 0,
+          "signed_count_bias": 0,
+          "percentage_error": null,
+          "overcount_rate": null,
+          "undercount_rate": null,
+          "false_events_per_hour": 0.0,
+          "missed_events_per_hour": 0.0,
+          "per_class": {},
+          "timestamp_mae_seconds": null,
+          "duplicate_event_rate": null,
+          "annotated_exposure_seconds": 6.0,
+          "excluded": {},
+          "abstention_rate": null,
+          "matching_policy": "scope-exact maximum-cardinality assignment, then minimum timestamp error",
+          "provenance": {
+            "kind": "synthetic_logic_fixture"
+          },
+          "uncertainty": "No population confidence interval inferred from one clip."
+        }
+      },
+      {
+        "scenario": "boundary_jitter",
+        "sample_every": 4,
+        "source_fps": 10,
+        "processed_frames": 15,
+        "elapsed_seconds": 0.027589600009378046,
+        "config_hash": "0fdcb6580283955d3b570ef2e9de6ee8",
+        "runtime": {
+          "fps": 503.9475894622867,
+          "average_latency_ms": 1.8244733335450292,
+          "p95_latency_ms": 3.051570006937254,
+          "p50_latency_ms": 1.5890999929979444,
+          "p99_latency_ms": 3.0520740026258864,
+          "stage_latency_ms": {
+            "tracking": {
+              "samples": 15,
+              "p50": 0.09539999882690609,
+              "p95": 0.27500000287545845
+            },
+            "events": {
+              "samples": 15,
+              "p50": 0.045599997974932194,
+              "p95": 0.13427000958472485
+            },
+            "storage": {
+              "samples": 15,
+              "p50": 1.3930999994045123,
+              "p95": 2.8593000082764775
+            }
+          },
+          "latency_window": 15,
+          "gpu_usage": null,
+          "cpu_usage": 0.0,
+          "memory_bytes": 87158784,
+          "resource_scope": "orchestrator process; detector/decoder child resources excluded"
+        },
+        "events": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "event_precision": null,
+          "event_recall": null,
+          "event_f1": null,
+          "absolute_error": 0,
+          "signed_count_bias": 0,
+          "percentage_error": null,
+          "overcount_rate": null,
+          "undercount_rate": null,
+          "false_events_per_hour": 0.0,
+          "missed_events_per_hour": 0.0,
+          "per_class": {},
+          "timestamp_mae_seconds": null,
+          "duplicate_event_rate": null,
+          "annotated_exposure_seconds": 6.0,
+          "excluded": {},
+          "abstention_rate": null,
+          "matching_policy": "scope-exact maximum-cardinality assignment, then minimum timestamp error",
+          "provenance": {
+            "kind": "synthetic_logic_fixture"
+          },
+          "uncertainty": "No population confidence interval inferred from one clip."
+        }
+      }
+    ]
+  },
+  "cli_traffic_workflow": {
+    "fixture_only": true,
+    "before_review": {
+      "person_entered": 1,
+      "person_exited": 0,
+      "net_observed_crossings": 1,
+      "in_store_occupancy_estimate": null,
+      "roles": "unknown",
+      "excluded_after_review": {},
+      "observed_camera_seconds": 1.25,
+      "calibrated_cameras_with_frames": [
+        "shop"
+      ],
+      "sampling_coverage_fraction": 1.4467592592592593e-05,
+      "coverage_notice": "Reliable adjacent sampled frames with configured lines/person detection; not a guarantee every crossing was observable. Zero counts without coverage are not verified zero traffic.",
+      "notice": "Crossings are not globally unique customers; initial occupancy and unseen doors are unknown."
+    },
+    "after_review": {
+      "person_entered": 0,
+      "person_exited": 0,
+      "net_observed_crossings": 0,
+      "in_store_occupancy_estimate": null,
+      "roles": "unknown",
+      "excluded_after_review": {
+        "rejected": 1
+      },
+      "observed_camera_seconds": 1.25,
+      "calibrated_cameras_with_frames": [
+        "shop"
+      ],
+      "sampling_coverage_fraction": 1.4467592592592593e-05,
+      "coverage_notice": "Reliable adjacent sampled frames with configured lines/person detection; not a guarantee every crossing was observable. Zero counts without coverage are not verified zero traffic.",
+      "notice": "Crossings are not globally unique customers; initial occupancy and unseen doors are unknown."
+    },
+    "evaluation": {
+      "tp": 1,
+      "fp": 0,
+      "fn": 0,
+      "event_precision": 1.0,
+      "event_recall": 1.0,
+      "event_f1": 1.0,
+      "absolute_error": 0,
+      "signed_count_bias": 0,
+      "percentage_error": 0.0,
+      "overcount_rate": 0.0,
+      "undercount_rate": 0.0,
+      "false_events_per_hour": 0.0,
+      "missed_events_per_hour": 0.0,
+      "per_class": {
+        "person_entered": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 0,
+          "event_precision": 1.0,
+          "event_recall": 1.0,
+          "event_f1": 1.0,
+          "absolute_error": 0,
+          "signed_count_bias": 0,
+          "percentage_error": 0.0,
+          "overcount_rate": 0.0,
+          "undercount_rate": 0.0,
+          "false_events_per_hour": 0.0,
+          "missed_events_per_hour": 0.0
+        }
+      },
+      "timestamp_mae_seconds": 0.0,
+      "duplicate_event_rate": 0.0,
+      "annotated_exposure_seconds": 1.5,
+      "excluded": {},
+      "abstention_rate": 0.0,
+      "matching_policy": "scope-exact maximum-cardinality assignment, then minimum timestamp error",
+      "provenance": {
+        "kind": "synthetic_logic_fixture"
+      },
+      "uncertainty": "No population confidence interval inferred from one clip.",
+      "ground_truth_sha256": "e153852baf04d5e89bb8d7bbbadceb303aa166b87431131efec42b545ea6b3e5",
+      "predictions_sha256": "f141f95dc3e1be3f56d4b6b6e5b40f81099c59d076c9504d2c8de3796076eda3"
+    },
+    "review_revision": 1,
+    "repeated_replay_identical": true
+  },
+  "code_sha256": {
+    "coffee_ops/__init__.py": "6aef8f11cf9d1feadb75cf3d07003c09ca7079ba99d5bed041be8d3053be601d",
+    "coffee_ops/__main__.py": "307299fda7b77d22c64cb51430ec75e5f59d78e9c948786afb3b2544fe45e4b7",
+    "coffee_ops/alerts.py": "03db4aebbaeceaf5f0a5616a0b7690290a2f25b9f30ac3b3ab4cb60f0814161a",
+    "coffee_ops/api.py": "66f3e071362177cf5ec5c2b515b5d5aba70b4edff60883beb479023cf846cad2",
+    "coffee_ops/business_reporting.py": "8d87e1fb9ba3217e869da3f7ee2d9a94043cc63e2f91f3e0d0cd77a958aa1fb9",
+    "coffee_ops/cli.py": "e9ada370f14985d287450f812ec03d7308fa21623ffe8eef693a67960d9d3c7d",
+    "coffee_ops/config.py": "1d76f22796b814f52bc628101acc582e5e7d8479b99e963478aef13ea14ad8b1",
+    "coffee_ops/dataset.py": "a389e04375882943794fddcba01272e1c7f417a9d83bd71584e0717312449272",
+    "coffee_ops/demo.py": "4c921b0936ac18f13356759c4f745d04d0c548837b7537843e563651e94d260d",
+    "coffee_ops/detector.py": "b52d5577f862a25e9cff5ab7004125991175a3fa5bd59cd02eb82d1bf79e9dbc",
+    "coffee_ops/evaluation.py": "088e146e5762a76fed08f18047567462c45e52d4a4429577e1dc696b3d72f548",
+    "coffee_ops/event_engine.py": "830e2174d37ce0eacfc271f5be8b9190ed03bd8ab7fe8dd26881d929d9a38ff9",
+    "coffee_ops/event_evaluation.py": "a7930240ffc797aec8e95d361a71bb752f60808962dd1e8629dfd4caef317f89",
+    "coffee_ops/exports.py": "36c7f1749fdb62868da227a12ff098bff34050817e61d22c126d25e5e68f5043",
+    "coffee_ops/health.py": "1a03cb66fa8e41eecca0a64ff6ae41041e36778629369963158ab760780171f4",
+    "coffee_ops/inventory.py": "fa9953b6f918367d93380961fbfdaa09f94690c21f2b93296a1206f55ced7a53",
+    "coffee_ops/mlops.py": "4b2f0c9a1a1d17360e13ee9a3b211ba3e21966fbda545d091b0f7ab7db1457c1",
+    "coffee_ops/pipeline.py": "9aad872549103fdcd000b3907e249a77734ee74b76a2d00c28c0e41ccf105763",
+    "coffee_ops/pos_adapter.py": "6e046b8b5c3db450f5dd8d233180ab3c0d8eef74b1d80571450d1d2edd5d7840",
+    "coffee_ops/reconciliation.py": "3e4794e10917e1b3659f9fb87885bb0aefaccfaa1e0fa186990ccd4b2d8abc43",
+    "coffee_ops/reporting.py": "0b6b8c1f4603768947b2b6ce2ff158dfe20409c019c565a22dfd920208872d5b",
+    "coffee_ops/runtime.py": "86d7c3fe443c3c02ee0989305d50cea665a63299f2a25a9076ec2b1066583bb8",
+    "coffee_ops/schema.py": "1218cafc80ae39c1239cf134d7eb0eefaad3f04b8026de97c1babb069ffc0d7a",
+    "coffee_ops/storage.py": "238c51b00469a04f74014b5e18c65a265a6d91fee5c95903d0e9e18a4573aa9e",
+    "coffee_ops/tracker.py": "2fb52e17a473bf3cb9ad2e9349818debb90b5b4c0c8cc7794ad0e4f98e98dac4",
+    "coffee_ops/traffic.py": "4d647237b1760c8646d7903daec3372556d1b4f24b9059e0745acc5f7aacd2d1",
+    "coffee_ops/video_input.py": "a8bc1d91218b6fa6c2f56b64d77ed4671e8bcbec7ff7f335b14ff61decb1cabb",
+    "coffee_ops/zones.py": "2ddabc0a78c2d848649cd0b206ec6615371d8a1b44bf1a715b43428888c1e855",
+    "scripts/benchmark_events.py": "0cf36b8e739129ce1fd62696dabacb9e03c2989a945677fea96801e33653ff3b",
+    "scripts/benchmark_models.py": "5bd5f1cd53f2ad48671517a89596d62c5997bb78ab1b97d3988691696599c826",
+    "scripts/benchmark_mvp.py": "6c0ffd11de0ac9859812ff4eee297ba1f1b84329e6f7ca961d19e2c94179e51a",
+    "scripts/benchmark_suite.py": "2cbd150a83315c551eacb0011d641945cf91ad0ab2b7c6b05d62b4eaf4de1697",
+    "scripts/verify_mvp.py": "536102a5579a0c93ebafc8882592b623509a7bbc0e341d120d8222eb397ef9c5",
+    "scripts/verify_training_notebook.py": "a323f3ca639ae7055611153fa137128643b455faeb03422433f269d501a565d8",
+    "tests/test_api.py": "513e9f9f15aa4f774dd3c370c9d9f8ca1a1965bd1b4ce64dbefe70d63828b87f",
+    "tests/test_business_reporting.py": "eb3f9d4695ed63ad8dd57fb82d89186e562bacf79ece45df18886e5cb6379d76",
+    "tests/test_detector_backend.py": "db8374aac3bc78fdccf35e70997443861c29352b9f5e4ed2472bdd38eaf7e099",
+    "tests/test_evaluation_and_data.py": "41f9b3825c20f3f3fb61f0b25b3c06e47311d1170c797a59d7d364180e678493",
+    "tests/test_event_scoring.py": "9305549fa2fb3218e2e7e73906757ff4cc8b08e72eba2d0b56c07c139bc267bb",
+    "tests/test_failure_boundaries.py": "3a63b279f9abce6734b1952272c9df677a2ad0b7ff9d500d45f7859660651fb7",
+    "tests/test_model_benchmark.py": "0072d945cfdae8a9c65c5dff3de300481c8e79803c63269ed23b4ff65ef4179c",
+    "tests/test_operations.py": "0a447aae32e54be911806185cbe5aa25aea62548dfe7bd42981af18e41c8c58f",
+    "tests/test_storage_resilience.py": "49b692183a3a335255f0b5964461cb240e6197d58b5241fadc81f97bd1a680c0",
+    "tests/test_traffic.py": "64840dfde928859fb6b13487016036df32efe2a63ea77180aa4aeecd46dff796",
+    "tests/test_training_notebook.py": "05106295c2ef1e35b17c59785a49a7247e90e61c763618ba7ce2c858af464a21",
+    "tests/test_video_integration.py": "5a6f9cbca7b715e17302e23903511beb4aee7f8bfd005bd50c0c453d93e5bdcb"
+  },
+  "limitations": [
+    "No target cafe footage/labels",
+    "Generic model study and training API checks are separate",
+    "Synthetic sampling cases are not a real-camera FPS recommendation",
+    "Only orchestrator resources, no sustained multi-camera/GPU capacity",
+    "No statistical speedup claim from single stress runs"
+  ],
+  "pip_check": "No broken requirements found in operational environment"
+}

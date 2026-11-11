@@ -1,0 +1,27 @@
+{
+  "date_utc": "2026-01-01",
+  "confirmed_sales_source": "paid_POS_only",
+  "confirmed_sold_units": {
+    "COFFEE": 1
+  },
+  "visual_movements": {
+    "coffee_cup:placed": 1,
+    "coffee_cup:transferred": 1,
+    "coffee_cup:disappeared": 1
+  },
+  "reconciliation_statuses": {
+    "observed": 1,
+    "confirmed_sale": 1,
+    "sale_correlated_movement": 1,
+    "payment_unmatched": 1
+  },
+  "occupancy_samples": {
+    "occupied": 7,
+    "empty": 3,
+    "unknown": 2
+  },
+  "table_utilization_percent": 70.0,
+  "utilization_method": "sample-weighted known states; unknown excluded",
+  "average_completed_occupancy_seconds": 8.0,
+  "payment_notice": "Video alone cannot confirm payment. Alerts require human review."
+}

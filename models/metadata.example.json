@@ -1,0 +1,10 @@
+{
+  "version": "shop-v1",
+  "dataset_version": "replace-with-real-dataset-version",
+  "sha256": "replace-with-sha256-of-explicit-weights",
+  "classes": {
+    "0": "person",
+    "1": "coffee_cup",
+    "2": "table"
+  }
+}

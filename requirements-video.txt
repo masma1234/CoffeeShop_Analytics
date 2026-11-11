@@ -1,0 +1,12 @@
+# Optional local-video review environment; do not install over the application .venv.
+av==19.0.2
+ijson==3.6.0
+transformers==4.57.6
+huggingface-hub==0.36.2
+numpy==2.2.5
+scipy==1.15.2
+opencv-python==4.11.0.86
+Pillow==13.0.0
+psutil==7.0.0
+tzdata==2026.6
+# Install a matched Torch/TorchVision pair separately. Ultralytics is not required by the RT-DETR path.

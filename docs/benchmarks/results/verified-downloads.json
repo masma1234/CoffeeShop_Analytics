@@ -1,0 +1,16 @@
+[
+  {
+    "name": "torch_cuda",
+    "bytes": 2860234115,
+    "sha256": "9cba9f0fa2e1b70fffdcec1235a1bb727cbff7e7b118ba111b2b7f984b7087e2",
+    "publisher_sha256_verified": true,
+    "seconds": 417.49761829999625
+  },
+  {
+    "name": "smolvlm",
+    "bytes": 2029990624,
+    "sha256": "b9bfd456c9472c0acd5719d6e514c4b859891af205ee1a736552fd3497b8b0c3",
+    "publisher_sha256_verified": true,
+    "seconds": 297.3429838000011
+  }
+]

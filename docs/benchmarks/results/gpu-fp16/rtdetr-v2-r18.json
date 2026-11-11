@@ -1,0 +1,789 @@
+{
+  "kind": "detector",
+  "provenance": {
+    "repository": "PekingU/rtdetr_v2_r18vd",
+    "revision": "5650961749fa93567c0d46fc7f43ea4f9e914107",
+    "class_mapping": "explicit COCO synonym validation; complete one-to-one catalog",
+    "parameters": 20174608,
+    "processor_size": {
+      "height": 640,
+      "width": 640
+    }
+  },
+  "load_seconds_includes_download": 4.017139000003226,
+  "warmup_ms": [
+    582.9453000042122,
+    41.62259999429807,
+    37.946299999020994
+  ],
+  "conditions": {
+    "clean": {
+      "samples": 24,
+      "mean_ms": 40.002987499368224,
+      "p50_ms": 38.9928500080714,
+      "p95_ms": 44.52634999688598,
+      "p99_ms": 46.66908200830221,
+      "images_per_second_serial": 24.99813295233995,
+      "diagnostic_detection_only": {
+        "precision": 0.3373493975903614,
+        "recall": 0.9333333333333333,
+        "f1": 0.49557522123893805,
+        "mAP50": 0.9405305915206905,
+        "mAP50_95": 0.8164635279515885,
+        "calibration_ece": 0.16800404743975905,
+        "per_class": {
+          "0": {
+            "tp": 9,
+            "fn": 1,
+            "fp": 18,
+            "precision": 0.3333333333333333,
+            "recall": 0.9,
+            "f1": 0.4864864864864865,
+            "mAP50": 0.830921553693831,
+            "mAP50_95": 0.38799137832335273
+          },
+          "1": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "8": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "13": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "15": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "16": {
+            "tp": 1,
+            "fp": 1,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "mAP50": 1.0,
+            "mAP50_95": 0.9
+          },
+          "17": {
+            "tp": 2,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "mAP50": 1.0,
+            "mAP50_95": 0.6757425742574257
+          },
+          "20": {
+            "fn": 1,
+            "tp": 1,
+            "fp": 5,
+            "precision": 0.16666666666666666,
+            "recall": 0.5,
+            "f1": 0.25,
+            "mAP50": 0.504950495049505,
+            "mAP50_95": 0.30297029702970296
+          },
+          "22": {
+            "tp": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "mAP50": 1.0,
+            "mAP50_95": 1.0
+          },
+          "23": {
+            "tp": 2,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "mAP50": 1.0,
+            "mAP50_95": 0.9009900990099009
+          },
+          "24": {
+            "fp": 3,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "25": {
+            "tp": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "mAP50": 1.0,
+            "mAP50_95": 1.0
+          },
+          "26": {
+            "fp": 6,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "28": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "39": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "45": {
+            "tp": 3,
+            "fp": 3,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "mAP50": 1.0,
+            "mAP50_95": 0.9442244224422442
+          },
+          "49": {
+            "tp": 4,
+            "fp": 5,
+            "precision": 0.4444444444444444,
+            "recall": 1.0,
+            "f1": 0.6153846153846154,
+            "mAP50": 0.9504950495049505,
+            "mAP50_95": 0.7603960396039604
+          },
+          "50": {
+            "tp": 1,
+            "fp": 1,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "mAP50": 1.0,
+            "mAP50_95": 1.0
+          },
+          "51": {
+            "fp": 2,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "56": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "58": {
+            "tp": 2,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "mAP50": 1.0,
+            "mAP50_95": 0.9252475247524753
+          },
+          "60": {
+            "fp": 2,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "67": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "75": {
+            "tp": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "mAP50": 1.0,
+            "mAP50_95": 1.0
+          },
+          "77": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          }
+        }
+      },
+      "latencies_ms": [
+        35.791099988273345,
+        41.34209999756422,
+        38.20169999380596,
+        41.40089999418706,
+        38.31750000244938,
+        38.00859999319073,
+        39.640900009544566,
+        44.631199998548254,
+        42.213000007905066,
+        36.874299999908544,
+        37.59150000405498,
+        40.523399991798215,
+        36.36399999959394,
+        42.76430000027176,
+        36.901599989505485,
+        43.49199999705888,
+        38.884100009454414,
+        37.575800000922754,
+        37.757400001282804,
+        47.27780001121573,
+        38.284499998553656,
+        43.93219998746645,
+        43.20020000159275,
+        39.101600006688386
+      ]
+    },
+    "dim_35_percent": {
+      "samples": 24,
+      "mean_ms": 37.1103958338305,
+      "p50_ms": 35.73375000269152,
+      "p95_ms": 41.633200009528075,
+      "p99_ms": 51.96141700449515,
+      "images_per_second_serial": 26.946627152071013,
+      "diagnostic_detection_only": {
+        "precision": 0.4153846153846154,
+        "recall": 0.9,
+        "f1": 0.5684210526315789,
+        "mAP50": 0.9181764330279182,
+        "mAP50_95": 0.7982192770559107,
+        "calibration_ece": 0.15603966346153847,
+        "per_class": {
+          "0": {
+            "tp": 8,
+            "fn": 2,
+            "fp": 12,
+            "precision": 0.4,
+            "recall": 0.8,
+            "f1": 0.5333333333333333,
+            "mAP50": 0.6781832029356781,
+            "mAP50_95": 0.37962142368082963
+          },
+          "15": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "16": {
+            "tp": 1,
+            "fp": 2,
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "f1": 0.5,
+            "mAP50": 1.0,
+            "mAP50_95": 1.0
+          },
+          "17": {
+            "tp": 2,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "mAP50": 1.0,
+            "mAP50_95": 0.6504950495049504
+          },
+          "20": {
+            "fn": 1,
+            "tp": 1,
+            "fp": 5,
+            "precision": 0.16666666666666666,
+            "recall": 0.5,
+            "f1": 0.25,
+            "mAP50": 0.504950495049505,
+            "mAP50_95": 0.30297029702970296
+          },
+          "22": {
+            "tp": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "mAP50": 1.0,
+            "mAP50_95": 1.0
+          },
+          "23": {
+            "tp": 2,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "mAP50": 1.0,
+            "mAP50_95": 0.9009900990099009
+          },
+          "24": {
+            "fp": 2,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "25": {
+            "tp": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "mAP50": 1.0,
+            "mAP50_95": 1.0
+          },
+          "26": {
+            "fp": 5,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "28": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "45": {
+            "tp": 3,
+            "fp": 2,
+            "precision": 0.6,
+            "recall": 1.0,
+            "f1": 0.75,
+            "mAP50": 1.0,
+            "mAP50_95": 0.9442244224422442
+          },
+          "49": {
+            "tp": 4,
+            "fp": 2,
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "f1": 0.8,
+            "mAP50": 0.8349834983498351,
+            "mAP50_95": 0.6498349834983499
+          },
+          "50": {
+            "tp": 1,
+            "fp": 1,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "mAP50": 1.0,
+            "mAP50_95": 0.9
+          },
+          "56": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "58": {
+            "tp": 2,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "mAP50": 1.0,
+            "mAP50_95": 0.8504950495049506
+          },
+          "60": {
+            "fp": 2,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "67": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "75": {
+            "tp": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "mAP50": 1.0,
+            "mAP50_95": 1.0
+          },
+          "77": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          }
+        }
+      },
+      "latencies_ms": [
+        54.949600002146326,
+        41.95750001235865,
+        35.316299996338785,
+        32.85830000822898,
+        32.375400012824684,
+        34.93729999172501,
+        36.634699994465336,
+        33.80319999996573,
+        35.00509999867063,
+        35.10399999504443,
+        39.36009999597445,
+        38.30590000143275,
+        36.007400005473755,
+        38.75010000774637,
+        35.869500003173016,
+        39.7884999983944,
+        39.79549999348819,
+        35.32439999980852,
+        38.08559999743011,
+        33.332499995594844,
+        37.808499997481704,
+        35.59800000221003,
+        34.520000001066364,
+        35.16210000088904
+      ]
+    },
+    "gaussian_blur_9": {
+      "samples": 24,
+      "mean_ms": 36.50540000065424,
+      "p50_ms": 35.746800000197254,
+      "p95_ms": 41.51333500049077,
+      "p99_ms": 42.45414600271033,
+      "images_per_second_serial": 27.393207579757465,
+      "diagnostic_detection_only": {
+        "precision": 0.2972972972972973,
+        "recall": 0.7333333333333333,
+        "f1": 0.4230769230769231,
+        "mAP50": 0.8111936193619361,
+        "mAP50_95": 0.705995599559956,
+        "calibration_ece": 0.17131743559966214,
+        "per_class": {
+          "0": {
+            "tp": 5,
+            "fn": 5,
+            "fp": 6,
+            "precision": 0.45454545454545453,
+            "recall": 0.5,
+            "f1": 0.47619047619047616,
+            "mAP50": 0.47194719471947194,
+            "mAP50_95": 0.22508250825082507
+          },
+          "2": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "3": {
+            "fp": 9,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "5": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "14": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "15": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "16": {
+            "tp": 1,
+            "fp": 2,
+            "precision": 0.3333333333333333,
+            "recall": 1.0,
+            "f1": 0.5,
+            "mAP50": 0.5,
+            "mAP50_95": 0.45
+          },
+          "17": {
+            "tp": 2,
+            "fp": 3,
+            "precision": 0.4,
+            "recall": 1.0,
+            "f1": 0.5714285714285714,
+            "mAP50": 1.0,
+            "mAP50_95": 0.700990099009901
+          },
+          "18": {
+            "fp": 2,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "19": {
+            "fp": 2,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "20": {
+            "fn": 1,
+            "tp": 1,
+            "fp": 5,
+            "precision": 0.16666666666666666,
+            "recall": 0.5,
+            "f1": 0.25,
+            "mAP50": 0.504950495049505,
+            "mAP50_95": 0.2272277227722772
+          },
+          "21": {
+            "fp": 3,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "22": {
+            "tp": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "mAP50": 1.0,
+            "mAP50_95": 1.0
+          },
+          "23": {
+            "tp": 2,
+            "fp": 1,
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "f1": 0.8,
+            "mAP50": 1.0,
+            "mAP50_95": 0.9504950495049505
+          },
+          "25": {
+            "tp": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "mAP50": 1.0,
+            "mAP50_95": 1.0
+          },
+          "44": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "45": {
+            "tp": 3,
+            "fp": 3,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "mAP50": 1.0,
+            "mAP50_95": 0.9112211221122113
+          },
+          "49": {
+            "tp": 3,
+            "fn": 1,
+            "fp": 3,
+            "precision": 0.5,
+            "recall": 0.75,
+            "f1": 0.6,
+            "mAP50": 0.7524752475247525,
+            "mAP50_95": 0.601980198019802
+          },
+          "50": {
+            "tp": 1,
+            "fp": 1,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "mAP50": 1.0,
+            "mAP50_95": 0.9
+          },
+          "51": {
+            "fp": 4,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "58": {
+            "tp": 1,
+            "fn": 1,
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1": 0.6666666666666666,
+            "mAP50": 0.504950495049505,
+            "mAP50_95": 0.5049504950495048
+          },
+          "60": {
+            "fp": 2,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "75": {
+            "tp": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "mAP50": 1.0,
+            "mAP50_95": 1.0
+          },
+          "77": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          }
+        }
+      },
+      "latencies_ms": [
+        38.13469999295194,
+        35.77230000519194,
+        41.715100000146776,
+        35.202099999878556,
+        35.72129999520257,
+        35.13089999614749,
+        36.02510000928305,
+        36.87139999237843,
+        39.37550001137424,
+        34.41900000325404,
+        34.78079999331385,
+        34.16369999467861,
+        35.70649999892339,
+        34.48469999420922,
+        35.024800003157,
+        36.10190001199953,
+        36.781700007850304,
+        35.01880000112578,
+        36.4253000007011,
+        35.85070000553969,
+        34.75219999381807,
+        42.67490000347607,
+        35.62619999866001,
+        40.370000002440065
+      ]
+    }
+  },
+  "model": "rtdetr-v2-r18",
+  "environment": {
+    "python": "3.13.2",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "torch": "2.9.0+cu128",
+    "cuda_available": true,
+    "device": "cuda:0",
+    "threads": 4,
+    "ultralytics": "8.4.204",
+    "transformers": "4.57.6"
+  },
+  "input_size": 640,
+  "vlm_thumbnail_max_size": null,
+  "confidence": 0.25,
+  "precision": "fp16",
+  "peak_process_rss_sampled_bytes": 1815965696,
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+    "peak_allocated_bytes": 101034496,
+    "peak_reserved_bytes": 157286400,
+    "cuda_runtime": "12.8",
+    "precision": "fp16",
+    "tf32": false
+  },
+  "dataset": {
+    "url": "https://github.com/ultralytics/assets/releases/download/v0.0.0/coco8.zip",
+    "sha256_files": {
+      "images/train/000000000009.jpg": "be0ecc9cacc0150f0a84f6dc098f3e5c526ac85f8a14c1a0d16c2a4eb3d305a6",
+      "labels/train/000000000009.txt": "91e0c22ffeffd27ae1c176c38fc534ff4de980c20fafb32922f01dcd407b920e",
+      "images/train/000000000025.jpg": "f7ddff65077bd4e362a890ed13b1cd931fd38882d49bae9e7e53e369e4b4d028",
+      "labels/train/000000000025.txt": "73e4d0a58416a5814ad3e9d58b6927b3a4898c5a4fa18341d333261ddb215b86",
+      "images/train/000000000030.jpg": "52a12b6af76049a23192320610a316b6c1ea8e7d12e083f15c18e1690c506e66",
+      "labels/train/000000000030.txt": "1defb5823f183ade62575a6b4398f2609a4d9cabd428147c887b95e610a831d9",
+      "images/train/000000000034.jpg": "8d5334f6c8d3e8b77d50726625eecc6896597f063d3801f1993ffcb9e6b05acb",
+      "labels/train/000000000034.txt": "252857cf07883c38308b12ec978323222813ffd0fb9a98bbfe350b44ee1a62e7",
+      "images/val/000000000036.jpg": "4c28394898302bef227834d63498a0fc54e4295f11c590c8a8ebcba51347bc03",
+      "labels/val/000000000036.txt": "638773d69e1348c8d213cc0fdaf4107d170df7811af56f2cce372ca245556149",
+      "images/val/000000000042.jpg": "c87afb6dfe55db1cada52479ed939a231e030d64f5e3c3eaf7eb1544591f853a",
+      "labels/val/000000000042.txt": "c0e1ac95cf47310a3de9692cf0505fbf1ddcabceed575a3ecfac3c87f184f168",
+      "images/val/000000000049.jpg": "86b46022d382f67b0934147fe515e1c3c3f5c04db45045516214b5e3092148e3",
+      "labels/val/000000000049.txt": "0c0973cfb10a591266b92769e7cd43686133ea12faaa9d583702bf1c55e126e3",
+      "images/val/000000000061.jpg": "6460e4a7cc80e34815aba8910a23152a16a24a416fa598138bd9231cccd413e2",
+      "labels/val/000000000061.txt": "d7988d745a68480c7331b323adeec29adb1b0a4df53b072ed45d9650893eb812"
+    },
+    "images": 8,
+    "scope": "COCO8 smoke test, COCO train2017 images; training leakage expected. Not held-out accuracy or overhead CCTV."
+  },
+  "not_measured": [
+    "cafe accuracy",
+    "tracking",
+    "handover/preparation events",
+    "POS accuracy",
+    "RTSP/decode/IPC/storage latency",
+    "multi-camera performance",
+    "GPU VRAM"
+  ]
+}

@@ -1,0 +1,826 @@
+{
+  "kind": "detector",
+  "provenance": {
+    "repository": "ustc-community/dfine-nano-coco",
+    "revision": "066438d3d8f0da137a37b38fdf3368fd4afceced",
+    "class_mapping": "explicit COCO synonym validation; complete one-to-one catalog",
+    "parameters": 3770421,
+    "processor_size": {
+      "height": 640,
+      "width": 640
+    }
+  },
+  "load_seconds_includes_download": 3.9014477000018815,
+  "warmup_ms": [
+    1890.664899998228,
+    51.74179999448825,
+    51.696999988052994
+  ],
+  "conditions": {
+    "clean": {
+      "samples": 24,
+      "mean_ms": 43.72007500023756,
+      "p50_ms": 43.523649997951,
+      "p95_ms": 49.81143500335747,
+      "p99_ms": 55.83562300482299,
+      "images_per_second_serial": 22.87278784390389,
+      "diagnostic_detection_only": {
+        "precision": 0.24324324324324326,
+        "recall": 0.9,
+        "f1": 0.3829787234042553,
+        "mAP50": 0.8983362621976484,
+        "mAP50_95": 0.7591955624133843,
+        "calibration_ece": 0.23793593398085588,
+        "per_class": {
+          "0": {
+            "tp": 8,
+            "fn": 2,
+            "fp": 28,
+            "precision": 0.2222222222222222,
+            "recall": 0.8,
+            "f1": 0.34782608695652173,
+            "mAP50": 0.7338305259097336,
+            "mAP50_95": 0.2547361879045047
+          },
+          "13": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "14": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "16": {
+            "tp": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "mAP50": 1.0,
+            "mAP50_95": 0.9
+          },
+          "17": {
+            "tp": 2,
+            "fp": 2,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "mAP50": 1.0,
+            "mAP50_95": 0.5676567656765676
+          },
+          "20": {
+            "fn": 1,
+            "tp": 1,
+            "fp": 3,
+            "precision": 0.25,
+            "recall": 0.5,
+            "f1": 0.3333333333333333,
+            "mAP50": 0.2524752475247525,
+            "mAP50_95": 0.12623762376237624
+          },
+          "22": {
+            "tp": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "mAP50": 1.0,
+            "mAP50_95": 1.0
+          },
+          "23": {
+            "tp": 2,
+            "fp": 3,
+            "precision": 0.4,
+            "recall": 1.0,
+            "f1": 0.5714285714285714,
+            "mAP50": 1.0,
+            "mAP50_95": 0.8009900990099009
+          },
+          "24": {
+            "fp": 4,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "25": {
+            "tp": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "mAP50": 1.0,
+            "mAP50_95": 1.0
+          },
+          "26": {
+            "fp": 4,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "28": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "29": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "39": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "45": {
+            "tp": 3,
+            "fp": 8,
+            "precision": 0.2727272727272727,
+            "recall": 1.0,
+            "f1": 0.42857142857142855,
+            "mAP50": 1.0,
+            "mAP50_95": 0.9442244224422442
+          },
+          "46": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "47": {
+            "fp": 3,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "49": {
+            "tp": 4,
+            "fp": 5,
+            "precision": 0.4444444444444444,
+            "recall": 1.0,
+            "f1": 0.6153846153846154,
+            "mAP50": 0.7937293729372937,
+            "mAP50_95": 0.5912541254125413
+          },
+          "50": {
+            "tp": 1,
+            "fp": 5,
+            "precision": 0.16666666666666666,
+            "recall": 1.0,
+            "f1": 0.2857142857142857,
+            "mAP50": 1.0,
+            "mAP50_95": 1.0
+          },
+          "51": {
+            "fp": 3,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "55": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "56": {
+            "fp": 2,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "58": {
+            "tp": 2,
+            "fp": 2,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "mAP50": 1.0,
+            "mAP50_95": 0.9252475247524753
+          },
+          "60": {
+            "fp": 3,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "75": {
+            "tp": 1,
+            "fp": 1,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "mAP50": 1.0,
+            "mAP50_95": 1.0
+          },
+          "77": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          }
+        }
+      },
+      "latencies_ms": [
+        47.962600001483224,
+        50.137700003688224,
+        43.33939999924041,
+        57.53760000516195,
+        47.1694000007119,
+        47.0086999994237,
+        43.73580000537913,
+        43.70789999666158,
+        47.7826999995159,
+        38.11470000073314,
+        39.3125999980839,
+        46.299599998747,
+        44.141400008811615,
+        41.882799996528774,
+        39.94529999908991,
+        44.18620000069495,
+        44.552400009706616,
+        43.05349999049213,
+        38.06110000004992,
+        39.66209999634884,
+        42.187300001387484,
+        38.47689999383874,
+        40.14369999640621,
+        40.880400003516115
+      ]
+    },
+    "dim_35_percent": {
+      "samples": 24,
+      "mean_ms": 41.97897916613632,
+      "p50_ms": 40.70520000095712,
+      "p95_ms": 51.47359499605953,
+      "p99_ms": 57.023726005572826,
+      "images_per_second_serial": 23.821446349192833,
+      "diagnostic_detection_only": {
+        "precision": 0.32142857142857145,
+        "recall": 0.9,
+        "f1": 0.47368421052631576,
+        "mAP50": 0.900674626286158,
+        "mAP50_95": 0.7483468279692419,
+        "calibration_ece": 0.15151832217261904,
+        "per_class": {
+          "0": {
+            "tp": 9,
+            "fn": 1,
+            "fp": 19,
+            "precision": 0.32142857142857145,
+            "recall": 0.9,
+            "f1": 0.47368421052631576,
+            "mAP50": 0.8031450203843914,
+            "mAP50_95": 0.33016193563090324
+          },
+          "8": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "16": {
+            "tp": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "mAP50": 1.0,
+            "mAP50_95": 0.9
+          },
+          "17": {
+            "tp": 2,
+            "fp": 3,
+            "precision": 0.4,
+            "recall": 1.0,
+            "f1": 0.5714285714285714,
+            "mAP50": 1.0,
+            "mAP50_95": 0.5003300330033005
+          },
+          "20": {
+            "fn": 1,
+            "tp": 1,
+            "fp": 3,
+            "precision": 0.25,
+            "recall": 0.5,
+            "f1": 0.3333333333333333,
+            "mAP50": 0.2524752475247525,
+            "mAP50_95": 0.15148514851485148
+          },
+          "22": {
+            "tp": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "mAP50": 1.0,
+            "mAP50_95": 1.0
+          },
+          "23": {
+            "tp": 2,
+            "fp": 1,
+            "precision": 0.6666666666666666,
+            "recall": 1.0,
+            "f1": 0.8,
+            "mAP50": 1.0,
+            "mAP50_95": 0.8009900990099009
+          },
+          "24": {
+            "fp": 3,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "25": {
+            "tp": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "mAP50": 1.0,
+            "mAP50_95": 1.0
+          },
+          "26": {
+            "fp": 4,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "28": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "45": {
+            "tp": 3,
+            "fp": 4,
+            "precision": 0.42857142857142855,
+            "recall": 1.0,
+            "f1": 0.6,
+            "mAP50": 1.0,
+            "mAP50_95": 0.9442244224422442
+          },
+          "47": {
+            "fp": 3,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "49": {
+            "tp": 3,
+            "fn": 1,
+            "precision": 1.0,
+            "recall": 0.75,
+            "f1": 0.8571428571428571,
+            "mAP50": 0.7524752475247525,
+            "mAP50_95": 0.5277227722772277
+          },
+          "50": {
+            "tp": 1,
+            "fp": 4,
+            "precision": 0.2,
+            "recall": 1.0,
+            "f1": 0.3333333333333333,
+            "mAP50": 1.0,
+            "mAP50_95": 0.9
+          },
+          "51": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "55": {
+            "fp": 2,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "56": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "58": {
+            "tp": 2,
+            "fp": 2,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "mAP50": 1.0,
+            "mAP50_95": 0.9252475247524753
+          },
+          "59": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "60": {
+            "fp": 2,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "73": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "75": {
+            "tp": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "mAP50": 1.0,
+            "mAP50_95": 1.0
+          },
+          "77": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          }
+        }
+      },
+      "latencies_ms": [
+        42.59209999872837,
+        39.40589999547228,
+        58.38850000873208,
+        39.14259999874048,
+        39.76070000499021,
+        37.75350000069011,
+        41.67069999675732,
+        41.63409999455325,
+        40.74450000189245,
+        40.94940000504721,
+        39.23699998995289,
+        40.80489999614656,
+        37.66570000152569,
+        42.402599996421486,
+        40.63279999536462,
+        40.292899997439235,
+        52.45469999499619,
+        38.04639998998027,
+        40.66590000002179,
+        38.8099000119837,
+        40.54050000559073,
+        42.92870000062976,
+        45.91400000208523,
+        45.05749999952968
+      ]
+    },
+    "gaussian_blur_9": {
+      "samples": 24,
+      "mean_ms": 42.7049833330481,
+      "p50_ms": 40.78414999821689,
+      "p95_ms": 49.662374993931735,
+      "p99_ms": 57.91457700688624,
+      "images_per_second_serial": 23.416470911630825,
+      "diagnostic_detection_only": {
+        "precision": 0.3150684931506849,
+        "recall": 0.7666666666666667,
+        "f1": 0.44660194174757284,
+        "mAP50": 0.8489152028755989,
+        "mAP50_95": 0.6772453710572522,
+        "calibration_ece": 0.18206201840753425,
+        "per_class": {
+          "0": {
+            "tp": 6,
+            "fn": 4,
+            "fp": 15,
+            "precision": 0.2857142857142857,
+            "recall": 0.6,
+            "f1": 0.3870967741935484,
+            "mAP50": 0.4246061968834246,
+            "mAP50_95": 0.22133389163092138
+          },
+          "16": {
+            "tp": 1,
+            "fp": 3,
+            "precision": 0.25,
+            "recall": 1.0,
+            "f1": 0.4,
+            "mAP50": 1.0,
+            "mAP50_95": 0.9
+          },
+          "17": {
+            "tp": 2,
+            "fp": 7,
+            "precision": 0.2222222222222222,
+            "recall": 1.0,
+            "f1": 0.36363636363636365,
+            "mAP50": 1.0,
+            "mAP50_95": 0.4168316831683169
+          },
+          "19": {
+            "fp": 2,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "20": {
+            "fn": 1,
+            "tp": 1,
+            "fp": 2,
+            "precision": 0.3333333333333333,
+            "recall": 0.5,
+            "f1": 0.4,
+            "mAP50": 0.504950495049505,
+            "mAP50_95": 0.2524752475247525
+          },
+          "22": {
+            "tp": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "mAP50": 1.0,
+            "mAP50_95": 1.0
+          },
+          "23": {
+            "tp": 2,
+            "fp": 2,
+            "precision": 0.5,
+            "recall": 1.0,
+            "f1": 0.6666666666666666,
+            "mAP50": 1.0,
+            "mAP50_95": 0.601980198019802
+          },
+          "25": {
+            "tp": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "mAP50": 1.0,
+            "mAP50_95": 1.0
+          },
+          "26": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "41": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "45": {
+            "tp": 3,
+            "fp": 4,
+            "precision": 0.42857142857142855,
+            "recall": 1.0,
+            "f1": 0.6,
+            "mAP50": 1.0,
+            "mAP50_95": 0.9442244224422442
+          },
+          "47": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "49": {
+            "fn": 1,
+            "tp": 3,
+            "fp": 1,
+            "precision": 0.75,
+            "recall": 0.75,
+            "f1": 0.75,
+            "mAP50": 0.7524752475247525,
+            "mAP50_95": 0.48514851485148514
+          },
+          "50": {
+            "tp": 1,
+            "fp": 3,
+            "precision": 0.25,
+            "recall": 1.0,
+            "f1": 0.4,
+            "mAP50": 1.0,
+            "mAP50_95": 0.9
+          },
+          "54": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "55": {
+            "fp": 2,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "56": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "58": {
+            "tp": 1,
+            "fn": 1,
+            "precision": 1.0,
+            "recall": 0.5,
+            "f1": 0.6666666666666666,
+            "mAP50": 0.504950495049505,
+            "mAP50_95": 0.5049504950495048
+          },
+          "60": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "64": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "67": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          },
+          "75": {
+            "tp": 1,
+            "precision": 1.0,
+            "recall": 1.0,
+            "f1": 1.0,
+            "mAP50": 1.0,
+            "mAP50_95": 0.9
+          },
+          "77": {
+            "fp": 1,
+            "precision": 0.0,
+            "recall": null,
+            "f1": 0.0,
+            "mAP50": null,
+            "mAP50_95": null
+          }
+        }
+      },
+      "latencies_ms": [
+        49.28779999318067,
+        46.99879999679979,
+        38.7365999922622,
+        39.60930000175722,
+        49.45710000174586,
+        39.82510000059847,
+        40.53520000888966,
+        40.87739999522455,
+        38.09499999624677,
+        42.98109999217559,
+        45.45730000245385,
+        41.58160000224598,
+        41.10239999135956,
+        40.69090000120923,
+        41.64680000394583,
+        40.335900004720315,
+        40.66909999528434,
+        60.368700011167675,
+        49.69859999255277,
+        37.37869999895338,
+        39.79730000719428,
+        39.75860000355169,
+        41.7678999947384,
+        38.262400004896335
+      ]
+    }
+  },
+  "model": "dfine-nano",
+  "environment": {
+    "python": "3.13.2",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "torch": "2.9.0+cu128",
+    "cuda_available": true,
+    "device": "cuda:0",
+    "threads": 4,
+    "ultralytics": "8.4.204",
+    "transformers": "4.57.6"
+  },
+  "input_size": 640,
+  "vlm_thumbnail_max_size": null,
+  "confidence": 0.25,
+  "precision": "fp16",
+  "peak_process_rss_sampled_bytes": 1950445568,
+  "gpu": {
+    "name": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+    "peak_allocated_bytes": 44434944,
+    "peak_reserved_bytes": 69206016,
+    "cuda_runtime": "12.8",
+    "precision": "fp16",
+    "tf32": false
+  },
+  "dataset": {
+    "url": "https://github.com/ultralytics/assets/releases/download/v0.0.0/coco8.zip",
+    "sha256_files": {
+      "images/train/000000000009.jpg": "be0ecc9cacc0150f0a84f6dc098f3e5c526ac85f8a14c1a0d16c2a4eb3d305a6",
+      "labels/train/000000000009.txt": "91e0c22ffeffd27ae1c176c38fc534ff4de980c20fafb32922f01dcd407b920e",
+      "images/train/000000000025.jpg": "f7ddff65077bd4e362a890ed13b1cd931fd38882d49bae9e7e53e369e4b4d028",
+      "labels/train/000000000025.txt": "73e4d0a58416a5814ad3e9d58b6927b3a4898c5a4fa18341d333261ddb215b86",
+      "images/train/000000000030.jpg": "52a12b6af76049a23192320610a316b6c1ea8e7d12e083f15c18e1690c506e66",
+      "labels/train/000000000030.txt": "1defb5823f183ade62575a6b4398f2609a4d9cabd428147c887b95e610a831d9",
+      "images/train/000000000034.jpg": "8d5334f6c8d3e8b77d50726625eecc6896597f063d3801f1993ffcb9e6b05acb",
+      "labels/train/000000000034.txt": "252857cf07883c38308b12ec978323222813ffd0fb9a98bbfe350b44ee1a62e7",
+      "images/val/000000000036.jpg": "4c28394898302bef227834d63498a0fc54e4295f11c590c8a8ebcba51347bc03",
+      "labels/val/000000000036.txt": "638773d69e1348c8d213cc0fdaf4107d170df7811af56f2cce372ca245556149",
+      "images/val/000000000042.jpg": "c87afb6dfe55db1cada52479ed939a231e030d64f5e3c3eaf7eb1544591f853a",
+      "labels/val/000000000042.txt": "c0e1ac95cf47310a3de9692cf0505fbf1ddcabceed575a3ecfac3c87f184f168",
+      "images/val/000000000049.jpg": "86b46022d382f67b0934147fe515e1c3c3f5c04db45045516214b5e3092148e3",
+      "labels/val/000000000049.txt": "0c0973cfb10a591266b92769e7cd43686133ea12faaa9d583702bf1c55e126e3",
+      "images/val/000000000061.jpg": "6460e4a7cc80e34815aba8910a23152a16a24a416fa598138bd9231cccd413e2",
+      "labels/val/000000000061.txt": "d7988d745a68480c7331b323adeec29adb1b0a4df53b072ed45d9650893eb812"
+    },
+    "images": 8,
+    "scope": "COCO8 smoke test, COCO train2017 images; training leakage expected. Not held-out accuracy or overhead CCTV."
+  },
+  "not_measured": [
+    "cafe accuracy",
+    "tracking",
+    "handover/preparation events",
+    "POS accuracy",
+    "RTSP/decode/IPC/storage latency",
+    "multi-camera performance",
+    "GPU VRAM"
+  ]
+}

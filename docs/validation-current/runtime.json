@@ -1,0 +1,28 @@
+{
+  "camera_id": "shop",
+  "run_id": "demo",
+  "timestamp": "2026-11-07T14:56:44.565730Z",
+  "status": "completed",
+  "reason": null,
+  "camera": "completed",
+  "detector": "fixture",
+  "tracker": "completed",
+  "storage": "ok",
+  "pos": "snapshot_imported",
+  "event_queue": {
+    "capacity": 2,
+    "policy": "bounded_backpressure_or_live_newest",
+    "dropped_frames": 0
+  },
+  "processed_frames": 12,
+  "runtime": {
+    "fps": 46.1462142821659,
+    "average_latency_ms": 2.4988250006572343,
+    "p95_latency_ms": 3.553894998185569,
+    "latency_window": 12,
+    "gpu_usage": null,
+    "cpu_usage": 24.01294316952144,
+    "memory_bytes": 88924160,
+    "resource_scope": "orchestrator process; detector/decoder child resources excluded"
+  }
+}

@@ -1,0 +1,5 @@
+# Optional research environment only; do not install over the verified application.
+# Base scientific/Torch dependencies come from requirements.txt.
+ultralytics==8.4.204
+transformers==4.57.6
+num2words==0.5.14

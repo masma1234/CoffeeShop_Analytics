@@ -1,0 +1,206 @@
+{
+  "review_date": "2026-11-07",
+  "scope": "Pretrained generic-image smoke benchmark; not cafe accuracy or all-model coverage",
+  "hardware": {
+    "cpu": "Intel Core i5-13450HX",
+    "physical_cores": 10,
+    "logical_processors": 16,
+    "system_ram_bytes": 16849256448,
+    "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+    "dedicated_vram_mib": 6144,
+    "nvidia_driver": "610.60"
+  },
+  "initial_cpu_suite_attempts": {
+    "failures": [
+      {
+        "model": "rtdetr-v2-r18",
+        "exit_code": 1
+      },
+      {
+        "model": "smolvlm2-500m",
+        "exit_code": 1
+      }
+    ],
+    "models_requested": [
+      "yolov8n",
+      "yolo11n",
+      "yolo11s",
+      "yolo26n",
+      "yolo26s",
+      "rtdetr-v2-r18",
+      "smolvlm2-500m"
+    ]
+  },
+  "attempt_notes": [
+    "Initial RT-DETR negative-box validation failure fixed by tested image-bound clipping; separate successful result retained.",
+    "Initial SmolVLM processor required num2words; subsequent CPU/GPU probes succeeded.",
+    "Initial bulk large downloads stalled; publisher checksums verified after bounded range retrieval."
+  ],
+  "final_reproducer_sha256": {
+    "scripts\\benchmark_models.py": "5bd5f1cd53f2ad48671517a89596d62c5997bb78ab1b97d3988691696599c826",
+    "scripts\\benchmark_suite.py": "2cbd150a83315c551eacb0011d641945cf91ad0ab2b7c6b05d62b4eaf4de1697"
+  },
+  "artifact_sha256": {
+    "cpu\\dfine-nano.json": "c03ec5dba88383bf1e1c721eddca213668712ce7660d542b4e14edbaad815be9",
+    "cpu\\dfine-small.json": "fcb89e3b0abaf00e9c1b293793bd5b98a38b0badd3960ebf83cec16193f27ed7",
+    "cpu\\rtdetr-v2-r18.json": "971019b3d5f464276f6146329fd76a86f1f84a4babcabd3504278076a8cdb4d7",
+    "cpu\\smolvlm2-500m.json": "792a9e4e19b17bbe748b15068be227b500c67c280082e6fa6a48880876e6e4e4",
+    "cpu\\yolo11n.json": "30bc0b317fac0a052249384cd4ee3126472f81de1f302126725a14695b6b5107",
+    "cpu\\yolo11s.json": "11bf3c994bff416fbe7ec547a1d93be5da86141172c0c42af04b1539e78881a1",
+    "cpu\\yolo26n.json": "4e388fdb17a5cfbde3d0c23919ad2074802303a124c2cfaead97d48404924d03",
+    "cpu\\yolo26s.json": "96943d345e33e99743654471aabf3a70db7a384f3244ac727ac5560fd3042758",
+    "cpu\\yolov8n.json": "7ec41ce1582bb973c811a026abe422aa9389da7bb30f5b9103e45f06404c9249",
+    "gpu-fp16\\dfine-nano.json": "ca10e194a7fc960e53e2644b3409bf48a8815eb3e99ed2db49ad926dcd9690b1",
+    "gpu-fp16\\dfine-small.json": "8ec42bbe182b7e3c467c1afbd704034c1c74cd94146d777af43228789ee4fa77",
+    "gpu-fp16\\repeat-rtdetr-v2-r18.json": "27599a037d732542052002e1596203c40bc312d2452251af4643ec641e91d2ba",
+    "gpu-fp16\\repeat-yolo11s.json": "a8bdbbb8e50e31ef5961f4a7545c049b43798b0261bee55973dcef1802f924c7",
+    "gpu-fp16\\repeat-yolo26s.json": "1bb5f41ce93f69919e1e02362be786faf78a271d0019ae152ed3029a0a6ae4ea",
+    "gpu-fp16\\rtdetr-v2-r18.json": "b435dbfef75211f85968d5dd8fe2fa125e552e9f6d94243d0aa12a62f6f85582",
+    "gpu-fp16\\smolvlm2-500m-canonical-original-prompt.json": "319e64dc057ecf850488c9c98c27363b11d3c77482efc56b5edd7442bcece4e7",
+    "gpu-fp16\\smolvlm2-500m-neutral.json": "a9251682aa0273c4b29a97b758bfc5f15179b645f13aecbdce62655b24f562f6",
+    "gpu-fp16\\smolvlm2-500m.json": "5a21dcec8fc2fa72c7686f0bbfedb8265dfd0df80177814def7ee9c24aa93083",
+    "gpu-fp16\\yolo11n.json": "e9e2f8a3b90b10aba76d93615d03716e6d41e403d5de269fb61560700f71f006",
+    "gpu-fp16\\yolo11s.json": "247f31e93bf2f41d777464bc7fbc64441be9e9c948649ed91bbcfc36e15a67c2",
+    "gpu-fp16\\yolo26n.json": "7ffd50c479d6fbeb75093f72d86634b0cdf9c71aa475782e5bab369463033244",
+    "gpu-fp16\\yolo26s.json": "cc5fcf7bc14f682ef2fb13ac1f7d03a6fc6514f5c70ae96e969315b3aac48385",
+    "gpu-fp16\\yolov8n.json": "5124571da3d3ecd2b473d23290e083e02c46fd6c5348ed498dc0e5168eac5322",
+    "gpu-fp32\\dfine-nano.json": "c037c7a4f73f23265d982db34d7a5cd2f3985ceeca9f3f901f6b9a642c1e1cc4",
+    "gpu-fp32\\dfine-small.json": "242f7677329fccba9d4409155336366a6b1b99c1530196c08bd85a9731d67ac8",
+    "gpu-fp32\\rtdetr-v2-r18.json": "4002084c762cc41a4a5d74ca10070bdc9beadd62ab903464625dca671d563481",
+    "gpu-fp32\\yolo11n.json": "20a25b74da60f8eec7dd739cd895325d9222f8a583496ba5f0bd16d5358d713c",
+    "gpu-fp32\\yolo11s.json": "c977b4ef14f775877f62d12574361e88684d0a8e0be72a9f61ecd866a00e3919",
+    "gpu-fp32\\yolo26n.json": "ac5f7cd0831f8c48a12820c9d3d0378f5759633142fe9fe27003496487bab192",
+    "gpu-fp32\\yolo26s.json": "a44acd9cc120f321da935d7bb6694e39112abaa0e50be7e08f12e4bc653d36ce",
+    "gpu-fp32\\yolov8n.json": "3701b13ae18caeb169803bc57c8b65bb105257227b6f5377070c010d1aaa43e9"
+  },
+  "metadata_notes": [
+    "Historical VLM input_size/confidence fields were detector defaults, not VLM settings. VLM thumbnail bound was 512x512, with processor tiling documented in canonical probe outputs. Final reproducer separates these metadata fields.",
+    "Source hashes identify the final reproducer, not an assertion that every historical invocation used byte-identical source. Raw measured latency values were preserved."
+  ],
+  "superseded_class_mapping_runs": {
+    "cpu\\dfine-nano.json": {
+      "sha256": "ece780d17afaaa8d391019c7dbd7fa8ae4f92b69b18810a04210e7a9d6094e58",
+      "reason": "Complete COCO synonym mapping now validated; affected measurements rerun."
+    },
+    "cpu\\dfine-small.json": {
+      "sha256": "2a585e67680db434a6711bbcb7ff0f8f1d2f4864ef39c88c5bbcba97d4bd3424",
+      "reason": "Complete COCO synonym mapping now validated; affected measurements rerun."
+    },
+    "cpu\\rtdetr-v2-r18.json": {
+      "sha256": "64a3e5b3cdea7ffd5b70c9598e0cfc4e54fa1a8a05c4caf45ddce2630c7a0ace",
+      "reason": "Complete COCO synonym mapping now validated; affected measurements rerun."
+    },
+    "gpu-fp32\\dfine-nano.json": {
+      "sha256": "fdbf37e8916be934022e2feafab5502bfb7fa8dbf613f03d4b26507e31f86182",
+      "reason": "Complete COCO synonym mapping now validated; affected measurements rerun."
+    },
+    "gpu-fp32\\dfine-small.json": {
+      "sha256": "666c238893cd260ace9880d955f4a3297fc6a9f38fd7d57bef85282a389a8ee8",
+      "reason": "Complete COCO synonym mapping now validated; affected measurements rerun."
+    },
+    "gpu-fp32\\rtdetr-v2-r18.json": {
+      "sha256": "897a3d79e092df320e7365397b9cdc21a307cb1ac374222d1f818cd96c6f53a7",
+      "reason": "Complete COCO synonym mapping now validated; affected measurements rerun."
+    },
+    "gpu-fp16\\dfine-nano.json": {
+      "sha256": "3185a11db76441cf87f5358630cf86bec9792afea4cd257d670f886adb70f81d",
+      "reason": "Complete COCO synonym mapping now validated; affected measurements rerun."
+    },
+    "gpu-fp16\\dfine-small.json": {
+      "sha256": "5bdc11194a061679c02c8e902bbc8555cdce34cc07905903287944e38064419d",
+      "reason": "Complete COCO synonym mapping now validated; affected measurements rerun."
+    },
+    "gpu-fp16\\repeat-rtdetr-v2-r18.json": {
+      "sha256": "79bc077e6b016081b39be797cb98bc4f369f3c774f442cc0387ede6972677a6f",
+      "reason": "Complete COCO synonym mapping now validated; affected measurements rerun."
+    },
+    "gpu-fp16\\rtdetr-v2-r18.json": {
+      "sha256": "ab1f5240b3b67f6ab8cffd48f7f057f6d867b89b4ee9d7758aaa3b036e0423df",
+      "reason": "Complete COCO synonym mapping now validated; affected measurements rerun."
+    }
+  },
+  "superseded_fp32_control_runs": {
+    "gpu-fp32\\dfine-nano.json": {
+      "sha256": "eaaab940c1f9fa406555ecfc3560ac968ceead7970cfe3081aabe995fa611971",
+      "mean_ms": 40.00777500126181
+    },
+    "gpu-fp32\\dfine-small.json": {
+      "sha256": "16373867d9aae088c34ef934c66badd44f2ec3d639b822c4e1a6385a8d3e3e7a",
+      "mean_ms": 44.26099583542964
+    },
+    "gpu-fp32\\rtdetr-v2-r18.json": {
+      "sha256": "87c0126447e77991393133fce3f2ef716566dc79aa9577ff41b98a7fbdce3e19",
+      "mean_ms": 42.84532916669074
+    },
+    "gpu-fp32\\yolo11n.json": {
+      "sha256": "43f91ba0e2e6a7e7870a27575d447fb2a8260c1fef222c5c53e37e4b59715aa2",
+      "mean_ms": 36.33006666435298
+    },
+    "gpu-fp32\\yolo11s.json": {
+      "sha256": "a2a5cff6c298cf2b0981d1a1aa8f1bba78d6ca08407f915f45e36d1af35f3ae0",
+      "mean_ms": 71.40761666596518
+    },
+    "gpu-fp32\\yolo26n.json": {
+      "sha256": "3818a0833a0ea1ffe952939bd61427ddea955c8398487feb063e0d704d113938",
+      "mean_ms": 34.54122499897494
+    },
+    "gpu-fp32\\yolo26s.json": {
+      "sha256": "4aeab6e0fc450b1403be243c47c30773179ba9439fc6b54f2cd64af3ef79f138",
+      "mean_ms": 70.66980833345345
+    },
+    "gpu-fp32\\yolov8n.json": {
+      "sha256": "9df331d77a36a0c28939a15bddacb2c2e3410b0ad74a3a485acc5c0cb0c0aa8e",
+      "mean_ms": 33.949566667918894
+    }
+  },
+  "initial_fp32_latency_only": {
+    "dfine-nano": {
+      "mean_ms": 101.96704166810378,
+      "p95_ms": 111.23749999824213,
+      "artifact_sha256": "fdbf37e8916be934022e2feafab5502bfb7fa8dbf613f03d4b26507e31f86182",
+      "scope": "Earlier trial; Transformers catalog diagnostics superseded. No causal performance attribution."
+    },
+    "dfine-small": {
+      "mean_ms": 172.1313541638665,
+      "p95_ms": 174.66860500135226,
+      "artifact_sha256": "666c238893cd260ace9880d955f4a3297fc6a9f38fd7d57bef85282a389a8ee8",
+      "scope": "Earlier trial; Transformers catalog diagnostics superseded. No causal performance attribution."
+    },
+    "rtdetr-v2-r18": {
+      "mean_ms": 205.4829416653471,
+      "p95_ms": 208.29642498865724,
+      "artifact_sha256": "897a3d79e092df320e7365397b9cdc21a307cb1ac374222d1f818cd96c6f53a7",
+      "scope": "Earlier trial; Transformers catalog diagnostics superseded. No causal performance attribution."
+    },
+    "yolo11n": {
+      "mean_ms": 36.33006666435298,
+      "p95_ms": 37.49821499513928,
+      "artifact_sha256": "43f91ba0e2e6a7e7870a27575d447fb2a8260c1fef222c5c53e37e4b59715aa2",
+      "scope": "Earlier trial; Transformers catalog diagnostics superseded. No causal performance attribution."
+    },
+    "yolo11s": {
+      "mean_ms": 71.40761666596518,
+      "p95_ms": 72.8612849896308,
+      "artifact_sha256": "a2a5cff6c298cf2b0981d1a1aa8f1bba78d6ca08407f915f45e36d1af35f3ae0",
+      "scope": "Earlier trial; Transformers catalog diagnostics superseded. No causal performance attribution."
+    },
+    "yolo26n": {
+      "mean_ms": 34.54122499897494,
+      "p95_ms": 36.50019000197062,
+      "artifact_sha256": "3818a0833a0ea1ffe952939bd61427ddea955c8398487feb063e0d704d113938",
+      "scope": "Earlier trial; Transformers catalog diagnostics superseded. No causal performance attribution."
+    },
+    "yolo26s": {
+      "mean_ms": 70.66980833345345,
+      "p95_ms": 72.00321500713471,
+      "artifact_sha256": "4aeab6e0fc450b1403be243c47c30773179ba9439fc6b54f2cd64af3ef79f138",
+      "scope": "Earlier trial; Transformers catalog diagnostics superseded. No causal performance attribution."
+    },
+    "yolov8n": {
+      "mean_ms": 33.949566667918894,
+      "p95_ms": 35.37433500314364,
+      "artifact_sha256": "9df331d77a36a0c28939a15bddacb2c2e3410b0ad74a3a485acc5c0cb0c0aa8e",
+      "scope": "Earlier trial; Transformers catalog diagnostics superseded. No causal performance attribution."
+    }
+  }
+}
