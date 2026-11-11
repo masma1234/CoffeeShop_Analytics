@@ -85,3 +85,19 @@ class APITests(unittest.TestCase):
         with self.assertRaises(FileNotFoundError):SQLiteStore(missing,read_only=True)
         self.assertFalse(missing.parent.exists())
         with self.assertRaises(ValueError):create_server(Config.load(ROOT/"config/example.json"),self.database,"short")
+
+    def test_cursor_outside_sqlite_range_returns_json_and_server_recovers(self):
+        for after in ["9223372036854775808", "9"*500, "-1"]:
+            status,data,_=self.request("/v1/events?camera=shop&after="+after)
+            self.assertEqual(status,400)
+            self.assertEqual(set(data),{"error"})
+        self.assertEqual(self.request("/v1/events?camera=shop&after=9223372036854775807")[0],200)
+        self.assertEqual(self.request("/v1/events?camera=shop")[0],200)
+
+    def test_minimal_liveness_does_not_open_storage_or_expose_readiness(self):
+        with patch("coffee_ops.api.SQLiteStore",side_effect=AssertionError("Must not open storage")):
+            status,data,headers=self.request("/healthz",token=None)
+        self.assertEqual((status,data),(200,{"status":"ok"}))
+        self.assertEqual(headers["Cache-Control"],"no-store")
+        for path in ["/healthz?detail=1","/v1/health","/v1/status?camera=shop"]:
+            self.assertEqual(self.request(path,token=None)[0],401)

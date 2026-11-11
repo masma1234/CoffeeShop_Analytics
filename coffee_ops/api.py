@@ -68,6 +68,10 @@ def create_server(config, database: str | Path, token: str, port: int = 8765) ->
             self.wfile.write(body)
 
         def do_GET(self):
+            # Liveness only: no database, paths, metrics or credentials. Detailed
+            # readiness remains behind bearer authentication at /v1/health.
+            if self.path=="/healthz":
+                self.respond(200,{"status":"ok"});return
             if not hmac.compare_digest(self.headers.get("Authorization","").encode(),expected):
                 self.respond(401,{"error":"Bearer authentication required"});return
             if self.headers.get("Origin"):

@@ -1,24 +1,69 @@
-name: CPU tests
+name: Local pilot verification
 on: [push, pull_request]
+permissions:
+  contents: read
 jobs:
   test:
     strategy:
       matrix:
         os: [ubuntu-latest, windows-latest]
+        profile: [cpu, video]
     runs-on: ${{ matrix.os }}
     timeout-minutes: 20
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4, verified vendor ref
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: '3.13'
           cache: pip
       - run: python -m pip install torch==2.9.0 torchvision==0.24.0 --index-url https://download.pytorch.org/whl/cpu
       - run: python -m pip install -r requirements.txt
+      - if: matrix.profile == 'video'
+        run: python -m pip install -r requirements-video.txt
+      - run: python -m pip check
       - run: python -m coffee_ops doctor
       - run: python scripts/verify_mvp.py --output var/acceptance
-      - uses: actions/upload-artifact@v4
+      - name: Verify tracked source was preserved during tests
+        run: git diff --exit-code
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         if: always()
         with:
-          name: evidence-${{ matrix.os }}
+          name: evidence-${{ matrix.os }}-${{ matrix.profile }}
           path: var/acceptance
+  image-security:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Record source hashes
+        run: git ls-files -z | xargs -0 sha256sum > source.sha256
+      - name: Build and verify isolated Linux tests
+        run: |
+          docker build --target test -t coffee-ops-tests .
+          docker run --rm --network none --cap-drop ALL --security-opt no-new-privileges coffee-ops-tests
+          docker run --rm --network none --cap-drop ALL --security-opt no-new-privileges coffee-ops-tests python scripts/verify_egress.py
+      - name: Build and record runtime artifact
+        run: |
+          docker build --target runtime -t coffee-ops-runtime .
+          docker image inspect coffee-ops-runtime > image-metadata.json
+          docker image save --output runtime.tar coffee-ops-runtime
+          sha256sum runtime.tar > runtime.tar.sha256
+      - name: Inventory dependency licenses
+        run: |
+          docker run --rm --network none coffee-ops-runtime python -c 'import importlib.metadata as m,json; print(json.dumps([{"name":d.metadata["Name"],"version":d.version,"license":d.metadata.get("License-Expression") or d.metadata.get("License") or "UNKNOWN"} for d in m.distributions()],indent=2))' > licenses.json
+      - name: Scan OS and Python packages (no vulnerability suppressions)
+        run: |
+          docker run --rm --cpus 2 --memory 2g --cap-drop ALL --security-opt no-new-privileges --mount type=bind,source="$PWD",target=/scan anchore/grype@sha256:13113eeceab017260370cf540e1d25442c59665fd07d1b09b66d63bb0c282887 docker-archive:/scan/runtime.tar -o json --file /scan/grype.json --fail-on high
+      - name: Require an owner-selected source license
+        if: always()
+        run: test -f LICENSE
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: image-security-evidence
+          path: |
+            source.sha256
+            image-metadata.json
+            runtime.tar.sha256
+            licenses.json
+            grype.json

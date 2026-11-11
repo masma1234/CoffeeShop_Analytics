@@ -1,0 +1,19 @@
+# Allow only the source needed for runtime and clean-checkout verification.
+**
+!Dockerfile
+!requirements*.txt
+!coffee_ops/
+!coffee_ops/*.py
+!config/
+!config/example.json
+!models/
+!models/metadata.example.json
+!schemas/
+!schemas/*.json
+!scripts/
+!scripts/*.py
+!tests/
+!tests/*.py
+!notebooks/
+!notebooks/cafe_model_benchmark.ipynb
+!README.md

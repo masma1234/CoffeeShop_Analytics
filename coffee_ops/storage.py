@@ -214,8 +214,8 @@ class SQLiteStore:
 
     @staticmethod
     def _page(limit: int, after: int) -> None:
-        if type(limit) is not int or not 1 <= limit <= 10000 or type(after) is not int or after < 0:
-            raise ValueError("limit must be 1..10000; after must be nonnegative")
+        if type(limit) is not int or not 1 <= limit <= 10000 or type(after) is not int or not 0 <= after <= 9223372036854775807:
+            raise ValueError("limit must be 1..10000; after must fit a nonnegative SQLite INTEGER")
 
     @staticmethod
     def _day(day: str) -> tuple[str, str]:
