@@ -24,6 +24,7 @@ def main():
     parser.add_argument("--profile",action="store_true",help="Separate instrumented diagnostic; do not compare its latency")
     args=parser.parse_args()
     if args.requests < 20 or not 1 <= args.concurrency <= 32: parser.error("Invalid workload size")
+    if args.profile and args.concurrency!=1: parser.error("Profile separately at concurrency one")
     root=args.source_root.resolve();sys.path.insert(0,str(root))
     import psutil
     from coffee_ops import api
@@ -43,8 +44,11 @@ def main():
         database_sha=hashlib.sha256(database.read_bytes()).hexdigest()
         server=api.create_server(config,database,token,port=0)
         request_cpu=[];profiles=[];original=server.RequestHandlerClass
+        handlers=threading.Condition();active_handlers=0
         class TimedHandler(original):
             def do_GET(self):
+                nonlocal active_handlers
+                with handlers:active_handlers+=1
                 if args.profile:
                     import cProfile
                     profile=cProfile.Profile();profile.enable()
@@ -54,6 +58,8 @@ def main():
                     request_cpu.append(time.thread_time()-start)
                     if args.profile:
                         profile.disable();profiles.append(profile)
+                    with handlers:
+                        active_handlers-=1;handlers.notify_all()
         server.RequestHandlerClass=TimedHandler
         thread=threading.Thread(target=server.serve_forever,kwargs={"poll_interval":.01},daemon=True);thread.start()
         paths=["/v1/events?camera=shop&limit=50&after=0"]*4+[
@@ -72,12 +78,18 @@ def main():
         def sample():
             while not stop.is_set():
                 rss.append(process.memory_info().rss);stop.wait(.01)
+        def wait_for_handlers():
+            with handlers:
+                if not handlers.wait_for(lambda:active_handlers==0,timeout=30):
+                    raise RuntimeError("Handler instrumentation did not finish")
         try:
             for i in range(10):
                 if request(i)[1]!=200:raise RuntimeError("Warmup failed")
+            wait_for_handlers()
             request_cpu.clear();profiles.clear();cpu_start=process.cpu_times();started=time.perf_counter()
             monitor=threading.Thread(target=sample,daemon=True);monitor.start()
             with ThreadPoolExecutor(max_workers=args.concurrency) as pool:rows=list(pool.map(request,range(args.requests)))
+            wait_for_handlers()
             elapsed=time.perf_counter()-started;cpu_end=process.cpu_times()
             stop.set();monitor.join();rss.append(process.memory_info().rss)
         finally:
@@ -85,14 +97,24 @@ def main():
         def quantile(values,q):return sorted(values)[max(0,math.ceil(len(values)*q)-1)]*1000
         latencies=[r[0] for r in rows]
         status=Counter(r[1] for r in rows)
+        limits={}
+        if sys.platform=="linux":
+            for name in ["cpu.max","memory.max","cpuset.cpus.effective"]:
+                try:limits[name]=(Path("/sys/fs/cgroup")/name).read_text().strip()
+                except OSError:limits[name]="unavailable"
         result={"purpose":"synthetic_read_api_diagnostic_not_P1_or_hosted_capacity",
             "platform":platform.platform(),"python":platform.python_version(),
             "requests":args.requests,"concurrency":args.concurrency,"warmup_requests":10,
+            "cgroup_limits":limits,
             "mix":"4 events pages (50 rows) : 1 business report; 200 stored events, no POS/frames",
             "database_sha256":database_sha,"database_bytes":database.stat().st_size,
+            "harness_sha256":hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
             "source_sha256":{name:hashlib.sha256((root/name).read_bytes()).hexdigest() for name in ["coffee_ops/api.py","coffee_ops/storage.py"]},
             "p50_ms":quantile(latencies,.5),"p95_ms":quantile(latencies,.95),"p99_ms":quantile(latencies,.99),
+            "latency_samples_ms":[value*1000 for value in latencies],
+            "request_thread_cpu_samples_ms":[value*1000 for value in request_cpu],
             "throughput_rps":len(rows)/elapsed,"statuses":dict(status),"error_rate":1-status[200]/len(rows),
+            "handler_samples":len(request_cpu),
             "request_thread_cpu_ms_mean":sum(request_cpu)/len(request_cpu)*1000,
             "process_cpu_seconds":cpu_end.user+cpu_end.system-cpu_start.user-cpu_start.system,
             "peak_sampled_rss_bytes":max(rss),
