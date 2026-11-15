@@ -1,5 +1,21 @@
 # GitHub readiness
 
+Owner-directed publication, 15 November 2026: the owner explicitly requested a
+push to the existing public repository
+[masma1234/CoffeeShop_Analytics](https://github.com/masma1234/CoffeeShop_Analytics).
+The selected branch is `audit/deep-clean-20261115`. All 194 tracked files are
+included: application, tests, notebook, dependency locks, CI, configuration,
+documentation, research and saved evidence. Local environments, model caches,
+recordings and operational databases remain excluded. The current maintenance
+results are in [the cleanup audit](docs/audits/deep-clean-20261115.md).
+
+This owner instruction supersedes the earlier hold on pushing source. It does
+not resolve the historical security, license/reference-rights or real-camera
+validation findings below. This remains an offline pilot; production deployment
+is not approved, and the existing unsuppressed release gates may fail. Statements
+below about no remote, no push, unstaged work and old HEADs are historical audit
+checkpoints, not instructions to reconstruct the current Git state.
+
 Local continuation, 15 November 2026: the reviewed working tree was preserved as
 baseline commit `b2ebc3c` on `fix/detector-startup-20261115` before new changes.
 The unstaged/index/HEAD statements below describe the 12 November audit checkpoint.
