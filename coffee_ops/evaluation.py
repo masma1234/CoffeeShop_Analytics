@@ -7,7 +7,7 @@ from pathlib import Path
 import numpy as np
 from scipy.optimize import linear_sum_assignment
 
-from .schema import Detection, file_hash, key, now
+from .schema import Detection, file_hash, now
 from .config import Config
 from .tracker import iou
 

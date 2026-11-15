@@ -1,5 +1,9 @@
 # Final engineering audit
 
+Latest continuation: [15 November cleanup and code audit](docs/audits/deep-clean-20261115.md).
+The findings below retain their original date and scope; later source changes and
+artifact removals have separate evidence. The deployment decision remains NO-GO.
+
 Audit started 2026-11-12; generated 2026-11-12T22:42:15.821075+00:00. **NO-GO for public GitHub publication
 and deployment.** The code is prepared for private owner review; unresolved
 licensing/reference rights, security debt and operational validation remain.

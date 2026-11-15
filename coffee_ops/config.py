@@ -17,10 +17,10 @@ def _keys(value: Any, required: set[str], optional: set[str] | None = None) -> N
 
 def _unique_pairs(pairs: list[tuple]) -> dict:
     result = {}
-    for key, value in pairs:
-        if key in result:
-            raise ValueError(f"Duplicate configuration key: {key}")
-        result[key] = value
+    for name, value in pairs:
+        if name in result:
+            raise ValueError(f"Duplicate configuration key: {name}")
+        result[name] = value
     return result
 
 

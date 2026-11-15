@@ -8,7 +8,7 @@ import cv2
 import numpy as np
 
 from coffee_ops.config import Config
-from coffee_ops.dataset import extract_frames, split_manifest, validate_dataset
+from coffee_ops.dataset import split_manifest, validate_dataset
 from coffee_ops.detector import validate_metadata
 from coffee_ops.evaluation import evaluate
 from coffee_ops.mlops import promote, rollback

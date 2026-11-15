@@ -9,6 +9,10 @@ The supported application is `coffee_ops`. The repository is an offline pilot.
 Real cafe accuracy, sustained operational performance and cloud staging have not
 been validated. No weights, footage or operational database are bundled in Git.
 
+The [15 November cleanup and code audit](docs/audits/deep-clean-20261115.md)
+records removed generated artifacts, evaluation integrity fixes, verification and
+the remaining cafe-validation gaps. Start here for the latest maintenance status.
+
 [Implementation status](IMPLEMENTATION_STATUS.md) records current scope and gaps.
 [Implemented architecture](docs/architecture/current_architecture.md) is the
 authoritative architecture document. Proposals and historical measurements remain

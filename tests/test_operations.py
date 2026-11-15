@@ -1,6 +1,4 @@
 """Business-rule unit and integration tests, independent of detector weights."""
-import copy
-import json
 import sqlite3
 import tempfile
 import unittest
@@ -14,7 +12,7 @@ from coffee_ops.reconciliation import reconcile
 from coffee_ops.pipeline import Pipeline
 from coffee_ops.pos_adapter import FilePOSAdapter, MockPOSAdapter, import_orders
 from coffee_ops.reporting import active_alerts, current_status, daily_report
-from coffee_ops.schema import Detection, Observation, key, utc
+from coffee_ops.schema import Detection, Observation, utc
 from coffee_ops.storage import SQLiteStore
 from coffee_ops.tracker import KalmanTracker
 from coffee_ops.zones import TableState, contains

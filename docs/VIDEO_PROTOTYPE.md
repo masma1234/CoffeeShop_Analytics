@@ -83,6 +83,14 @@ preparation/handover probability.
 
 ## Output files
 
+Frame evaluation requires a completed detection journal bound to the annotation
+manifest's source identity. Selected frame IDs and timestamps must agree, class
+names must be unambiguous, and annotation images must remain within the review
+directory with matching hashes. Incomplete or mixed-run exports fail before
+scores are returned. Older manually assembled journals without completion/source
+metadata need regeneration from their original recording; do not invent metadata
+to bypass the check.
+
 | File | Purpose |
 |---|---|
 | `annotated.mp4` | Review video, every decoded frame retained at source-relative PTS |

@@ -1,0 +1,2524 @@
+{
+  "date": "2026-11-15",
+  "baseline_commit": "ac625d1",
+  "scope": "Every tracked file inventoried and hashed; machine-readable source/contracts parsed. Source review concentrates on runtime data, evaluation and worker boundaries; binary reference documents and third-party environment source are inventoried, not semantically certified.",
+  "tracked_file_review": [
+    {
+      "path": ".dockerignore",
+      "bytes": 357,
+      "sha256": "9baa07f6842a884d224941b3a30210724d6c4c5204dcee9823a7d20d199b6cc3",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": ".github/workflows/tests.yml",
+      "bytes": 4000,
+      "sha256": "0b3b3d314d176f648457c559a22f2022a90da51accdb6745379531d38e39c81b",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 603,
+      "sha256": "388180f53617280faf9e8ef406267b4cf2cc4c2ffa5bec9cb470ef54f24ea81b",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "CLEANUP_MANIFEST.md",
+      "bytes": 4607,
+      "sha256": "e062417489a527a715b1ebc83c352c596b29624dd9e71b4cfc435439a2d4352f",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "DEPLOYMENT_READINESS.md",
+      "bytes": 5267,
+      "sha256": "a8aa9d9ba1335c8e62af2f690245874209e20c5f3d44a5ac086a85606a97c59c",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "Dockerfile",
+      "bytes": 1922,
+      "sha256": "70bc32d67d4dc1ff22d1297427b437c39aee543b709f1f953173116b59e7e29a",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "FINAL_ENGINEERING_AUDIT.md",
+      "bytes": 12926,
+      "sha256": "ab604846554fdc146bc903601e863e6cd272ca43fec22332c956e48361caf1b8",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "GITHUB_READINESS.md",
+      "bytes": 5321,
+      "sha256": "3bff0b891846184af03f7dcd6f9f6ebc25a8a41e2a54f1713ef54821da396044",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "IMPLEMENTATION_STATUS.md",
+      "bytes": 5177,
+      "sha256": "e1b43469a662d97a3977254545065bd0cd73da46bdb8fb5608573cee3197de6b",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "README.md",
+      "bytes": 8209,
+      "sha256": "6ec7aca5b98d5a456d788ad412439658aa6d9840697569ea7f7d822fd8f1d235",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "RELEASE_AUDIT.md",
+      "bytes": 226,
+      "sha256": "d92aff72c8bd03e1a8b3b4066d267e6307241063c88761f2a844a3dcf4966718",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "RELEASE_EVIDENCE.md",
+      "bytes": 12718,
+      "sha256": "beeab1c155b4a7eca1512795d70b773a977207391fc95f6437a9c12e1509b84a",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "Solutions et ressources pour un syst\u00e8me d\u2019analytics de ventes et de commandes de coffee-shop.pdf",
+      "bytes": 258844,
+      "sha256": "82476ed4292795d191b1bc9dca0097ff475c22c947def307a2148e611c8af687",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "Syst\u00e8me analytique de ventes et commandes pour coffee shops _ jeux de donn\u00e9es, architecture, APIs, E.docx",
+      "bytes": 155036,
+      "sha256": "9f831090cc2694fed95d68ac9e539b8d9d0b8f3bd2a5fe0bddfb66bdfc7b0913",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "Syst\u00e8me analytique de ventes et commandes pour coffee shops _ jeux de donn\u00e9es, architecture, APIs, E.pdf",
+      "bytes": 269140,
+      "sha256": "36754dd13d51e44e9f4b055dd1d88b13ebc1fc2f4ceb766176bafcd8aef1cdd8",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/__init__.py",
+      "bytes": 100,
+      "sha256": "6aef8f11cf9d1feadb75cf3d07003c09ca7079ba99d5bed041be8d3053be601d",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/__main__.py",
+      "bytes": 497,
+      "sha256": "4b7a57a7aa4f3547718185e9873832d5de12a5962f821438881299ec19a6cef4",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/alerts.py",
+      "bytes": 3629,
+      "sha256": "03db4aebbaeceaf5f0a5616a0b7690290a2f25b9f30ac3b3ab4cb60f0814161a",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/api.py",
+      "bytes": 7005,
+      "sha256": "cdddb86e112f60cd84ec4cb3346a4acf099c4df0c91c63cbb2fb3729eff71d4e",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/business_reporting.py",
+      "bytes": 10709,
+      "sha256": "0df4f48e1fff97ef486cbdc7f8a7e855efa02e93d8020e1bb804547da636e07b",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/cli.py",
+      "bytes": 17973,
+      "sha256": "08a9938ff74cd6f4b484b8d2ded83dc7f4ac805ccfd2da5ef44a9b0273bd1feb",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/config.py",
+      "bytes": 12576,
+      "sha256": "a80ff8ea9132d6b35167c6af0cfcc8524059c798027f88cb0858616e10690447",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/dataset.py",
+      "bytes": 6514,
+      "sha256": "ce8832748f036a74c47d75ad2b60508904b9044057660d5a697654ce71bf4798",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/demo.py",
+      "bytes": 3578,
+      "sha256": "94ef23e0cfaa47e76a98a9209bde8a698483769c7f666f0557c765db4b056d1a",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/detector.py",
+      "bytes": 12549,
+      "sha256": "45867c94c25568bb79ebc4e5cc6b7c53a971752a88c48ee29105821bf4016e23",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/detector_startup.py",
+      "bytes": 3737,
+      "sha256": "7bb275a89fb59bbce4b686a912c9c2ef63fcff49514c47aaa8dd0b52e05e8f30",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/evaluation.py",
+      "bytes": 13053,
+      "sha256": "a4c1f1556fb86c0933980f76ac7aa713345a96eaa863b3a466b2a8f31043138f",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/event_engine.py",
+      "bytes": 6254,
+      "sha256": "fd82604b4b092187919b53726bb3983bd909f8b878300ec14145805055d69346",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/event_evaluation.py",
+      "bytes": 8792,
+      "sha256": "b7a2ffd03528bcba9753502063621e12a8e9b6bf52847edf607a0b68fa933357",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/exports.py",
+      "bytes": 1936,
+      "sha256": "36c7f1749fdb62868da227a12ff098bff34050817e61d22c126d25e5e68f5043",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/health.py",
+      "bytes": 691,
+      "sha256": "1a03cb66fa8e41eecca0a64ff6ae41041e36778629369963158ab760780171f4",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/inventory.py",
+      "bytes": 484,
+      "sha256": "fa9953b6f918367d93380961fbfdaa09f94690c21f2b93296a1206f55ced7a53",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/mlops.py",
+      "bytes": 3090,
+      "sha256": "04e3831cb09db04e921ea65836249aa6bf7291daab4b7b98b76747f8612abd15",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/pipeline.py",
+      "bytes": 15540,
+      "sha256": "0bc2a035946c96b1f2f7b8cd1f30cfa819606c0eae489752bf833f6f7e3f93da",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/pos_adapter.py",
+      "bytes": 3372,
+      "sha256": "6e046b8b5c3db450f5dd8d233180ab3c0d8eef74b1d80571450d1d2edd5d7840",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/product_evidence.py",
+      "bytes": 6587,
+      "sha256": "d3bc978fd27c03d06c108c4be5ce79a83cbabc3983b5334e35b7196370f1705f",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/reconciliation.py",
+      "bytes": 5131,
+      "sha256": "380689640757a646932995d3bdffc453deea5930e704dfd2218709e92f3f7ce6",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/reporting.py",
+      "bytes": 4265,
+      "sha256": "fcee338affa2cc07cd8b2a8b266a6af1de9a9013ac6673824c4ea21fb25d48c9",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/resources.py",
+      "bytes": 2924,
+      "sha256": "a6f420eb06ce3a0c5d7b49fbc6fa9b5aa8842a63606749478cd70071e6bacc2e",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/review_exports.py",
+      "bytes": 2266,
+      "sha256": "f238910a08153785b8b0b4d2ba8b99521b31a3ea009e25442cc95e792f90d687",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/review_labels.py",
+      "bytes": 7152,
+      "sha256": "8a8f3ce6481adbd5dc9730e2c67801deaf21a7732834810a23c04aebf3ef21c9",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/runtime.py",
+      "bytes": 3327,
+      "sha256": "86d7c3fe443c3c02ee0989305d50cea665a63299f2a25a9076ec2b1066583bb8",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/schema.py",
+      "bytes": 2144,
+      "sha256": "1218cafc80ae39c1239cf134d7eb0eefaad3f04b8026de97c1babb069ffc0d7a",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/storage.py",
+      "bytes": 22417,
+      "sha256": "3c3129beb0f9abc0645b182faab009f24335cac82ef27adcc240d7889f3b9870",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/tracker.py",
+      "bytes": 4616,
+      "sha256": "2fb52e17a473bf3cb9ad2e9349818debb90b5b4c0c8cc7794ad0e4f98e98dac4",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/traffic.py",
+      "bytes": 5528,
+      "sha256": "4d647237b1760c8646d7903daec3372556d1b4f24b9059e0745acc5f7aacd2d1",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/video_input.py",
+      "bytes": 3902,
+      "sha256": "a8bc1d91218b6fa6c2f56b64d77ed4671e8bcbec7ff7f335b14ff61decb1cabb",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/video_io.py",
+      "bytes": 6419,
+      "sha256": "4973fb27ea6eb941d4fc73475aa90c7c0d51a80b5f8bf70ff1bfd5f94061da80",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/video_overlay.py",
+      "bytes": 2748,
+      "sha256": "99c45376a9d1fddeb630da300e162584a0a7adc4079d88722563afe4706d9c35",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/video_review.py",
+      "bytes": 19504,
+      "sha256": "a722d0a4283783f9c386d0ac71fcd4d90c19ccf02f23fefb4796ca06b3ad26cd",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "coffee_ops/zones.py",
+      "bytes": 3880,
+      "sha256": "2ddabc0a78c2d848649cd0b206ec6615371d8a1b44bf1a715b43428888c1e855",
+      "category": "runtime",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "config/example.json",
+      "bytes": 3803,
+      "sha256": "e92add4450ee742726ff118f4d1c866da350548cac8c85680f82094331d16cc3",
+      "category": "documentation/configuration/research",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "constraints.txt",
+      "bytes": 94,
+      "sha256": "1044242e1d8bf8d62078755d1b6aea2290ed4138ddb922e54d2832a2c93d4d3a",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/ADR-001.md",
+      "bytes": 6685,
+      "sha256": "ca5dd8fe6185d861085b39100a3da308a3fe9a7ad69c110aef4424f536bec4fe",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/ADR-002.md",
+      "bytes": 2987,
+      "sha256": "0b443e2c59988fafb45df78ef384ccf1a76e5a826c9d0977f1096cded79adf42",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/DATA_AND_EVALUATION.md",
+      "bytes": 9764,
+      "sha256": "8cf23e4573d63ac801057e9440c5ec08ac4b43265aab5516c6b6f7374773b0a5",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/PRIVACY.md",
+      "bytes": 4120,
+      "sha256": "f3bdc7b18c831fc3864ef9234cfd6c60236853222ce58dd69cadb9ed5c149001",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/PROJECT_STATUS.md",
+      "bytes": 854,
+      "sha256": "f1e9b00766fd14f4542ec724beb7d291842805659d7ce83a4be7ea100d0aeda3",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/SCHEMAS.md",
+      "bytes": 7607,
+      "sha256": "644ce8712360e992c58cb3981dc5fa5c511599bc70badc252f3e135188f7b1a2",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/VERIFICATION.md",
+      "bytes": 10308,
+      "sha256": "746ce28f4d6df4be11d30ba2daf7c28acc754f09c4c9c6da9d262d767c0e8f19",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/VIDEO_PROTOTYPE.md",
+      "bytes": 16215,
+      "sha256": "21cd4ee104589b04d6fdacbfb50624110f4010e7b9cac4244943d86fb6c78c5d",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/annotation_guidelines.md",
+      "bytes": 7824,
+      "sha256": "c1cd756292f046b8ba156314616e7ee589b25adaa217621afd3321341a8895a4",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/architecture/current_architecture.md",
+      "bytes": 4887,
+      "sha256": "b0fd67da352414b9a0f910b34c9affe6b0391886ea22cd5210df023f2eb980eb",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/architecture/event_counting_design.md",
+      "bytes": 4314,
+      "sha256": "5a9b866ce71c6b68fdb13bda003d622f2e35b79705230b6deb9a1f285a64736f",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/architecture/recommended_architecture.md",
+      "bytes": 3003,
+      "sha256": "8b5b79b0ac8abbe4bd212ea936f3f77e2f01e4694a6176e5786cb437cb610a12",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/audits/cache-cleanup-completed-20261112.json.gz",
+      "bytes": 1821458,
+      "sha256": "444a7107d5af09296fe8d5c690045eed7b74e8ce53b74a8cacaa120b1119c319",
+      "category": "documentation/configuration/research",
+      "checks": [
+        "gzip integrity decoded"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/audits/cache-cleanup-proposed-20261112.json.gz",
+      "bytes": 1814959,
+      "sha256": "bb25c86666f2875d5bb0850133cd87f867f8f0d3adbbf18732c8327344070afc",
+      "category": "documentation/configuration/research",
+      "checks": [
+        "gzip integrity decoded"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/audits/current_system_audit.md",
+      "bytes": 8623,
+      "sha256": "4b7d698547db1439dd7fdc3c6d828ed47a3b7a3c81ae31433a06fbcbf5a05472",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/audits/dependency_advisories.json",
+      "bytes": 15102,
+      "sha256": "70f00ddc3ae4b0d66e294ce6eddc6138ef2a99e11711d1cfc3e9b4cf836e3838",
+      "category": "documentation/configuration/research",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/audits/disk-inventory-20261112.md",
+      "bytes": 40497,
+      "sha256": "6ed143c39b814a1293c66936a57e2c54c8cc065f1c8e94e397fd589c6eb70825",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/audits/image-security-20261112.json.gz",
+      "bytes": 15694,
+      "sha256": "36e981be4d5ac492c806c17d5fa67a2f05f08199ed263f79a960d2eef0db0553",
+      "category": "documentation/configuration/research",
+      "checks": [
+        "gzip integrity decoded"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/audits/implementation_changes.md",
+      "bytes": 4565,
+      "sha256": "016cafde1fbfabfaf8b8ed283256e31b5d7142db1a97a9614105fa2f2ac4fab7",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/audits/publication-candidate-20261112.txt",
+      "bytes": 6609,
+      "sha256": "05fecc53b390e095e54d1feac677e0291bcbd1b42fa5c5dfad1f7152a69cf0f2",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/audits/security-20261112.md",
+      "bytes": 43014,
+      "sha256": "0d5da85d29913806fcf836c9a226f4498defc755e9aee0ea1827ede35638454c",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmark_protocol.md",
+      "bytes": 6459,
+      "sha256": "5615398c544ae23c12fabb058c67344f9d7b6f8f0b4d34f1144b9dd99675544b",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/benchmark-environment.txt",
+      "bytes": 1193,
+      "sha256": "6b2c08723a9ad88ac02da48bebd766395caf1725e20de757edcdf54a9b2e7c1d",
+      "category": "historical evidence",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/counting_evaluation.md",
+      "bytes": 3721,
+      "sha256": "5a41cd2aaeaf8332311ed1e2ea90f372d331332fba8efe80724c52d639d115d2",
+      "category": "historical evidence",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/detector_startup_20261115.json",
+      "bytes": 43086,
+      "sha256": "d31dc7616cbdc585f080a04a3488d4febff7bb4147c77a2a0773644ce5b5e0bd",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/detector_startup_20261115.md",
+      "bytes": 6645,
+      "sha256": "ebabdb79f4093a5820a19b1a0c70f6e65c2b813cfb8f643c61a8a9c69cf1e253",
+      "category": "historical evidence",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/foundation_results.json",
+      "bytes": 54780,
+      "sha256": "b8da6e2182c3605ee4226af38ce5ebdc817505ae212071df1d9b1142bc681150",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/foundation_tests.txt",
+      "bytes": 24648,
+      "sha256": "ed5bb2b742dadd2d61f730f11745cb888b97f52662682d18d62aa29774822d81",
+      "category": "historical evidence",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/model_comparison.md",
+      "bytes": 8122,
+      "sha256": "623beaf726051f102cd1b31685648519dcba7b76053b3124cf5679be66363637",
+      "category": "historical evidence",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/model_latency.png",
+      "bytes": 94837,
+      "sha256": "956585ecafaa5be6bd9f4c976e6212fba6da8628b0133919b40e780b15c76cf6",
+      "category": "historical evidence",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/notebook_verification.json",
+      "bytes": 3279,
+      "sha256": "e3839c194f4577b98a403267a671e9cd9f93674e999802fc6e56b43bb76fa407",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/performance_report.md",
+      "bytes": 11607,
+      "sha256": "35e5cc1c98493cf7021b05b9b8cd217d68e1468069ad92102ce7fc4e75133bac",
+      "category": "historical evidence",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/cpu/dfine-nano.json",
+      "bytes": 22941,
+      "sha256": "c03ec5dba88383bf1e1c721eddca213668712ce7660d542b4e14edbaad815be9",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/cpu/dfine-small.json",
+      "bytes": 20688,
+      "sha256": "fcb89e3b0abaf00e9c1b293793bd5b98a38b0badd3960ebf83cec16193f27ed7",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/cpu/rtdetr-v2-r18.json",
+      "bytes": 21705,
+      "sha256": "971019b3d5f464276f6146329fd76a86f1f84a4babcabd3504278076a8cdb4d7",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/cpu/smolvlm2-500m.json",
+      "bytes": 3374,
+      "sha256": "792a9e4e19b17bbe748b15068be227b500c67c280082e6fa6a48880876e6e4e4",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/cpu/yolo11n.json",
+      "bytes": 15166,
+      "sha256": "30bc0b317fac0a052249384cd4ee3126472f81de1f302126725a14695b6b5107",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/cpu/yolo11s.json",
+      "bytes": 15141,
+      "sha256": "11bf3c994bff416fbe7ec547a1d93be5da86141172c0c42af04b1539e78881a1",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/cpu/yolo26n.json",
+      "bytes": 15415,
+      "sha256": "4e388fdb17a5cfbde3d0c23919ad2074802303a124c2cfaead97d48404924d03",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/cpu/yolo26s.json",
+      "bytes": 15274,
+      "sha256": "96943d345e33e99743654471aabf3a70db7a384f3244ac727ac5560fd3042758",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/cpu/yolov8n.json",
+      "bytes": 16005,
+      "sha256": "7ec41ce1582bb973c811a026abe422aa9389da7bb30f5b9103e45f06404c9249",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/data_manifest.json",
+      "bytes": 412,
+      "sha256": "90bcbc3649c92ad849ba9b1adc6eeff909028b42b9252bf295f73e50c32db14d",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/gpu-fp16/dfine-nano.json",
+      "bytes": 23155,
+      "sha256": "ca10e194a7fc960e53e2644b3409bf48a8815eb3e99ed2db49ad926dcd9690b1",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/gpu-fp16/dfine-small.json",
+      "bytes": 20892,
+      "sha256": "8ec42bbe182b7e3c467c1afbd704034c1c74cd94146d777af43228789ee4fa77",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/gpu-fp16/repeat-rtdetr-v2-r18.json",
+      "bytes": 27056,
+      "sha256": "27599a037d732542052002e1596203c40bc312d2452251af4643ec641e91d2ba",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/gpu-fp16/repeat-yolo11s.json",
+      "bytes": 20393,
+      "sha256": "a8bdbbb8e50e31ef5961f4a7545c049b43798b0261bee55973dcef1802f924c7",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/gpu-fp16/repeat-yolo26s.json",
+      "bytes": 20548,
+      "sha256": "1bb5f41ce93f69919e1e02362be786faf78a271d0019ae152ed3029a0a6ae4ea",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/gpu-fp16/rtdetr-v2-r18.json",
+      "bytes": 22154,
+      "sha256": "b435dbfef75211f85968d5dd8fe2fa125e552e9f6d94243d0aa12a62f6f85582",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/gpu-fp16/smolvlm2-500m-canonical-original-prompt.json",
+      "bytes": 3945,
+      "sha256": "319e64dc057ecf850488c9c98c27363b11d3c77482efc56b5edd7442bcece4e7",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/gpu-fp16/smolvlm2-500m-neutral.json",
+      "bytes": 4016,
+      "sha256": "a9251682aa0273c4b29a97b758bfc5f15179b645f13aecbdce62655b24f562f6",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/gpu-fp16/smolvlm2-500m.json",
+      "bytes": 3588,
+      "sha256": "5a21dcec8fc2fa72c7686f0bbfedb8265dfd0df80177814def7ee9c24aa93083",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/gpu-fp16/yolo11n.json",
+      "bytes": 15421,
+      "sha256": "e9e2f8a3b90b10aba76d93615d03716e6d41e403d5de269fb61560700f71f006",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/gpu-fp16/yolo11s.json",
+      "bytes": 15382,
+      "sha256": "247f31e93bf2f41d777464bc7fbc64441be9e9c948649ed91bbcfc36e15a67c2",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/gpu-fp16/yolo26n.json",
+      "bytes": 15731,
+      "sha256": "7ffd50c479d6fbeb75093f72d86634b0cdf9c71aa475782e5bab369463033244",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/gpu-fp16/yolo26s.json",
+      "bytes": 15543,
+      "sha256": "cc5fcf7bc14f682ef2fb13ac1f7d03a6fc6514f5c70ae96e969315b3aac48385",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/gpu-fp16/yolov8n.json",
+      "bytes": 16294,
+      "sha256": "5124571da3d3ecd2b473d23290e083e02c46fd6c5348ed498dc0e5168eac5322",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/gpu-fp32/dfine-nano.json",
+      "bytes": 23117,
+      "sha256": "c037c7a4f73f23265d982db34d7a5cd2f3985ceeca9f3f901f6b9a642c1e1cc4",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/gpu-fp32/dfine-small.json",
+      "bytes": 20914,
+      "sha256": "242f7677329fccba9d4409155336366a6b1b99c1530196c08bd85a9731d67ac8",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/gpu-fp32/rtdetr-v2-r18.json",
+      "bytes": 21917,
+      "sha256": "4002084c762cc41a4a5d74ca10070bdc9beadd62ab903464625dca671d563481",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/gpu-fp32/yolo11n.json",
+      "bytes": 15479,
+      "sha256": "20a25b74da60f8eec7dd739cd895325d9222f8a583496ba5f0bd16d5358d713c",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/gpu-fp32/yolo11s.json",
+      "bytes": 15431,
+      "sha256": "c977b4ef14f775877f62d12574361e88684d0a8e0be72a9f61ecd866a00e3919",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/gpu-fp32/yolo26n.json",
+      "bytes": 15760,
+      "sha256": "ac5f7cd0831f8c48a12820c9d3d0378f5759633142fe9fe27003496487bab192",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/gpu-fp32/yolo26s.json",
+      "bytes": 15572,
+      "sha256": "a44acd9cc120f321da935d7bb6694e39112abaa0e50be7e08f12e4bc653d36ce",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/gpu-fp32/yolov8n.json",
+      "bytes": 16278,
+      "sha256": "3701b13ae18caeb169803bc57c8b65bb105257227b6f5377070c010d1aaa43e9",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/run_index.json",
+      "bytes": 11145,
+      "sha256": "90cb912983bb29cf0647be70a9b70f290559d83e95517f28ed2f418c62b51d44",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/results/verified-downloads.json",
+      "bytes": 443,
+      "sha256": "5247caeffd48917d87767a16dd430c31b10c1a4515eeef213022083f6efa23a2",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/video_operational_tests.txt",
+      "bytes": 29052,
+      "sha256": "f77827dfa1f4827ade37f9be64e16a1ed58bb1683f03ece1372e310cd2fe8612",
+      "category": "historical evidence",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/video_prototype_results.json",
+      "bytes": 14572,
+      "sha256": "6f0dc1336efd16440d4ea6d79590f598703d77a181079a600e0f460478c56a33",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/benchmarks/video_prototype_tests.txt",
+      "bytes": 28343,
+      "sha256": "0f863d8a898e1540733609c15e515904ce66ebc3e9b58a548773d14c089ed2a8",
+      "category": "historical evidence",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/deployment_runbook.md",
+      "bytes": 8530,
+      "sha256": "7313ddd01c19db6f4a42bd24e51fe322c3287f95a3c57b8f304d6afdebe61041",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/final_recommendations.md",
+      "bytes": 9044,
+      "sha256": "1d09406a986dcae5c582a3a7972adfb47bc5b7fdf8d882aa987a9caadc898f08",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/history/release-20261111/CLEANUP_MANIFEST.md",
+      "bytes": 7690,
+      "sha256": "709a08957b9d525de602cc14c9cb541336becb78c07e7909b5a46ba1a1c82601",
+      "category": "historical evidence",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/history/release-20261111/DEPLOYMENT_READINESS.md",
+      "bytes": 11707,
+      "sha256": "8ce1e3363eb5081135c2a827b71f3f7c5c9e691a8fcf541545e124fa5d2b4523",
+      "category": "historical evidence",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/history/release-20261111/README-history.md",
+      "bytes": 391,
+      "sha256": "861055823ffa7addee0783d56ed8d061f17a1c43bf1c2d2dfab48a9233ae9a96",
+      "category": "historical evidence",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/history/release-20261111/README.md",
+      "bytes": 16300,
+      "sha256": "7cccf910e2ab52ef823bb81d062f60453c279071cc45908f6bd372de4b85cd38",
+      "category": "historical evidence",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/history/release-20261111/RELEASE_AUDIT.md",
+      "bytes": 25417,
+      "sha256": "460700066e038a11080c12c08e326117224e1798d2074406066af5789a6a56a2",
+      "category": "historical evidence",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/history/release-20261111/RELEASE_EVIDENCE.md",
+      "bytes": 40277,
+      "sha256": "ddb1bb87f7eb2b52b59686c45537f259e1b6d734534ae2d7b013eec1a9215c32",
+      "category": "historical evidence",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/implementation_roadmap.md",
+      "bytes": 7698,
+      "sha256": "df2ff8af1081195d937f29f6c5a1f8b595cdee40fb338f59f3540a2f95bc35ac",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/research/README.md",
+      "bytes": 2311,
+      "sha256": "2cf7b6f042283844491738e1c5c606747d1935a95a85045f8ee83c9aa296485e",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/research/dataset_strategy.md",
+      "bytes": 2855,
+      "sha256": "581d123c5d46a4aa612be420f25add757d83ac9c56c1b6dae7525a6939ddb60a",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/research/repository_snapshot.json",
+      "bytes": 4020,
+      "sha256": "7d77500bf27a2eb95245fb2f305180cebdf1ebffa75c7e2005a98e824b5084bf",
+      "category": "documentation/configuration/research",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/research/resource-api-checks.json",
+      "bytes": 2995,
+      "sha256": "0d08e7e9845244167d729996bf8b363b0f6f8641bf93d0a18a484ac8f825f017",
+      "category": "documentation/configuration/research",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/research/resource_inventory.md",
+      "bytes": 8308,
+      "sha256": "9ef3ef41bed9bd2beff3e88b9f8beeec54bfc012f057a0d02e7cfb6ebb3d5d09",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/research/technology_comparison.md",
+      "bytes": 15456,
+      "sha256": "90ed8454e3bf2b34a415d8ae94a35630b7892088da06cd5e4d0cd909b0b3248f",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/research/training-datasets.json",
+      "bytes": 9907,
+      "sha256": "ca1cb1148a4371bbd4f5852d01f3af74a12c3c46c701b0bd1306a5e3a1ed4f79",
+      "category": "documentation/configuration/research",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/research/training_datasets.md",
+      "bytes": 6600,
+      "sha256": "cd5eb60313a66cc096cbd18f487697d6e6cd25dc37b0acae71e5c490b97f2175",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/validation-current/acceptance.json",
+      "bytes": 3948,
+      "sha256": "3adfdd772dfaa2b9133bd624ea240a900fa9f62ea7f7f619f43c5200070f4742",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/validation-current/daily-report.json",
+      "bytes": 741,
+      "sha256": "c18afbbf7760d30b39645cc7da2e6d2dba610ccdc00c03295568177f887e543d",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/validation-current/environment.txt",
+      "bytes": 681,
+      "sha256": "0c443c94e3efc8618c50be368e9b6b2781cdb02cf7260c78713211299cacd6b0",
+      "category": "historical evidence",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/validation-current/fixture-evaluation.json",
+      "bytes": 2366,
+      "sha256": "a483e08e60d85f369bcda930ce6445fc34bef5dfed679bc4892a544355b0e305",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/validation-current/runtime.json",
+      "bytes": 771,
+      "sha256": "77e3a03a6002cdb166a8a3d36f351f06a0b7811fd8891acab28316aa6b78feb7",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/validation-current/stress.json",
+      "bytes": 2383,
+      "sha256": "0bf7ca7c6c7d5b6dd80b5ded57077e98403cdcab0c1bbd43998ea2a06b1d766f",
+      "category": "historical evidence",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "docs/validation-current/tests.txt",
+      "bytes": 16255,
+      "sha256": "fd16a843ef2d04d6649bf33ca2db63c491a678f5f10b57bffa2cd26ee38e0cd4",
+      "category": "historical evidence",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "models/metadata.example.json",
+      "bytes": 219,
+      "sha256": "df54eddd9694015a26442f40e513e6bd6bd51de9a0cd67c83911658c0e5e7721",
+      "category": "documentation/configuration/research",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "notebooks/README.md",
+      "bytes": 6425,
+      "sha256": "198c65be5028d635d0bb17286e9000bb505ccf39831ecd1bc975f86378341cc9",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "notebooks/cafe_model_benchmark.ipynb",
+      "bytes": 62936,
+      "sha256": "b96e09211c359999f826f299e851572117d34e34266b7aa26cce82dcdac6552b",
+      "category": "documentation/configuration/research",
+      "checks": [
+        "Notebook JSON and all Python cells parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "requirements-benchmark.txt",
+      "bytes": 209,
+      "sha256": "37cc6b77b41edcea2abfc7cc42d8722b755b8a3bc4fe704ca39cc3d418262837",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "requirements-dev.txt",
+      "bytes": 164,
+      "sha256": "0c35e714748cf260aaed4361b4aa7e2fb2431c60e25ab73746348cdc469cde5b",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "requirements-lock-linux.txt",
+      "bytes": 3662,
+      "sha256": "1e290f8f3473acbdf108745efb3eb040638c6b60c2a71c0bc763d67534351480",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "requirements-lock-windows.txt",
+      "bytes": 3798,
+      "sha256": "07feed8323a42ae7008c1f17d9a4cd1470422295cda72174f5dc997a25447480",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "requirements-notebook.txt",
+      "bytes": 389,
+      "sha256": "403df1b27e55fa1e16f08f79c16068cc0a88086c0f9f206d69a3983795584caa",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "requirements-video.txt",
+      "bytes": 355,
+      "sha256": "eaddd9ef728e007c5c5f51d0d07b95da4b3ff23530e390b9c0e21d7287e61b27",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "requirements.txt",
+      "bytes": 392,
+      "sha256": "a8c5367c1b01f346b966b96d1713943f039cf48cd9b8df0cf918c8a875bf655b",
+      "category": "documentation/configuration/research",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "schemas/event_annotations.v1.schema.json",
+      "bytes": 4459,
+      "sha256": "97669a345698b43ec6b53e1dbfa006a31ac6462a7438f62c02f7925eca7ba360",
+      "category": "documentation/configuration/research",
+      "checks": [
+        "JSON parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "scripts/apply_cache_cleanup.ps1",
+      "bytes": 3697,
+      "sha256": "c168ddef3a014660cc6c9dd5a84fd22c6322fd7927ff4b109b7862d99a1bd7ac",
+      "category": "reusable tooling",
+      "checks": [],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "scripts/audit_repository.py",
+      "bytes": 10099,
+      "sha256": "38c6e0e6577d6c9260aaa846f36ac34a41118aecca2a66e469a779a8e0dcbfc2",
+      "category": "reusable tooling",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "scripts/benchmark_api.py",
+      "bytes": 7326,
+      "sha256": "38611dddc871fa502bb415ee79014d9b9863965bc84f8b3ad9b7c57702bb19a6",
+      "category": "reusable tooling",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "scripts/benchmark_events.py",
+      "bytes": 4150,
+      "sha256": "0cf36b8e739129ce1fd62696dabacb9e03c2989a945677fea96801e33653ff3b",
+      "category": "reusable tooling",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "scripts/benchmark_models.py",
+      "bytes": 17922,
+      "sha256": "5bd5f1cd53f2ad48671517a89596d62c5997bb78ab1b97d3988691696599c826",
+      "category": "reusable tooling",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "scripts/benchmark_mvp.py",
+      "bytes": 6078,
+      "sha256": "6c0ffd11de0ac9859812ff4eee297ba1f1b84329e6f7ca961d19e2c94179e51a",
+      "category": "reusable tooling",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "scripts/benchmark_suite.py",
+      "bytes": 2363,
+      "sha256": "2cbd150a83315c551eacb0011d641945cf91ad0ab2b7c6b05d62b4eaf4de1697",
+      "category": "reusable tooling",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "scripts/check_docs.py",
+      "bytes": 1811,
+      "sha256": "a2c3dd08818f85344852953ac23f33f61ffe56ae53dfe6d97416228ec9d91ad9",
+      "category": "reusable tooling",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "scripts/check_quality.py",
+      "bytes": 2336,
+      "sha256": "4b21fd0f41e886f9baa9f20e0633694ebaf9fcf8a9dc69152c9d82a682a4562b",
+      "category": "reusable tooling",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "scripts/lock_requirements.py",
+      "bytes": 2867,
+      "sha256": "bd191286380078497fe3725e3aaad81ab695fff97bdab9f206f177369b9d01c6",
+      "category": "reusable tooling",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "scripts/plan_cache_cleanup.py",
+      "bytes": 4333,
+      "sha256": "c8814997f4763ffee4c82e3100b1acf019c035abdd599053a555a584182a2223",
+      "category": "reusable tooling",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "scripts/review_publication.py",
+      "bytes": 3855,
+      "sha256": "ad79f9694530540a664a7ce20715d3ef30c3aa2480e1b84c645f3b20b1da0f90",
+      "category": "reusable tooling",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "scripts/setup_environment.py",
+      "bytes": 2219,
+      "sha256": "e6258aa35546175348e99216cad649b01f3e2884e11d554447d8289d93f9e322",
+      "category": "reusable tooling",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "scripts/verify_container.py",
+      "bytes": 6841,
+      "sha256": "000bcba6e59f3e75a4cd26d96efc9017c1588735a85b3f9701dc97b287786bfc",
+      "category": "reusable tooling",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "scripts/verify_egress.py",
+      "bytes": 2418,
+      "sha256": "711f515be0fbad2bc2c8f91d4466e38168981af84aef3dba2ab0a15e82100761",
+      "category": "reusable tooling",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "scripts/verify_mvp.py",
+      "bytes": 7954,
+      "sha256": "536102a5579a0c93ebafc8882592b623509a7bbc0e341d120d8222eb397ef9c5",
+      "category": "reusable tooling",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "scripts/verify_training_notebook.py",
+      "bytes": 4834,
+      "sha256": "a323f3ca639ae7055611153fa137128643b455faeb03422433f269d501a565d8",
+      "category": "reusable tooling",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "scripts/verify_video_prototype.py",
+      "bytes": 4530,
+      "sha256": "3a3398f1f6c3297bee4f1ab304cdca2aabfae6396770c007f05a6bd7ea2b776c",
+      "category": "reusable tooling",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "tests/test_api.py",
+      "bytes": 5411,
+      "sha256": "ac5b93c5d59c930ae443c1f049734d2e01112f491d636bb81fbbd2d03020aff9",
+      "category": "regression test",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "tests/test_business_reporting.py",
+      "bytes": 7465,
+      "sha256": "eb3f9d4695ed63ad8dd57fb82d89186e562bacf79ece45df18886e5cb6379d76",
+      "category": "regression test",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "tests/test_detector_backend.py",
+      "bytes": 3029,
+      "sha256": "042acefd27c4d97b9a831ebdc6bceb3ab71ed9b1c01c336c5650186c4069968c",
+      "category": "regression test",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "tests/test_detector_startup.py",
+      "bytes": 8711,
+      "sha256": "46c45ba2562518feaa7d5b6a6f81c5c942877aa61778ddf98da55ee08215b9ea",
+      "category": "regression test",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "tests/test_entrypoint.py",
+      "bytes": 1010,
+      "sha256": "1632c9397e5c20bce0b78b5a7a224dece3cf2fbc8cfe30a5b187ca6404416d82",
+      "category": "regression test",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "tests/test_evaluation_and_data.py",
+      "bytes": 10366,
+      "sha256": "0aa515766cb04841225df46c7f960a34e188fe9d64d6dc852632a09e651fb280",
+      "category": "regression test",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "tests/test_event_scoring.py",
+      "bytes": 5424,
+      "sha256": "9305549fa2fb3218e2e7e73906757ff4cc8b08e72eba2d0b56c07c139bc267bb",
+      "category": "regression test",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "tests/test_failure_boundaries.py",
+      "bytes": 7220,
+      "sha256": "3a63b279f9abce6734b1952272c9df677a2ad0b7ff9d500d45f7859660651fb7",
+      "category": "regression test",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "tests/test_model_benchmark.py",
+      "bytes": 4000,
+      "sha256": "0072d945cfdae8a9c65c5dff3de300481c8e79803c63269ed23b4ff65ef4179c",
+      "category": "regression test",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "tests/test_operations.py",
+      "bytes": 22604,
+      "sha256": "e85ea45c2d3a953b9df8ef923499b3608227d2210b555f8f9ff5adea0232d307",
+      "category": "regression test",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "tests/test_product_evidence.py",
+      "bytes": 4158,
+      "sha256": "6a1092b8a37401f66f279eab59263f587ec9fa22aff16539b8da6fa7b44918a7",
+      "category": "regression test",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "tests/test_review_labels.py",
+      "bytes": 5377,
+      "sha256": "7a6a2408bd2e704627a3e63ccc0bb2e909863071dd04b90625467e79cd267448",
+      "category": "regression test",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "tests/test_storage_resilience.py",
+      "bytes": 10897,
+      "sha256": "f4abec3e88cdf0566ac8234a29d6e0c059d1080321a0565c464fd54c4e626c21",
+      "category": "regression test",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "tests/test_traffic.py",
+      "bytes": 7006,
+      "sha256": "64840dfde928859fb6b13487016036df32efe2a63ea77180aa4aeecd46dff796",
+      "category": "regression test",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "tests/test_training_notebook.py",
+      "bytes": 12281,
+      "sha256": "38f243ce5b748d3de309822da94b72dfd8f8963c59b928a4a2e755d2d84078d3",
+      "category": "regression test",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "tests/test_video_integration.py",
+      "bytes": 6355,
+      "sha256": "5a6f9cbca7b715e17302e23903511beb4aee7f8bfd005bd50c0c453d93e5bdcb",
+      "category": "regression test",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    },
+    {
+      "path": "tests/test_video_review.py",
+      "bytes": 10538,
+      "sha256": "77baff446fda6b2d606c4f3a142baf39122e70a5c9adc3099e8f42382a177455",
+      "category": "regression test",
+      "checks": [
+        "AST syntax parsed"
+      ],
+      "disposition": "retain: supported app, tests, reusable tool, setup contract, research or unique evidence"
+    }
+  ],
+  "parse_failures": [],
+  "before": {
+    "file_count": 104640,
+    "total_logical_bytes": 17323494502,
+    "errors": [],
+    "hashes": {
+      "fresh": 178,
+      "reused_unchanged_size_mtime": 102343
+    },
+    "links_not_followed": [
+      "var/model-benchmark/huggingface/hub/models--ustc-community--dfine-small-coco/snapshots/f79e65b5fbb33ceb9d3ebba042955d7410c608f8/config.json",
+      "var/model-benchmark/huggingface/hub/models--ustc-community--dfine-small-coco/snapshots/f79e65b5fbb33ceb9d3ebba042955d7410c608f8/model.safetensors",
+      "var/model-benchmark/huggingface/hub/models--ustc-community--dfine-small-coco/snapshots/f79e65b5fbb33ceb9d3ebba042955d7410c608f8/preprocessor_config.json",
+      "var/model-benchmark/huggingface/hub/models--ustc-community--dfine-nano-coco/snapshots/066438d3d8f0da137a37b38fdf3368fd4afceced/config.json",
+      "var/model-benchmark/huggingface/hub/models--ustc-community--dfine-nano-coco/snapshots/066438d3d8f0da137a37b38fdf3368fd4afceced/model.safetensors",
+      "var/model-benchmark/huggingface/hub/models--ustc-community--dfine-nano-coco/snapshots/066438d3d8f0da137a37b38fdf3368fd4afceced/preprocessor_config.json",
+      "var/model-benchmark/huggingface/hub/models--PekingU--rtdetr_v2_r18vd/snapshots/5650961749fa93567c0d46fc7f43ea4f9e914107/config.json",
+      "var/model-benchmark/huggingface/hub/models--PekingU--rtdetr_v2_r18vd/snapshots/5650961749fa93567c0d46fc7f43ea4f9e914107/model.safetensors",
+      "var/model-benchmark/huggingface/hub/models--PekingU--rtdetr_v2_r18vd/snapshots/5650961749fa93567c0d46fc7f43ea4f9e914107/preprocessor_config.json",
+      "var/model-benchmark/huggingface/hub/models--HuggingFaceTB--SmolVLM2-500M-Video-Instruct/snapshots/7b375e1b73b11138ff12fe22c8f2822d8fe03467/added_tokens.json",
+      "var/model-benchmark/huggingface/hub/models--HuggingFaceTB--SmolVLM2-500M-Video-Instruct/snapshots/7b375e1b73b11138ff12fe22c8f2822d8fe03467/chat_template.json",
+      "var/model-benchmark/huggingface/hub/models--HuggingFaceTB--SmolVLM2-500M-Video-Instruct/snapshots/7b375e1b73b11138ff12fe22c8f2822d8fe03467/config.json",
+      "var/model-benchmark/huggingface/hub/models--HuggingFaceTB--SmolVLM2-500M-Video-Instruct/snapshots/7b375e1b73b11138ff12fe22c8f2822d8fe03467/generation_config.json",
+      "var/model-benchmark/huggingface/hub/models--HuggingFaceTB--SmolVLM2-500M-Video-Instruct/snapshots/7b375e1b73b11138ff12fe22c8f2822d8fe03467/merges.txt",
+      "var/model-benchmark/huggingface/hub/models--HuggingFaceTB--SmolVLM2-500M-Video-Instruct/snapshots/7b375e1b73b11138ff12fe22c8f2822d8fe03467/model.safetensors",
+      "var/model-benchmark/huggingface/hub/models--HuggingFaceTB--SmolVLM2-500M-Video-Instruct/snapshots/7b375e1b73b11138ff12fe22c8f2822d8fe03467/preprocessor_config.json",
+      "var/model-benchmark/huggingface/hub/models--HuggingFaceTB--SmolVLM2-500M-Video-Instruct/snapshots/7b375e1b73b11138ff12fe22c8f2822d8fe03467/processor_config.json",
+      "var/model-benchmark/huggingface/hub/models--HuggingFaceTB--SmolVLM2-500M-Video-Instruct/snapshots/7b375e1b73b11138ff12fe22c8f2822d8fe03467/special_tokens_map.json",
+      "var/model-benchmark/huggingface/hub/models--HuggingFaceTB--SmolVLM2-500M-Video-Instruct/snapshots/7b375e1b73b11138ff12fe22c8f2822d8fe03467/tokenizer.json",
+      "var/model-benchmark/huggingface/hub/models--HuggingFaceTB--SmolVLM2-500M-Video-Instruct/snapshots/7b375e1b73b11138ff12fe22c8f2822d8fe03467/tokenizer_config.json",
+      "var/model-benchmark/huggingface/hub/models--HuggingFaceTB--SmolVLM2-500M-Video-Instruct/snapshots/7b375e1b73b11138ff12fe22c8f2822d8fe03467/vocab.json"
+    ]
+  },
+  "after": {
+    "file_count": 76961,
+    "total_logical_bytes": 9906363627,
+    "errors": [],
+    "hashes": {
+      "fresh": 30,
+      "reused_unchanged_size_mtime": 72526
+    },
+    "links_not_followed": [
+      "var/model-benchmark/huggingface/hub/models--ustc-community--dfine-small-coco/snapshots/f79e65b5fbb33ceb9d3ebba042955d7410c608f8/config.json",
+      "var/model-benchmark/huggingface/hub/models--ustc-community--dfine-small-coco/snapshots/f79e65b5fbb33ceb9d3ebba042955d7410c608f8/model.safetensors",
+      "var/model-benchmark/huggingface/hub/models--ustc-community--dfine-small-coco/snapshots/f79e65b5fbb33ceb9d3ebba042955d7410c608f8/preprocessor_config.json",
+      "var/model-benchmark/huggingface/hub/models--ustc-community--dfine-nano-coco/snapshots/066438d3d8f0da137a37b38fdf3368fd4afceced/config.json",
+      "var/model-benchmark/huggingface/hub/models--ustc-community--dfine-nano-coco/snapshots/066438d3d8f0da137a37b38fdf3368fd4afceced/model.safetensors",
+      "var/model-benchmark/huggingface/hub/models--ustc-community--dfine-nano-coco/snapshots/066438d3d8f0da137a37b38fdf3368fd4afceced/preprocessor_config.json",
+      "var/model-benchmark/huggingface/hub/models--PekingU--rtdetr_v2_r18vd/snapshots/5650961749fa93567c0d46fc7f43ea4f9e914107/config.json",
+      "var/model-benchmark/huggingface/hub/models--PekingU--rtdetr_v2_r18vd/snapshots/5650961749fa93567c0d46fc7f43ea4f9e914107/model.safetensors",
+      "var/model-benchmark/huggingface/hub/models--PekingU--rtdetr_v2_r18vd/snapshots/5650961749fa93567c0d46fc7f43ea4f9e914107/preprocessor_config.json",
+      "var/model-benchmark/huggingface/hub/models--HuggingFaceTB--SmolVLM2-500M-Video-Instruct/snapshots/7b375e1b73b11138ff12fe22c8f2822d8fe03467/added_tokens.json",
+      "var/model-benchmark/huggingface/hub/models--HuggingFaceTB--SmolVLM2-500M-Video-Instruct/snapshots/7b375e1b73b11138ff12fe22c8f2822d8fe03467/chat_template.json",
+      "var/model-benchmark/huggingface/hub/models--HuggingFaceTB--SmolVLM2-500M-Video-Instruct/snapshots/7b375e1b73b11138ff12fe22c8f2822d8fe03467/config.json",
+      "var/model-benchmark/huggingface/hub/models--HuggingFaceTB--SmolVLM2-500M-Video-Instruct/snapshots/7b375e1b73b11138ff12fe22c8f2822d8fe03467/generation_config.json",
+      "var/model-benchmark/huggingface/hub/models--HuggingFaceTB--SmolVLM2-500M-Video-Instruct/snapshots/7b375e1b73b11138ff12fe22c8f2822d8fe03467/merges.txt",
+      "var/model-benchmark/huggingface/hub/models--HuggingFaceTB--SmolVLM2-500M-Video-Instruct/snapshots/7b375e1b73b11138ff12fe22c8f2822d8fe03467/model.safetensors",
+      "var/model-benchmark/huggingface/hub/models--HuggingFaceTB--SmolVLM2-500M-Video-Instruct/snapshots/7b375e1b73b11138ff12fe22c8f2822d8fe03467/preprocessor_config.json",
+      "var/model-benchmark/huggingface/hub/models--HuggingFaceTB--SmolVLM2-500M-Video-Instruct/snapshots/7b375e1b73b11138ff12fe22c8f2822d8fe03467/processor_config.json",
+      "var/model-benchmark/huggingface/hub/models--HuggingFaceTB--SmolVLM2-500M-Video-Instruct/snapshots/7b375e1b73b11138ff12fe22c8f2822d8fe03467/special_tokens_map.json",
+      "var/model-benchmark/huggingface/hub/models--HuggingFaceTB--SmolVLM2-500M-Video-Instruct/snapshots/7b375e1b73b11138ff12fe22c8f2822d8fe03467/tokenizer.json",
+      "var/model-benchmark/huggingface/hub/models--HuggingFaceTB--SmolVLM2-500M-Video-Instruct/snapshots/7b375e1b73b11138ff12fe22c8f2822d8fe03467/tokenizer_config.json",
+      "var/model-benchmark/huggingface/hub/models--HuggingFaceTB--SmolVLM2-500M-Video-Instruct/snapshots/7b375e1b73b11138ff12fe22c8f2822d8fe03467/vocab.json"
+    ]
+  },
+  "net_logical_bytes_reduction": 7417130875,
+  "cleanup": {
+    "initial_removals": [
+      {
+        "path": "var/release-audit-20261111/finalize_evidence.py",
+        "bytes": 22582,
+        "sha256": "9b41e23ca13fa79c867c610af5eafd0d1e8910ff4e106e0a02fd0bd12b517d30",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/release-audit-20261111/finish_resumed_reports.py",
+        "bytes": 17844,
+        "sha256": "fc3144fdeedfdbd56722dbad29ba07634080712e31208d60fc61c1eb49d442c1",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/release-audit-20261111/inspect_retention.py",
+        "bytes": 2774,
+        "sha256": "52f990a0d0321b4ac1c47cdecbaedebb02067e4b4cd5b886b2a31962a1ccb357",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/release-audit-20261111/recover_and_measure.py",
+        "bytes": 2054,
+        "sha256": "8d43494d2bb40f43b5528e1e0f97d1d7bf27a8ab3d325da47693169a875df4ad",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/release-audit-20261111/resume_linux.py",
+        "bytes": 4000,
+        "sha256": "b018de9be56f46e7b58d3233dbb12e3d5ec20dc2fcb07e5262009ef98b4a3477",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/release-audit-20261111/runtime-image.tar",
+        "bytes": 536346624,
+        "sha256": "e884b5dc4a603b5816b932b4f0fd35aecc4e619f08a85e379b453a59ca09fd83",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/release-audit-20261111/run_linux_checks.py",
+        "bytes": 3070,
+        "sha256": "6bd7f2328ee197a7d2937fd95e879a87e79d7a34d476a67310ed9c972986bdb1",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/release-audit-20261111/run_local_checks.py",
+        "bytes": 2921,
+        "sha256": "1f4e8f84a14217b184388cb15f18d66215d9dc4fe4a89f18b4052e20dce81e46",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/release-audit-20261111/run_performance.py",
+        "bytes": 2866,
+        "sha256": "5422a9ab9f382c0345216e865cfc922ec6633165f92c0dd55784c30327cc662a",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/release-audit-20261111/grype-cache/grype-db-download3031804826/vulnerability.db",
+        "bytes": 3414958080,
+        "sha256": "916c012179697a1151a1b993d9c5c1dd43e54626b924916fd2801a5f3d0f17b2",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/engineering-audit-20261112/capture_final.py",
+        "bytes": 4086,
+        "sha256": "db6a00a8a428e3ee3b7d047b4d062e54bb969b28dbbbc0b0247a20cae8c12a6b",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/engineering-audit-20261112/check_rtdetr.py",
+        "bytes": 1757,
+        "sha256": "1fbeb6481bafe583e1e2300c32e49692c14234cfda62ac790289bb27b97e40dd",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/engineering-audit-20261112/diagnose_rtdetr_load.py",
+        "bytes": 1206,
+        "sha256": "cb2de068e64614dde7670585931051a96b099a771a1b89d1c8cb8a3e883ee2a2",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/engineering-audit-20261112/finish_cleanup.py",
+        "bytes": 4025,
+        "sha256": "a646a6a84a630735f88b611f5149b783b8f2e7174b392a47b0e2c5011b24e28e",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/engineering-audit-20261112/finish_image.py",
+        "bytes": 2282,
+        "sha256": "b9cbdc2ca461b491b21f87f21a1c6547f4010c9b5e1db6ef2f5d9c1f6d506cbc",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/engineering-audit-20261112/organize_docs.py",
+        "bytes": 10700,
+        "sha256": "97d0be6c85b2eb45857f1408bd474c8ea3d2a3be67ae282bf9d23321cd5a64bb",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/engineering-audit-20261112/prepare_cleanup.py",
+        "bytes": 3351,
+        "sha256": "0b9ccb059a0745d9a026ae5ae8837df0eb5cb727ef5951442b3a4002c7de81e7",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/engineering-audit-20261112/prepare_clean_checkout.py",
+        "bytes": 1467,
+        "sha256": "b6bddc99c15981267322a360a45eafd95e4b8a93f874578d6ff279b6b1623c86",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/engineering-audit-20261112/reconcile_cleanup.py",
+        "bytes": 1714,
+        "sha256": "5f7b82c09b33d33ec154cdf8f3fafdd32a62ad3b9a3d746ccfb5e9dad1ee5152",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/engineering-audit-20261112/record_release_gates.py",
+        "bytes": 1066,
+        "sha256": "1c9f29ed1df81bf9dd567760d4ecb7d6c90115b92d8df598673780014d9d7bd9",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/engineering-audit-20261112/repeat_rtdetr.py",
+        "bytes": 1604,
+        "sha256": "dd66bd505a2899071c93f26aaac4cb2ad127e26efb476cab854dd7de264a7ba4",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/engineering-audit-20261112/runtime-image.tar",
+        "bytes": 550058496,
+        "sha256": "8ebda3a7fd5e2e6f9af64443bbcb18cd675e4867654682e30f95fb8c933f43b8",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/engineering-audit-20261112/run_clean_windows.py",
+        "bytes": 1169,
+        "sha256": "a4c790d999d636b11b59887cfecdb82ba01b243e111d93cde38cfb9b2d7ccdc2",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/engineering-audit-20261112/run_trivy_baseline.py",
+        "bytes": 2061,
+        "sha256": "37176a603233883689f9618ff10daf090c3e618719cf4e2350bd51688893d00f",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/engineering-audit-20261112/validate_handoff.py",
+        "bytes": 3853,
+        "sha256": "e21295aa787fec1cab3216c38344e23758ed6326a5b806c407a8e004374a6355",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/engineering-audit-20261112/verify_clean_container_build.py",
+        "bytes": 1913,
+        "sha256": "65418387185ebf8a3e199618df8d35a2872138af074e7ea555930a06999f05bd",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/engineering-audit-20261112/write_final_reports.py",
+        "bytes": 44637,
+        "sha256": "4be43c310f9d9377707c04c84798f33188f1657371fa7fb597f557f2b052429a",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/engineering-audit-20261112/write_security_report.py",
+        "bytes": 11758,
+        "sha256": "a297f21713ba058d88af5fd143f27a787f28f5777a905807288a6f387d46f15e",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/engineering-audit-20261112/trivy-cache/fanal/fanal.db",
+        "bytes": 1048576,
+        "sha256": "b3a6e60b0d24ca584bafb365eefbec60cc23673a357b67bc3ffe7e4cc18c7679",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/engineering-audit-20261112/trivy-cache/db/metadata.json",
+        "bytes": 151,
+        "sha256": "acd332c1be2f22837f4320f23bde37cb04a13e76389d2cc8b8c03f96da4d0443",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/engineering-audit-20261112/trivy-cache/db/trivy.db",
+        "bytes": 1764192256,
+        "sha256": "99fdc77556d4c2870c4288db54e6cddc88a7234a3db6e6895d101d441ed86e57",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/detector-startup-20261115/capture_results.py",
+        "bytes": 6363,
+        "sha256": "26e51c59c8b39ca63d911993ae47f562ccb97904b9ac71cd24bae4be93bfcc56",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/detector-startup-20261115/compare_loaders.py",
+        "bytes": 3354,
+        "sha256": "7457bea196640c446adaf21f06a1d806c4bfaae0fd5f366db6b0defecce66a42",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/detector-startup-20261115/profile_imports.py",
+        "bytes": 1488,
+        "sha256": "69e25e912543805bca621ec18385df92c968381af48e1f44380aea0552679a4f",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      },
+      {
+        "path": "var/detector-startup-20261115/run_pretrained_checks.py",
+        "bytes": 3115,
+        "sha256": "a96723ec22c0854d4061e8613e4043caf00837a1c8466e8d3824dad00d26edd8",
+        "reason": "Expired scanner cache, redundant local Docker image export, or completed task-only audit driver; reports and reusable scripts retained"
+      }
+    ],
+    "clone_environment": {
+      "planned_files": 27644,
+      "absent_files": 27644,
+      "remaining_files": 0,
+      "removed_logical_bytes": 1122480350,
+      "note": "Initial standard Windows path deletion stopped on long paths. Reconciled all baseline files using native PowerShell extended paths. Primary candidate environment retained."
+    },
+    "generated_tool_caches": {
+      "deleted_files": 55,
+      "deleted_bytes": 177646667
+    },
+    "total_deleted_files": 27734,
+    "total_deleted_logical_bytes": 7566902280,
+    "retained": "Primary environments and research dependency chain, weights, datasets, videos, ledgers, historical results, source history and reusable tooling",
+    "limits": "No Docker engine pruning. Logical sizes are not filesystem allocation. Historical scanner feed snapshots and task-only drivers intentionally removed. Initial clone deletion encountered Windows long-path errors; baseline paths subsequently reconciled absent."
+  },
+  "verification": {
+    "quality_checks": [
+      {
+        "check": "pip-check",
+        "command": [
+          "<project>\\.venv-candidate\\Scripts\\python.exe",
+          "-B",
+          "-m",
+          "pip",
+          "check"
+        ],
+        "exit_code": 0,
+        "seconds": 1.0796679999912158
+      },
+      {
+        "check": "doctor",
+        "command": [
+          "<project>\\.venv-candidate\\Scripts\\python.exe",
+          "-B",
+          "-m",
+          "coffee_ops",
+          "doctor"
+        ],
+        "exit_code": 0,
+        "seconds": 41.75297629996203
+      },
+      {
+        "check": "config",
+        "command": [
+          "<project>\\.venv-candidate\\Scripts\\python.exe",
+          "-B",
+          "-m",
+          "coffee_ops",
+          "validate-config"
+        ],
+        "exit_code": 0,
+        "seconds": 0.16355879994807765
+      },
+      {
+        "check": "pytest-coverage",
+        "command": [
+          "<project>\\.venv-candidate\\Scripts\\python.exe",
+          "-B",
+          "-m",
+          "coverage",
+          "run",
+          "--source=coffee_ops",
+          "-m",
+          "pytest",
+          "-q",
+          "-o",
+          "cache_dir=<project>\\var\\deep-clean-20261115\\quality\\.pytest_cache",
+          "tests"
+        ],
+        "exit_code": 0,
+        "seconds": 85.71274749998702
+      },
+      {
+        "check": "coverage-report",
+        "command": [
+          "<project>\\.venv-candidate\\Scripts\\python.exe",
+          "-B",
+          "-m",
+          "coverage",
+          "report"
+        ],
+        "exit_code": 0,
+        "seconds": 0.5855454999837093
+      },
+      {
+        "check": "coverage-json",
+        "command": [
+          "<project>\\.venv-candidate\\Scripts\\python.exe",
+          "-B",
+          "-m",
+          "coverage",
+          "json",
+          "-o",
+          "<project>\\var\\deep-clean-20261115\\quality\\coverage.json"
+        ],
+        "exit_code": 0,
+        "seconds": 0.5050485999672674
+      },
+      {
+        "check": "ruff",
+        "command": [
+          "<project>\\.venv-candidate\\Scripts\\python.exe",
+          "-B",
+          "-m",
+          "ruff",
+          "check",
+          "--cache-dir",
+          "<project>\\var\\deep-clean-20261115\\quality\\.ruff_cache",
+          "--select",
+          "E9,F",
+          "coffee_ops",
+          "scripts",
+          "tests"
+        ],
+        "exit_code": 0,
+        "seconds": 0.11959270003717393
+      },
+      {
+        "check": "mypy",
+        "command": [
+          "<project>\\.venv-candidate\\Scripts\\python.exe",
+          "-B",
+          "-m",
+          "mypy",
+          "--cache-dir",
+          "<project>\\var\\deep-clean-20261115\\quality\\.mypy_cache",
+          "--show-traceback",
+          "--check-untyped-defs",
+          "--ignore-missing-imports",
+          "coffee_ops"
+        ],
+        "exit_code": 0,
+        "seconds": 52.48388170002727
+      },
+      {
+        "check": "acceptance",
+        "command": [
+          "<project>\\.venv-candidate\\Scripts\\python.exe",
+          "-B",
+          "scripts/verify_mvp.py",
+          "--output",
+          "<project>\\var\\deep-clean-20261115\\quality\\acceptance"
+        ],
+        "exit_code": 0,
+        "seconds": 118.18894339998951
+      }
+    ],
+    "windows_tests": 205,
+    "pytest_subtests": 48,
+    "linux_tests": 205,
+    "linux_scope": "Existing video-test image with current source/tests read-only mounts and network none; no image rebuild or security rescan",
+    "acceptance_cli_checks": 21,
+    "acceptance_commands": [
+      {
+        "arguments": [
+          "doctor"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "make-demo",
+          "--directory",
+          "<temporary-workdir>\\demo"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "import-pos",
+          "--file",
+          "<temporary-workdir>\\demo\\orders.json"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "replay",
+          "--source",
+          "<temporary-workdir>\\demo\\fixture.avi",
+          "--camera",
+          "shop",
+          "--run-id",
+          "demo",
+          "--start",
+          "2026-01-01T09:00:00Z",
+          "--fixture-detections",
+          "<temporary-workdir>\\demo\\detections.json"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "reconcile"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "report",
+          "--date",
+          "2026-01-01"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "export-predictions",
+          "--run-id",
+          "demo",
+          "--camera",
+          "shop"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "evaluate",
+          "--truth",
+          "<temporary-workdir>\\demo\\ground-truth.json",
+          "--predictions",
+          "<temporary-workdir>\\predictions.json"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "replay",
+          "--source",
+          "<temporary-workdir>\\demo\\fixture.avi",
+          "--camera",
+          "shop",
+          "--run-id",
+          "demo",
+          "--start",
+          "2026-01-01T09:00:00Z",
+          "--fixture-detections",
+          "<temporary-workdir>\\demo\\detections.json"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "reconcile"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "report",
+          "--date",
+          "2026-01-01"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "replay",
+          "--source",
+          "<temporary-workdir>\\demo\\fixture.avi",
+          "--camera",
+          "shop",
+          "--run-id",
+          "weights-missing",
+          "--start",
+          "2026-01-01T09:00:00Z"
+        ],
+        "exit_code": 2,
+        "expected": 2
+      },
+      {
+        "arguments": [
+          "import-pos",
+          "--file",
+          "<temporary-workdir>\\missing.csv"
+        ],
+        "exit_code": 2,
+        "expected": 2
+      },
+      {
+        "arguments": [
+          "replay",
+          "--source",
+          "<temporary-workdir>\\traffic.avi",
+          "--camera",
+          "shop",
+          "--run-id",
+          "traffic",
+          "--start",
+          "2026-01-01T23:00:00Z",
+          "--fixture-detections",
+          "<temporary-workdir>\\traffic-detections.json"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "business-report",
+          "--date",
+          "2026-01-02",
+          "--timezone",
+          "Africa/Tunis",
+          "--camera",
+          "shop",
+          "--run-id",
+          "traffic"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "export-predictions",
+          "--run-id",
+          "traffic",
+          "--camera",
+          "shop",
+          "--all-events"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "evaluate-events",
+          "--truth",
+          "<temporary-workdir>\\traffic-truth.json",
+          "--predictions",
+          "<temporary-workdir>\\traffic-predictions.json"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "review-crossing",
+          "--event-id",
+          "d21080fcd5df2a9d31518e3420e7178d",
+          "--decision",
+          "rejected",
+          "--note",
+          "Synthetic review workflow check"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "business-report",
+          "--date",
+          "2026-01-02",
+          "--timezone",
+          "Africa/Tunis",
+          "--camera",
+          "shop",
+          "--run-id",
+          "traffic"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "replay",
+          "--source",
+          "<temporary-workdir>\\traffic.avi",
+          "--camera",
+          "shop",
+          "--run-id",
+          "traffic",
+          "--start",
+          "2026-01-01T23:00:00Z",
+          "--fixture-detections",
+          "<temporary-workdir>\\traffic-detections.json"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "business-report",
+          "--date",
+          "2026-01-02",
+          "--timezone",
+          "Africa/Tunis",
+          "--camera",
+          "shop",
+          "--run-id",
+          "traffic"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      }
+    ],
+    "repeat_replay_identical": true,
+    "coverage": {
+      "covered_lines": 2803,
+      "num_statements": 3341,
+      "percent_covered": 83.89703681532475,
+      "percent_covered_display": "84",
+      "missing_lines": 538,
+      "excluded_lines": 15,
+      "percent_statements_covered": 83.89703681532475,
+      "percent_statements_covered_display": "84"
+    }
+  },
+  "remaining_gaps": [
+    "No representative cafe footage or independent labels",
+    "No validated preparation completion or handover classifier",
+    "Live reconnect, queue lifecycle and sustained capacity unvalidated",
+    "Historical security findings remain open; no new feed scan",
+    "Legacy export and POS JSON readers materialize full documents"
+  ],
+  "raw_evidence": "var/deep-clean-20261115",
+  "inventory_compression": [
+    {
+      "source": "var\\deep-clean-20261115\\inventory-before.json",
+      "archive": "var\\deep-clean-20261115\\inventory-before.json.gz",
+      "original_bytes": 55312443,
+      "compressed_bytes": 8514299,
+      "original_sha256": "8e36175e2b8b5b31b279d44a16f5081dd848af7e672b78e4ccda77f763373fe8",
+      "archive_sha256": "63aa5b505f487680451cfce9cea94d62d75717ad416de21b946ea71f98d28c16"
+    },
+    {
+      "source": "var\\deep-clean-20261115\\inventory-after.json",
+      "archive": "var\\deep-clean-20261115\\inventory-after.json.gz",
+      "original_bytes": 36123810,
+      "compressed_bytes": 5857816,
+      "original_sha256": "2fb26f48c38e36290406d44b4c047a2dde19330a08daefba165119bde607c80f",
+      "archive_sha256": "c882e39560faa5c615a5ba74b23d67498b10b05d0dff3f12c68e0f3f735c2a55"
+    },
+    {
+      "source": "var\\deep-clean-20261115\\clone-environment-plan.json",
+      "archive": "var\\deep-clean-20261115\\clone-environment-plan.json.gz",
+      "original_bytes": 5316613,
+      "compressed_bytes": 285268,
+      "original_sha256": "793710802c49f8b283c7c5f2a3999545f09dcfa77c9644ede5337822baca93a0",
+      "archive_sha256": "450c8a88bd9cd60ccca684ed254155c3d7811ecf770dc5be1ac4118d94ee5533"
+    }
+  ],
+  "inventory_compression_saved_bytes": 82095483
+}

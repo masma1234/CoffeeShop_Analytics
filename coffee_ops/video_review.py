@@ -17,7 +17,7 @@ from .detector import FixtureDetector,YOLODetector
 from .pipeline import Pipeline
 from .resources import ResourceMonitor
 from .review_exports import DetectionJournal,event_rows,frame_rows,stream_json
-from .schema import Detection,file_hash,key,stamp,utc
+from .schema import Detection,file_hash,stamp,utc
 from .storage import SQLiteStore
 from .video_io import PTSVideoInput,PTSVideoWriter
 from .video_overlay import render

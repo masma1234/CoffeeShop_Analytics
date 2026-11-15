@@ -1,5 +1,11 @@
 # Cleanup manifest: 2026-11-12
 
+Superseding cleanup: [15 November deep cleanup](docs/audits/deep-clean-20261115.md)
+removes expired scanner caches, redundant Docker exports, task-only drivers and
+the disposable clone's virtual environment. The preservation statements below
+describe the 12 November checkpoint. Its saved scan results and source evidence
+remain; historical scanner databases are no longer retained for exact replay.
+
 Status: **COMPLETED with one reconciled logging interruption**, documented below.
 The exact proposal was written and reviewed before the first deletion.
 

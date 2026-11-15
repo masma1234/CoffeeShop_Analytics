@@ -2,7 +2,7 @@
 from __future__ import annotations
 import json
 from pathlib import Path
-from .schema import key,utc
+from .schema import utc
 
 
 class DetectionJournal:

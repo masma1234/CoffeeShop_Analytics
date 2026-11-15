@@ -1,15 +1,13 @@
 """Concurrency, migration, transaction faults and bounded-query regressions."""
-import json
 import sqlite3
 import threading
-import unittest
 from concurrent.futures import ThreadPoolExecutor
 from unittest.mock import patch
 
 from coffee_ops.alerts import alert
 from coffee_ops.pos_adapter import MockPOSAdapter, import_orders
 from coffee_ops.reconciliation import reconcile
-from coffee_ops.reporting import active_alerts, daily_report, unresolved_events
+from coffee_ops.reporting import active_alerts, daily_report
 from coffee_ops.schema import canonical, key
 from coffee_ops.storage import SQLiteStore, SCHEMA_VERSION
 from test_operations import StoreCase, START, event, order

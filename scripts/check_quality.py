@@ -23,7 +23,7 @@ def main() -> int:
         "pytest-coverage": ["-m", "coverage", "run", "--source=coffee_ops", "-m", "pytest", "-q", "-o", "cache_dir=" + str(args.output.resolve() / ".pytest_cache"), "tests"],
         "coverage-report": ["-m", "coverage", "report"],
         "coverage-json": ["-m", "coverage", "json", "-o", str(args.output.resolve() / "coverage.json")],
-        "ruff": ["-m", "ruff", "check", "--cache-dir", str(args.output.resolve() / ".ruff_cache"), "--select", "E9,F63,F7,F82", "coffee_ops", "scripts", "tests"],
+        "ruff": ["-m", "ruff", "check", "--cache-dir", str(args.output.resolve() / ".ruff_cache"), "--select", "E9,F", "coffee_ops", "scripts", "tests"],
         "mypy": ["-m", "mypy", "--cache-dir", str(args.output.resolve() / ".mypy_cache"), "--show-traceback", "--check-untyped-defs", "--ignore-missing-imports", "coffee_ops"],
         "acceptance": ["scripts/verify_mvp.py", "--output", str(args.output.resolve() / "acceptance")],
     }
