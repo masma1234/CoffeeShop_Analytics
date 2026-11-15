@@ -55,6 +55,9 @@ class DetectorBackendTests(unittest.TestCase):
             self.assertIsInstance(detections, list)
             self.assertTrue(all(d.class_id in {0, 1, 2} for d in detections))
             self.assertEqual(detector.metadata["version"], "untrained-test")
+            self.assertEqual(detector.startup_metrics["status"], "ready")
+            self.assertLess(detector.startup_metrics["total_seconds"], detector.startup_metrics["deadline_seconds"])
+            self.assertEqual(detector.startup_metrics["phases"][-1]["phase"], "ready")
         finally:
             detector.close()
         self.assertFalse(detector.process.is_alive())

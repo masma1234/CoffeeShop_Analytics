@@ -10,6 +10,7 @@ from pathlib import Path
 from typing import Any, Callable, Protocol, cast
 
 from .config import Config
+from .detector_startup import StartupDeadline
 from .schema import Detection, file_hash
 
 
@@ -45,10 +46,14 @@ def _worker(connection: Any, weights: str, names: dict[int, str], device: str, t
     try:
         import sys
         sys.stdout = sys.stderr  # Third-party model diagnostics must not corrupt CLI JSON.
+        connection.send(("loading", "backend_validation"))
         from .health import backend_health
         backend_health()
+        connection.send(("loading", "backend_import"))
         from ultralytics import YOLO
+        connection.send(("loading", "model_load"))
         model = YOLO(weights)
+        connection.send(("loading", "class_validation"))
         actual = dict(enumerate(model.names)) if isinstance(model.names, list) else model.names
         if actual != names:
             raise ValueError(f"Weight class names/IDs mismatch: {actual}")
@@ -69,22 +74,41 @@ def _worker(connection: Any, weights: str, names: dict[int, str], device: str, t
         connection.close()
 
 
+def _validate_rtdetr_checkpoint(directory: str, weights: str, names: dict[int, str]) -> None:
+    root = Path(directory)
+    if (root / "model.safetensors").resolve() != Path(weights).resolve():
+        raise ValueError("RT-DETR metadata must hash the actual model.safetensors being loaded")
+    configuration = json.loads((root / "config.json").read_text(encoding="utf-8"))
+    if configuration.get("model_type") != "rt_detr_v2" or configuration.get("id2label") != {str(cid): name for cid, name in names.items()}:
+        raise ValueError("RT-DETR architecture or embedded catalog differs from configuration")
+    processor = json.loads((root / "preprocessor_config.json").read_text(encoding="utf-8"))
+    if processor.get("image_processor_type") != "RTDetrImageProcessor":
+        raise ValueError("RT-DETR requires the supported RTDetrImageProcessor checkpoint")
+
+
 def _rtdetr_worker(connection: Any, directory: str, weights: str, names: dict, enabled: set,
                    device: str, threshold: float, acceptance: dict, image_size: int, half: bool) -> None:
     try:
         import sys
         sys.stdout=sys.stderr
+        connection.send(("loading", "checkpoint_validation"))
+        _validate_rtdetr_checkpoint(directory, weights, names)
+        connection.send(("loading", "torch_import"))
         import torch
         from PIL import Image
-        from transformers import AutoImageProcessor,AutoModelForObjectDetection
+        connection.send(("loading", "transformers_import"))
+        from transformers import RTDetrImageProcessor,RTDetrV2ForObjectDetection
         root=Path(directory)
-        if (root/"model.safetensors").resolve()!=Path(weights).resolve():
-            raise ValueError("RT-DETR metadata must hash the actual model.safetensors being loaded")
-        model=AutoModelForObjectDetection.from_pretrained(root,local_files_only=True,trust_remote_code=False,use_safetensors=True).to(device).eval()
+        connection.send(("loading", "model_load"))
+        model=RTDetrV2ForObjectDetection.from_pretrained(root,local_files_only=True,use_safetensors=True)
+        connection.send(("loading", "class_validation"))
         if model.config.model_type!="rt_detr_v2" or model.config.id2label!=names:
             raise ValueError("RT-DETR architecture or embedded catalog differs from configuration")
-        processor=AutoImageProcessor.from_pretrained(root,local_files_only=True,use_fast=False,trust_remote_code=False)
+        connection.send(("loading", "processor_load"))
+        processor=RTDetrImageProcessor.from_pretrained(root,local_files_only=True)
         processor.size={"height":image_size,"width":image_size}
+        connection.send(("loading", "device_setup"))
+        model=model.to(device).eval()
         half=half and device.startswith("cuda")
         if half:model.half()
         connection.send(("ready",None))
@@ -96,7 +120,7 @@ def _rtdetr_worker(connection: Any, directory: str, weights: str, names: dict, e
             if half:batch["pixel_values"]=batch["pixel_values"].half()
             with torch.inference_mode():output=model(**batch)
             prediction=processor.post_process_object_detection(output,threshold=.001,
-                target_sizes=torch.tensor([[height,width]],device=device))[0]
+                target_sizes=[(height,width)])[0]
             detections=[]
             for b,c,s in zip(prediction["boxes"].cpu().tolist(),prediction["labels"].cpu().tolist(),prediction["scores"].cpu().tolist()):
                 if c not in enabled:continue
@@ -139,13 +163,17 @@ class YOLODetector:
             arguments=(child,str(config.path(cfg["weights"])),names,cfg["device"],min(thresholds,default=.25))
             target=_worker
         self.process = ctx.Process(target=target,args=arguments,daemon=True)
-        self.process.start()
-        child.close()
+        startup = StartupDeadline(cfg["load_timeout_seconds"])
+        self.startup_metrics = startup.metrics
         try:
-            self._receive(cfg["load_timeout_seconds"])
-        except (RuntimeError, TimeoutError, EOFError, OSError):
+            self.process.start()
+            child.close()
+            startup.wait(self.connection)
+        except BaseException:
             self.close()
             raise
+        finally:
+            child.close()
 
     def _receive(self, timeout: float) -> Any:
         if not self.connection.poll(timeout):
@@ -154,6 +182,9 @@ class YOLODetector:
         status, payload = self.connection.recv()
         if status == "error":
             raise RuntimeError(f"Detector failed: {payload}")
+        if status != "ok":
+            self.close()
+            raise RuntimeError("Invalid detector inference response")
         return payload
 
     def detect(self, frame: Any, frame_index: int) -> list[Detection]:
@@ -190,9 +221,10 @@ class YOLODetector:
         return payload
 
     def close(self) -> None:
-        if self.process.is_alive():
-            self.process.terminate()
-        self.process.join(timeout=3)
+        if self.process.pid is not None:
+            if self.process.is_alive():
+                self.process.terminate()
+            self.process.join(timeout=3)
         self.connection.close()
 
 

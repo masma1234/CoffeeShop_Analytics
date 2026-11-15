@@ -116,9 +116,11 @@ def review_video(config,source,directory,camera_id,run_id,start,*,database=None,
     timings: deque[float] = deque(maxlen=10000)
     started=time.perf_counter();decoded=processed=0;last_offset=Fraction(0)
     exported=[];next_export=0.;sample_count=0;last_result={};complete=False;error=None
+    detector_startup=None
     try:
         store=SQLiteStore(database or config.path(config.data["storage"]["path"]))
         detector=FixtureDetector(fixture) if fixture else YOLODetector(config,camera_id)
+        detector_startup=getattr(detector,"startup_metrics",None)
         metadata=dict(detector.metadata)
         if fixture:metadata["fixture_sha256"]=file_hash(str(fixture))
         raw_journal=DetectionJournal(destination/"detections.json",{"model":metadata,"source_identity":identity,
@@ -212,6 +214,7 @@ def review_video(config,source,directory,camera_id,run_id,start,*,database=None,
             if source.stat().st_size!=source_stat.st_size or source.stat().st_mtime_ns!=source_stat.st_mtime_ns:raise ValueError("Source file changed during processing")
     except BaseException as exc:
         complete=False;error=f"{type(exc).__name__}: {exc}"
+        detector_startup=getattr(exc,"startup_metrics",detector_startup)
         if pipeline:
             try:pipeline.health("error",error,component="video_review")
             except Exception:pass
@@ -233,6 +236,7 @@ def review_video(config,source,directory,camera_id,run_id,start,*,database=None,
             "event_counts_by_kind":dict(counts),"prepared_drinks":None,"confirmed_handovers":None,"customer_pickups":None,
             "semantic_notice":"Detector/zone motion supports visible transitions and advisory candidates, not validated preparation completion, transfer, customer role or paid sales.",
             "resources":resources,"model_worker_metrics":getattr(detector,"last_model_metrics",{}),
+            "detector_startup":detector_startup,
             "timestamp_notice":"Original PTS journal preserved. MP4 offsets quantized to 1/60000 second; audio omitted; odd dimensions padded at right/bottom.",
             "max_output_pts_rounding_error_seconds":writer.max_rounding_error if writer else None,
             "latency_scope":"Parent receipt through detector/tracker/storage/overlay/encoder enqueue; excludes asynchronous decode/mux completion. Total wall time includes worker load/flush.",

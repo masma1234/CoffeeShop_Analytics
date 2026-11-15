@@ -45,6 +45,17 @@ validated optimal values. Use `--device cpu` when preparing a CPU config, or edi
 the generated model device explicitly. No silent CPU fallback is used for a failed
 CUDA model load. `--max-frames 300` bounds an initial source-frame trial.
 
+Startup reports stages such as `torch_import`, `transformers_import`, `model_load`
+and `device_setup` to stderr; stdout remains JSON. RT-DETR uses its dedicated model
+and image processor classes, with exact checkpoint architecture/catalog/processor
+validation before imports. The default 60-second `model.load_timeout_seconds`
+still covers the entire spawned worker startup. Progress does not reset it. A
+failure names the last stage, terminates the worker and writes the available
+`detector_startup` diagnostics in `processing_summary.json`. Phase timestamps are
+parent-observed operation starts, not isolated operation durations. Parent-side
+checkpoint hashing is excluded from this startup timer and included in total
+review wall time. See [the measured startup check](benchmarks/detector_startup_20261115.md).
+
 Always choose a new output directory. To replay the same source/config without
 duplicating ledger events, use the same run ID and database with another new output
 directory. Changed source/config requires a new run. Keep sessions separate when

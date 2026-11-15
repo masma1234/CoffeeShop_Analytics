@@ -86,6 +86,12 @@ metrics. See [the annotation contract](docs/annotation_guidelines.md),
 [evaluation workflow](docs/DATA_AND_EVALUATION.md) and
 [benchmark protocol](docs/benchmark_protocol.md).
 
+Model startup logs identify the current import/load stage. One configured deadline
+covers the whole worker startup; progress never extends it. Video processing
+summaries retain startup timings and the last stage on a load failure. See the
+[startup verification](docs/benchmarks/detector_startup_20261115.md) for measured
+limits and the dedicated RT-DETR loader change.
+
 ## Local read API
 
 Initialize the database with a writer first. Set `COFFEE_OPS_API_TOKEN` to a private

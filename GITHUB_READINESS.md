@@ -1,5 +1,12 @@
 # GitHub readiness
 
+Local continuation, 15 November 2026: the reviewed working tree was preserved as
+baseline commit `b2ebc3c` on `fix/detector-startup-20261115` before new changes.
+The unstaged/index/HEAD statements below describe the 12 November audit checkpoint.
+Current inference startup work and its verification are documented in the
+[startup report](docs/benchmarks/detector_startup_20261115.md). No remote, push,
+publication or deployment was performed during this continuation.
+
 **Decision: NO-GO for public publication.** Recommend a private owner-review
 repository after explicit destination/visibility approval and rights review.
 Preparation is local only: no push, repository creation, remote change, public

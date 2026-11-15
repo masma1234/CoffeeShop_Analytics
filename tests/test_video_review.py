@@ -8,6 +8,7 @@ from pathlib import Path
 import tempfile
 from types import SimpleNamespace
 import unittest
+from unittest.mock import patch
 
 import numpy as np
 
@@ -75,6 +76,21 @@ class NativeVideoReviewTests(unittest.TestCase):
     def review(self,name,**kwargs):
         from coffee_ops.video_review import review_video
         return review_video(self.config,self.source,self.root/name,"shop","video-review","2026-01-01T09:00:00Z",fixture=self.fixture,**kwargs)
+
+    def test_startup_failure_is_preserved_in_failed_processing_summary(self):
+        from coffee_ops.detector_startup import DetectorStartupTimeout
+        from coffee_ops.video_review import review_video
+        metrics={"status":"failed","deadline_seconds":1,"total_seconds":1,
+                 "phases":[{"phase":"transformers_import","elapsed_seconds":.1}]}
+        failure=DetectorStartupTimeout("Detector startup exceeded 1s deadline; last stage: transformers_import",metrics)
+        with patch("coffee_ops.video_review.YOLODetector",side_effect=failure):
+            with self.assertRaises(DetectorStartupTimeout):
+                review_video(self.config,self.source,self.root/"load-failure","shop","video-review","2026-01-01T09:00:00Z")
+        summary=json.loads((self.root/"load-failure/processing_summary.json").read_text())
+        self.assertEqual(summary["status"],"failed")
+        self.assertEqual(summary["detector_startup"],metrics)
+        self.assertEqual(summary["inferred_frames"],0)
+        self.assertIsNone(summary["confirmed_handovers"])
 
     def test_vfr_sampling_preserves_all_frame_pts_and_source_bytes(self):
         import av

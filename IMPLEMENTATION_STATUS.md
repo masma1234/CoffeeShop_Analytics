@@ -3,6 +3,12 @@
 Audit started 2026-11-12. Report generated 2026-11-12T22:42:15.821075+00:00. This is a scope and validation
 record; the [README](README.md) is the authoritative overview and setup guide.
 
+15 November continuation: [startup verification](docs/benchmarks/detector_startup_20261115.md)
+documents the dedicated RT-DETR loader, fixed deadline, bounded stage diagnostics
+and cancellation/disconnect regression tests. The capability table below records
+the earlier audit checkpoint; new inference checks do not establish cafe accuracy,
+cold-boot reliability or security clearance.
+
 | Capability | Implemented behavior | Validation boundary |
 |---|---|---|
 | Decode/replay | Spawned decoder, bounded queue, sampling, deadlines, camera lease | Synthetic recordings and fault tests; live reconnection and sustained camera operation unvalidated |

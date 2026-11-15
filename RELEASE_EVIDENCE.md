@@ -1,5 +1,11 @@
 # Release evidence
 
+The [15 November startup continuation](docs/benchmarks/detector_startup_20261115.md)
+records subsequent source changes and their separate checks. The 12 November
+image digests and source-equality claims below apply to that historical checkpoint,
+not to the later working tree. No new production-image scan or deployment is
+claimed by the startup continuation.
+
 Audit started 2026-11-12. Generated 2026-11-12T22:42:15.821075+00:00. Commands and raw logs are local under
 `var/engineering-audit-20261112`. They are preserved as executed, including failed
 attempts. No remote CI, cloud staging, real-camera accuracy or production capacity

@@ -1,0 +1,1335 @@
+{
+  "generated_utc": "2026-11-15T10:24:06.195049+00:00",
+  "baseline_commit": "b2ebc3c",
+  "scope": "Windows CPU fixed-deadline startup and repeated public-photo inference/replay; Linux logic/native tests. No cafe accuracy, cold-boot reliability, GPU upgrade, new image scan or deployment claim.",
+  "baseline": {
+    "path": "var/detector-startup-20261115/baseline-tests.log",
+    "bytes": 59654,
+    "sha256": "cf4c804d1408b7ad01878d88a9ead8043d0ee41b15aea9d037754aa6653502bf",
+    "tests": 187,
+    "seconds": 180.388,
+    "passed": true
+  },
+  "final_windows": {
+    "path": "var/detector-startup-20261115/final-windows-tests.log",
+    "bytes": 64098,
+    "sha256": "462cf59985b6c211e4ee6ebf153f9ac48361755a66843446b2a2113f1d3643a3",
+    "tests": 200,
+    "seconds": 103.139,
+    "passed": true
+  },
+  "final_linux": {
+    "path": "var/detector-startup-20261115/final-linux-tests.log",
+    "bytes": 64116,
+    "sha256": "25e85f0bba8f50f45593149dba69d35415b0c4d48523faef8154858d4ee78de4",
+    "tests": 200,
+    "seconds": 32.553,
+    "passed": true,
+    "execution": {
+      "arguments": [
+        "run",
+        "--rm",
+        "--network",
+        "none",
+        "--cap-drop",
+        "ALL",
+        "--security-opt",
+        "no-new-privileges",
+        "--read-only",
+        "--tmpfs",
+        "/tmp:rw,nosuid,nodev,size=512m",
+        "--cpus",
+        "2",
+        "--memory",
+        "3g",
+        "--mount",
+        "type=bind,source=<project>\\coffee_ops,target=/app/coffee_ops,readonly",
+        "--mount",
+        "type=bind,source=<project>\\tests,target=/app/tests,readonly",
+        "coffee-ops-engineering-video:20261112",
+        "python",
+        "-B",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0,
+      "seconds": 37.255737599999996,
+      "scope": "Existing audited Linux video-test image with current app and tests mounted read-only; no rebuild, new image scan, network or deployment"
+    },
+    "existing_image_id": "sha256:679fa9b08f8b1b8b5f1f9b80b7b13f224c82d81ea6613417eb99614716460487"
+  },
+  "quality_first_invocation": [
+    {
+      "check": "pip-check",
+      "command": [
+        "<project>\\.venv-candidate\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "exit_code": 0,
+      "seconds": 22.941338400007226
+    },
+    {
+      "check": "doctor",
+      "command": [
+        "<project>\\.venv-candidate\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "coffee_ops",
+        "doctor"
+      ],
+      "exit_code": 0,
+      "seconds": 33.97564000001876
+    },
+    {
+      "check": "config",
+      "command": [
+        "<project>\\.venv-candidate\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "coffee_ops",
+        "validate-config"
+      ],
+      "exit_code": 0,
+      "seconds": 0.5813942999811843
+    },
+    {
+      "check": "pytest-coverage",
+      "command": [
+        "<project>\\.venv-candidate\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "coverage",
+        "run",
+        "--source=coffee_ops",
+        "-m",
+        "pytest",
+        "-q",
+        "-o",
+        "cache_dir=<project>\\var\\detector-startup-20261115\\quality\\.pytest_cache",
+        "tests"
+      ],
+      "exit_code": 0,
+      "seconds": 220.1593145999941
+    },
+    {
+      "check": "coverage-report",
+      "command": [
+        "<project>\\.venv-candidate\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "coverage",
+        "report"
+      ],
+      "exit_code": 0,
+      "seconds": 4.169506500009447
+    },
+    {
+      "check": "coverage-json",
+      "command": [
+        "<project>\\.venv-candidate\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "coverage",
+        "json",
+        "-o",
+        "<project>\\var\\detector-startup-20261115\\quality\\coverage.json"
+      ],
+      "exit_code": 0,
+      "seconds": 2.206061500008218
+    },
+    {
+      "check": "ruff",
+      "command": [
+        "<project>\\.venv-candidate\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "ruff",
+        "check",
+        "--cache-dir",
+        "<project>\\var\\detector-startup-20261115\\quality\\.ruff_cache",
+        "--select",
+        "E9,F63,F7,F82",
+        "coffee_ops",
+        "scripts",
+        "tests"
+      ],
+      "exit_code": 0,
+      "seconds": 0.9502348999958485
+    },
+    {
+      "check": "mypy",
+      "command": [
+        "<project>\\.venv-candidate\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "mypy",
+        "--cache-dir",
+        "<project>\\var\\detector-startup-20261115\\quality\\.mypy_cache",
+        "--show-traceback",
+        "--check-untyped-defs",
+        "--ignore-missing-imports",
+        "coffee_ops"
+      ],
+      "exit_code": 1,
+      "seconds": 143.18410850001965
+    },
+    {
+      "check": "acceptance",
+      "command": [
+        "<project>\\.venv-candidate\\Scripts\\python.exe",
+        "-B",
+        "scripts/verify_mvp.py",
+        "--output",
+        "<project>\\var\\detector-startup-20261115\\quality\\acceptance"
+      ],
+      "exit_code": 0,
+      "seconds": 232.18840829998953
+    }
+  ],
+  "resolved_failures": [
+    "First new fault-test invocation found startup timeouts were caught as OSError/disconnects. Catch narrowed to pipe operations; timeout regressions pass.",
+    "Initial quality command exited 1 only for the dedicated processor's target_sizes type annotation. Replaced the tensor argument with its supported list of size tuples. Final mypy and CPU preprocessing/model/postprocessing equivalence pass. Other original quality checks passed."
+  ],
+  "final_static_checks": {
+    "mypy": {
+      "exit_code": 0,
+      "modules": 36,
+      "path": "var/detector-startup-20261115/mypy-final.log",
+      "bytes": 92,
+      "sha256": "25daa561f2e79ac2f51f900a152eadf72cd290f94bb28f01206e52b54fa2d793"
+    },
+    "ruff": {
+      "exit_code": 0,
+      "path": "var/detector-startup-20261115/ruff-final.log",
+      "bytes": 42,
+      "sha256": "af352a86840ad0af3d37ea0d9197f868363a6dac6b1c2ef5d2722f6b41d2d9af"
+    }
+  },
+  "pytest": {
+    "tests": 200,
+    "subtests": 41,
+    "passed": true,
+    "path": "var/detector-startup-20261115/quality/pytest-coverage.log",
+    "bytes": 336,
+    "sha256": "08f1a8e64e66084ae3d60f727d8937fa2f5b400052baa64c493a8aacaea97f3f"
+  },
+  "coverage": {
+    "covered_lines": 2777,
+    "num_statements": 3312,
+    "percent_covered": 83.84661835748793,
+    "percent_covered_display": "84",
+    "missing_lines": 535,
+    "excluded_lines": 15,
+    "percent_statements_covered": 83.84661835748793,
+    "percent_statements_covered_display": "84"
+  },
+  "acceptance": {
+    "test_exit_code": 0,
+    "cli_checks": 21,
+    "commands": [
+      {
+        "arguments": [
+          "doctor"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "make-demo",
+          "--directory",
+          "<temporary-workdir>\\demo"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "import-pos",
+          "--file",
+          "<temporary-workdir>\\demo\\orders.json"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "replay",
+          "--source",
+          "<temporary-workdir>\\demo\\fixture.avi",
+          "--camera",
+          "shop",
+          "--run-id",
+          "demo",
+          "--start",
+          "2026-01-01T09:00:00Z",
+          "--fixture-detections",
+          "<temporary-workdir>\\demo\\detections.json"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "reconcile"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "report",
+          "--date",
+          "2026-01-01"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "export-predictions",
+          "--run-id",
+          "demo",
+          "--camera",
+          "shop"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "evaluate",
+          "--truth",
+          "<temporary-workdir>\\demo\\ground-truth.json",
+          "--predictions",
+          "<temporary-workdir>\\predictions.json"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "replay",
+          "--source",
+          "<temporary-workdir>\\demo\\fixture.avi",
+          "--camera",
+          "shop",
+          "--run-id",
+          "demo",
+          "--start",
+          "2026-01-01T09:00:00Z",
+          "--fixture-detections",
+          "<temporary-workdir>\\demo\\detections.json"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "reconcile"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "report",
+          "--date",
+          "2026-01-01"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "replay",
+          "--source",
+          "<temporary-workdir>\\demo\\fixture.avi",
+          "--camera",
+          "shop",
+          "--run-id",
+          "weights-missing",
+          "--start",
+          "2026-01-01T09:00:00Z"
+        ],
+        "exit_code": 2,
+        "expected": 2
+      },
+      {
+        "arguments": [
+          "import-pos",
+          "--file",
+          "<temporary-workdir>\\missing.csv"
+        ],
+        "exit_code": 2,
+        "expected": 2
+      },
+      {
+        "arguments": [
+          "replay",
+          "--source",
+          "<temporary-workdir>\\traffic.avi",
+          "--camera",
+          "shop",
+          "--run-id",
+          "traffic",
+          "--start",
+          "2026-01-01T23:00:00Z",
+          "--fixture-detections",
+          "<temporary-workdir>\\traffic-detections.json"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "business-report",
+          "--date",
+          "2026-01-02",
+          "--timezone",
+          "Africa/Tunis",
+          "--camera",
+          "shop",
+          "--run-id",
+          "traffic"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "export-predictions",
+          "--run-id",
+          "traffic",
+          "--camera",
+          "shop",
+          "--all-events"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "evaluate-events",
+          "--truth",
+          "<temporary-workdir>\\traffic-truth.json",
+          "--predictions",
+          "<temporary-workdir>\\traffic-predictions.json"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "review-crossing",
+          "--event-id",
+          "d21080fcd5df2a9d31518e3420e7178d",
+          "--decision",
+          "rejected",
+          "--note",
+          "Synthetic review workflow check"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "business-report",
+          "--date",
+          "2026-01-02",
+          "--timezone",
+          "Africa/Tunis",
+          "--camera",
+          "shop",
+          "--run-id",
+          "traffic"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "replay",
+          "--source",
+          "<temporary-workdir>\\traffic.avi",
+          "--camera",
+          "shop",
+          "--run-id",
+          "traffic",
+          "--start",
+          "2026-01-01T23:00:00Z",
+          "--fixture-detections",
+          "<temporary-workdir>\\traffic-detections.json"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      },
+      {
+        "arguments": [
+          "business-report",
+          "--date",
+          "2026-01-02",
+          "--timezone",
+          "Africa/Tunis",
+          "--camera",
+          "shop",
+          "--run-id",
+          "traffic"
+        ],
+        "exit_code": 0,
+        "expected": 0
+      }
+    ],
+    "repeated_report_identical": true,
+    "path": "var/detector-startup-20261115/quality/acceptance/tests.txt",
+    "bytes": 31324,
+    "sha256": "08eb2a2244a3de214a56e949a756f5d826a1191f7ef1f942040c3d221c7cac4d"
+  },
+  "import_experiment": {
+    "scope": "Fresh Python processes; OS/filesystem caches not cleared; no cold-boot or contention guarantee",
+    "results": [
+      {
+        "mode": "auto",
+        "code": "import time,json; t=time.perf_counter(); import torch; a=time.perf_counter(); from transformers import AutoImageProcessor, AutoModelForObjectDetection; b=time.perf_counter(); print(json.dumps({'torch_seconds':a-t,'transformers_seconds':b-a,'total_seconds':b-t}))",
+        "exit_code": 0,
+        "wall_seconds": 106.66669560002629,
+        "stdout": "{\"torch_seconds\": 15.984354500018526, \"transformers_seconds\": 88.95040590001736, \"total_seconds\": 104.93476040003588}\n",
+        "stderr": ""
+      },
+      {
+        "mode": "explicit",
+        "code": "import time,json; t=time.perf_counter(); import torch; a=time.perf_counter(); from transformers import RTDetrImageProcessor, RTDetrV2ForObjectDetection; b=time.perf_counter(); print(json.dumps({'torch_seconds':a-t,'transformers_seconds':b-a,'total_seconds':b-t}))",
+        "exit_code": 0,
+        "wall_seconds": 40.77107750001596,
+        "stdout": "{\"torch_seconds\": 12.518706700007897, \"transformers_seconds\": 26.746069799992256, \"total_seconds\": 39.26477650000015}\n",
+        "stderr": ""
+      },
+      {
+        "mode": "explicit",
+        "code": "import time,json; t=time.perf_counter(); import torch; a=time.perf_counter(); from transformers import RTDetrImageProcessor, RTDetrV2ForObjectDetection; b=time.perf_counter(); print(json.dumps({'torch_seconds':a-t,'transformers_seconds':b-a,'total_seconds':b-t}))",
+        "exit_code": 0,
+        "wall_seconds": 43.204720699985046,
+        "stdout": "{\"torch_seconds\": 11.30471930000931, \"transformers_seconds\": 30.19972209999105, \"total_seconds\": 41.50444140000036}\n",
+        "stderr": ""
+      },
+      {
+        "mode": "auto",
+        "code": "import time,json; t=time.perf_counter(); import torch; a=time.perf_counter(); from transformers import AutoImageProcessor, AutoModelForObjectDetection; b=time.perf_counter(); print(json.dumps({'torch_seconds':a-t,'transformers_seconds':b-a,'total_seconds':b-t}))",
+        "exit_code": 0,
+        "wall_seconds": 80.466923400003,
+        "stdout": "{\"torch_seconds\": 32.135637799976394, \"transformers_seconds\": 46.82860970002366, \"total_seconds\": 78.96424750000006}\n",
+        "stderr": ""
+      }
+    ]
+  },
+  "pretrained_commands": [
+    {
+      "name": "pretrained-review",
+      "command": [
+        "<project>\\.venv-candidate\\Scripts\\python.exe",
+        "-B",
+        "scripts/verify_video_prototype.py",
+        "--output",
+        "<project>\\var\\detector-startup-20261115\\pretrained-review",
+        "--device",
+        "cpu"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 55.25915779999923
+    },
+    {
+      "name": "pretrained-replay",
+      "command": [
+        "<project>\\.venv-candidate\\Scripts\\python.exe",
+        "-B",
+        "-m",
+        "coffee_ops",
+        "--config",
+        "<project>\\var\\detector-startup-20261115\\pretrained-review\\configuration\\config.json",
+        "annotate-video",
+        "--source",
+        "<project>\\var\\detector-startup-20261115\\pretrained-review\\public-photo-loop.mp4",
+        "--directory",
+        "<project>\\var\\detector-startup-20261115\\pretrained-replay",
+        "--camera",
+        "video",
+        "--run-id",
+        "public-photo-loop",
+        "--start",
+        "2026-01-01T09:00:00Z",
+        "--sample-every",
+        "1"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 48.328401000006124
+    },
+    {
+      "name": "loader-equivalence",
+      "command": [
+        "<project>\\.venv-candidate\\Scripts\\python.exe",
+        "-B",
+        "<project>\\var\\detector-startup-20261115\\compare_loaders.py"
+      ],
+      "exit_code": 0,
+      "wall_seconds": 35.02614139998332
+    }
+  ],
+  "first_pretrained_verification": {
+    "purpose": "actual_pretrained_inference_and_encoding_software_check_not_real_video_accuracy",
+    "source": "Eight repeated frames of one existing public COCO8 photograph, resized to 640x480",
+    "source_photo_sha256": "86b46022d382f67b0934147fe515e1c3c3f5c04db45045516214b5e3092148e3",
+    "source_video_sha256": "8f09c44d70c9f02c6bf6bc0ada878b0ee6b5f534850a0cb9c026846206789863",
+    "model": {
+      "version": "rtdetr-v2-d18309d0d7ea",
+      "dataset_version": "pretrained-COCO; cafe accuracy unverified",
+      "sha256": "d18309d0d7ea57048138885c4c6ecfcb1e24506fc6153b94ad484f8ab62c7115",
+      "classes": {
+        "0": "person",
+        "1": "bicycle",
+        "2": "car",
+        "3": "motorbike",
+        "4": "aeroplane",
+        "5": "bus",
+        "6": "train",
+        "7": "truck",
+        "8": "boat",
+        "9": "traffic light",
+        "10": "fire hydrant",
+        "11": "stop sign",
+        "12": "parking meter",
+        "13": "bench",
+        "14": "bird",
+        "15": "cat",
+        "16": "dog",
+        "17": "horse",
+        "18": "sheep",
+        "19": "cow",
+        "20": "elephant",
+        "21": "bear",
+        "22": "zebra",
+        "23": "giraffe",
+        "24": "backpack",
+        "25": "umbrella",
+        "26": "handbag",
+        "27": "tie",
+        "28": "suitcase",
+        "29": "frisbee",
+        "30": "skis",
+        "31": "snowboard",
+        "32": "sports ball",
+        "33": "kite",
+        "34": "baseball bat",
+        "35": "baseball glove",
+        "36": "skateboard",
+        "37": "surfboard",
+        "38": "tennis racket",
+        "39": "bottle",
+        "40": "wine glass",
+        "41": "cup",
+        "42": "fork",
+        "43": "knife",
+        "44": "spoon",
+        "45": "bowl",
+        "46": "banana",
+        "47": "apple",
+        "48": "sandwich",
+        "49": "orange",
+        "50": "broccoli",
+        "51": "carrot",
+        "52": "hot dog",
+        "53": "pizza",
+        "54": "donut",
+        "55": "cake",
+        "56": "chair",
+        "57": "sofa",
+        "58": "pottedplant",
+        "59": "bed",
+        "60": "diningtable",
+        "61": "toilet",
+        "62": "tvmonitor",
+        "63": "laptop",
+        "64": "mouse",
+        "65": "remote",
+        "66": "keyboard",
+        "67": "cell phone",
+        "68": "microwave",
+        "69": "oven",
+        "70": "toaster",
+        "71": "sink",
+        "72": "refrigerator",
+        "73": "book",
+        "74": "clock",
+        "75": "vase",
+        "76": "scissors",
+        "77": "teddy bear",
+        "78": "hair drier",
+        "79": "toothbrush"
+      },
+      "backend": "rtdetr_v2",
+      "checkpoint_files": {
+        "config.json": "ed051ec77cb41c5d9d5e3af21a979b1e890599dfd68434d7636ff82ded4c1527",
+        "preprocessor_config.json": "cd38cd59999e7a95d68e487fbe5132df3d4e5c32a0836add57e6126ba0c4eaf1"
+      },
+      "publisher": "PekingU/rtdetr_v2_r18vd",
+      "revision": "5650961749fa93567c0d46fc7f43ea4f9e914107",
+      "license": "Apache-2.0 publisher model card",
+      "license_source": "https://huggingface.co/PekingU/rtdetr_v2_r18vd",
+      "notice": "Generic COCO classes; donuts/cakes do not cover every pastry or product"
+    },
+    "commands": [
+      {
+        "command": [
+          "prepare-video",
+          "--source",
+          "<output>\\public-photo-loop.mp4",
+          "--directory",
+          "<output>\\configuration",
+          "--device",
+          "cpu"
+        ],
+        "exit_code": 0
+      },
+      {
+        "command": [
+          "--config",
+          "<output>\\configuration\\config.json",
+          "annotate-video",
+          "--source",
+          "<output>\\public-photo-loop.mp4",
+          "--directory",
+          "<output>\\review",
+          "--camera",
+          "video",
+          "--run-id",
+          "public-photo-loop",
+          "--start",
+          "2026-01-01T09:00:00Z",
+          "--sample-every",
+          "1"
+        ],
+        "exit_code": 0
+      }
+    ],
+    "summary": {
+      "status": "completed",
+      "error": null,
+      "fixture_only": false,
+      "decoded_frames": 8,
+      "inferred_frames": 8,
+      "sample_every": 1,
+      "wall_seconds": 42.94682970002759,
+      "processed_inference_fps": 0.18627684641399408,
+      "decoded_output_fps": 0.18627684641399408,
+      "processed_media_span_seconds": 0.7,
+      "source_video": {
+        "width": 640,
+        "height": 480,
+        "rate": "10/1",
+        "time_base": "1/10000",
+        "declared_frames": 8,
+        "declared_duration_seconds": 0.8,
+        "first_pts": 0,
+        "first_time_base": "1/10000",
+        "timestamp_policy": "Exact original PTS retained in frame journal; capture offsets relative to first decoded PTS"
+      },
+      "source_sha256": "8f09c44d70c9f02c6bf6bc0ada878b0ee6b5f534850a0cb9c026846206789863",
+      "outputs_directory": "<project>\\var\\detector-startup-20261115\\pretrained-review\\review",
+      "database": "<project>\\var\\detector-startup-20261115\\pretrained-review\\configuration\\operations.sqlite3",
+      "event_counts_by_kind": {},
+      "prepared_drinks": null,
+      "confirmed_handovers": null,
+      "customer_pickups": null,
+      "semantic_notice": "Detector/zone motion supports visible transitions and advisory candidates, not validated preparation completion, transfer, customer role or paid sales.",
+      "resources": {
+        "sampled_process_tree_cpu_percent_one_core": 115.50004049881626,
+        "sampled_process_tree_peak_rss_bytes": 743944192,
+        "gpu_device_samples": 30,
+        "gpu_device_peak_utilization_percent": 0,
+        "gpu_device_peak_memory_used_mib": 0,
+        "scope": "Sampled process tree; CPU can exceed 100%; RSS sums shared pages. NVIDIA utilization/memory are whole-device, not exclusive to this job; fast child exits may be undercounted."
+      },
+      "model_worker_metrics": {
+        "proposal_confidence_floor": 0.001,
+        "gpu_peak_allocated_bytes": null
+      },
+      "detector_startup": {
+        "status": "ready",
+        "deadline_seconds": 60,
+        "total_seconds": 31.231231299985666,
+        "phases": [
+          {
+            "phase": "spawn",
+            "elapsed_seconds": 0.0
+          },
+          {
+            "phase": "checkpoint_validation",
+            "elapsed_seconds": 0.3292329999967478
+          },
+          {
+            "phase": "torch_import",
+            "elapsed_seconds": 0.3313526000129059
+          },
+          {
+            "phase": "transformers_import",
+            "elapsed_seconds": 9.768957499996759
+          },
+          {
+            "phase": "model_load",
+            "elapsed_seconds": 30.93021099996986
+          },
+          {
+            "phase": "class_validation",
+            "elapsed_seconds": 31.221175799961202
+          },
+          {
+            "phase": "processor_load",
+            "elapsed_seconds": 31.221456400002353
+          },
+          {
+            "phase": "device_setup",
+            "elapsed_seconds": 31.22269189998042
+          },
+          {
+            "phase": "ready",
+            "elapsed_seconds": 31.231045199965592
+          }
+        ],
+        "scope": "Parent-observed process start through ready; excludes parent checkpoint hashing. Phase times mark operation starts, not isolated operation durations."
+      },
+      "timestamp_notice": "Original PTS journal preserved. MP4 offsets quantized to 1/60000 second; audio omitted; odd dimensions padded at right/bottom.",
+      "max_output_pts_rounding_error_seconds": 0.0,
+      "latency_scope": "Parent receipt through detector/tracker/storage/overlay/encoder enqueue; excludes asynchronous decode/mux completion. Total wall time includes worker load/flush.",
+      "metric_availability": {
+        "detection_AP": null,
+        "tracking_IDF1": null,
+        "table_accuracy": null,
+        "event_accuracy": null
+      },
+      "frame_turnaround_ms": {
+        "p50": 1214.3178500118665,
+        "p95": 1461.9402049836935,
+        "p99": 1510.9418009925866
+      }
+    },
+    "raw_proposal_rows": 1064,
+    "output_frame_pts_seconds": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7
+    ],
+    "frame_count_and_pts_passed": true,
+    "accuracy_claims": false,
+    "cafe_footage_available": false
+  },
+  "replay_summary": {
+    "status": "completed",
+    "error": null,
+    "fixture_only": false,
+    "decoded_frames": 8,
+    "inferred_frames": 8,
+    "sample_every": 1,
+    "wall_seconds": 42.211617499997374,
+    "processed_inference_fps": 0.18952128522439343,
+    "decoded_output_fps": 0.18952128522439343,
+    "processed_media_span_seconds": 0.7,
+    "source_video": {
+      "width": 640,
+      "height": 480,
+      "rate": "10/1",
+      "time_base": "1/10000",
+      "declared_frames": 8,
+      "declared_duration_seconds": 0.8,
+      "first_pts": 0,
+      "first_time_base": "1/10000",
+      "timestamp_policy": "Exact original PTS retained in frame journal; capture offsets relative to first decoded PTS"
+    },
+    "source_sha256": "8f09c44d70c9f02c6bf6bc0ada878b0ee6b5f534850a0cb9c026846206789863",
+    "outputs_directory": "<project>\\var\\detector-startup-20261115\\pretrained-replay",
+    "database": "<project>\\var\\detector-startup-20261115\\pretrained-review\\configuration\\operations.sqlite3",
+    "event_counts_by_kind": {},
+    "prepared_drinks": null,
+    "confirmed_handovers": null,
+    "customer_pickups": null,
+    "semantic_notice": "Detector/zone motion supports visible transitions and advisory candidates, not validated preparation completion, transfer, customer role or paid sales.",
+    "resources": {
+      "sampled_process_tree_cpu_percent_one_core": 117.73222458859009,
+      "sampled_process_tree_peak_rss_bytes": 776491008,
+      "gpu_device_samples": 30,
+      "gpu_device_peak_utilization_percent": 0,
+      "gpu_device_peak_memory_used_mib": 0,
+      "scope": "Sampled process tree; CPU can exceed 100%; RSS sums shared pages. NVIDIA utilization/memory are whole-device, not exclusive to this job; fast child exits may be undercounted."
+    },
+    "model_worker_metrics": {
+      "proposal_confidence_floor": 0.001,
+      "gpu_peak_allocated_bytes": null
+    },
+    "detector_startup": {
+      "status": "ready",
+      "deadline_seconds": 60,
+      "total_seconds": 30.35538710001856,
+      "phases": [
+        {
+          "phase": "spawn",
+          "elapsed_seconds": 0.0
+        },
+        {
+          "phase": "checkpoint_validation",
+          "elapsed_seconds": 0.3273318000137806
+        },
+        {
+          "phase": "torch_import",
+          "elapsed_seconds": 0.32971180003369227
+        },
+        {
+          "phase": "transformers_import",
+          "elapsed_seconds": 9.346262700040825
+        },
+        {
+          "phase": "model_load",
+          "elapsed_seconds": 30.059438200027216
+        },
+        {
+          "phase": "class_validation",
+          "elapsed_seconds": 30.344563100021333
+        },
+        {
+          "phase": "processor_load",
+          "elapsed_seconds": 30.344902400043793
+        },
+        {
+          "phase": "device_setup",
+          "elapsed_seconds": 30.345805200049654
+        },
+        {
+          "phase": "ready",
+          "elapsed_seconds": 30.355174700031057
+        }
+      ],
+      "scope": "Parent-observed process start through ready; excludes parent checkpoint hashing. Phase times mark operation starts, not isolated operation durations."
+    },
+    "timestamp_notice": "Original PTS journal preserved. MP4 offsets quantized to 1/60000 second; audio omitted; odd dimensions padded at right/bottom.",
+    "max_output_pts_rounding_error_seconds": 0.0,
+    "latency_scope": "Parent receipt through detector/tracker/storage/overlay/encoder enqueue; excludes asynchronous decode/mux completion. Total wall time includes worker load/flush.",
+    "metric_availability": {
+      "detection_AP": null,
+      "tracking_IDF1": null,
+      "table_accuracy": null,
+      "event_accuracy": null
+    },
+    "frame_turnaround_ms": {
+      "p50": 1287.2330999816768,
+      "p95": 1344.077194997226,
+      "p99": 1344.0979990089545
+    }
+  },
+  "replay_identity": {
+    "same_source_config_run_database": true,
+    "events_identical": true,
+    "tracked_frames_identical": true,
+    "non_health_ledger_rows_before": 148,
+    "non_health_ledger_rows_after": 148,
+    "scope": "Repeated public-photo fixture, CPU FP32; not real cafe accuracy or cold-boot validation"
+  },
+  "loader_equivalence": {
+    "purpose": "One existing public photo, CPU FP32 loader equivalence; not cafe accuracy or cross-device equivalence",
+    "source_photo_sha256": "86b46022d382f67b0934147fe515e1c3c3f5c04db45045516214b5e3092148e3",
+    "weights_sha256": "d18309d0d7ea57048138885c4c6ecfcb1e24506fc6153b94ad484f8ab62c7115",
+    "torch": "2.13.0+cpu",
+    "processor_tensors_equal": true,
+    "postprocess_tensors_equal": true,
+    "logits_max_absolute_difference": 0.0,
+    "boxes_max_absolute_difference": 0.0
+  },
+  "retained_video": {
+    "path": "var/detector-startup-20261115/pretrained-review/review/annotated.mp4",
+    "bytes": 119073,
+    "sha256": "3696a673a6026f22a59900e448e8b951d025b0f39920df626bf5310535c32702"
+  },
+  "redundant_replay_video": {
+    "path": "var/detector-startup-20261115/pretrained-replay/annotated.mp4",
+    "bytes": 119073,
+    "sha256": "3696a673a6026f22a59900e448e8b951d025b0f39920df626bf5310535c32702"
+  },
+  "packages": {
+    "torch": "2.13.0+cpu",
+    "torchvision": "0.28.0+cpu",
+    "transformers": "4.57.6",
+    "huggingface-hub": "0.36.2",
+    "av": "19.0.2",
+    "numpy": "2.2.5",
+    "scipy": "1.15.2",
+    "Pillow": "13.0.0",
+    "ultralytics": "8.3.163"
+  },
+  "source_manifest": [
+    {
+      "path": "coffee_ops/__init__.py",
+      "bytes": 100,
+      "sha256": "6aef8f11cf9d1feadb75cf3d07003c09ca7079ba99d5bed041be8d3053be601d"
+    },
+    {
+      "path": "coffee_ops/__main__.py",
+      "bytes": 497,
+      "sha256": "4b7a57a7aa4f3547718185e9873832d5de12a5962f821438881299ec19a6cef4"
+    },
+    {
+      "path": "coffee_ops/alerts.py",
+      "bytes": 3629,
+      "sha256": "03db4aebbaeceaf5f0a5616a0b7690290a2f25b9f30ac3b3ab4cb60f0814161a"
+    },
+    {
+      "path": "coffee_ops/api.py",
+      "bytes": 7005,
+      "sha256": "cdddb86e112f60cd84ec4cb3346a4acf099c4df0c91c63cbb2fb3729eff71d4e"
+    },
+    {
+      "path": "coffee_ops/business_reporting.py",
+      "bytes": 10709,
+      "sha256": "0df4f48e1fff97ef486cbdc7f8a7e855efa02e93d8020e1bb804547da636e07b"
+    },
+    {
+      "path": "coffee_ops/cli.py",
+      "bytes": 17973,
+      "sha256": "08a9938ff74cd6f4b484b8d2ded83dc7f4ac805ccfd2da5ef44a9b0273bd1feb"
+    },
+    {
+      "path": "coffee_ops/config.py",
+      "bytes": 12572,
+      "sha256": "64fc5abd377257afb76cd9bcee242e56aa11ebba0050e21c5533202efade66d6"
+    },
+    {
+      "path": "coffee_ops/dataset.py",
+      "bytes": 6514,
+      "sha256": "ce8832748f036a74c47d75ad2b60508904b9044057660d5a697654ce71bf4798"
+    },
+    {
+      "path": "coffee_ops/demo.py",
+      "bytes": 3578,
+      "sha256": "94ef23e0cfaa47e76a98a9209bde8a698483769c7f666f0557c765db4b056d1a"
+    },
+    {
+      "path": "coffee_ops/detector.py",
+      "bytes": 12549,
+      "sha256": "45867c94c25568bb79ebc4e5cc6b7c53a971752a88c48ee29105821bf4016e23"
+    },
+    {
+      "path": "coffee_ops/detector_startup.py",
+      "bytes": 3737,
+      "sha256": "7bb275a89fb59bbce4b686a912c9c2ef63fcff49514c47aaa8dd0b52e05e8f30"
+    },
+    {
+      "path": "coffee_ops/evaluation.py",
+      "bytes": 13058,
+      "sha256": "e8677227e589888660bc0be50d11372b4c124f5e4a12f732ce302377fc784d7f"
+    },
+    {
+      "path": "coffee_ops/event_engine.py",
+      "bytes": 6254,
+      "sha256": "fd82604b4b092187919b53726bb3983bd909f8b878300ec14145805055d69346"
+    },
+    {
+      "path": "coffee_ops/event_evaluation.py",
+      "bytes": 8792,
+      "sha256": "b7a2ffd03528bcba9753502063621e12a8e9b6bf52847edf607a0b68fa933357"
+    },
+    {
+      "path": "coffee_ops/exports.py",
+      "bytes": 1936,
+      "sha256": "36c7f1749fdb62868da227a12ff098bff34050817e61d22c126d25e5e68f5043"
+    },
+    {
+      "path": "coffee_ops/health.py",
+      "bytes": 691,
+      "sha256": "1a03cb66fa8e41eecca0a64ff6ae41041e36778629369963158ab760780171f4"
+    },
+    {
+      "path": "coffee_ops/inventory.py",
+      "bytes": 484,
+      "sha256": "fa9953b6f918367d93380961fbfdaa09f94690c21f2b93296a1206f55ced7a53"
+    },
+    {
+      "path": "coffee_ops/mlops.py",
+      "bytes": 3090,
+      "sha256": "04e3831cb09db04e921ea65836249aa6bf7291daab4b7b98b76747f8612abd15"
+    },
+    {
+      "path": "coffee_ops/pipeline.py",
+      "bytes": 15540,
+      "sha256": "0bc2a035946c96b1f2f7b8cd1f30cfa819606c0eae489752bf833f6f7e3f93da"
+    },
+    {
+      "path": "coffee_ops/pos_adapter.py",
+      "bytes": 3372,
+      "sha256": "6e046b8b5c3db450f5dd8d233180ab3c0d8eef74b1d80571450d1d2edd5d7840"
+    },
+    {
+      "path": "coffee_ops/product_evidence.py",
+      "bytes": 6587,
+      "sha256": "d3bc978fd27c03d06c108c4be5ce79a83cbabc3983b5334e35b7196370f1705f"
+    },
+    {
+      "path": "coffee_ops/reconciliation.py",
+      "bytes": 5131,
+      "sha256": "380689640757a646932995d3bdffc453deea5930e704dfd2218709e92f3f7ce6"
+    },
+    {
+      "path": "coffee_ops/reporting.py",
+      "bytes": 4265,
+      "sha256": "fcee338affa2cc07cd8b2a8b266a6af1de9a9013ac6673824c4ea21fb25d48c9"
+    },
+    {
+      "path": "coffee_ops/resources.py",
+      "bytes": 2924,
+      "sha256": "a6f420eb06ce3a0c5d7b49fbc6fa9b5aa8842a63606749478cd70071e6bacc2e"
+    },
+    {
+      "path": "coffee_ops/review_exports.py",
+      "bytes": 2270,
+      "sha256": "a490c05f6e6bb4a8924374d120557a3a4d37c44947a3e6598c01f14c8851031d"
+    },
+    {
+      "path": "coffee_ops/review_labels.py",
+      "bytes": 4862,
+      "sha256": "02992a408bdc93cdc6f0ed4f08e6f49fff6fc97a92023a5f54cd1c8d8a64b311"
+    },
+    {
+      "path": "coffee_ops/runtime.py",
+      "bytes": 3327,
+      "sha256": "86d7c3fe443c3c02ee0989305d50cea665a63299f2a25a9076ec2b1066583bb8"
+    },
+    {
+      "path": "coffee_ops/schema.py",
+      "bytes": 2144,
+      "sha256": "1218cafc80ae39c1239cf134d7eb0eefaad3f04b8026de97c1babb069ffc0d7a"
+    },
+    {
+      "path": "coffee_ops/storage.py",
+      "bytes": 22417,
+      "sha256": "3c3129beb0f9abc0645b182faab009f24335cac82ef27adcc240d7889f3b9870"
+    },
+    {
+      "path": "coffee_ops/tracker.py",
+      "bytes": 4616,
+      "sha256": "2fb52e17a473bf3cb9ad2e9349818debb90b5b4c0c8cc7794ad0e4f98e98dac4"
+    },
+    {
+      "path": "coffee_ops/traffic.py",
+      "bytes": 5528,
+      "sha256": "4d647237b1760c8646d7903daec3372556d1b4f24b9059e0745acc5f7aacd2d1"
+    },
+    {
+      "path": "coffee_ops/video_input.py",
+      "bytes": 3902,
+      "sha256": "a8bc1d91218b6fa6c2f56b64d77ed4671e8bcbec7ff7f335b14ff61decb1cabb"
+    },
+    {
+      "path": "coffee_ops/video_io.py",
+      "bytes": 6419,
+      "sha256": "4973fb27ea6eb941d4fc73475aa90c7c0d51a80b5f8bf70ff1bfd5f94061da80"
+    },
+    {
+      "path": "coffee_ops/video_overlay.py",
+      "bytes": 2748,
+      "sha256": "99c45376a9d1fddeb630da300e162584a0a7adc4079d88722563afe4706d9c35"
+    },
+    {
+      "path": "coffee_ops/video_review.py",
+      "bytes": 19508,
+      "sha256": "c1296d70f995503c2c9266b016708937d5c33134c2c207807c5e28c87b535083"
+    },
+    {
+      "path": "coffee_ops/zones.py",
+      "bytes": 3880,
+      "sha256": "2ddabc0a78c2d848649cd0b206ec6615371d8a1b44bf1a715b43428888c1e855"
+    },
+    {
+      "path": "tests/test_api.py",
+      "bytes": 5411,
+      "sha256": "ac5b93c5d59c930ae443c1f049734d2e01112f491d636bb81fbbd2d03020aff9"
+    },
+    {
+      "path": "tests/test_business_reporting.py",
+      "bytes": 7465,
+      "sha256": "eb3f9d4695ed63ad8dd57fb82d89186e562bacf79ece45df18886e5cb6379d76"
+    },
+    {
+      "path": "tests/test_detector_backend.py",
+      "bytes": 3029,
+      "sha256": "042acefd27c4d97b9a831ebdc6bceb3ab71ed9b1c01c336c5650186c4069968c"
+    },
+    {
+      "path": "tests/test_detector_startup.py",
+      "bytes": 8711,
+      "sha256": "46c45ba2562518feaa7d5b6a6f81c5c942877aa61778ddf98da55ee08215b9ea"
+    },
+    {
+      "path": "tests/test_entrypoint.py",
+      "bytes": 1010,
+      "sha256": "1632c9397e5c20bce0b78b5a7a224dece3cf2fbc8cfe30a5b187ca6404416d82"
+    },
+    {
+      "path": "tests/test_evaluation_and_data.py",
+      "bytes": 10382,
+      "sha256": "41f9b3825c20f3f3fb61f0b25b3c06e47311d1170c797a59d7d364180e678493"
+    },
+    {
+      "path": "tests/test_event_scoring.py",
+      "bytes": 5424,
+      "sha256": "9305549fa2fb3218e2e7e73906757ff4cc8b08e72eba2d0b56c07c139bc267bb"
+    },
+    {
+      "path": "tests/test_failure_boundaries.py",
+      "bytes": 7220,
+      "sha256": "3a63b279f9abce6734b1952272c9df677a2ad0b7ff9d500d45f7859660651fb7"
+    },
+    {
+      "path": "tests/test_model_benchmark.py",
+      "bytes": 4000,
+      "sha256": "0072d945cfdae8a9c65c5dff3de300481c8e79803c63269ed23b4ff65ef4179c"
+    },
+    {
+      "path": "tests/test_operations.py",
+      "bytes": 22633,
+      "sha256": "0a447aae32e54be911806185cbe5aa25aea62548dfe7bd42981af18e41c8c58f"
+    },
+    {
+      "path": "tests/test_product_evidence.py",
+      "bytes": 4158,
+      "sha256": "6a1092b8a37401f66f279eab59263f587ec9fa22aff16539b8da6fa7b44918a7"
+    },
+    {
+      "path": "tests/test_review_labels.py",
+      "bytes": 3042,
+      "sha256": "1a76f54fabd2d903ca414c302aa38ccd58a3ae74cec8d64173b8a8b1d9d915c8"
+    },
+    {
+      "path": "tests/test_storage_resilience.py",
+      "bytes": 10944,
+      "sha256": "49b692183a3a335255f0b5964461cb240e6197d58b5241fadc81f97bd1a680c0"
+    },
+    {
+      "path": "tests/test_traffic.py",
+      "bytes": 7006,
+      "sha256": "64840dfde928859fb6b13487016036df32efe2a63ea77180aa4aeecd46dff796"
+    },
+    {
+      "path": "tests/test_training_notebook.py",
+      "bytes": 12281,
+      "sha256": "38f243ce5b748d3de309822da94b72dfd8f8963c59b928a4a2e755d2d84078d3"
+    },
+    {
+      "path": "tests/test_video_integration.py",
+      "bytes": 6355,
+      "sha256": "5a6f9cbca7b715e17302e23903511beb4aee7f8bfd005bd50c0c453d93e5bdcb"
+    },
+    {
+      "path": "tests/test_video_review.py",
+      "bytes": 10561,
+      "sha256": "3da96a7f312e43bb8fc097a3058a155d934d1ee276aefde959857addad39bf55"
+    },
+    {
+      "path": "scripts/audit_repository.py",
+      "bytes": 10099,
+      "sha256": "38c6e0e6577d6c9260aaa846f36ac34a41118aecca2a66e469a779a8e0dcbfc2"
+    },
+    {
+      "path": "scripts/benchmark_api.py",
+      "bytes": 7326,
+      "sha256": "38611dddc871fa502bb415ee79014d9b9863965bc84f8b3ad9b7c57702bb19a6"
+    },
+    {
+      "path": "scripts/benchmark_events.py",
+      "bytes": 4150,
+      "sha256": "0cf36b8e739129ce1fd62696dabacb9e03c2989a945677fea96801e33653ff3b"
+    },
+    {
+      "path": "scripts/benchmark_models.py",
+      "bytes": 17922,
+      "sha256": "5bd5f1cd53f2ad48671517a89596d62c5997bb78ab1b97d3988691696599c826"
+    },
+    {
+      "path": "scripts/benchmark_mvp.py",
+      "bytes": 6078,
+      "sha256": "6c0ffd11de0ac9859812ff4eee297ba1f1b84329e6f7ca961d19e2c94179e51a"
+    },
+    {
+      "path": "scripts/benchmark_suite.py",
+      "bytes": 2363,
+      "sha256": "2cbd150a83315c551eacb0011d641945cf91ad0ab2b7c6b05d62b4eaf4de1697"
+    },
+    {
+      "path": "scripts/check_docs.py",
+      "bytes": 1811,
+      "sha256": "a2c3dd08818f85344852953ac23f33f61ffe56ae53dfe6d97416228ec9d91ad9"
+    },
+    {
+      "path": "scripts/check_quality.py",
+      "bytes": 2345,
+      "sha256": "48bbec482ddd7d74d261fbf9efcce442ef7b8188e0ad65f6c485c046563358cb"
+    },
+    {
+      "path": "scripts/lock_requirements.py",
+      "bytes": 2867,
+      "sha256": "bd191286380078497fe3725e3aaad81ab695fff97bdab9f206f177369b9d01c6"
+    },
+    {
+      "path": "scripts/plan_cache_cleanup.py",
+      "bytes": 4333,
+      "sha256": "c8814997f4763ffee4c82e3100b1acf019c035abdd599053a555a584182a2223"
+    },
+    {
+      "path": "scripts/review_publication.py",
+      "bytes": 3855,
+      "sha256": "ad79f9694530540a664a7ce20715d3ef30c3aa2480e1b84c645f3b20b1da0f90"
+    },
+    {
+      "path": "scripts/setup_environment.py",
+      "bytes": 2219,
+      "sha256": "e6258aa35546175348e99216cad649b01f3e2884e11d554447d8289d93f9e322"
+    },
+    {
+      "path": "scripts/verify_container.py",
+      "bytes": 6841,
+      "sha256": "000bcba6e59f3e75a4cd26d96efc9017c1588735a85b3f9701dc97b287786bfc"
+    },
+    {
+      "path": "scripts/verify_egress.py",
+      "bytes": 2418,
+      "sha256": "711f515be0fbad2bc2c8f91d4466e38168981af84aef3dba2ab0a15e82100761"
+    },
+    {
+      "path": "scripts/verify_mvp.py",
+      "bytes": 7954,
+      "sha256": "536102a5579a0c93ebafc8882592b623509a7bbc0e341d120d8222eb397ef9c5"
+    },
+    {
+      "path": "scripts/verify_training_notebook.py",
+      "bytes": 4834,
+      "sha256": "a323f3ca639ae7055611153fa137128643b455faeb03422433f269d501a565d8"
+    },
+    {
+      "path": "scripts/verify_video_prototype.py",
+      "bytes": 4530,
+      "sha256": "3a3398f1f6c3297bee4f1ab304cdca2aabfae6396770c007f05a6bd7ea2b776c"
+    }
+  ],
+  "limits": [
+    "OS/filesystem caches not cleared; fresh Python processes are not cold boots.",
+    "Import experiment is exploratory; other desktop activity and a brief overlapping unit invocation are uncontrolled.",
+    "Identical loader outputs measured on one public photo in CPU FP32 only; no cross-device guarantee.",
+    "Eight repeated photo frames are software smoke evidence, not cafe accuracy or sustainable throughput.",
+    "Existing dependency/security/licensing findings remain open; no runtime/dependency upgrade was performed."
+  ]
+}
