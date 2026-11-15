@@ -8,6 +8,7 @@ import numpy as np
 from scipy.optimize import linear_sum_assignment
 
 from .schema import Detection, file_hash, key, now
+from .config import Config
 from .tracker import iou
 
 
@@ -59,14 +60,14 @@ def evaluate(ground_truth: dict, predictions: dict) -> dict:
     if set(gt) != set(pred):
         raise ValueError("Predictions and ground truth must cover exactly the same annotated frames")
     classes = sorted({d["class_id"] for f in list(gt.values())+list(pred.values()) for d in f.get("detections", [])})
-    counts = {cid: Counter() for cid in classes}
+    counts: dict[int, Counter[str]] = {cid: Counter() for cid in classes}
     calibration = []
     identities: Counter = Counter()
     previous_id: dict = {}
     was_matched: dict = {}
     switches = fragments = total_gt = total_pred = 0
     track_times: dict = defaultdict(list)
-    occupancy = Counter()
+    occupancy: Counter[str] = Counter()
     false_duration = 0.0
     detection_delays = []
     occupancy_started: dict = {}
@@ -193,7 +194,7 @@ def evaluate(ground_truth: dict, predictions: dict) -> dict:
     return result
 
 
-def model_evaluate(config: object, data: str, split: str = "test") -> dict:
+def model_evaluate(config: Config, data: str, split: str = "test") -> dict:
     from .detector import validate_metadata
     from ultralytics import YOLO
     metadata = validate_metadata(config)

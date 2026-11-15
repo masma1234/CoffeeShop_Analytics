@@ -1,5 +1,9 @@
 # Current architecture
 
+Authoritative implemented architecture, reviewed 2026-11-12. Start with the
+[project overview](../../README.md) and [implementation status](../../IMPLEMENTATION_STATUS.md).
+Other architecture documents describe proposals unless explicitly identified as implemented here.
+
 ```mermaid
 flowchart LR
     A[Video or RTSP] --> B[Spawned OpenCV decoder / bounded queue]
@@ -49,3 +53,29 @@ The optional annotate-video orchestrator reuses detector deadlines, tracking, ev
 and frame transactions. Pickup presence/placement/departure and interaction
 candidates are implemented when configured. Confirmed preparation, handover and
 customer-role inference remain unavailable. Review exports stream to disk.
+
+## Operational boundaries
+
+The API binds only to 127.0.0.1. One shared bearer token authorizes the whole
+read-only ledger, with at most eight request handlers, five-second socket timeouts
+and one read-only SQLite connection per request. There are no accounts, sessions,
+tenants, dashboard, uploads or payment-processing endpoints. `/healthz` is minimal
+liveness; `/v1/health` requires authentication and reports storage readiness.
+Status, events, cameras and business-report routes validate their query fields.
+Pagination rejects values beyond SQLite's signed 64-bit range. API responses omit
+evidence images, source URLs and filesystem paths; native process diagnostics can
+still contain private paths and belong in protected local logs.
+
+Each writer uses its own SQLite connection. Camera leases serialize writers for
+the same camera; frame data and projections commit together. POS allocation is
+transactional and quantity-bounded. Health and business history grow on disk and
+need operator-owned backup, retention and capacity policies. In-memory queues,
+tracker expiry, telemetry windows and review overlays are bounded. Output videos
+and exports grow with clip length and need storage budgeting.
+
+The CLI translates SIGTERM into interruption so existing `finally` blocks close
+servers, stores and child processes. The production image runs as UID 10001,
+contains runtime packages only, and disables automatic model/package downloads.
+The Docker network and resource restrictions are invocation controls, not app
+configuration. The default image command validates configuration and exits.
+No provider deployment, public TLS endpoint or cloud egress policy exists.

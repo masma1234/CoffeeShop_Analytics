@@ -16,20 +16,15 @@ jobs:
         with:
           python-version: '3.13'
           cache: pip
-      - run: python -m pip install torch==2.9.0 torchvision==0.24.0 --index-url https://download.pytorch.org/whl/cpu
-      - run: python -m pip install -r requirements.txt
-      - if: matrix.profile == 'video'
-        run: python -m pip install -r requirements-video.txt
-      - run: python -m pip check
-      - run: python -m coffee_ops doctor
-      - run: python scripts/verify_mvp.py --output var/acceptance
+      - run: python scripts/setup_environment.py --directory .venv-ci --dev ${{ matrix.profile == 'video' && '--video' || '' }}
+      - run: ${{ runner.os == 'Windows' && '.venv-ci/Scripts/python.exe' || '.venv-ci/bin/python' }} scripts/check_quality.py --output var/quality
       - name: Verify tracked source was preserved during tests
         run: git diff --exit-code
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         if: always()
         with:
           name: evidence-${{ matrix.os }}-${{ matrix.profile }}
-          path: var/acceptance
+          path: var/quality
   image-security:
     runs-on: ubuntu-latest
     timeout-minutes: 30
@@ -39,7 +34,7 @@ jobs:
         run: git ls-files -z | xargs -0 sha256sum > source.sha256
       - name: Build and verify isolated Linux tests
         run: |
-          docker build --target test -t coffee-ops-tests .
+          docker build --target video-test -t coffee-ops-tests .
           docker run --rm --network none --cap-drop ALL --security-opt no-new-privileges coffee-ops-tests
           docker run --rm --network none --cap-drop ALL --security-opt no-new-privileges coffee-ops-tests python scripts/verify_egress.py
       - name: Build and record runtime artifact
@@ -48,12 +43,22 @@ jobs:
           docker image inspect coffee-ops-runtime > image-metadata.json
           docker image save --output runtime.tar coffee-ops-runtime
           sha256sum runtime.tar > runtime.tar.sha256
+          python scripts/verify_container.py --image coffee-ops-runtime --output container-check.json
       - name: Inventory dependency licenses
         run: |
           docker run --rm --network none coffee-ops-runtime python -c 'import importlib.metadata as m,json; print(json.dumps([{"name":d.metadata["Name"],"version":d.version,"license":d.metadata.get("License-Expression") or d.metadata.get("License") or "UNKNOWN"} for d in m.distributions()],indent=2))' > licenses.json
-      - name: Scan OS and Python packages (no vulnerability suppressions)
+      - name: Install verified scanner release
         run: |
-          docker run --rm --cpus 2 --memory 2g --cap-drop ALL --security-opt no-new-privileges --mount type=bind,source="$PWD",target=/scan anchore/grype@sha256:13113eeceab017260370cf540e1d25442c59665fd07d1b09b66d63bb0c282887 docker-archive:/scan/runtime.tar -o json --file /scan/grype.json --fail-on high
+          curl -fsSL https://github.com/aquasecurity/trivy/releases/download/v0.76.2/trivy_0.76.2_Linux-64bit.tar.gz -o trivy.tar.gz
+          echo 'bc0fc726e017b8927a62b2d3531d7a84ee01769daf5c99ed866dced54089fdbf  trivy.tar.gz' | sha256sum -c
+          mkdir trivy-tool
+          tar -xzf trivy.tar.gz -C trivy-tool trivy
+      - name: Complete OS and Python scan and SBOM
+        run: |
+          trivy-tool/trivy image --input runtime.tar --scanners vuln --list-all-pkgs --format json --output trivy.json --timeout 15m --no-progress
+          trivy-tool/trivy convert --format cyclonedx --output sbom.cdx.json trivy.json
+      - name: Reject all unresolved high or critical matches
+        run: python -c 'import json,sys; r=json.load(open("trivy.json")); v=[v for r in r["Results"] for v in (r.get("Vulnerabilities") or []) if v["Severity"] in {"HIGH","CRITICAL"}]; print(len(v),"high/critical matches"); sys.exit(bool(v))'
       - name: Require an owner-selected source license
         if: always()
         run: test -f LICENSE
@@ -66,4 +71,6 @@ jobs:
             image-metadata.json
             runtime.tar.sha256
             licenses.json
-            grype.json
+            trivy.json
+            sbom.cdx.json
+            container-check.json

@@ -19,7 +19,8 @@ def _classify(store: SQLiteStore, event: dict, config: dict) -> tuple[str, dict 
         return ("confirmed_sale", order, "existing_paid_allocation") if order and order["payment_status"] == "paid" else ("payment_unmatched", None, "allocated_order_no_longer_paid")
     sold = store.sold_event(event)
     if sold and sold["event_id"] != eid and kind in MOVEMENTS:
-        order = store.order(store.allocation(sold["event_id"]))
+        allocation = store.allocation(sold["event_id"])
+        order = store.order(allocation) if allocation is not None else None
         if utc(sold["timestamp"]) <= utc(event["timestamp"]) and order and order["payment_status"] == "paid":
             return "sale_correlated_movement", None, "same_track_already_allocated"
         return "needs_review", None, "track_has_another_allocation"
@@ -73,6 +74,8 @@ def reconcile(store: SQLiteStore, config: dict, batch_size: int = 200) -> dict:
                               "association_confidence": event["confidence"] if order else None,
                               "reason": reason, "payment_proof": "POS" if status == "confirmed_sale" else None}
                     if status == "confirmed_sale" and store.allocation(eid) is None:
+                        if order is None:
+                            raise RuntimeError("Confirmed sale requires a qualifying POS order")
                         store.allocate(event, order)
                     store.append("reconciliations", key(result), event["timestamp"], result)
                     if status in {"payment_unmatched", "inventory_discrepancy", "needs_review"}:

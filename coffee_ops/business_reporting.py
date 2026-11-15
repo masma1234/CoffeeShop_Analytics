@@ -4,6 +4,7 @@ from __future__ import annotations
 from collections import Counter, defaultdict
 from datetime import date, datetime, time, timedelta
 from zoneinfo import ZoneInfo
+from typing import Any
 
 from .schema import key, stamp, utc
 from .storage import SQLiteStore
@@ -27,7 +28,7 @@ def business_window(day: str, timezone: str = "UTC", start_hour: int = 0) -> tup
         boundaries.append(converted)
     if boundaries[1] <= boundaries[0]:
         raise ValueError("Empty business day")
-    return tuple(boundaries)
+    return boundaries[0], boundaries[1]
 
 
 def business_report(store: SQLiteStore, day: str, timezone: str = "UTC", start_hour: int = 0,
@@ -37,7 +38,7 @@ def business_report(store: SQLiteStore, day: str, timezone: str = "UTC", start_h
     start, end = business_window(day, timezone, start_hour)
     start_s, end_s = start.timestamp(), end.timestamp()
     zone = ZoneInfo(timezone)
-    hours = []
+    hours: list[dict[str, Any]] = []
     cursor = start
     while cursor < end:
         stop = min(cursor+timedelta(hours=1), end)
@@ -46,8 +47,10 @@ def business_report(store: SQLiteStore, day: str, timezone: str = "UTC", start_h
                       "person_entered":0,"person_exited":0,"visual_product_events":{},
                       "traffic_observed_camera_seconds":0.})
         cursor = stop
-    counts, products, sales = Counter(), Counter(), Counter()
-    excluded_traffic = Counter()
+    counts: Counter[str] = Counter()
+    products: Counter[str] = Counter()
+    sales: Counter[str] = Counter()
+    excluded_traffic: Counter[str] = Counter()
     with store.snapshot():
         for event in store.between("events", stamp(start), stamp(end), camera_id,run_id):
             kind = event["kind"]
@@ -69,8 +72,10 @@ def business_report(store: SQLiteStore, day: str, timezone: str = "UTC", start_h
         for order in store.orders_between(stamp(start), stamp(end), camera_id):
             if order["payment_status"] == "paid":
                 sales[order["sku"]] += order["quantity"]
-        previous, duration, transitions = {}, defaultdict(Counter), Counter()
-        run_ranges = defaultdict(dict)
+        previous: dict[str, dict] = {}
+        duration: defaultdict[tuple[str, str], Counter[str]] = defaultdict(Counter)
+        transitions: Counter[tuple[str, str]] = Counter()
+        run_ranges: defaultdict[str, dict[str, list[float]]] = defaultdict(dict)
 
         def integrate(sample, until):
             t = utc(sample["timestamp"]).timestamp()
@@ -104,7 +109,9 @@ def business_report(store: SQLiteStore, day: str, timezone: str = "UTC", start_h
                 raise ValueError("Overlapping camera runs; select --run-id instead of double-counting replays")
         # Traffic coverage needs adjacent reliable frames AND the historical run's
         # person catalog/calibration. A zero count without those is unobserved time.
-        prior_frames,run_gates,covered_cameras={},{},set()
+        prior_frames: dict[str, dict] = {}
+        run_gates: dict[tuple[str, str], float | None] = {}
+        covered_cameras: set[str] = set()
         for frame in store.between("frames",stamp(start-timedelta(seconds=max_observation_gap)),stamp(end),camera_id,run_id):
             camera,run=frame["camera_id"],frame["run_id"]
             gate_key=(camera,run)
@@ -121,14 +128,14 @@ def business_report(store: SQLiteStore, day: str, timezone: str = "UTC", start_h
             if gap is not None:
                 covered_cameras.add(camera)
             if gap is not None and previous_frame and previous_frame["run_id"]==run and frame["reliable"] is True and previous_frame["reliable"] is True:
-                a=utc(previous_frame["_timestamp"]).timestamp();b=utc(frame["_timestamp"]).timestamp()
-                if 0<b-a<=gap:
-                    a,b=max(a,start_s),min(b,end_s)
-                    while a<b:
-                        index=min(len(hours)-1,int((a-start_s)//3600))
-                        stop=min(b,start_s+(index+1)*3600)
-                        hours[index]["traffic_observed_camera_seconds"]+=stop-a
-                        a=stop
+                interval_start=utc(previous_frame["_timestamp"]).timestamp();interval_end=utc(frame["_timestamp"]).timestamp()
+                if 0<interval_end-interval_start<=gap:
+                    interval_start,interval_end=max(interval_start,start_s),min(interval_end,end_s)
+                    while interval_start<interval_end:
+                        index=min(len(hours)-1,int((interval_start-start_s)//3600))
+                        bucket_end=min(interval_end,start_s+(index+1)*3600)
+                        hours[index]["traffic_observed_camera_seconds"]+=bucket_end-interval_start
+                        interval_start=bucket_end
             prior_frames[camera]=frame
         tables = []
         total_seconds = end_s-start_s

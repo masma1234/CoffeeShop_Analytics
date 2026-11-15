@@ -6,22 +6,20 @@ produces an annotated MP4, tracking/event evidence, JSON/CSV exports and a proce
 summary. **No real coffee-shop footage or manual café labels have been supplied.**
 The actual pretrained-model check uses a clearly identified public-photo loop.
 
-## Launch on this laptop
+## Launch with the reviewed CPU environment
 
-Run from the project folder containing `coffee_ops`. The existing `.venv-notebook`
-has the tested CUDA stack, Transformers and optional video dependencies. The main
-application `.venv` remains separate. If needed, install the small optional video
-packages in the video environment:
+Run from the project folder containing `coffee_ops`. Follow the [current setup](../README.md)
+with `--video` in a new environment. Old research environments retain known
+advisory debt and are preserved for historical reproducibility.
 
 ```powershell
-$vp = '.\.venv-notebook\Scripts\python.exe'
-& $vp -m pip install -r requirements-video.txt
+$vp = '.\.venv-candidate\Scripts\python.exe'
 ```
 
 Prepare a configuration using your video's decoded dimensions and the local model:
 
 ```powershell
-& $vp -m coffee_ops prepare-video --source 'C:\Videos\my-cafe.mp4' --directory var/my-video-config --device cuda:0
+& $vp -m coffee_ops prepare-video --source 'C:\Videos\my-cafe.mp4' --directory var/my-video-config --device cpu
 ```
 
 The default checkpoint is the already cached **PekingU/rtdetr_v2_r18vd** revision

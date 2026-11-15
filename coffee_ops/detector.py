@@ -7,7 +7,7 @@ import pickle
 import threading
 import time
 from pathlib import Path
-from typing import Any, Protocol
+from typing import Any, Callable, Protocol, cast
 
 from .config import Config
 from .schema import Detection, file_hash
@@ -58,7 +58,10 @@ def _worker(connection: Any, weights: str, names: dict[int, str], device: str, t
             if frame is None:
                 break
             result = model.predict(frame, device=device, conf=threshold, verbose=False)[0]
-            output = [Detection(int(b.cls[0]), tuple(float(x) for x in b.xyxy[0].tolist()), float(b.conf[0])) for b in result.boxes]
+            output = []
+            for b in result.boxes:
+                x1, y1, x2, y2 = map(float, b.xyxy[0].tolist())
+                output.append(Detection(int(b.cls[0]), (x1, y1, x2, y2), float(b.conf[0])))
             connection.send(("ok", output))
     except Exception as exc:
         connection.send(("error", f"{type(exc).__name__}: {exc}"))
@@ -114,8 +117,8 @@ class YOLODetector:
         self.metadata = validate_metadata(config)
         cfg = config.data["model"]
         self.timeout = cfg["inference_timeout_seconds"]
-        self.last_model_metrics = {}
-        self.last_raw_detections = []
+        self.last_model_metrics: dict[str, Any] = {}
+        self.last_raw_detections: list[Detection] = []
         ctx = mp.get_context("spawn")
         self.connection, child = ctx.Pipe()
         thresholds = list(config.camera(camera_id).get("thresholds", {}).values())
@@ -124,6 +127,8 @@ class YOLODetector:
         # per-class acceptance remains in Config.filter.
         thresholds.append(config.data["rules"]["low_confidence"] * 0.5)
         names={cid:c["name"] for cid,c in config.catalog.items()}
+        arguments: tuple[Any, ...]
+        target: Callable[..., None]
         if cfg.get("backend","yolo")=="rtdetr_v2":
             arguments=(child,str(config.path(cfg["checkpoint_directory"])),str(config.path(cfg["weights"])),names,
                        {cid for cid,c in config.catalog.items() if c["enabled"]},cfg["device"],
@@ -178,7 +183,7 @@ class YOLODetector:
             raise RuntimeError(f"Detector input transfer failed: {errors[0]}") from errors[0]
         payload=self._receive(max(0, deadline-time.monotonic()))
         if isinstance(payload,dict) and "detections" in payload:
-            self.last_raw_detections=payload.get("proposals",payload["detections"])
+            self.last_raw_detections=cast(list[Detection], payload.get("proposals",payload["detections"]))
             self.last_model_metrics={k:v for k,v in payload.items() if k not in {"detections","proposals"}}
             return payload["detections"]
         self.last_raw_detections=payload

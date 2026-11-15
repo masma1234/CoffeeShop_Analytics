@@ -17,7 +17,7 @@ from .detector import FixtureDetector,YOLODetector
 from .pipeline import Pipeline
 from .resources import ResourceMonitor
 from .review_exports import DetectionJournal,event_rows,frame_rows,stream_json
-from .schema import file_hash,key,stamp,utc
+from .schema import Detection,file_hash,key,stamp,utc
 from .storage import SQLiteStore
 from .video_io import PTSVideoInput,PTSVideoWriter
 from .video_overlay import render
@@ -111,8 +111,11 @@ def review_video(config,source,directory,camera_id,run_id,start,*,database=None,
         "scope":"synthetic fixture, not model accuracy" if fixture else "unlabeled local model inference unless independent labels supplied"})
     monitor=ResourceMonitor();monitor.start()
     store=reader=writer=detector=pipeline=raw_journal=None
-    started=time.perf_counter();decoded=processed=0;last_offset=Fraction(0);recent=deque(maxlen=50)
-    event_counts=Counter();timings=deque(maxlen=10000);exported=[];next_export=0.;sample_count=0;last_result={};complete=False;error=None
+    recent: deque[dict] = deque(maxlen=50)
+    event_counts: Counter[str] = Counter()
+    timings: deque[float] = deque(maxlen=10000)
+    started=time.perf_counter();decoded=processed=0;last_offset=Fraction(0)
+    exported=[];next_export=0.;sample_count=0;last_result={};complete=False;error=None
     try:
         store=SQLiteStore(database or config.path(config.data["storage"]["path"]))
         detector=FixtureDetector(fixture) if fixture else YOLODetector(config,camera_id)
@@ -129,7 +132,8 @@ def review_video(config,source,directory,camera_id,run_id,start,*,database=None,
                 for index,pts,time_base,offset,image in reader:
                     frame_started=time.perf_counter();last_offset=offset;decoded+=1
                     store.renew_lease(camera_id,owner,max(60,config.data["model"]["inference_timeout_seconds"]+30))
-                    sampled=index%sampling==0;detections=[];proposals=[]
+                    sampled=index%sampling==0;detections=[]
+                    proposals: list[Detection] = []
                     if sampled:
                         detection_started=time.perf_counter();detections=detector.detect(image,index)
                         detector_ms=(time.perf_counter()-detection_started)*1000
@@ -187,12 +191,12 @@ def review_video(config,source,directory,camera_id,run_id,start,*,database=None,
             with (destination/"annotation_classes.txt").open("x",encoding="utf-8") as f:
                 f.write("\n".join(c["name"] for _,c in sorted(config.catalog.items()) if c["enabled"])+"\n")
             evaluation=None
-            if event_labels:
+            if labels_document is not None:
                 from .event_evaluation import evaluate_events
                 truth=labels_document
                 if truth.get("source_identity") not in {None,identity}:raise ValueError("Labels belong to a different source")
                 if truth.get("duration_seconds",0)>duration+.001:raise ValueError("Labels extend beyond the processed clip; use labels for this exact interval")
-                labeled_predictions=[]
+                labeled_predictions: list[dict] = []
                 for event in event_rows(store,run_id,camera_id,capture_start):
                     if len(labeled_predictions)>=10000:raise ValueError("Split event evaluations into clips of at most 10000 events")
                     labeled_predictions.append(event)

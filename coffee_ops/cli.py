@@ -7,6 +7,7 @@ import logging
 import sqlite3
 import sys
 from pathlib import Path
+from typing import Any
 
 from .config import Config
 from .schema import canonical, file_hash, key, now, utc
@@ -140,7 +141,7 @@ def parser() -> argparse.ArgumentParser:
     return p
 
 
-def read_json(path: str) -> dict:
+def read_json(path: str) -> Any:
     return json.loads(Path(path).read_text(encoding="utf-8"))
 
 
@@ -171,6 +172,23 @@ def dispatch(args: argparse.Namespace, config: Config, store: SQLiteStore | None
     if cmd == "make-demo":
         from .demo import make_demo
         return make_demo(args.directory)
+    if cmd == "evaluate-events":
+        from .event_evaluation import evaluate_events
+        result = evaluate_events(read_json(args.truth),read_json(args.predictions))
+        result.update(ground_truth_sha256=file_hash(args.truth),predictions_sha256=file_hash(args.predictions))
+        return result
+    if cmd in {"extract-frames", "validate-dataset", "split-dataset"}:
+        from .dataset import extract_frames, split_manifest, validate_dataset
+        if cmd == "extract-frames":
+            return extract_frames(args.video, args.directory, args.every)
+        if cmd == "validate-dataset":
+            return validate_dataset(args.manifest, args.minimum_examples)
+        return split_manifest(args.manifest, args.seed)
+    if cmd == "prune-evidence":
+        from .pipeline import prune_evidence
+        return {"removed_files": prune_evidence(config)}
+    if store is None:
+        raise ValueError(f"Database required for command: {cmd}")
     if cmd == "replay":
         from .detector import FixtureDetector, YOLODetector
         from .runtime import replay
@@ -250,21 +268,6 @@ def dispatch(args: argparse.Namespace, config: Config, store: SQLiteStore | None
     if cmd == "export-predictions":
         from .exports import export_predictions
         return export_predictions(store, args.run_id, args.camera, args.all_events)
-    if cmd == "evaluate-events":
-        from .event_evaluation import evaluate_events
-        result = evaluate_events(read_json(args.truth),read_json(args.predictions))
-        result.update(ground_truth_sha256=file_hash(args.truth),predictions_sha256=file_hash(args.predictions))
-        return result
-    if cmd in {"extract-frames", "validate-dataset", "split-dataset"}:
-        from .dataset import extract_frames, split_manifest, validate_dataset
-        if cmd == "extract-frames":
-            return extract_frames(args.video, args.directory, args.every)
-        if cmd == "validate-dataset":
-            return validate_dataset(args.manifest, args.minimum_examples)
-        return split_manifest(args.manifest, args.seed)
-    if cmd == "prune-evidence":
-        from .pipeline import prune_evidence
-        return {"removed_files": prune_evidence(config)}
     if cmd in {"promote", "rollback", "drift"}:
         from .mlops import drift_summary, promote, rollback
         if cmd == "promote":

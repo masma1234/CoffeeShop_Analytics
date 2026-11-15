@@ -34,8 +34,8 @@ class ResourceMonitor:
                         capture_output=True,text=True,timeout=2,creationflags=getattr(subprocess,"CREATE_NO_WINDOW",0))
                     if r.returncode==0:
                         for line in r.stdout.splitlines():
-                            index,util,memory=[x.strip() for x in line.split(",")]
-                            int(index);util=float(util);memory=float(memory)
+                            index,util_text,memory_text=[x.strip() for x in line.split(",")]
+                            int(index);util=float(util_text);memory=float(memory_text)
                             self.gpu_samples+=1
                             self.gpu_peak_util=max(self.gpu_peak_util or 0,util)
                             self.gpu_peak_memory=max(self.gpu_peak_memory or 0,memory)

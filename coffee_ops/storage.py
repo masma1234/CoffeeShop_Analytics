@@ -145,7 +145,10 @@ class SQLiteStore:
                     raise ValueError(f"Conflicting immutable {kind}: {identity}")
                 return False
             cursor = self.db.execute("INSERT INTO records(kind,id,timestamp,payload) VALUES (?,?,?,?)", (kind, identity, timestamp, encoded))
-            self._project(cursor.lastrowid, kind, payload)
+            sequence = cursor.lastrowid
+            if sequence is None:
+                raise RuntimeError("Record insertion did not produce a sequence")
+            self._project(sequence, kind, payload)
             return True
 
     @contextmanager
@@ -287,7 +290,8 @@ class SQLiteStore:
         return self.db.execute("SELECT coalesce(max(seq),0) FROM records WHERE kind=?", (kind,)).fetchone()[0]
 
     def order_lines(self, day: str | None = None) -> Iterator[dict]:
-        sql, args = "SELECT payload FROM order_heads", []
+        sql = "SELECT payload FROM order_heads"
+        args: list[str] = []
         if day:
             sql += " WHERE timestamp>=? AND timestamp<?"
             args.extend(self._day(day))

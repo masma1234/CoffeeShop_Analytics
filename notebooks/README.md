@@ -13,7 +13,7 @@ py -3.13 -m venv .venv-notebook
 $trainpy = '.\.venv-notebook\Scripts\python.exe'
 & $trainpy -m pip install --upgrade pip
 # Matched publisher pair; verify availability/driver support for your platform.
-& $trainpy -m pip install torch==2.14.1 torchvision==0.29.1 --index-url https://download.pytorch.org/whl/cu130
+& $trainpy -m pip install torch==2.13.0 torchvision==0.28.0 --index-url https://download.pytorch.org/whl/cu128
 & $trainpy -m pip install -r requirements-notebook.txt
 ```
 
@@ -24,7 +24,9 @@ The application's existing `.venv` is separate. The locally prepared research
 kernel currently reuses the previously tested CUDA 2.9.0 stack through a local
 `.pth` file; this saves duplicate multi-GB downloads but retains its known advisory
 debt. A clean environment created with the commands above has no such inheritance.
-The patched pair shown above has not been functionally tested in this repository.
+The CPU variant of this pair passes application checks; CUDA training with it has
+not been revalidated. Do not substitute Torch 2.14.x: the publisher reports an
+[advisory affecting that series](https://github.com/pytorch/pytorch/security/advisories/GHSA-v32g-mr63-3j83).
 
 1. Run the notebook with all heavy-action switches off to inspect the workflow.
 2. Choose a dataset from the [verified source guide](../docs/research/training_datasets.md).

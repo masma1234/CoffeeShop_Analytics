@@ -60,14 +60,14 @@ def evaluate_events(truth: dict, predictions: dict) -> dict:
     tolerances={k:finite(v,"event tolerance") for k,v in truth.get("event_tolerances_seconds",{}).items()}
     duration=truth.get("duration_seconds")
     if duration is not None: duration=finite(duration,"annotated duration",.000001)
-    ignored=[]
+    ignored: list[tuple[float, float]] = []
     for interval in truth.get("unscored_intervals",[]):
         a,b=finite(interval["start_seconds"],"interval start"),finite(interval["end_seconds"],"interval end")
         if duration is None or b<=a or b>duration or ignored and a<ignored[-1][1]:
             raise ValueError("Unscored intervals require duration, sorted disjoint bounds")
         ignored.append((a,b))
     exposure=duration-sum(b-a for a,b in ignored) if duration is not None else None
-    excluded=Counter()
+    excluded: Counter[str] = Counter()
 
     def read(items,name):
         if not isinstance(items,list) or len(items)>10000:
@@ -96,13 +96,13 @@ def evaluate_events(truth: dict, predictions: dict) -> dict:
         return result
 
     gt,pred=read(truth["events"],"truth"),read(predictions.get("events",[]),"predictions")
-    groups=defaultdict(lambda:[[],[]])
+    groups: defaultdict[tuple, list[list[int]]] = defaultdict(lambda:[[],[]])
     for which,items in enumerate([gt,pred]):
         for i,event in enumerate(items):
             scope=tuple(event.get(k) for k in SCOPE)
             if any(v is not None and not isinstance(v,str) for v in scope): raise ValueError("Invalid scope value")
             groups[scope][which].append(i)
-    pairs=[]
+    pairs: list[tuple[int, int]] = []
     for scope,(gi,pi) in groups.items():
         if len(gi)*len(pi)>2_000_000: raise ValueError("Match capacity exceeded; split independent clips")
         costs=np.full((len(gi),len(pi)),1e9)

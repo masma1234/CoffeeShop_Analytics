@@ -2,6 +2,7 @@
 from __future__ import annotations
 import json
 from pathlib import Path
+from typing import Any
 
 from .evaluation import evaluate,match
 from .schema import Detection,file_hash
@@ -19,9 +20,10 @@ def evaluate_review_frames(directory,labels_directory,classes_file,labels_review
     if not names or len(names)!=len(set(names)) or any(name not in source for name in names):
         raise ValueError("Each annotation class must have an exact unique model class name; no silent renaming")
     mapping={i:source[n] for i,n in enumerate(names)};wanted=set(mapping.values())
-    label_index={}
+    label_index: dict[str, list[Path]] = {}
     for path in labels.rglob("*.txt"):label_index.setdefault(path.stem,[]).append(path)
-    truth=[];width,height=manifest["width"],manifest["height"]
+    truth: list[dict[str, Any]] = []
+    width,height=manifest["width"],manifest["height"]
     for row in rows:
         image=root/row["image"]
         if file_hash(str(image))!=row["image_sha256"]:raise ValueError("Exported annotation image changed")
@@ -38,7 +40,9 @@ def evaluate_review_frames(directory,labels_directory,classes_file,labels_review
             if box[2]>width or box[3]>height:raise ValueError("YOLO label outside image geometry")
             detections.append({"class_id":d.class_id,"bbox":list(d.bbox),"confidence":1.})
         truth.append({"frame":row["frame"],"seconds":row["seconds"],"detections":detections})
-    ids={r["frame"] for r in truth};raw=[];operating=[]
+    ids={r["frame"] for r in truth}
+    raw: list[dict[str, Any]] = []
+    operating: list[dict[str, Any]] = []
     with (root/"detections.json").open("rb") as f:
         for frame in ijson.items(f,"frames.item"):
             if int(frame["frame"]) not in ids:continue
@@ -50,7 +54,8 @@ def evaluate_review_frames(directory,labels_directory,classes_file,labels_review
     truth_document={"frames":truth,"provenance":{"kind":"human_frame_annotations_split_independence_unverified"}}
     raw_report=evaluate(truth_document,{"frames":raw})
     operating_report=evaluate(truth_document,{"frames":operating})
-    by_frame={r["frame"]:r for r in operating};errors=[]
+    by_frame={r["frame"]:r for r in operating}
+    errors: list[dict[str, Any]] = []
     for expected in truth:
         predicted=by_frame[expected["frame"]]["detections"];ground=expected["detections"]
         pairs=match(ground,predicted);good_gt={i for i,j in pairs};good_pred={j for i,j in pairs}

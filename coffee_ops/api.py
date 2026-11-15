@@ -6,6 +6,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 import threading
 import sqlite3
+from typing import Any
 from urllib.parse import parse_qs, urlsplit
 
 from .business_reporting import business_report
@@ -85,6 +86,7 @@ def create_server(config, database: str | Path, token: str, port: int = 8765) ->
                 if any(len(v)!=1 for v in query.values()): raise ValueError("Duplicate query parameter")
                 params={k:v[0] for k,v in query.items()}
                 store=SQLiteStore(database,timeout=2,read_only=True)
+                result: dict[str, Any]
                 if url.path=="/v1/health" and not params:
                     result={"storage":store.health(),"scope":"loopback read-only pilot"}
                 elif url.path=="/v1/cameras" and not params:

@@ -44,7 +44,7 @@ class Pipeline:
         self.frames = 0
         self.reliable_frames = 0
         self.last_reliable_capture: str | None = None
-        self.stage_latencies = {name:deque(maxlen=10000) for name in ("detection","tracking","events","storage")}
+        self.stage_latencies: dict[str, deque[float]] = {name:deque(maxlen=10000) for name in ("detection","tracking","events","storage")}
         self.started = time.perf_counter()
         self.process_handle = psutil.Process()
         self.cpu_started = time.process_time()
@@ -67,9 +67,12 @@ class Pipeline:
                component: str | None = None) -> dict:
         timestamp = now()
         running = status == "running"
+        session = self.store.get("runs", key(self.run_id, self.camera_id))
+        if session is None:
+            raise RuntimeError("Pipeline run metadata is missing")
         record = {"camera_id": self.camera_id, "run_id": self.run_id, "timestamp": timestamp,
                   "status": status, "reason": reason, "camera": "ok" if running else status,
-                  "detector": "fixture" if self.store.get("runs", key(self.run_id, self.camera_id))["model"].get("version") == "fixture" else "ok" if running else status,
+                  "detector": "fixture" if session["model"].get("version") == "fixture" else "ok" if running else status,
                   "tracker": "unstable" if self.motion_latched else "ok" if running else status,
                   "storage": self.store.health()["status"],
                   "pos": "disabled_camera_only" if self.config.data["pos"]["mode"] == "camera_only" else "snapshot_imported" if self.store.records("orders", limit=1) else "unavailable",
@@ -140,7 +143,7 @@ class Pipeline:
             gray = cv2.resize(cv2.cvtColor(image, cv2.COLOR_BGR2GRAY), (64, 48)).astype(np.float32)
             if self.previous_image is not None:
                 shift, response = cv2.phaseCorrelate(self.previous_image, gray)
-                motion = np.hypot(*shift)/max(gray.shape)
+                motion = np.hypot(shift[0], shift[1])/max(gray.shape)
                 if response > 0.3 and motion > self.camera["motion_threshold"]:
                     self.motion_latched = True
                     self.tracker.reset()

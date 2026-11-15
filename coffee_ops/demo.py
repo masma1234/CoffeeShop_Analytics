@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import json
 from pathlib import Path
+from typing import Any
 
 import cv2
 import numpy as np
@@ -16,13 +17,13 @@ def make_demo(directory: str) -> dict:
     video = root / "fixture.avi"
     if video.exists():
         raise FileExistsError("Demo exists; choose a new output directory")
-    writer = cv2.VideoWriter(str(video), cv2.VideoWriter_fourcc(*"MJPG"), 1, (320, 240))
+    writer = cv2.VideoWriter(str(video), cv2.VideoWriter.fourcc(*"MJPG"), 1, (320, 240))
     if not writer.isOpened():
         raise OSError("MJPG video writer unavailable")
     frames, truth = [], []
     try:
         for index in range(12):
-            detections = []
+            detections: list[dict[str, Any]] = []
             if index < 10:
                 x = 20 if index < 5 else min(240, 20+(index-4)*55)
                 detections.append({"class_id": 0, "bbox": [x, 20, x+30, 80], "confidence": 0.95, "track_id": "person-a"})

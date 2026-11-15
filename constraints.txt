@@ -1,0 +1,2 @@
+# Torch's transitive packaging dependency: CVE-2025-47273 and later fixes.
+setuptools==84.2.1

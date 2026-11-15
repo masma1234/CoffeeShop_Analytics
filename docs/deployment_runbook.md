@@ -11,7 +11,9 @@ Run `doctor` and `validate-config` first. Operational weights must be trusted lo
 files whose checksum, model version and embedded class names exactly match config
 and metadata. Cup-only notebook exports cannot supply person traffic or table
 occupancy. Do not rename cup labels or an RT-DETR directory to bypass the contract.
-YOLO26 and RT-DETR require separately validated runtime/adapter integration.
+The configured RT-DETRv2 adapter is implemented. Its old model smoke evidence
+does not validate a new dependency stack or real cafe accuracy. Other detector
+versions require separate compatibility checks before changing configuration.
 
 To enable directional crossings, add `crossing_lines` inside the relevant camera:
 

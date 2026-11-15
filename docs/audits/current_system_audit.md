@@ -1,5 +1,9 @@
 # Current-system audit - 2026-11-07
 
+> Historical foundation audit. The authoritative current review is
+> [FINAL_ENGINEERING_AUDIT.md](../../FINAL_ENGINEERING_AUDIT.md). Preserve the
+> original observations below; the Git, dependency and verification state has changed.
+
 Repository scope: coffee_ops, configuration, dependency manifests, scripts, tests,
 saved verification evidence and documentation. Project-scoped git log returned no
 project commits; the enclosing user worktree is not a usable project history.

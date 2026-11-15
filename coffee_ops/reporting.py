@@ -57,7 +57,7 @@ def current_status(store: SQLiteStore, camera_id: str) -> dict:
     from .schema import utc
     age = (utc(now())-utc(health["timestamp"])).total_seconds() if health else None
     active = bool(health and sample and observation and health["status"] == "running"
-                  and health.get("processed_frames", 0) > 0 and 0 <= age < 60
+                  and health.get("processed_frames", 0) > 0 and age is not None and 0 <= age < 60
                   and health["run_id"] == sample["run_id"] == observation["run_id"])
     if not active:
         tables = [{**t, "status": "unknown", "people": None, "full": False, "confidence": 0} for t in tables]

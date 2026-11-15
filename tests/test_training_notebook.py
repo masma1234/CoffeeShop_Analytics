@@ -160,7 +160,7 @@ class TrainingNotebookTests(unittest.TestCase):
 
     def test_original_coco_sparse_categories_crowds_and_xywh(self):
         try:
-            import ijson  # noqa: F401; optional notebook dependency
+            import ijson  # noqa: F401  # Optional notebook dependency.
         except ImportError:
             self.skipTest("Install requirements-notebook.txt to exercise streaming COCO import.")
         folder = self.root / "train2017"; folder.mkdir()

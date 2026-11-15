@@ -1,5 +1,9 @@
 # Verification record - 2026-11-07
 
+> Historical evidence. Use [current release evidence](../RELEASE_EVIDENCE.md) and
+> [the current audit](../FINAL_ENGINEERING_AUDIT.md) for present counts and gates.
+> The measurements below retain their original environments and limitations.
+
 ## Latest local-video prototype verification
 
 The [current video verification](benchmarks/video_prototype_results.json) records

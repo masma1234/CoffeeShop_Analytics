@@ -1,4 +1,5 @@
-# Direct runtime dependencies pinned for reproducible installs.
+# Runtime input pins. Install the platform lock for a reproducible environment.
+-c constraints.txt
 ultralytics==8.3.163
 opencv-python==4.11.0.86
 numpy==2.2.5
@@ -7,5 +8,6 @@ scipy==1.15.2
 psutil==7.0.0
 tzdata==2026.6
 # Keep the native operator libraries paired. Install CPU wheels first (README).
-torch==2.9.0
-torchvision==0.24.0
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.13.0+cpu
+torchvision==0.28.0+cpu

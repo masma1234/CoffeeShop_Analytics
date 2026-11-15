@@ -1,5 +1,6 @@
 """Explicit promotion gates, append-only registry, rollback and feedback export."""
 from __future__ import annotations
+from typing import Any
 
 from .config import Config
 from .detector import validate_metadata
@@ -17,7 +18,7 @@ def promote(store: SQLiteStore, config: Config, evaluation: dict, audit: dict) -
     if evaluation.get("model_sha256") != model["sha256"] or evaluation.get("dataset_manifest_sha256") != audit["manifest_sha256"]:
         raise ValueError("Evaluation is not bound to these weights and audited dataset")
     for dotted, threshold in config.data["promotion"].items():
-        value = evaluation
+        value: Any = evaluation
         for component in dotted.split("."):
             value = value.get(component) if isinstance(value, dict) else None
         if type(value) not in (int, float) or not threshold <= value <= 1:
@@ -25,8 +26,9 @@ def promote(store: SQLiteStore, config: Config, evaluation: dict, audit: dict) -
     ts = now()
     entry = {"timestamp": ts, "action": "promote", "model": model, "config_hash": config.digest,
              "evaluation_hash": key(evaluation), "dataset_audit_hash": key(audit)}
-    entry["registry_id"] = key(entry)
-    store.append("model_registry", entry["registry_id"], ts, entry)
+    registry_id = key(entry)
+    entry["registry_id"] = registry_id
+    store.append("model_registry", registry_id, ts, entry)
     return entry
 
 

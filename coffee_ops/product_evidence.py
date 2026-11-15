@@ -60,7 +60,7 @@ class ProductEvidenceEngine:
                 state.person=None;state.interaction_since=None;state.motion=0;state.handled_reported=False
             if gap>p["max_gap_seconds"] or state.lost_reported:
                 state.outside_pickup.clear();state.inside_pickup.clear()
-            if near:
+            if near and nearest is not None:
                 if state.person!=nearest.track_id:
                     state.person=nearest.track_id;state.interaction_since=ts;state.motion=0;state.handled_reported=False
                 else:state.motion+=math.dist(state.observation.center,track.center)

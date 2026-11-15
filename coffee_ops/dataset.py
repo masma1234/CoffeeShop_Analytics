@@ -127,7 +127,7 @@ def split_manifest(path: str, seed: str = "42") -> dict:
             parent[i] = parent[parent[i]]
             i = parent[i]
         return i
-    seen = {}
+    seen: dict[tuple[str, str], int] = {}
     for i, row in enumerate(rows):
         for field in ("camera_id", "environment_id", "video_id"):
             token = (field, row[field])
