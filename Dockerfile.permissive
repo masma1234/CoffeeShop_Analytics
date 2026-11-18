@@ -1,0 +1,50 @@
+# Python 3.13, Wolfi/glibc, RT-DETR profile. Base pinned for Linux amd64.
+FROM cgr.dev/chainguard/wolfi-base@sha256:fa63d07ad857b4fb4dacb80f3f269116d24e3f27f9ce41feed5c0f617afcaf7e AS runtime-base
+USER root
+RUN for attempt in 1 2 3; do \
+      apk add --no-cache python-3.13=3.13.18_git20261115-r1 libstdc++=16.2.0-r4 libgomp=16.2.0-r4 && exit 0; \
+    done; exit 1
+ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1 \
+    HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 HF_HOME=/tmp/huggingface \
+    HOME=/tmp OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 \
+    PATH=/opt/venv/bin:$PATH
+WORKDIR /app
+
+FROM runtime-base AS dependencies
+RUN apk add --no-cache py3.13-pip=26.2.2-r3 \
+    && /usr/bin/python3.13 -m venv --without-pip /opt/venv
+COPY requirements-lock-permissive-linux.txt ./
+RUN /usr/bin/python3.13 -m pip --python /opt/venv/bin/python install --require-hashes -r requirements-lock-permissive-linux.txt \
+    && /usr/bin/python3.13 -m pip --python /opt/venv/bin/python check
+
+FROM runtime-base AS runtime
+# ensurepip is a build helper bundled with Python, not an inference dependency.
+# Keep the stricter production check that both pip and ensurepip are absent.
+RUN rm -rf /usr/lib/python3.13/ensurepip
+COPY --from=dependencies /opt/venv /opt/venv
+COPY coffee_ops/ ./coffee_ops/
+COPY config/example.json ./config/example.json
+COPY models/metadata.example.json ./models/metadata.example.json
+COPY schemas/ ./schemas/
+RUN mkdir /app/var && chown 10001:10001 /app/var
+USER 10001:10001
+CMD ["python", "-m", "coffee_ops", "validate-config"]
+
+FROM dependencies AS test
+COPY requirements-dev.txt ./
+RUN /usr/bin/python3.13 -m pip --python /opt/venv/bin/python install pip==26.3 -r requirements-dev.txt \
+    && /usr/bin/python3.13 -m pip --python /opt/venv/bin/python check
+COPY coffee_ops/ ./coffee_ops/
+COPY config/example.json ./config/example.json
+COPY models/metadata.example.json ./models/metadata.example.json
+COPY schemas/ ./schemas/
+COPY tests/ ./tests/
+COPY scripts/ ./scripts/
+COPY notebooks/cafe_model_benchmark.ipynb ./notebooks/cafe_model_benchmark.ipynb
+COPY README.md ./README.md
+RUN mkdir /app/var && chown 10001:10001 /app/var
+USER 10001:10001
+CMD ["python", "-m", "unittest", "discover", "-s", "tests", "-v"]
+
+# Keep the default build free of the test-only toolchain.
+FROM runtime AS production

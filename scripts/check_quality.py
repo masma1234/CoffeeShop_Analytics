@@ -13,6 +13,8 @@ import time
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--mypy-cache", type=Path,
+                        help="Optional reusable type cache; evidence output must still be new")
     args = parser.parse_args()
     args.output.mkdir(parents=True, exist_ok=False)
     root = Path(__file__).resolve().parents[1]
@@ -24,7 +26,7 @@ def main() -> int:
         "coverage-report": ["-m", "coverage", "report"],
         "coverage-json": ["-m", "coverage", "json", "-o", str(args.output.resolve() / "coverage.json")],
         "ruff": ["-m", "ruff", "check", "--cache-dir", str(args.output.resolve() / ".ruff_cache"), "--select", "E9,F", "coffee_ops", "scripts", "tests"],
-        "mypy": ["-m", "mypy", "--cache-dir", str(args.output.resolve() / ".mypy_cache"), "--show-traceback", "--check-untyped-defs", "--ignore-missing-imports", "coffee_ops"],
+        "mypy": ["-m", "mypy", "--cache-dir", str((args.mypy_cache or args.output / ".mypy_cache").resolve()), "--show-traceback", "--check-untyped-defs", "--ignore-missing-imports", "coffee_ops"],
         "acceptance": ["scripts/verify_mvp.py", "--output", str(args.output.resolve() / "acceptance")],
     }
     results = []

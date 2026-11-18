@@ -3,6 +3,7 @@
 No downloaded weights, training, real-world labels or accuracy claims.
 """
 import contextlib
+import importlib.util
 import io
 import json
 import tempfile
@@ -18,6 +19,7 @@ from coffee_ops.schema import file_hash
 ROOT = Path(__file__).resolve().parents[1]
 
 
+@unittest.skipUnless(importlib.util.find_spec("ultralytics"), "Optional YOLO backend is not installed")
 class DetectorBackendTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
@@ -61,6 +63,7 @@ class DetectorBackendTests(unittest.TestCase):
         finally:
             detector.close()
         self.assertFalse(detector.process.is_alive())
+        self.assertEqual(detector.process.exitcode, 0)
 
     def test_embedded_weight_names_cannot_be_overridden_by_metadata(self):
         with self.assertRaisesRegex(RuntimeError, "class names/IDs mismatch"):

@@ -3,6 +3,16 @@
 Audit started 2026-11-12. Report generated 2026-11-12T22:42:15.821075+00:00. This is a scope and validation
 record; the [README](README.md) is the authoritative overview and setup guide.
 
+17 November current status: all four Windows/Linux CPU/video profiles and the
+RT-DETR Linux profile passed nine checks each. The rebuilt RT-DETR image passed
+native/isolation checks and has zero Trivy findings; its SBOM has 94 components.
+Pretrained CPU numerical parity passed on 30 calibration images. Source license,
+third-party/publication rights and real cafe acceptance remain open. See the
+[current release gates](GITHUB_READINESS.md) and
+[verification evidence](docs/audits/release-verification-20261117.json).
+The capability table below is the dated 12 November snapshot, including the
+legacy image's unresolved findings; it does not describe the new RT-DETR image.
+
 15 November continuation: [startup verification](docs/benchmarks/detector_startup_20261115.md)
 documents the dedicated RT-DETR loader, fixed deadline, bounded stage diagnostics
 and cancellation/disconnect regression tests. The capability table below records
@@ -50,5 +60,5 @@ bound disk use. Original environments remain preserved with known dependency deb
    configuration and real-held-out evaluation. No numeric business target is invented.
 
 See [the architecture](docs/architecture/current_architecture.md),
-[release evidence](RELEASE_EVIDENCE.md), [annotation contract](docs/annotation_guidelines.md)
+[current verification](docs/benchmarks/model_validation_20261116.md), [annotation contract](docs/annotation_guidelines.md)
 and [benchmark protocol](docs/benchmark_protocol.md).

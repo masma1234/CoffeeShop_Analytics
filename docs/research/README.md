@@ -17,12 +17,14 @@ Execution priorities:
 4. Select three candidates conditionally on data, latency, integration and licensing.
 5. Document a real-video comparison protocol and implement only justified benchmark tooling.
 
-Read [model comparison](../benchmarks/model_comparison.md) for the decision and
-[performance report](../benchmarks/performance_report.md) for local measurements.
+Read [current model validation](../benchmarks/model_validation_20261116.md) for
+the owner's permissive-stack selection and latest measurements. The earlier
+[performance report](../benchmarks/performance_report.md) covers different
+models and experiments; its dates and limitations still apply.
 
 Supporting work:
 
-- [Current-system audit](../audits/current_system_audit.md)
+- [Current release gates](../../GITHUB_READINESS.md)
 - [Verified resource inventory](resource_inventory.md)
 - [Technology screening](technology_comparison.md)
 - [Dataset strategy](dataset_strategy.md)

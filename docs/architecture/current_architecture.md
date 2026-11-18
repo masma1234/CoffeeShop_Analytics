@@ -41,7 +41,7 @@ weighting; business-report uses explicit IANA timezone/day boundaries and time-w
 coverage. Traffic reviews append corrections; SQLite remains the source for aggregates.
 New live runs store a source hash rather than credential-bearing URLs.
 Historical records grow; the active decoder/tracker state
-is bounded. See [audit](../audits/current_system_audit.md) for gaps and risks.
+is bounded. See [current release gates](../../GITHUB_READINESS.md) for gaps and risks.
 
 Stored event provenance joins the event's camera/run ID to the immutable run's
 source identity, config hash, model metadata and start clock. Traffic records add

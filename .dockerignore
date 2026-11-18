@@ -1,6 +1,7 @@
 # Allow only the source needed for runtime and clean-checkout verification.
 **
 !Dockerfile
+!Dockerfile.permissive
 !requirements*.txt
 !constraints.txt
 !coffee_ops/

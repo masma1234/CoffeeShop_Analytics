@@ -102,6 +102,24 @@ class FailureBoundaryTests(StoreCase):
         finally:
             detector.close()
 
+    def test_idle_worker_ignoring_shutdown_is_still_terminated_within_close_budget(self):
+        detector = YOLODetector.__new__(YOLODetector)
+        ctx = mp.get_context("spawn")
+        detector.connection, child = ctx.Pipe()
+        detector.process = ctx.Process(target=hold_pipe, args=(child,), daemon=True)
+        detector._idle = True
+        detector.process.start()
+        child.close()
+        started = time.perf_counter()
+        try:
+            detector.close()
+            self.assertFalse(detector.process.is_alive())
+            self.assertNotEqual(detector.process.exitcode, 0)
+            self.assertTrue(detector.connection.closed)
+            self.assertLess(time.perf_counter()-started, 4)
+        finally:
+            detector.close()
+
     def test_fixture_missing_frame_is_not_an_empty_observation(self):
         path = self.root / "fixture.json"
         path.write_text(json.dumps({"purpose": "pipeline_fixture_not_model_accuracy", "frames": [{"frame": 0, "detections": []}]}))

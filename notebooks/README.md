@@ -2,7 +2,14 @@
 
 Open [cafe_model_benchmark.ipynb](cafe_model_benchmark.ipynb). It is self-contained:
 upload that single notebook to Kaggle/Colab, or run it with VS Code's notebook UI.
-It trains YOLO11s, YOLO26s and the exact Hugging Face RT-DETRv2-R18 checkpoint.
+It supports YOLO11s, YOLO26s and the exact Hugging Face RT-DETRv2-R18 checkpoint.
+
+For the owner's current permissive-model preference, select only
+`MODEL_NAMES=["rtdetr_v2_r18"]`. The shared comparison environment below still
+installs Ultralytics for historical YOLO experiments; it is not the proposed
+permissive runtime. See [current measurements and remaining gates](../docs/benchmarks/model_validation_20261116.md).
+Do not train on the new frozen COCO calibration/test subset. No cafe training
+or production promotion has been completed in that follow-up.
 
 ## Run locally on the RTX 3050 laptop
 
@@ -20,10 +27,10 @@ $trainpy = '.\.venv-notebook\Scripts\python.exe'
 Select `.venv-notebook` as the notebook interpreter/kernel. For CPU use the official
 CPU wheel index instead and set `DEVICE="cpu"`. See the
 [official Torch version instructions](https://pytorch.org/get-started/previous-versions/).
-The application's existing `.venv` is separate. The locally prepared research
-kernel currently reuses the previously tested CUDA 2.9.0 stack through a local
-`.pth` file; this saves duplicate multi-GB downloads but retains its known advisory
-debt. A clean environment created with the commands above has no such inheritance.
+The application's retained `.venv-candidate` is separate. The 17 November storage
+cleanup removed the old notebook/GPU environments and their shared `.pth`
+inheritance, preserving their package inventories as evidence. Create a fresh
+research environment with the commands above before using the notebook again.
 The CPU variant of this pair passes application checks; CUDA training with it has
 not been revalidated. Do not substitute Torch 2.14.x: the publisher reports an
 [advisory affecting that series](https://github.com/pytorch/pytorch/security/advisories/GHSA-v32g-mr63-3j83).
@@ -81,7 +88,7 @@ remains separate because the current public detector labels cannot score it fair
 ## Verification
 
 ```powershell
-& .\.venv\Scripts\python.exe -m unittest discover -s tests -v
+& .\.venv-candidate\Scripts\python.exe -m unittest discover -s tests -v
 ```
 
 Tests execute the actual notebook helper cells and exercise geometry, annotation

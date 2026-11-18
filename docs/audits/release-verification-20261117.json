@@ -1,0 +1,1676 @@
+{
+  "date": "2026-11-17",
+  "published_commit": "097c1bd76d6c37efeb43fdab41dde9d6076596e7",
+  "branch": "audit/deep-clean-20261115",
+  "publication_performed": false,
+  "project_license_selected": false,
+  "production_ready": false,
+  "source_inventory": {
+    "cleanup_before_audit_reports": 192,
+    "published": 194,
+    "removed_superseded_documents": 16,
+    "added_source_test_lock_and_audit_files": 15,
+    "current_existing_nonignored_files": 193,
+    "working_tree": "Uncommitted owner-review material; no new Git commit",
+    "frozen_source_files_tested": 193,
+    "frozen_source_manifest_sha256": "dac994247b61c613e7921af7749085d7f622939b8f0e30865f847ccdd238d355",
+    "documentation_finalized_after_test_export": [
+      "docs/audits/post-publication-20261115.md",
+      "docs/audits/release-verification-20261117.json",
+      "docs/audits/workspace-cleanup-20261116.md",
+      "docs/benchmarks/model_validation_20261116.md",
+      "GITHUB_READINESS.md",
+      "IMPLEMENTATION_STATUS.md",
+      "README.md",
+      "docs/benchmarks/benchmark-environment.txt",
+      "docs/research/training_datasets.md"
+    ],
+    "all_36_application_files_match_image_frozen_and_current_source": true,
+    "clean_source_scope": "No .git, operational data, checkpoints, caches or generated evidence; Windows fresh CPU hash-locked environment and isolated Linux test images",
+    "limits": "Candidate source export, not a new published clean Git checkout; Windows/Linux runtime tests passed. OS transitive repository resolution and optional/dev dependencies are not fully frozen."
+  },
+  "published_actions": {
+    "url": "https://github.com/masma1234/CoffeeShop_Analytics/actions/runs/43731027661",
+    "four_windows_linux_cpu_video_jobs": "Passed",
+    "image_security": "Failed: 61 HIGH, 1 CRITICAL Debian matches, and no owner-selected root LICENSE",
+    "local_ci_changes_run_remotely": false,
+    "artifact_review": "Actual image-security-evidence downloaded, all 194 source hashes matched; see post-publication audit",
+    "legacy_debian_findings_resolved": false
+  },
+  "five_quality_profiles": {
+    "windows-cpu": {
+      "all_nine_passed": true,
+      "checks": [
+        {
+          "check": "pip-check",
+          "exit_code": 0,
+          "seconds": 1.0679082000278868
+        },
+        {
+          "check": "doctor",
+          "exit_code": 0,
+          "seconds": 5.741754200018477
+        },
+        {
+          "check": "config",
+          "exit_code": 0,
+          "seconds": 0.17179120000218973
+        },
+        {
+          "check": "pytest-coverage",
+          "exit_code": 0,
+          "seconds": 25.96152200002689
+        },
+        {
+          "check": "coverage-report",
+          "exit_code": 0,
+          "seconds": 0.47355250001419336
+        },
+        {
+          "check": "coverage-json",
+          "exit_code": 0,
+          "seconds": 0.5873717999784276
+        },
+        {
+          "check": "ruff",
+          "exit_code": 0,
+          "seconds": 0.12949459999799728
+        },
+        {
+          "check": "mypy",
+          "exit_code": 0,
+          "seconds": 1.620517099974677
+        },
+        {
+          "check": "acceptance",
+          "exit_code": 0,
+          "seconds": 33.57502170000225
+        }
+      ],
+      "pytest_summary": "197 passed, 21 skipped, 44 subtests passed in 24.26s",
+      "coverage": {
+        "covered_lines": 2492,
+        "num_statements": 3363,
+        "percent_covered": 74.10050550104074,
+        "percent_covered_display": "74",
+        "missing_lines": 871,
+        "excluded_lines": 15,
+        "percent_statements_covered": 74.10050550104074,
+        "percent_statements_covered_display": "74"
+      },
+      "acceptance_commands": 21,
+      "acceptance_unit_suite": {
+        "exit_code": 0,
+        "timed_out": false,
+        "deadline_seconds": 180
+      }
+    },
+    "windows-video": {
+      "all_nine_passed": true,
+      "checks": [
+        {
+          "check": "pip-check",
+          "exit_code": 0,
+          "seconds": 1.076129299995955
+        },
+        {
+          "check": "doctor",
+          "exit_code": 0,
+          "seconds": 7.612131699977908
+        },
+        {
+          "check": "config",
+          "exit_code": 0,
+          "seconds": 0.150465999962762
+        },
+        {
+          "check": "pytest-coverage",
+          "exit_code": 0,
+          "seconds": 46.07483110000612
+        },
+        {
+          "check": "coverage-report",
+          "exit_code": 0,
+          "seconds": 0.444706300040707
+        },
+        {
+          "check": "coverage-json",
+          "exit_code": 0,
+          "seconds": 0.4959281999617815
+        },
+        {
+          "check": "ruff",
+          "exit_code": 0,
+          "seconds": 0.12310720002278686
+        },
+        {
+          "check": "mypy",
+          "exit_code": 0,
+          "seconds": 2.7796692999545485
+        },
+        {
+          "check": "acceptance",
+          "exit_code": 0,
+          "seconds": 50.99409280001419
+        }
+      ],
+      "pytest_summary": "218 passed, 51 subtests passed in 44.47s",
+      "coverage": {
+        "covered_lines": 2853,
+        "num_statements": 3363,
+        "percent_covered": 84.8349687778769,
+        "percent_covered_display": "85",
+        "missing_lines": 510,
+        "excluded_lines": 15,
+        "percent_statements_covered": 84.8349687778769,
+        "percent_statements_covered_display": "85"
+      },
+      "acceptance_commands": 21,
+      "acceptance_unit_suite": {
+        "exit_code": 0,
+        "timed_out": false,
+        "deadline_seconds": 180
+      }
+    },
+    "linux-cpu": {
+      "all_nine_passed": true,
+      "checks": [
+        {
+          "check": "pip-check",
+          "exit_code": 0,
+          "seconds": 0.6748936510011845
+        },
+        {
+          "check": "doctor",
+          "exit_code": 0,
+          "seconds": 3.802397612000277
+        },
+        {
+          "check": "config",
+          "exit_code": 0,
+          "seconds": 0.42342866599938134
+        },
+        {
+          "check": "pytest-coverage",
+          "exit_code": 0,
+          "seconds": 24.66858751500149
+        },
+        {
+          "check": "coverage-report",
+          "exit_code": 0,
+          "seconds": 1.4790301989996806
+        },
+        {
+          "check": "coverage-json",
+          "exit_code": 0,
+          "seconds": 2.52795046600113
+        },
+        {
+          "check": "ruff",
+          "exit_code": 0,
+          "seconds": 0.6226464430001215
+        },
+        {
+          "check": "mypy",
+          "exit_code": 0,
+          "seconds": 4.93260251799984
+        },
+        {
+          "check": "acceptance",
+          "exit_code": 0,
+          "seconds": 32.32838279099997
+        }
+      ],
+      "pytest_summary": "197 passed, 21 skipped, 44 subtests passed in 23.01s",
+      "coverage": {
+        "covered_lines": 2492,
+        "num_statements": 3363,
+        "percent_covered": 74.10050550104074,
+        "percent_covered_display": "74",
+        "missing_lines": 871,
+        "excluded_lines": 15,
+        "percent_statements_covered": 74.10050550104074,
+        "percent_statements_covered_display": "74"
+      },
+      "acceptance_commands": 21,
+      "acceptance_unit_suite": {
+        "exit_code": 0,
+        "timed_out": false,
+        "deadline_seconds": 180
+      }
+    },
+    "linux-video": {
+      "all_nine_passed": true,
+      "checks": [
+        {
+          "check": "pip-check",
+          "exit_code": 0,
+          "seconds": 0.6215454529992712
+        },
+        {
+          "check": "doctor",
+          "exit_code": 0,
+          "seconds": 2.5950155219998123
+        },
+        {
+          "check": "config",
+          "exit_code": 0,
+          "seconds": 0.32850874200084945
+        },
+        {
+          "check": "pytest-coverage",
+          "exit_code": 0,
+          "seconds": 41.11614057800034
+        },
+        {
+          "check": "coverage-report",
+          "exit_code": 0,
+          "seconds": 1.2920361710002908
+        },
+        {
+          "check": "coverage-json",
+          "exit_code": 0,
+          "seconds": 2.245959297000809
+        },
+        {
+          "check": "ruff",
+          "exit_code": 0,
+          "seconds": 0.4733587829996395
+        },
+        {
+          "check": "mypy",
+          "exit_code": 0,
+          "seconds": 5.187599130998933
+        },
+        {
+          "check": "acceptance",
+          "exit_code": 0,
+          "seconds": 57.58787161500004
+        }
+      ],
+      "pytest_summary": "218 passed, 51 subtests passed in 39.54s",
+      "coverage": {
+        "covered_lines": 2846,
+        "num_statements": 3363,
+        "percent_covered": 84.62682129051443,
+        "percent_covered_display": "85",
+        "missing_lines": 517,
+        "excluded_lines": 15,
+        "percent_statements_covered": 84.62682129051443,
+        "percent_statements_covered_display": "85"
+      },
+      "acceptance_commands": 21,
+      "acceptance_unit_suite": {
+        "exit_code": 0,
+        "timed_out": false,
+        "deadline_seconds": 180
+      }
+    },
+    "linux-permissive": {
+      "all_nine_passed": true,
+      "checks": [
+        {
+          "check": "pip-check",
+          "exit_code": 0,
+          "seconds": 0.47210987099970225
+        },
+        {
+          "check": "doctor",
+          "exit_code": 0,
+          "seconds": 3.2800123730012274
+        },
+        {
+          "check": "config",
+          "exit_code": 0,
+          "seconds": 0.12203301900080987
+        },
+        {
+          "check": "pytest-coverage",
+          "exit_code": 0,
+          "seconds": 22.969827553999494
+        },
+        {
+          "check": "coverage-report",
+          "exit_code": 0,
+          "seconds": 1.1852554239994788
+        },
+        {
+          "check": "coverage-json",
+          "exit_code": 0,
+          "seconds": 1.174108150000393
+        },
+        {
+          "check": "ruff",
+          "exit_code": 0,
+          "seconds": 0.17210992299987993
+        },
+        {
+          "check": "mypy",
+          "exit_code": 0,
+          "seconds": 12.306529978999606
+        },
+        {
+          "check": "acceptance",
+          "exit_code": 0,
+          "seconds": 22.92390756900022
+        }
+      ],
+      "pytest_summary": "216 passed, 2 skipped, 51 subtests passed in 21.37s",
+      "coverage": {
+        "covered_lines": 2844,
+        "num_statements": 3363,
+        "percent_covered": 84.56735057983943,
+        "percent_covered_display": "85",
+        "missing_lines": 519,
+        "excluded_lines": 15,
+        "percent_statements_covered": 84.56735057983943,
+        "percent_statements_covered_display": "85"
+      },
+      "acceptance_commands": 21,
+      "acceptance_unit_suite": {
+        "exit_code": 0,
+        "timed_out": false,
+        "deadline_seconds": 180
+      }
+    }
+  },
+  "coverage_limits": "Parent-process statement coverage only; subprocess native/pretrained inference has separate integration/parity evidence, not merged coverage",
+  "notebook": {
+    "notebook": "notebooks\\cafe_model_benchmark.ipynb",
+    "schema_valid": true,
+    "default_kernel_execution": true,
+    "smoke_only": true,
+    "accuracy_claims": false,
+    "models": {}
+  },
+  "recommended_image": {
+    "build_file": "Dockerfile.permissive",
+    "target": "production",
+    "tag": "coffee-ops-permissive:20261117-verified",
+    "oci_index_digest": "sha256:62c967fe065187fa76d79e37096fb400332c82645ad086918778db7c9caaf7d1",
+    "trivy_artifact_config_digest": "sha256:64fff51e164eb5d3aa0a07090916e7c9bd2b11098fe52f6827da89616d6758ed",
+    "trivy_metadata_image_id_matches_docker": true,
+    "all_ordered_filesystem_diffids_match": true,
+    "build_and_runtime_verified": true,
+    "python_distributions": 46,
+    "image_metadata_sha256": "ca3fdb1b0e13dd5f093d6d15f01b12949708cc5ca1a9ac01ae4c5800e785eaf4",
+    "native_container_verification": {
+      "image": "coffee-ops-permissive:20261117-verified",
+      "synthetic_only": true,
+      "passed": true,
+      "image_id": "sha256:62c967fe065187fa76d79e37096fb400332c82645ad086918778db7c9caaf7d1",
+      "runtime": {
+        "non_root": true,
+        "root_read_only": true,
+        "private_health_auth": true,
+        "events": 0
+      },
+      "egress": {
+        "interfaces": [
+          "lo"
+        ],
+        "loopback": "passed",
+        "blocked": [
+          {
+            "destination": "public",
+            "protocol": "tcp",
+            "errno": 101
+          },
+          {
+            "destination": "public",
+            "protocol": "udp",
+            "errno": 101
+          },
+          {
+            "destination": "metadata",
+            "protocol": "tcp",
+            "errno": 101
+          },
+          {
+            "destination": "metadata",
+            "protocol": "udp",
+            "errno": 101
+          },
+          {
+            "destination": "private",
+            "protocol": "tcp",
+            "errno": 101
+          },
+          {
+            "destination": "private",
+            "protocol": "udp",
+            "errno": 101
+          },
+          {
+            "destination": "public_ipv6",
+            "protocol": "tcp",
+            "errno": 101
+          },
+          {
+            "destination": "public_ipv6",
+            "protocol": "udp",
+            "errno": 101
+          }
+        ]
+      },
+      "native_smoke": {
+        "health": {
+          "status": "ok",
+          "torch": "2.13.0+cpu",
+          "torchvision": "0.28.0+cpu",
+          "cpu_nms": "passed",
+          "cuda_available": false,
+          "scope": "Native backend compatibility only; no model accuracy tested"
+        },
+        "backend": "rtdetr_v2",
+        "untrained_architecture_inference": true,
+        "model_accuracy_validated": false
+      },
+      "stop_seconds": 0.14365600002929568,
+      "runtime_limits": {
+        "NetworkMode": "none",
+        "ReadonlyRootfs": true,
+        "NanoCpus": 1000000000,
+        "Memory": 1073741824,
+        "CapDrop": [
+          "ALL"
+        ],
+        "SecurityOpt": [
+          "no-new-privileges"
+        ],
+        "Tmpfs": {
+          "/tmp": "rw,nosuid,nodev,size=128m"
+        }
+      },
+      "exit_code": 0,
+      "published_ports": {},
+      "stdout": "{\n  \"status\": \"stopped\"\n}"
+    },
+    "capacity_limits": "Tiny untrained model in 1 GiB isolated smoke; real pretrained parity separately with 2 GiB. Sustained full-model/multi-camera capacity is unvalidated."
+  },
+  "final_image_scan": {
+    "completed": true,
+    "created_at": "2026-11-17T20:20:47.3215852+01:00",
+    "scanner": "Trivy 0.76.2",
+    "report_sha256": "e2ecdf20173dae556d3b49c4e1bad05af0d29f3a7dde0fc3920520f0ce8afb35",
+    "high_critical": 0,
+    "all_severity_findings": 0,
+    "targets": [
+      {
+        "type": "wolfi",
+        "packages": 35,
+        "findings": 0
+      },
+      {
+        "type": "python-pkg",
+        "packages": 58,
+        "findings": 0
+      }
+    ],
+    "python_count_note": "Trivy inventories additional vendored metadata; 58 entries do not mean 58 installed distributions",
+    "suppression_used": false,
+    "security_gate": {
+      "high_critical_matches": 0,
+      "passed": true,
+      "suppression_used": false
+    },
+    "database": {
+      "Version": 2,
+      "NextUpdate": "2026-11-18T13:00:16.23116036Z",
+      "UpdatedAt": "2026-11-17T13:00:16.23116094Z",
+      "DownloadedAt": "2026-11-17T15:05:24.7900152Z"
+    },
+    "sbom": {
+      "format": "CycloneDX",
+      "components": 94,
+      "sha256": "6eb38edf466f14aacc91d21c601b03ae259cc24aad206014dc318416858f65c4"
+    },
+    "limits": "Point-in-time scan of the explicit RT-DETR production profile; does not clear legacy/research/development environments or licensing"
+  },
+  "upgrade": {
+    "transformers": {
+      "from": "4.57.6",
+      "to": "5.23.0"
+    },
+    "huggingface_hub": {
+      "from": "0.36.2",
+      "to": "2.4.0"
+    },
+    "initial_findings": [
+      {
+        "VulnerabilityID": "CVE-2026-4372",
+        "PkgName": "transformers",
+        "InstalledVersion": "4.57.6",
+        "FixedVersion": "5.3.0",
+        "Severity": "HIGH",
+        "Title": "HuggingFace transformers vulnerable to remote code execution"
+      },
+      {
+        "VulnerabilityID": "CVE-2026-5241",
+        "PkgName": "transformers",
+        "InstalledVersion": "4.57.6",
+        "FixedVersion": "5.5.0",
+        "Severity": "HIGH",
+        "Title": "python-transformers: python-transformers: Arbitrary code execution due to overridden trust_remote_code setting"
+      },
+      {
+        "VulnerabilityID": "CVE-2026-80047",
+        "PkgName": "transformers",
+        "InstalledVersion": "4.57.6",
+        "FixedVersion": null,
+        "Severity": "HIGH",
+        "Title": "transformers: Hugging Face Transformers: Unauthorized file write via GenerativePreTrainedModel.load_custom_generate()"
+      },
+      {
+        "VulnerabilityID": "CVE-2026-9856",
+        "PkgName": "transformers",
+        "InstalledVersion": "4.57.6",
+        "FixedVersion": "5.10.0",
+        "Severity": "HIGH",
+        "Title": "transformers: Hugging Face Transformers: Arbitrary file write via path traversal"
+      },
+      {
+        "VulnerabilityID": "CVE-2026-1839",
+        "PkgName": "transformers",
+        "InstalledVersion": "4.57.6",
+        "FixedVersion": "5.0.0rc3",
+        "Severity": "MEDIUM",
+        "Title": "transformers: HuggingFace Transformers: Arbitrary code execution via malicious checkpoint file"
+      }
+    ],
+    "vendor_advisories": [
+      {
+        "ghsa_id": "GHSA-29pf-2h5f-8g72",
+        "cve_id": "CVE-2026-4372",
+        "html_url": "https://github.com/advisories/GHSA-29pf-2h5f-8g72",
+        "summary": "HuggingFace transformers vulnerable to remote code execution",
+        "severity": "high",
+        "vulnerabilities": [
+          {
+            "package": {
+              "ecosystem": "pip",
+              "name": "transformers"
+            },
+            "vulnerable_version_range": "< 5.3.0",
+            "first_patched_version": "5.3.0",
+            "vulnerable_functions": []
+          }
+        ]
+      },
+      {
+        "ghsa_id": "GHSA-fgcw-684q-jj6r",
+        "cve_id": "CVE-2026-5241",
+        "html_url": "https://github.com/advisories/GHSA-fgcw-684q-jj6r",
+        "summary": "huggingface/transformers: Arbitrary Code Execution During Model Initialization in the LightGlue Model Loading Path",
+        "severity": "high",
+        "vulnerabilities": [
+          {
+            "package": {
+              "ecosystem": "pip",
+              "name": "transformers"
+            },
+            "vulnerable_version_range": "< 5.5.0",
+            "first_patched_version": "5.5.0",
+            "vulnerable_functions": []
+          }
+        ]
+      },
+      {
+        "ghsa_id": "GHSA-x9r9-c232-4q39",
+        "cve_id": "CVE-2026-80047",
+        "html_url": "https://github.com/advisories/GHSA-x9r9-c232-4q39",
+        "summary": "Hugging Face Transformers downloads custom generation code before trust consent",
+        "severity": "high",
+        "vulnerabilities": [
+          {
+            "package": {
+              "ecosystem": "pip",
+              "name": "transformers"
+            },
+            "vulnerable_version_range": ">= 4.49.0, <= 5.8.1",
+            "first_patched_version": null,
+            "vulnerable_functions": []
+          }
+        ]
+      },
+      {
+        "ghsa_id": "GHSA-xrqw-3rrv-vx5w",
+        "cve_id": "CVE-2026-9856",
+        "html_url": "https://github.com/advisories/GHSA-xrqw-3rrv-vx5w",
+        "summary": "Transformers save_pretrained path traversal allows arbitrary file writes through chat template names",
+        "severity": "high",
+        "vulnerabilities": [
+          {
+            "package": {
+              "ecosystem": "pip",
+              "name": "transformers"
+            },
+            "vulnerable_version_range": "< 5.10.0",
+            "first_patched_version": "5.10.0",
+            "vulnerable_functions": []
+          }
+        ]
+      }
+    ],
+    "CVE_2026_80047": {
+      "advisory_patched_version_unspecified": true,
+      "fix_commit": "cbc1651a032b923da7f4b44b3d0e6f68e6ba6b55",
+      "release_checked": "v5.23.0",
+      "contains_fix": true,
+      "ahead_by": 869,
+      "url": "https://github.com/huggingface/transformers/compare/cbc1651a032b923da7f4b44b3d0e6f68e6ba6b55...v5.23.0"
+    },
+    "wheel_hash_provenance": {
+      "resolution": "patched-resolution.json",
+      "verified_prior_hash_fallback": [
+        {
+          "name": "Jinja2",
+          "version": "3.1.6",
+          "exact_download_url": "https://download.pytorch.org/whl/jinja2-3.1.6-py3-none-any.whl",
+          "sha256": "85ece4451f492d0c13c5dd7c13a64681a86afae63a5f347908daf103ce6d2f67",
+          "source": "Prior binary-verified lock; identical exact wheel URL in prior resolver report"
+        }
+      ],
+      "packages": 46
+    },
+    "preprocessing": "Explicit RTDetrImageProcessorPil in v5; preserves the previous PIL resize/normalization contract",
+    "worker_shutdown": "Idle worker receives sentinel, joins up to 2 seconds; terminate/join up to 1 second if needed. In-flight/failed startup still use forced cleanup. Existing total 3-second budget retained.",
+    "offline_workers": "HF_HUB_OFFLINE and HF_HUB_DISABLE_TELEMETRY; YOLO_OFFLINE and YOLO_AUTOINSTALL=false",
+    "tiny_model_fixture": "Two decoder layers required for the upgraded shared prediction-head target validation; fixture remains untrained integration-only",
+    "type_compatibility": "Dedicated Hugging Face model.to called with explicit receiver, preserving HF guards; no type ignore added"
+  },
+  "runtime_parity": {
+    "purpose": "Numerical compatibility check across runtime/OS versions, not cafe accuracy",
+    "images": 30,
+    "baseline": {
+      "torch": "2.13.0+cpu",
+      "torchvision": "0.28.0+cpu",
+      "transformers": "4.57.6",
+      "huggingface-hub": "0.36.2"
+    },
+    "candidate": {
+      "torch": "2.13.0+cpu",
+      "torchvision": "0.28.0+cpu",
+      "transformers": "5.23.0",
+      "huggingface-hub": "2.4.0"
+    },
+    "weights_sha256": "d18309d0d7ea57048138885c4c6ecfcb1e24506fc6153b94ad484f8ab62c7115",
+    "device": "cpu",
+    "precision": "fp32",
+    "image_size": 512,
+    "thresholds": {
+      "person": 0.55,
+      "bottle": 0.45,
+      "cup": 0.55
+    },
+    "matched_detections": 61,
+    "unmatched": [],
+    "minimum_box_iou": 0.9999951524645028,
+    "maximum_score_delta": 5.078315734863281e-05,
+    "maximum_box_coordinate_delta_pixels": 0.0001220703125,
+    "criteria": {
+      "minimum_box_iou": 0.99,
+      "maximum_score_delta": 0.01,
+      "unmatched_detections": 0
+    },
+    "passed": true,
+    "limits": [
+      "30 calibration images; not a full held-out AP test",
+      "Both CPU FP32; does not validate upgraded CUDA FP16",
+      "Windows/OpenCV 4.11 baseline versus Linux/OpenCV 4.13 candidate"
+    ]
+  },
+  "model_selection": {
+    "provisional_pilot": "PekingU/rtdetr_v2_r18vd",
+    "revision": "5650961749fa93567c0d46fc7f43ea4f9e914107",
+    "weights_sha256": "d18309d0d7ea57048138885c4c6ecfcb1e24506fc6153b94ad484f8ab62c7115",
+    "alternatives": [
+      "D-FINE Small: slightly higher overall AP",
+      "D-FINE Nano: smaller and stronger on this blurred-cup probe"
+    ],
+    "benchmark_images": 600,
+    "calibration": 300,
+    "held_out_test": 300,
+    "clean_test_AP50_95": 0.46250665,
+    "cup_true_positives": 69,
+    "cup_false_positives": 21,
+    "cup_false_negatives": 95,
+    "cup_recall": 0.42073170731707316,
+    "image_size": 512,
+    "class_thresholds": {
+      "person": 0.55,
+      "bottle": 0.45,
+      "cup": 0.55
+    },
+    "research_environment": "Original CUDA FP16/FP32 public-data results use Transformers 4.57.6; retained as dated evidence, not a cleared current environment",
+    "upgraded_runtime_evidence": "CPU FP32 numerical parity on 30 calibration images only; no new full held-out AP or CUDA FP16 benchmark",
+    "trained": false,
+    "cafe_footage_available": false,
+    "next_step": "Obtain permissioned overhead cafe clips; split recording sessions before extracting frames, annotate completely, evaluate detection/tracking/events and end-to-end throughput, then train only if justified on a separate training split"
+  },
+  "licensing": {
+    "project_license": "Undecided by owner; no LICENSE created",
+    "ultralytics_and_thop_in_recommended_image": false,
+    "legacy_ultralytics_8_3_163": "Declares AGPL-3.0; retained compatibility/research dependency, excluded from recommended runtime",
+    "recommended_approach": "Use RT-DETR direction; separately decide original source license and review exact dependency/native/model/data redistribution notices before publication or distribution",
+    "python_inventory": [
+      {
+        "name": "packaging",
+        "version": "26.3",
+        "license": "Apache-2.0 OR BSD-2-Clause",
+        "license_classifiers": []
+      },
+      {
+        "name": "tokenizers",
+        "version": "0.23.3",
+        "license": "UNKNOWN",
+        "license_classifiers": [
+          "License :: OSI Approved :: Apache Software License"
+        ]
+      },
+      {
+        "name": "annotated-types",
+        "version": "0.8.0",
+        "license": "MIT",
+        "license_classifiers": [
+          "License :: OSI Approved :: MIT License"
+        ]
+      },
+      {
+        "name": "shellingham",
+        "version": "1.5.4",
+        "license": "ISC License",
+        "license_classifiers": [
+          "License :: OSI Approved :: ISC License (ISCL)"
+        ]
+      },
+      {
+        "name": "torchvision",
+        "version": "0.28.0+cpu",
+        "license": "BSD",
+        "license_classifiers": []
+      },
+      {
+        "name": "idna",
+        "version": "3.20",
+        "license": "BSD-3-Clause",
+        "license_classifiers": []
+      },
+      {
+        "name": "filelock",
+        "version": "4.2.11",
+        "license": "MIT",
+        "license_classifiers": []
+      },
+      {
+        "name": "pydantic_core",
+        "version": "2.50.4",
+        "license": "MIT",
+        "license_classifiers": []
+      },
+      {
+        "name": "ijson",
+        "version": "3.6.0",
+        "license": "BSD-3-Clause AND ISC",
+        "license_classifiers": []
+      },
+      {
+        "name": "anyio",
+        "version": "4.16.0",
+        "license": "MIT",
+        "license_classifiers": []
+      },
+      {
+        "name": "PyYAML",
+        "version": "6.0.2",
+        "license": "MIT",
+        "license_classifiers": [
+          "License :: OSI Approved :: MIT License"
+        ]
+      },
+      {
+        "name": "rich",
+        "version": "15.0.0",
+        "license": "MIT",
+        "license_classifiers": [
+          "License :: OSI Approved :: MIT License"
+        ]
+      },
+      {
+        "name": "pydantic",
+        "version": "2.14.3",
+        "license": "MIT",
+        "license_classifiers": []
+      },
+      {
+        "name": "MarkupSafe",
+        "version": "3.0.4",
+        "license": "BSD-3-Clause",
+        "license_classifiers": []
+      },
+      {
+        "name": "truststore",
+        "version": "0.10.5",
+        "license": "MIT",
+        "license_classifiers": []
+      },
+      {
+        "name": "setuptools",
+        "version": "84.2.1",
+        "license": "MIT",
+        "license_classifiers": []
+      },
+      {
+        "name": "typing-inspection",
+        "version": "0.4.5",
+        "license": "MIT",
+        "license_classifiers": []
+      },
+      {
+        "name": "transformers",
+        "version": "5.23.0",
+        "license": "Apache 2.0 License",
+        "license_classifiers": []
+      },
+      {
+        "name": "numpy",
+        "version": "2.2.5",
+        "license": "Copyright (c) 2005-2024, NumPy Developers.\n All rights reserved.\n\n Redistribution and use in source and binary forms, with or without\n modification, are permitted provided that the following conditions are\n met:\n\n     * Redistributions of source code must retain the above copyright\n        notice, this list of conditions and the following disclaimer.\n\n     * Redistributions in binary form must reproduce the above\n        copyright notice, this list of conditions and the following\n        disclaimer in the documentation and/or other materials provided\n        with the distribution.\n\n     * Neither the name of the NumPy Developers nor the names of any\n        contributors may be used to endorse or promote products derived\n        from this software without specific prior written permission.\n\n THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\n ----\n\n The NumPy repository and source distributions bundle several libraries that are\n compatibly licensed.  We list these here.\n\n Name: lapack-lite\n Files: numpy/linalg/lapack_lite/*\n License: BSD-3-Clause\n   For details, see numpy/linalg/lapack_lite/LICENSE.txt\n\n Name: dragon4\n Files: numpy/_core/src/multiarray/dragon4.c\n License: MIT\n   For license text, see numpy/_core/src/multiarray/dragon4.c\n\n Name: libdivide\n Files: numpy/_core/include/numpy/libdivide/*\n License: Zlib\n   For license text, see numpy/_core/include/numpy/libdivide/LICENSE.txt\n\n\n Note that the following files are vendored in the repository and sdist but not\n installed in built numpy packages:\n\n Name: Meson\n Files: vendored-meson/meson/*\n License: Apache 2.0\n   For license text, see vendored-meson/meson/COPYING\n\n Name: spin\n Files: .spin/cmds.py\n License: BSD-3\n   For license text, see .spin/LICENSE\n\n Name: tempita\n Files: numpy/_build_utils/tempita/*\n License: MIT\n   For details, see numpy/_build_utils/tempita/LICENCE.txt\n\n ----\n\n This binary distribution of NumPy also bundles the following software:\n\n\n Name: OpenBLAS\n Files: numpy.libs/libscipy_openblas*.so\n Description: bundled as a dynamically linked library\n Availability: https://github.com/OpenMathLib/OpenBLAS/\n License: BSD-3-Clause\n   Copyright (c) 2011-2014, The OpenBLAS Project\n   All rights reserved.\n\n   Redistribution and use in source and binary forms, with or without\n   modification, are permitted provided that the following conditions are\n   met:\n\n      1. Redistributions of source code must retain the above copyright\n         notice, this list of conditions and the following disclaimer.\n\n      2. Redistributions in binary form must reproduce the above copyright\n         notice, this list of conditions and the following disclaimer in\n         the documentation and/or other materials provided with the\n         distribution.\n      3. Neither the name of the OpenBLAS project nor the names of\n         its contributors may be used to endorse or promote products\n         derived from this software without specific prior written\n         permission.\n\n   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\"\n   AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n   IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\n   ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE\n   LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\n   DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR\n   SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER\n   CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,\n   OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE\n   USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\n\n Name: LAPACK\n Files: numpy.libs/libscipy_openblas*.so\n Description: bundled in OpenBLAS\n Availability: https://github.com/OpenMathLib/OpenBLAS/\n License: BSD-3-Clause-Attribution\n   Copyright (c) 1992-2013 The University of Tennessee and The University\n                           of Tennessee Research Foundation.  All rights\n                           reserved.\n   Copyright (c) 2000-2013 The University of California Berkeley. All\n                           rights reserved.\n   Copyright (c) 2006-2013 The University of Colorado Denver.  All rights\n                           reserved.\n\n   $COPYRIGHT$\n\n   Additional copyrights may follow\n\n   $HEADER$\n\n   Redistribution and use in source and binary forms, with or without\n   modification, are permitted provided that the following conditions are\n   met:\n\n   - Redistributions of source code must retain the above copyright\n     notice, this list of conditions and the following disclaimer.\n\n   - Redistributions in binary form must reproduce the above copyright\n     notice, this list of conditions and the following disclaimer listed\n     in this license in the documentation and/or other materials\n     provided with the distribution.\n\n   - Neither the name of the copyright holders nor the names of its\n     contributors may be used to endorse or promote products derived from\n     this software without specific prior written permission.\n\n   The copyright holders provide no reassurances that the source code\n   provided does not infringe any patent, copyright, or any other\n   intellectual property rights of third parties.  The copyright holders\n   disclaim any liability to any recipient for claims brought against\n   recipient by any third party for infringement of that parties\n   intellectual property rights.\n\n   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n   \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n   LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n   A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n   OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n   SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n   LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n   DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n   THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n   (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\n\n Name: GCC runtime library\n Files: numpy.libs/libgfortran*.so\n Description: dynamically linked to files compiled with gcc\n Availability: https://gcc.gnu.org/git/?p=gcc.git;a=tree;f=libgfortran\n License: GPL-3.0-with-GCC-exception\n   Copyright (C) 2002-2017 Free Software Foundation, Inc.\n\n   Libgfortran is free software; you can redistribute it and/or modify\n   it under the terms of the GNU General Public License as published by\n   the Free Software Foundation; either version 3, or (at your option)\n   any later version.\n\n   Libgfortran is distributed in the hope that it will be useful,\n   but WITHOUT ANY WARRANTY; without even the implied warranty of\n   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n   GNU General Public License for more details.\n\n   Under Section 7 of GPL version 3, you are granted additional\n   permissions described in the GCC Runtime Library Exception, version\n   3.1, as published by the Free Software Foundation.\n\n   You should have received a copy of the GNU General Public License and\n   a copy of the GCC Runtime Library Exception along with this program;\n   see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see\n   <http://www.gnu.org/licenses/>.\n\n ----\n\n Full text of license texts referred to above follows (that they are\n listed below does not necessarily imply the conditions apply to the\n present binary release):\n\n ----\n\n GCC RUNTIME LIBRARY EXCEPTION\n\n Version 3.1, 31 March 2009\n\n Copyright (C) 2009 Free Software Foundation, Inc. <http://fsf.org/>\n\n Everyone is permitted to copy and distribute verbatim copies of this\n license document, but changing it is not allowed.\n\n This GCC Runtime Library Exception (\"Exception\") is an additional\n permission under section 7 of the GNU General Public License, version\n 3 (\"GPLv3\"). It applies to a given file (the \"Runtime Library\") that\n bears a notice placed by the copyright holder of the file stating that\n the file is governed by GPLv3 along with this Exception.\n\n When you use GCC to compile a program, GCC may combine portions of\n certain GCC header files and runtime libraries with the compiled\n program. The purpose of this Exception is to allow compilation of\n non-GPL (including proprietary) programs to use, in this way, the\n header files and runtime libraries covered by this Exception.\n\n 0. Definitions.\n\n A file is an \"Independent Module\" if it either requires the Runtime\n Library for execution after a Compilation Process, or makes use of an\n interface provided by the Runtime Library, but is not otherwise based\n on the Runtime Library.\n\n \"GCC\" means a version of the GNU Compiler Collection, with or without\n modifications, governed by version 3 (or a specified later version) of\n the GNU General Public License (GPL) with the option of using any\n subsequent versions published by the FSF.\n\n \"GPL-compatible Software\" is software whose conditions of propagation,\n modification and use would permit combination with GCC in accord with\n the license of GCC.\n\n \"Target Code\" refers to output from any compiler for a real or virtual\n target processor architecture, in executable form or suitable for\n input to an assembler, loader, linker and/or execution\n phase. Notwithstanding that, Target Code does not include data in any\n format that is used as a compiler intermediate representation, or used\n for producing a compiler intermediate representation.\n\n The \"Compilation Process\" transforms code entirely represented in\n non-intermediate languages designed for human-written code, and/or in\n Java Virtual Machine byte code, into Target Code. Thus, for example,\n use of source code generators and preprocessors need not be considered\n part of the Compilation Process, since the Compilation Process can be\n understood as starting with the output of the generators or\n preprocessors.\n\n A Compilation Process is \"Eligible\" if it is done using GCC, alone or\n with other GPL-compatible software, or if it is done without using any\n work based on GCC. For example, using non-GPL-compatible Software to\n optimize any GCC intermediate representations would not qualify as an\n Eligible Compilation Process.\n\n 1. Grant of Additional Permission.\n\n You have permission to propagate a work of Target Code formed by\n combining the Runtime Library with Independent Modules, even if such\n propagation would otherwise violate the terms of GPLv3, provided that\n all Target Code was generated by Eligible Compilation Processes. You\n may then convey such a combination under terms of your choice,\n consistent with the licensing of the Independent Modules.\n\n 2. No Weakening of GCC Copyleft.\n\n The availability of this Exception does not imply any general\n presumption that third-party software is unaffected by the copyleft\n requirements of the license of GCC.\n\n ----\n\n                     GNU GENERAL PUBLIC LICENSE\n                        Version 3, 29 June 2007\n\n  Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>\n  Everyone is permitted to copy and distribute verbatim copies\n  of this license document, but changing it is not allowed.\n\n                             Preamble\n\n   The GNU General Public License is a free, copyleft license for\n software and other kinds of works.\n\n   The licenses for most software and other practical works are designed\n to take away your freedom to share and change the works.  By contrast,\n the GNU General Public License is intended to guarantee your freedom to\n share and change all versions of a program--to make sure it remains free\n software for all its users.  We, the Free Software Foundation, use the\n GNU General Public License for most of our software; it applies also to\n any other work released this way by its authors.  You can apply it to\n your programs, too.\n\n   When we speak of free software, we are referring to freedom, not\n price.  Our General Public Licenses are designed to make sure that you\n have the freedom to distribute copies of free software (and charge for\n them if you wish), that you receive source code or can get it if you\n want it, that you can change the software or use pieces of it in new\n free programs, and that you know you can do these things.\n\n   To protect your rights, we need to prevent others from denying you\n these rights or asking you to surrender the rights.  Therefore, you have\n certain responsibilities if you distribute copies of the software, or if\n you modify it: responsibilities to respect the freedom of others.\n\n   For example, if you distribute copies of such a program, whether\n gratis or for a fee, you must pass on to the recipients the same\n freedoms that you received.  You must make sure that they, too, receive\n or can get the source code.  And you must show them these terms so they\n know their rights.\n\n   Developers that use the GNU GPL protect your rights with two steps:\n (1) assert copyright on the software, and (2) offer you this License\n giving you legal permission to copy, distribute and/or modify it.\n\n   For the developers' and authors' protection, the GPL clearly explains\n that there is no warranty for this free software.  For both users' and\n authors' sake, the GPL requires that modified versions be marked as\n changed, so that their problems will not be attributed erroneously to\n authors of previous versions.\n\n   Some devices are designed to deny users access to install or run\n modified versions of the software inside them, although the manufacturer\n can do so.  This is fundamentally incompatible with the aim of\n protecting users' freedom to change the software.  The systematic\n pattern of such abuse occurs in the area of products for individuals to\n use, which is precisely where it is most unacceptable.  Therefore, we\n have designed this version of the GPL to prohibit the practice for those\n products.  If such problems arise substantially in other domains, we\n stand ready to extend this provision to those domains in future versions\n of the GPL, as needed to protect the freedom of users.\n\n   Finally, every program is threatened constantly by software patents.\n States should not allow patents to restrict development and use of\n software on general-purpose computers, but in those that do, we wish to\n avoid the special danger that patents applied to a free program could\n make it effectively proprietary.  To prevent this, the GPL assures that\n patents cannot be used to render the program non-free.\n\n   The precise terms and conditions for copying, distribution and\n modification follow.\n\n                        TERMS AND CONDITIONS\n\n   0. Definitions.\n\n   \"This License\" refers to version 3 of the GNU General Public License.\n\n   \"Copyright\" also means copyright-like laws that apply to other kinds of\n works, such as semiconductor masks.\n\n   \"The Program\" refers to any copyrightable work licensed under this\n License.  Each licensee is addressed as \"you\".  \"Licensees\" and\n \"recipients\" may be individuals or organizations.\n\n   To \"modify\" a work means to copy from or adapt all or part of the work\n in a fashion requiring copyright permission, other than the making of an\n exact copy.  The resulting work is called a \"modified version\" of the\n earlier work or a work \"based on\" the earlier work.\n\n   A \"covered work\" means either the unmodified Program or a work based\n on the Program.\n\n   To \"propagate\" a work means to do anything with it that, without\n permission, would make you directly or secondarily liable for\n infringement under applicable copyright law, except executing it on a\n computer or modifying a private copy.  Propagation includes copying,\n distribution (with or without modification), making available to the\n public, and in some countries other activities as well.\n\n   To \"convey\" a work means any kind of propagation that enables other\n parties to make or receive copies.  Mere interaction with a user through\n a computer network, with no transfer of a copy, is not conveying.\n\n   An interactive user interface displays \"Appropriate Legal Notices\"\n to the extent that it includes a convenient and prominently visible\n feature that (1) displays an appropriate copyright notice, and (2)\n tells the user that there is no warranty for the work (except to the\n extent that warranties are provided), that licensees may convey the\n work under this License, and how to view a copy of this License.  If\n the interface presents a list of user commands or options, such as a\n menu, a prominent item in the list meets this criterion.\n\n   1. Source Code.\n\n   The \"source code\" for a work means the preferred form of the work\n for making modifications to it.  \"Object code\" means any non-source\n form of a work.\n\n   A \"Standard Interface\" means an interface that either is an official\n standard defined by a recognized standards body, or, in the case of\n interfaces specified for a particular programming language, one that\n is widely used among developers working in that language.\n\n   The \"System Libraries\" of an executable work include anything, other\n than the work as a whole, that (a) is included in the normal form of\n packaging a Major Component, but which is not part of that Major\n Component, and (b) serves only to enable use of the work with that\n Major Component, or to implement a Standard Interface for which an\n implementation is available to the public in source code form.  A\n \"Major Component\", in this context, means a major essential component\n (kernel, window system, and so on) of the specific operating system\n (if any) on which the executable work runs, or a compiler used to\n produce the work, or an object code interpreter used to run it.\n\n   The \"Corresponding Source\" for a work in object code form means all\n the source code needed to generate, install, and (for an executable\n work) run the object code and to modify the work, including scripts to\n control those activities.  However, it does not include the work's\n System Libraries, or general-purpose tools or generally available free\n programs which are used unmodified in performing those activities but\n which are not part of the work.  For example, Corresponding Source\n includes interface definition files associated with source files for\n the work, and the source code for shared libraries and dynamically\n linked subprograms that the work is specifically designed to require,\n such as by intimate data communication or control flow between those\n subprograms and other parts of the work.\n\n   The Corresponding Source need not include anything that users\n can regenerate automatically from other parts of the Corresponding\n Source.\n\n   The Corresponding Source for a work in source code form is that\n same work.\n\n   2. Basic Permissions.\n\n   All rights granted under this License are granted for the term of\n copyright on the Program, and are irrevocable provided the stated\n conditions are met.  This License explicitly affirms your unlimited\n permission to run the unmodified Program.  The output from running a\n covered work is covered by this License only if the output, given its\n content, constitutes a covered work.  This License acknowledges your\n rights of fair use or other equivalent, as provided by copyright law.\n\n   You may make, run and propagate covered works that you do not\n convey, without conditions so long as your license otherwise remains\n in force.  You may convey covered works to others for the sole purpose\n of having them make modifications exclusively for you, or provide you\n with facilities for running those works, provided that you comply with\n the terms of this License in conveying all material for which you do\n not control copyright.  Those thus making or running the covered works\n for you must do so exclusively on your behalf, under your direction\n and control, on terms that prohibit them from making any copies of\n your copyrighted material outside their relationship with you.\n\n   Conveying under any other circumstances is permitted solely under\n the conditions stated below.  Sublicensing is not allowed; section 10\n makes it unnecessary.\n\n   3. Protecting Users' Legal Rights From Anti-Circumvention Law.\n\n   No covered work shall be deemed part of an effective technological\n measure under any applicable law fulfilling obligations under article\n 11 of the WIPO copyright treaty adopted on 20 December 1996, or\n similar laws prohibiting or restricting circumvention of such\n measures.\n\n   When you convey a covered work, you waive any legal power to forbid\n circumvention of technological measures to the extent such circumvention\n is effected by exercising rights under this License with respect to\n the covered work, and you disclaim any intention to limit operation or\n modification of the work as a means of enforcing, against the work's\n users, your or third parties' legal rights to forbid circumvention of\n technological measures.\n\n   4. Conveying Verbatim Copies.\n\n   You may convey verbatim copies of the Program's source code as you\n receive it, in any medium, provided that you conspicuously and\n appropriately publish on each copy an appropriate copyright notice;\n keep intact all notices stating that this License and any\n non-permissive terms added in accord with section 7 apply to the code;\n keep intact all notices of the absence of any warranty; and give all\n recipients a copy of this License along with the Program.\n\n   You may charge any price or no price for each copy that you convey,\n and you may offer support or warranty protection for a fee.\n\n   5. Conveying Modified Source Versions.\n\n   You may convey a work based on the Program, or the modifications to\n produce it from the Program, in the form of source code under the\n terms of section 4, provided that you also meet all of these conditions:\n\n     a) The work must carry prominent notices stating that you modified\n     it, and giving a relevant date.\n\n     b) The work must carry prominent notices stating that it is\n     released under this License and any conditions added under section\n     7.  This requirement modifies the requirement in section 4 to\n     \"keep intact all notices\".\n\n     c) You must license the entire work, as a whole, under this\n     License to anyone who comes into possession of a copy.  This\n     License will therefore apply, along with any applicable section 7\n     additional terms, to the whole of the work, and all its parts,\n     regardless of how they are packaged.  This License gives no\n     permission to license the work in any other way, but it does not\n     invalidate such permission if you have separately received it.\n\n     d) If the work has interactive user interfaces, each must display\n     Appropriate Legal Notices; however, if the Program has interactive\n     interfaces that do not display Appropriate Legal Notices, your\n     work need not make them do so.\n\n   A compilation of a covered work with other separate and independent\n works, which are not by their nature extensions of the covered work,\n and which are not combined with it such as to form a larger program,\n in or on a volume of a storage or distribution medium, is called an\n \"aggregate\" if the compilation and its resulting copyright are not\n used to limit the access or legal rights of the compilation's users\n beyond what the individual works permit.  Inclusion of a covered work\n in an aggregate does not cause this License to apply to the other\n parts of the aggregate.\n\n   6. Conveying Non-Source Forms.\n\n   You may convey a covered work in object code form under the terms\n of sections 4 and 5, provided that you also convey the\n machine-readable Corresponding Source under the terms of this License,\n in one of these ways:\n\n     a) Convey the object code in, or embodied in, a physical product\n     (including a physical distribution medium), accompanied by the\n     Corresponding Source fixed on a durable physical medium\n     customarily used for software interchange.\n\n     b) Convey the object code in, or embodied in, a physical product\n     (including a physical distribution medium), accompanied by a\n     written offer, valid for at least three years and valid for as\n     long as you offer spare parts or customer support for that product\n     model, to give anyone who possesses the object code either (1) a\n     copy of the Corresponding Source for all the software in the\n     product that is covered by this License, on a durable physical\n     medium customarily used for software interchange, for a price no\n     more than your reasonable cost of physically performing this\n     conveying of source, or (2) access to copy the\n     Corresponding Source from a network server at no charge.\n\n     c) Convey individual copies of the object code with a copy of the\n     written offer to provide the Corresponding Source.  This\n     alternative is allowed only occasionally and noncommercially, and\n     only if you received the object code with such an offer, in accord\n     with subsection 6b.\n\n     d) Convey the object code by offering access from a designated\n     place (gratis or for a charge), and offer equivalent access to the\n     Corresponding Source in the same way through the same place at no\n     further charge.  You need not require recipients to copy the\n     Corresponding Source along with the object code.  If the place to\n     copy the object code is a network server, the Corresponding Source\n     may be on a different server (operated by you or a third party)\n     that supports equivalent copying facilities, provided you maintain\n     clear directions next to the object code saying where to find the\n     Corresponding Source.  Regardless of what server hosts the\n     Corresponding Source, you remain obligated to ensure that it is\n     available for as long as needed to satisfy these requirements.\n\n     e) Convey the object code using peer-to-peer transmission, provided\n     you inform other peers where the object code and Corresponding\n     Source of the work are being offered to the general public at no\n     charge under subsection 6d.\n\n   A separable portion of the object code, whose source code is excluded\n from the Corresponding Source as a System Library, need not be\n included in conveying the object code work.\n\n   A \"User Product\" is either (1) a \"consumer product\", which means any\n tangible personal property which is normally used for personal, family,\n or household purposes, or (2) anything designed or sold for incorporation\n into a dwelling.  In determining whether a product is a consumer product,\n doubtful cases shall be resolved in favor of coverage.  For a particular\n product received by a particular user, \"normally used\" refers to a\n typical or common use of that class of product, regardless of the status\n of the particular user or of the way in which the particular user\n actually uses, or expects or is expected to use, the product.  A product\n is a consumer product regardless of whether the product has substantial\n commercial, industrial or non-consumer uses, unless such uses represent\n the only significant mode of use of the product.\n\n   \"Installation Information\" for a User Product means any methods,\n procedures, authorization keys, or other information required to install\n and execute modified versions of a covered work in that User Product from\n a modified version of its Corresponding Source.  The information must\n suffice to ensure that the continued functioning of the modified object\n code is in no case prevented or interfered with solely because\n modification has been made.\n\n   If you convey an object code work under this section in, or with, or\n specifically for use in, a User Product, and the conveying occurs as\n part of a transaction in which the right of possession and use of the\n User Product is transferred to the recipient in perpetuity or for a\n fixed term (regardless of how the transaction is characterized), the\n Corresponding Source conveyed under this section must be accompanied\n by the Installation Information.  But this requirement does not apply\n if neither you nor any third party retains the ability to install\n modified object code on the User Product (for example, the work has\n been installed in ROM).\n\n   The requirement to provide Installation Information does not include a\n requirement to continue to provide support service, warranty, or updates\n for a work that has been modified or installed by the recipient, or for\n the User Product in which it has been modified or installed.  Access to a\n network may be denied when the modification itself materially and\n adversely affects the operation of the network or violates the rules and\n protocols for communication across the network.\n\n   Corresponding Source conveyed, and Installation Information provided,\n in accord with this section must be in a format that is publicly\n documented (and with an implementation available to the public in\n source code form), and must require no special password or key for\n unpacking, reading or copying.\n\n   7. Additional Terms.\n\n   \"Additional permissions\" are terms that supplement the terms of this\n License by making exceptions from one or more of its conditions.\n Additional permissions that are applicable to the entire Program shall\n be treated as though they were included in this License, to the extent\n that they are valid under applicable law.  If additional permissions\n apply only to part of the Program, that part may be used separately\n under those permissions, but the entire Program remains governed by\n this License without regard to the additional permissions.\n\n   When you convey a copy of a covered work, you may at your option\n remove any additional permissions from that copy, or from any part of\n it.  (Additional permissions may be written to require their own\n removal in certain cases when you modify the work.)  You may place\n additional permissions on material, added by you to a covered work,\n for which you have or can give appropriate copyright permission.\n\n   Notwithstanding any other provision of this License, for material you\n add to a covered work, you may (if authorized by the copyright holders of\n that material) supplement the terms of this License with terms:\n\n     a) Disclaiming warranty or limiting liability differently from the\n     terms of sections 15 and 16 of this License; or\n\n     b) Requiring preservation of specified reasonable legal notices or\n     author attributions in that material or in the Appropriate Legal\n     Notices displayed by works containing it; or\n\n     c) Prohibiting misrepresentation of the origin of that material, or\n     requiring that modified versions of such material be marked in\n     reasonable ways as different from the original version; or\n\n     d) Limiting the use for publicity purposes of names of licensors or\n     authors of the material; or\n\n     e) Declining to grant rights under trademark law for use of some\n     trade names, trademarks, or service marks; or\n\n     f) Requiring indemnification of licensors and authors of that\n     material by anyone who conveys the material (or modified versions of\n     it) with contractual assumptions of liability to the recipient, for\n     any liability that these contractual assumptions directly impose on\n     those licensors and authors.\n\n   All other non-permissive additional terms are considered \"further\n restrictions\" within the meaning of section 10.  If the Program as you\n received it, or any part of it, contains a notice stating that it is\n governed by this License along with a term that is a further\n restriction, you may remove that term.  If a license document contains\n a further restriction but permits relicensing or conveying under this\n License, you may add to a covered work material governed by the terms\n of that license document, provided that the further restriction does\n not survive such relicensing or conveying.\n\n   If you add terms to a covered work in accord with this section, you\n must place, in the relevant source files, a statement of the\n additional terms that apply to those files, or a notice indicating\n where to find the applicable terms.\n\n   Additional terms, permissive or non-permissive, may be stated in the\n form of a separately written license, or stated as exceptions;\n the above requirements apply either way.\n\n   8. Termination.\n\n   You may not propagate or modify a covered work except as expressly\n provided under this License.  Any attempt otherwise to propagate or\n modify it is void, and will automatically terminate your rights under\n this License (including any patent licenses granted under the third\n paragraph of section 11).\n\n   However, if you cease all violation of this License, then your\n license from a particular copyright holder is reinstated (a)\n provisionally, unless and until the copyright holder explicitly and\n finally terminates your license, and (b) permanently, if the copyright\n holder fails to notify you of the violation by some reasonable means\n prior to 60 days after the cessation.\n\n   Moreover, your license from a particular copyright holder is\n reinstated permanently if the copyright holder notifies you of the\n violation by some reasonable means, this is the first time you have\n received notice of violation of this License (for any work) from that\n copyright holder, and you cure the violation prior to 30 days after\n your receipt of the notice.\n\n   Termination of your rights under this section does not terminate the\n licenses of parties who have received copies or rights from you under\n this License.  If your rights have been terminated and not permanently\n reinstated, you do not qualify to receive new licenses for the same\n material under section 10.\n\n   9. Acceptance Not Required for Having Copies.\n\n   You are not required to accept this License in order to receive or\n run a copy of the Program.  Ancillary propagation of a covered work\n occurring solely as a consequence of using peer-to-peer transmission\n to receive a copy likewise does not require acceptance.  However,\n nothing other than this License grants you permission to propagate or\n modify any covered work.  These actions infringe copyright if you do\n not accept this License.  Therefore, by modifying or propagating a\n covered work, you indicate your acceptance of this License to do so.\n\n   10. Automatic Licensing of Downstream Recipients.\n\n   Each time you convey a covered work, the recipient automatically\n receives a license from the original licensors, to run, modify and\n propagate that work, subject to this License.  You are not responsible\n for enforcing compliance by third parties with this License.\n\n   An \"entity transaction\" is a transaction transferring control of an\n organization, or substantially all assets of one, or subdividing an\n organization, or merging organizations.  If propagation of a covered\n work results from an entity transaction, each party to that\n transaction who receives a copy of the work also receives whatever\n licenses to the work the party's predecessor in interest had or could\n give under the previous paragraph, plus a right to possession of the\n Corresponding Source of the work from the predecessor in interest, if\n the predecessor has it or can get it with reasonable efforts.\n\n   You may not impose any further restrictions on the exercise of the\n rights granted or affirmed under this License.  For example, you may\n not impose a license fee, royalty, or other charge for exercise of\n rights granted under this License, and you may not initiate litigation\n (including a cross-claim or counterclaim in a lawsuit) alleging that\n any patent claim is infringed by making, using, selling, offering for\n sale, or importing the Program or any portion of it.\n\n   11. Patents.\n\n   A \"contributor\" is a copyright holder who authorizes use under this\n License of the Program or a work on which the Program is based.  The\n work thus licensed is called the contributor's \"contributor version\".\n\n   A contributor's \"essential patent claims\" are all patent claims\n owned or controlled by the contributor, whether already acquired or\n hereafter acquired, that would be infringed by some manner, permitted\n by this License, of making, using, or selling its contributor version,\n but do not include claims that would be infringed only as a\n consequence of further modification of the contributor version.  For\n purposes of this definition, \"control\" includes the right to grant\n patent sublicenses in a manner consistent with the requirements of\n this License.\n\n   Each contributor grants you a non-exclusive, worldwide, royalty-free\n patent license under the contributor's essential patent claims, to\n make, use, sell, offer for sale, import and otherwise run, modify and\n propagate the contents of its contributor version.\n\n   In the following three paragraphs, a \"patent license\" is any express\n agreement or commitment, however denominated, not to enforce a patent\n (such as an express permission to practice a patent or covenant not to\n sue for patent infringement).  To \"grant\" such a patent license to a\n party means to make such an agreement or commitment not to enforce a\n patent against the party.\n\n   If you convey a covered work, knowingly relying on a patent license,\n and the Corresponding Source of the work is not available for anyone\n to copy, free of charge and under the terms of this License, through a\n publicly available network server or other readily accessible means,\n then you must either (1) cause the Corresponding Source to be so\n available, or (2) arrange to deprive yourself of the benefit of the\n patent license for this particular work, or (3) arrange, in a manner\n consistent with the requirements of this License, to extend the patent\n license to downstream recipients.  \"Knowingly relying\" means you have\n actual knowledge that, but for the patent license, your conveying the\n covered work in a country, or your recipient's use of the covered work\n in a country, would infringe one or more identifiable patents in that\n country that you have reason to believe are valid.\n\n   If, pursuant to or in connection with a single transaction or\n arrangement, you convey, or propagate by procuring conveyance of, a\n covered work, and grant a patent license to some of the parties\n receiving the covered work authorizing them to use, propagate, modify\n or convey a specific copy of the covered work, then the patent license\n you grant is automatically extended to all recipients of the covered\n work and works based on it.\n\n   A patent license is \"discriminatory\" if it does not include within\n the scope of its coverage, prohibits the exercise of, or is\n conditioned on the non-exercise of one or more of the rights that are\n specifically granted under this License.  You may not convey a covered\n work if you are a party to an arrangement with a third party that is\n in the business of distributing software, under which you make payment\n to the third party based on the extent of your activity of conveying\n the work, and under which the third party grants, to any of the\n parties who would receive the covered work from you, a discriminatory\n patent license (a) in connection with copies of the covered work\n conveyed by you (or copies made from those copies), or (b) primarily\n for and in connection with specific products or compilations that\n contain the covered work, unless you entered into that arrangement,\n or that patent license was granted, prior to 28 March 2007.\n\n   Nothing in this License shall be construed as excluding or limiting\n any implied license or other defenses to infringement that may\n otherwise be available to you under applicable patent law.\n\n   12. No Surrender of Others' Freedom.\n\n   If conditions are imposed on you (whether by court order, agreement or\n otherwise) that contradict the conditions of this License, they do not\n excuse you from the conditions of this License.  If you cannot convey a\n covered work so as to satisfy simultaneously your obligations under this\n License and any other pertinent obligations, then as a consequence you may\n not convey it at all.  For example, if you agree to terms that obligate you\n to collect a royalty for further conveying from those to whom you convey\n the Program, the only way you could satisfy both those terms and this\n License would be to refrain entirely from conveying the Program.\n\n   13. Use with the GNU Affero General Public License.\n\n   Notwithstanding any other provision of this License, you have\n permission to link or combine any covered work with a work licensed\n under version 3 of the GNU Affero General Public License into a single\n combined work, and to convey the resulting work.  The terms of this\n License will continue to apply to the part which is the covered work,\n but the special requirements of the GNU Affero General Public License,\n section 13, concerning interaction through a network will apply to the\n combination as such.\n\n   14. Revised Versions of this License.\n\n   The Free Software Foundation may publish revised and/or new versions of\n the GNU General Public License from time to time.  Such new versions will\n be similar in spirit to the present version, but may differ in detail to\n address new problems or concerns.\n\n   Each version is given a distinguishing version number.  If the\n Program specifies that a certain numbered version of the GNU General\n Public License \"or any later version\" applies to it, you have the\n option of following the terms and conditions either of that numbered\n version or of any later version published by the Free Software\n Foundation.  If the Program does not specify a version number of the\n GNU General Public License, you may choose any version ever published\n by the Free Software Foundation.\n\n   If the Program specifies that a proxy can decide which future\n versions of the GNU General Public License can be used, that proxy's\n public statement of acceptance of a version permanently authorizes you\n to choose that version for the Program.\n\n   Later license versions may give you additional or different\n permissions.  However, no additional obligations are imposed on any\n author or copyright holder as a result of your choosing to follow a\n later version.\n\n   15. Disclaimer of Warranty.\n\n   THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY\n APPLICABLE LAW.  EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT\n HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM \"AS IS\" WITHOUT WARRANTY\n OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO,\n THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\n PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM\n IS WITH YOU.  SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF\n ALL NECESSARY SERVICING, REPAIR OR CORRECTION.\n\n   16. Limitation of Liability.\n\n   IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING\n WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS\n THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY\n GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE\n USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF\n DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD\n PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS),\n EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF\n SUCH DAMAGES.\n\n   17. Interpretation of Sections 15 and 16.\n\n   If the disclaimer of warranty and limitation of liability provided\n above cannot be given local legal effect according to their terms,\n reviewing courts shall apply local law that most closely approximates\n an absolute waiver of all civil liability in connection with the\n Program, unless a warranty or assumption of liability accompanies a\n copy of the Program in return for a fee.\n\n                      END OF TERMS AND CONDITIONS\n\n             How to Apply These Terms to Your New Programs\n\n   If you develop a new program, and you want it to be of the greatest\n possible use to the public, the best way to achieve this is to make it\n free software which everyone can redistribute and change under these terms.\n\n   To do so, attach the following notices to the program.  It is safest\n to attach them to the start of each source file to most effectively\n state the exclusion of warranty; and each file should have at least\n the \"copyright\" line and a pointer to where the full notice is found.\n\n     <one line to give the program's name and a brief idea of what it does.>\n     Copyright (C) <year>  <name of author>\n\n     This program is free software: you can redistribute it and/or modify\n     it under the terms of the GNU General Public License as published by\n     the Free Software Foundation, either version 3 of the License, or\n     (at your option) any later version.\n\n     This program is distributed in the hope that it will be useful,\n     but WITHOUT ANY WARRANTY; without even the implied warranty of\n     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n     GNU General Public License for more details.\n\n     You should have received a copy of the GNU General Public License\n     along with this program.  If not, see <http://www.gnu.org/licenses/>.\n\n Also add information on how to contact you by electronic and paper mail.\n\n   If the program does terminal interaction, make it output a short\n notice like this when it starts in an interactive mode:\n\n     <program>  Copyright (C) <year>  <name of author>\n     This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.\n     This is free software, and you are welcome to redistribute it\n     under certain conditions; type `show c' for details.\n\n The hypothetical commands `show w' and `show c' should show the appropriate\n parts of the General Public License.  Of course, your program's commands\n might be different; for a GUI interface, you would use an \"about box\".\n\n   You should also get your employer (if you work as a programmer) or school,\n if any, to sign a \"copyright disclaimer\" for the program, if necessary.\n For more information on this, and how to apply and follow the GNU GPL, see\n <http://www.gnu.org/licenses/>.\n\n   The GNU General Public License does not permit incorporating your program\n into proprietary programs.  If your program is a subroutine library, you\n may consider it more useful to permit linking proprietary applications with\n the library.  If this is what you want to do, use the GNU Lesser General\n Public License instead of this License.  But first, please read\n <http://www.gnu.org/philosophy/why-not-lgpl.html>.\n\n Name: libquadmath\n Files: numpy.libs/libquadmath*.so\n Description: dynamically linked to files compiled with gcc\n Availability: https://gcc.gnu.org/git/?p=gcc.git;a=tree;f=libquadmath\n License: LGPL-2.1-or-later\n\n     GCC Quad-Precision Math Library\n     Copyright (C) 2010-2019 Free Software Foundation, Inc.\n     Written by Francois-Xavier Coudert  <fxcoudert@gcc.gnu.org>\n\n     This file is part of the libquadmath library.\n     Libquadmath is free software; you can redistribute it and/or\n     modify it under the terms of the GNU Library General Public\n     License as published by the Free Software Foundation; either\n     version 2.1 of the License, or (at your option) any later version.\n\n     Libquadmath is distributed in the hope that it will be useful,\n     but WITHOUT ANY WARRANTY; without even the implied warranty of\n     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n     Lesser General Public License for more details.\n     https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html\n",
+        "license_classifiers": [
+          "License :: OSI Approved :: BSD License"
+        ]
+      },
+      {
+        "name": "safetensors",
+        "version": "0.8.0",
+        "license": "UNKNOWN",
+        "license_classifiers": [
+          "License :: OSI Approved :: Apache Software License"
+        ]
+      },
+      {
+        "name": "Pygments",
+        "version": "2.21.0",
+        "license": "BSD-2-Clause",
+        "license_classifiers": []
+      },
+      {
+        "name": "huggingface_hub",
+        "version": "2.4.0",
+        "license": "Apache-2.0",
+        "license_classifiers": [
+          "License :: OSI Approved :: Apache Software License"
+        ]
+      },
+      {
+        "name": "scipy",
+        "version": "1.15.2",
+        "license": "Copyright (c) 2001-2002 Enthought, Inc. 2003-2024, SciPy Developers.\n All rights reserved.\n\n Redistribution and use in source and binary forms, with or without\n modification, are permitted provided that the following conditions\n are met:\n\n 1. Redistributions of source code must retain the above copyright\n    notice, this list of conditions and the following disclaimer.\n\n 2. Redistributions in binary form must reproduce the above\n    copyright notice, this list of conditions and the following\n    disclaimer in the documentation and/or other materials provided\n    with the distribution.\n\n 3. Neither the name of the copyright holder nor the names of its\n    contributors may be used to endorse or promote products derived\n    from this software without specific prior written permission.\n\n THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\n ----\n\n This binary distribution of SciPy can also bundle the following software\n (depending on the build):\n\n\n Name: OpenBLAS\n Files: scipy.libs/libscipy_openblas*.so\n Description: bundled as a dynamically linked library\n Availability: https://github.com/OpenMathLib/OpenBLAS/\n License: BSD-3-Clause-Attribution\n   Copyright (c) 2011-2014, The OpenBLAS Project\n   All rights reserved.\n\n   Redistribution and use in source and binary forms, with or without\n   modification, are permitted provided that the following conditions are\n   met:\n\n      1. Redistributions of source code must retain the above copyright\n         notice, this list of conditions and the following disclaimer.\n\n      2. Redistributions in binary form must reproduce the above copyright\n         notice, this list of conditions and the following disclaimer in\n         the documentation and/or other materials provided with the\n         distribution.\n      3. Neither the name of the OpenBLAS project nor the names of \n         its contributors may be used to endorse or promote products \n         derived from this software without specific prior written \n         permission.\n\n   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS IS\"\n   AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE\n   IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE\n   ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE\n   LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL\n   DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR\n   SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER\n   CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,\n   OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE\n   USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\n\n Name: LAPACK\n Files: scipy.libs/libscipy_openblas*.so\n Description: bundled in OpenBLAS\n Availability: https://github.com/OpenMathLib/OpenBLAS/\n License: BSD-3-Clause-Attribution\n   Copyright (c) 1992-2013 The University of Tennessee and The University\n                           of Tennessee Research Foundation.  All rights\n                           reserved.\n   Copyright (c) 2000-2013 The University of California Berkeley. All\n                           rights reserved.\n   Copyright (c) 2006-2013 The University of Colorado Denver.  All rights\n                           reserved.\n\n   $COPYRIGHT$\n\n   Additional copyrights may follow\n\n   $HEADER$\n\n   Redistribution and use in source and binary forms, with or without\n   modification, are permitted provided that the following conditions are\n   met:\n\n   - Redistributions of source code must retain the above copyright\n     notice, this list of conditions and the following disclaimer.\n\n   - Redistributions in binary form must reproduce the above copyright\n     notice, this list of conditions and the following disclaimer listed\n     in this license in the documentation and/or other materials\n     provided with the distribution.\n\n   - Neither the name of the copyright holders nor the names of its\n     contributors may be used to endorse or promote products derived from\n     this software without specific prior written permission.\n\n   The copyright holders provide no reassurances that the source code\n   provided does not infringe any patent, copyright, or any other\n   intellectual property rights of third parties.  The copyright holders\n   disclaim any liability to any recipient for claims brought against\n   recipient by any third party for infringement of that parties\n   intellectual property rights.\n\n   THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS\n   \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT\n   LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR\n   A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT\n   OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,\n   SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT\n   LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\n   DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY\n   THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT\n   (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE\n   OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.\n\n\n Name: GCC runtime library\n Files: scipy.libs/libgfortran*.so\n Description: dynamically linked to files compiled with gcc\n Availability: https://gcc.gnu.org/git/?p=gcc.git;a=tree;f=libgfortran\n License: GPL-3.0-with-GCC-exception\n   Copyright (C) 2002-2017 Free Software Foundation, Inc.\n\n   Libgfortran is free software; you can redistribute it and/or modify\n   it under the terms of the GNU General Public License as published by\n   the Free Software Foundation; either version 3, or (at your option)\n   any later version.\n\n   Libgfortran is distributed in the hope that it will be useful,\n   but WITHOUT ANY WARRANTY; without even the implied warranty of\n   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n   GNU General Public License for more details.\n\n   Under Section 7 of GPL version 3, you are granted additional\n   permissions described in the GCC Runtime Library Exception, version\n   3.1, as published by the Free Software Foundation.\n\n   You should have received a copy of the GNU General Public License and\n   a copy of the GCC Runtime Library Exception along with this program;\n   see the files COPYING3 and COPYING.RUNTIME respectively.  If not, see\n   <http://www.gnu.org/licenses/>.\n\n ----\n\n Full text of license texts referred to above follows (that they are\n listed below does not necessarily imply the conditions apply to the\n present binary release):\n\n ----\n\n GCC RUNTIME LIBRARY EXCEPTION\n\n Version 3.1, 31 March 2009\n\n Copyright (C) 2009 Free Software Foundation, Inc. <http://fsf.org/>\n\n Everyone is permitted to copy and distribute verbatim copies of this\n license document, but changing it is not allowed.\n\n This GCC Runtime Library Exception (\"Exception\") is an additional\n permission under section 7 of the GNU General Public License, version\n 3 (\"GPLv3\"). It applies to a given file (the \"Runtime Library\") that\n bears a notice placed by the copyright holder of the file stating that\n the file is governed by GPLv3 along with this Exception.\n\n When you use GCC to compile a program, GCC may combine portions of\n certain GCC header files and runtime libraries with the compiled\n program. The purpose of this Exception is to allow compilation of\n non-GPL (including proprietary) programs to use, in this way, the\n header files and runtime libraries covered by this Exception.\n\n 0. Definitions.\n\n A file is an \"Independent Module\" if it either requires the Runtime\n Library for execution after a Compilation Process, or makes use of an\n interface provided by the Runtime Library, but is not otherwise based\n on the Runtime Library.\n\n \"GCC\" means a version of the GNU Compiler Collection, with or without\n modifications, governed by version 3 (or a specified later version) of\n the GNU General Public License (GPL) with the option of using any\n subsequent versions published by the FSF.\n\n \"GPL-compatible Software\" is software whose conditions of propagation,\n modification and use would permit combination with GCC in accord with\n the license of GCC.\n\n \"Target Code\" refers to output from any compiler for a real or virtual\n target processor architecture, in executable form or suitable for\n input to an assembler, loader, linker and/or execution\n phase. Notwithstanding that, Target Code does not include data in any\n format that is used as a compiler intermediate representation, or used\n for producing a compiler intermediate representation.\n\n The \"Compilation Process\" transforms code entirely represented in\n non-intermediate languages designed for human-written code, and/or in\n Java Virtual Machine byte code, into Target Code. Thus, for example,\n use of source code generators and preprocessors need not be considered\n part of the Compilation Process, since the Compilation Process can be\n understood as starting with the output of the generators or\n preprocessors.\n\n A Compilation Process is \"Eligible\" if it is done using GCC, alone or\n with other GPL-compatible software, or if it is done without using any\n work based on GCC. For example, using non-GPL-compatible Software to\n optimize any GCC intermediate representations would not qualify as an\n Eligible Compilation Process.\n\n 1. Grant of Additional Permission.\n\n You have permission to propagate a work of Target Code formed by\n combining the Runtime Library with Independent Modules, even if such\n propagation would otherwise violate the terms of GPLv3, provided that\n all Target Code was generated by Eligible Compilation Processes. You\n may then convey such a combination under terms of your choice,\n consistent with the licensing of the Independent Modules.\n\n 2. No Weakening of GCC Copyleft.\n\n The availability of this Exception does not imply any general\n presumption that third-party software is unaffected by the copyleft\n requirements of the license of GCC.\n\n ----\n\n                     GNU GENERAL PUBLIC LICENSE\n                        Version 3, 29 June 2007\n\n  Copyright (C) 2007 Free Software Foundation, Inc. <http://fsf.org/>\n  Everyone is permitted to copy and distribute verbatim copies\n  of this license document, but changing it is not allowed.\n\n                             Preamble\n\n   The GNU General Public License is a free, copyleft license for\n software and other kinds of works.\n\n   The licenses for most software and other practical works are designed\n to take away your freedom to share and change the works.  By contrast,\n the GNU General Public License is intended to guarantee your freedom to\n share and change all versions of a program--to make sure it remains free\n software for all its users.  We, the Free Software Foundation, use the\n GNU General Public License for most of our software; it applies also to\n any other work released this way by its authors.  You can apply it to\n your programs, too.\n\n   When we speak of free software, we are referring to freedom, not\n price.  Our General Public Licenses are designed to make sure that you\n have the freedom to distribute copies of free software (and charge for\n them if you wish), that you receive source code or can get it if you\n want it, that you can change the software or use pieces of it in new\n free programs, and that you know you can do these things.\n\n   To protect your rights, we need to prevent others from denying you\n these rights or asking you to surrender the rights.  Therefore, you have\n certain responsibilities if you distribute copies of the software, or if\n you modify it: responsibilities to respect the freedom of others.\n\n   For example, if you distribute copies of such a program, whether\n gratis or for a fee, you must pass on to the recipients the same\n freedoms that you received.  You must make sure that they, too, receive\n or can get the source code.  And you must show them these terms so they\n know their rights.\n\n   Developers that use the GNU GPL protect your rights with two steps:\n (1) assert copyright on the software, and (2) offer you this License\n giving you legal permission to copy, distribute and/or modify it.\n\n   For the developers' and authors' protection, the GPL clearly explains\n that there is no warranty for this free software.  For both users' and\n authors' sake, the GPL requires that modified versions be marked as\n changed, so that their problems will not be attributed erroneously to\n authors of previous versions.\n\n   Some devices are designed to deny users access to install or run\n modified versions of the software inside them, although the manufacturer\n can do so.  This is fundamentally incompatible with the aim of\n protecting users' freedom to change the software.  The systematic\n pattern of such abuse occurs in the area of products for individuals to\n use, which is precisely where it is most unacceptable.  Therefore, we\n have designed this version of the GPL to prohibit the practice for those\n products.  If such problems arise substantially in other domains, we\n stand ready to extend this provision to those domains in future versions\n of the GPL, as needed to protect the freedom of users.\n\n   Finally, every program is threatened constantly by software patents.\n States should not allow patents to restrict development and use of\n software on general-purpose computers, but in those that do, we wish to\n avoid the special danger that patents applied to a free program could\n make it effectively proprietary.  To prevent this, the GPL assures that\n patents cannot be used to render the program non-free.\n\n   The precise terms and conditions for copying, distribution and\n modification follow.\n\n                        TERMS AND CONDITIONS\n\n   0. Definitions.\n\n   \"This License\" refers to version 3 of the GNU General Public License.\n\n   \"Copyright\" also means copyright-like laws that apply to other kinds of\n works, such as semiconductor masks.\n\n   \"The Program\" refers to any copyrightable work licensed under this\n License.  Each licensee is addressed as \"you\".  \"Licensees\" and\n \"recipients\" may be individuals or organizations.\n\n   To \"modify\" a work means to copy from or adapt all or part of the work\n in a fashion requiring copyright permission, other than the making of an\n exact copy.  The resulting work is called a \"modified version\" of the\n earlier work or a work \"based on\" the earlier work.\n\n   A \"covered work\" means either the unmodified Program or a work based\n on the Program.\n\n   To \"propagate\" a work means to do anything with it that, without\n permission, would make you directly or secondarily liable for\n infringement under applicable copyright law, except executing it on a\n computer or modifying a private copy.  Propagation includes copying,\n distribution (with or without modification), making available to the\n public, and in some countries other activities as well.\n\n   To \"convey\" a work means any kind of propagation that enables other\n parties to make or receive copies.  Mere interaction with a user through\n a computer network, with no transfer of a copy, is not conveying.\n\n   An interactive user interface displays \"Appropriate Legal Notices\"\n to the extent that it includes a convenient and prominently visible\n feature that (1) displays an appropriate copyright notice, and (2)\n tells the user that there is no warranty for the work (except to the\n extent that warranties are provided), that licensees may convey the\n work under this License, and how to view a copy of this License.  If\n the interface presents a list of user commands or options, such as a\n menu, a prominent item in the list meets this criterion.\n\n   1. Source Code.\n\n   The \"source code\" for a work means the preferred form of the work\n for making modifications to it.  \"Object code\" means any non-source\n form of a work.\n\n   A \"Standard Interface\" means an interface that either is an official\n standard defined by a recognized standards body, or, in the case of\n interfaces specified for a particular programming language, one that\n is widely used among developers working in that language.\n\n   The \"System Libraries\" of an executable work include anything, other\n than the work as a whole, that (a) is included in the normal form of\n packaging a Major Component, but which is not part of that Major\n Component, and (b) serves only to enable use of the work with that\n Major Component, or to implement a Standard Interface for which an\n implementation is available to the public in source code form.  A\n \"Major Component\", in this context, means a major essential component\n (kernel, window system, and so on) of the specific operating system\n (if any) on which the executable work runs, or a compiler used to\n produce the work, or an object code interpreter used to run it.\n\n   The \"Corresponding Source\" for a work in object code form means all\n the source code needed to generate, install, and (for an executable\n work) run the object code and to modify the work, including scripts to\n control those activities.  However, it does not include the work's\n System Libraries, or general-purpose tools or generally available free\n programs which are used unmodified in performing those activities but\n which are not part of the work.  For example, Corresponding Source\n includes interface definition files associated with source files for\n the work, and the source code for shared libraries and dynamically\n linked subprograms that the work is specifically designed to require,\n such as by intimate data communication or control flow between those\n subprograms and other parts of the work.\n\n   The Corresponding Source need not include anything that users\n can regenerate automatically from other parts of the Corresponding\n Source.\n\n   The Corresponding Source for a work in source code form is that\n same work.\n\n   2. Basic Permissions.\n\n   All rights granted under this License are granted for the term of\n copyright on the Program, and are irrevocable provided the stated\n conditions are met.  This License explicitly affirms your unlimited\n permission to run the unmodified Program.  The output from running a\n covered work is covered by this License only if the output, given its\n content, constitutes a covered work.  This License acknowledges your\n rights of fair use or other equivalent, as provided by copyright law.\n\n   You may make, run and propagate covered works that you do not\n convey, without conditions so long as your license otherwise remains\n in force.  You may convey covered works to others for the sole purpose\n of having them make modifications exclusively for you, or provide you\n with facilities for running those works, provided that you comply with\n the terms of this License in conveying all material for which you do\n not control copyright.  Those thus making or running the covered works\n for you must do so exclusively on your behalf, under your direction\n and control, on terms that prohibit them from making any copies of\n your copyrighted material outside their relationship with you.\n\n   Conveying under any other circumstances is permitted solely under\n the conditions stated below.  Sublicensing is not allowed; section 10\n makes it unnecessary.\n\n   3. Protecting Users' Legal Rights From Anti-Circumvention Law.\n\n   No covered work shall be deemed part of an effective technological\n measure under any applicable law fulfilling obligations under article\n 11 of the WIPO copyright treaty adopted on 20 December 1996, or\n similar laws prohibiting or restricting circumvention of such\n measures.\n\n   When you convey a covered work, you waive any legal power to forbid\n circumvention of technological measures to the extent such circumvention\n is effected by exercising rights under this License with respect to\n the covered work, and you disclaim any intention to limit operation or\n modification of the work as a means of enforcing, against the work's\n users, your or third parties' legal rights to forbid circumvention of\n technological measures.\n\n   4. Conveying Verbatim Copies.\n\n   You may convey verbatim copies of the Program's source code as you\n receive it, in any medium, provided that you conspicuously and\n appropriately publish on each copy an appropriate copyright notice;\n keep intact all notices stating that this License and any\n non-permissive terms added in accord with section 7 apply to the code;\n keep intact all notices of the absence of any warranty; and give all\n recipients a copy of this License along with the Program.\n\n   You may charge any price or no price for each copy that you convey,\n and you may offer support or warranty protection for a fee.\n\n   5. Conveying Modified Source Versions.\n\n   You may convey a work based on the Program, or the modifications to\n produce it from the Program, in the form of source code under the\n terms of section 4, provided that you also meet all of these conditions:\n\n     a) The work must carry prominent notices stating that you modified\n     it, and giving a relevant date.\n\n     b) The work must carry prominent notices stating that it is\n     released under this License and any conditions added under section\n     7.  This requirement modifies the requirement in section 4 to\n     \"keep intact all notices\".\n\n     c) You must license the entire work, as a whole, under this\n     License to anyone who comes into possession of a copy.  This\n     License will therefore apply, along with any applicable section 7\n     additional terms, to the whole of the work, and all its parts,\n     regardless of how they are packaged.  This License gives no\n     permission to license the work in any other way, but it does not\n     invalidate such permission if you have separately received it.\n\n     d) If the work has interactive user interfaces, each must display\n     Appropriate Legal Notices; however, if the Program has interactive\n     interfaces that do not display Appropriate Legal Notices, your\n     work need not make them do so.\n\n   A compilation of a covered work with other separate and independent\n works, which are not by their nature extensions of the covered work,\n and which are not combined with it such as to form a larger program,\n in or on a volume of a storage or distribution medium, is called an\n \"aggregate\" if the compilation and its resulting copyright are not\n used to limit the access or legal rights of the compilation's users\n beyond what the individual works permit.  Inclusion of a covered work\n in an aggregate does not cause this License to apply to the other\n parts of the aggregate.\n\n   6. Conveying Non-Source Forms.\n\n   You may convey a covered work in object code form under the terms\n of sections 4 and 5, provided that you also convey the\n machine-readable Corresponding Source under the terms of this License,\n in one of these ways:\n\n     a) Convey the object code in, or embodied in, a physical product\n     (including a physical distribution medium), accompanied by the\n     Corresponding Source fixed on a durable physical medium\n     customarily used for software interchange.\n\n     b) Convey the object code in, or embodied in, a physical product\n     (including a physical distribution medium), accompanied by a\n     written offer, valid for at least three years and valid for as\n     long as you offer spare parts or customer support for that product\n     model, to give anyone who possesses the object code either (1) a\n     copy of the Corresponding Source for all the software in the\n     product that is covered by this License, on a durable physical\n     medium customarily used for software interchange, for a price no\n     more than your reasonable cost of physically performing this\n     conveying of source, or (2) access to copy the\n     Corresponding Source from a network server at no charge.\n\n     c) Convey individual copies of the object code with a copy of the\n     written offer to provide the Corresponding Source.  This\n     alternative is allowed only occasionally and noncommercially, and\n     only if you received the object code with such an offer, in accord\n     with subsection 6b.\n\n     d) Convey the object code by offering access from a designated\n     place (gratis or for a charge), and offer equivalent access to the\n     Corresponding Source in the same way through the same place at no\n     further charge.  You need not require recipients to copy the\n     Corresponding Source along with the object code.  If the place to\n     copy the object code is a network server, the Corresponding Source\n     may be on a different server (operated by you or a third party)\n     that supports equivalent copying facilities, provided you maintain\n     clear directions next to the object code saying where to find the\n     Corresponding Source.  Regardless of what server hosts the\n     Corresponding Source, you remain obligated to ensure that it is\n     available for as long as needed to satisfy these requirements.\n\n     e) Convey the object code using peer-to-peer transmission, provided\n     you inform other peers where the object code and Corresponding\n     Source of the work are being offered to the general public at no\n     charge under subsection 6d.\n\n   A separable portion of the object code, whose source code is excluded\n from the Corresponding Source as a System Library, need not be\n included in conveying the object code work.\n\n   A \"User Product\" is either (1) a \"consumer product\", which means any\n tangible personal property which is normally used for personal, family,\n or household purposes, or (2) anything designed or sold for incorporation\n into a dwelling.  In determining whether a product is a consumer product,\n doubtful cases shall be resolved in favor of coverage.  For a particular\n product received by a particular user, \"normally used\" refers to a\n typical or common use of that class of product, regardless of the status\n of the particular user or of the way in which the particular user\n actually uses, or expects or is expected to use, the product.  A product\n is a consumer product regardless of whether the product has substantial\n commercial, industrial or non-consumer uses, unless such uses represent\n the only significant mode of use of the product.\n\n   \"Installation Information\" for a User Product means any methods,\n procedures, authorization keys, or other information required to install\n and execute modified versions of a covered work in that User Product from\n a modified version of its Corresponding Source.  The information must\n suffice to ensure that the continued functioning of the modified object\n code is in no case prevented or interfered with solely because\n modification has been made.\n\n   If you convey an object code work under this section in, or with, or\n specifically for use in, a User Product, and the conveying occurs as\n part of a transaction in which the right of possession and use of the\n User Product is transferred to the recipient in perpetuity or for a\n fixed term (regardless of how the transaction is characterized), the\n Corresponding Source conveyed under this section must be accompanied\n by the Installation Information.  But this requirement does not apply\n if neither you nor any third party retains the ability to install\n modified object code on the User Product (for example, the work has\n been installed in ROM).\n\n   The requirement to provide Installation Information does not include a\n requirement to continue to provide support service, warranty, or updates\n for a work that has been modified or installed by the recipient, or for\n the User Product in which it has been modified or installed.  Access to a\n network may be denied when the modification itself materially and\n adversely affects the operation of the network or violates the rules and\n protocols for communication across the network.\n\n   Corresponding Source conveyed, and Installation Information provided,\n in accord with this section must be in a format that is publicly\n documented (and with an implementation available to the public in\n source code form), and must require no special password or key for\n unpacking, reading or copying.\n\n   7. Additional Terms.\n\n   \"Additional permissions\" are terms that supplement the terms of this\n License by making exceptions from one or more of its conditions.\n Additional permissions that are applicable to the entire Program shall\n be treated as though they were included in this License, to the extent\n that they are valid under applicable law.  If additional permissions\n apply only to part of the Program, that part may be used separately\n under those permissions, but the entire Program remains governed by\n this License without regard to the additional permissions.\n\n   When you convey a copy of a covered work, you may at your option\n remove any additional permissions from that copy, or from any part of\n it.  (Additional permissions may be written to require their own\n removal in certain cases when you modify the work.)  You may place\n additional permissions on material, added by you to a covered work,\n for which you have or can give appropriate copyright permission.\n\n   Notwithstanding any other provision of this License, for material you\n add to a covered work, you may (if authorized by the copyright holders of\n that material) supplement the terms of this License with terms:\n\n     a) Disclaiming warranty or limiting liability differently from the\n     terms of sections 15 and 16 of this License; or\n\n     b) Requiring preservation of specified reasonable legal notices or\n     author attributions in that material or in the Appropriate Legal\n     Notices displayed by works containing it; or\n\n     c) Prohibiting misrepresentation of the origin of that material, or\n     requiring that modified versions of such material be marked in\n     reasonable ways as different from the original version; or\n\n     d) Limiting the use for publicity purposes of names of licensors or\n     authors of the material; or\n\n     e) Declining to grant rights under trademark law for use of some\n     trade names, trademarks, or service marks; or\n\n     f) Requiring indemnification of licensors and authors of that\n     material by anyone who conveys the material (or modified versions of\n     it) with contractual assumptions of liability to the recipient, for\n     any liability that these contractual assumptions directly impose on\n     those licensors and authors.\n\n   All other non-permissive additional terms are considered \"further\n restrictions\" within the meaning of section 10.  If the Program as you\n received it, or any part of it, contains a notice stating that it is\n governed by this License along with a term that is a further\n restriction, you may remove that term.  If a license document contains\n a further restriction but permits relicensing or conveying under this\n License, you may add to a covered work material governed by the terms\n of that license document, provided that the further restriction does\n not survive such relicensing or conveying.\n\n   If you add terms to a covered work in accord with this section, you\n must place, in the relevant source files, a statement of the\n additional terms that apply to those files, or a notice indicating\n where to find the applicable terms.\n\n   Additional terms, permissive or non-permissive, may be stated in the\n form of a separately written license, or stated as exceptions;\n the above requirements apply either way.\n\n   8. Termination.\n\n   You may not propagate or modify a covered work except as expressly\n provided under this License.  Any attempt otherwise to propagate or\n modify it is void, and will automatically terminate your rights under\n this License (including any patent licenses granted under the third\n paragraph of section 11).\n\n   However, if you cease all violation of this License, then your\n license from a particular copyright holder is reinstated (a)\n provisionally, unless and until the copyright holder explicitly and\n finally terminates your license, and (b) permanently, if the copyright\n holder fails to notify you of the violation by some reasonable means\n prior to 60 days after the cessation.\n\n   Moreover, your license from a particular copyright holder is\n reinstated permanently if the copyright holder notifies you of the\n violation by some reasonable means, this is the first time you have\n received notice of violation of this License (for any work) from that\n copyright holder, and you cure the violation prior to 30 days after\n your receipt of the notice.\n\n   Termination of your rights under this section does not terminate the\n licenses of parties who have received copies or rights from you under\n this License.  If your rights have been terminated and not permanently\n reinstated, you do not qualify to receive new licenses for the same\n material under section 10.\n\n   9. Acceptance Not Required for Having Copies.\n\n   You are not required to accept this License in order to receive or\n run a copy of the Program.  Ancillary propagation of a covered work\n occurring solely as a consequence of using peer-to-peer transmission\n to receive a copy likewise does not require acceptance.  However,\n nothing other than this License grants you permission to propagate or\n modify any covered work.  These actions infringe copyright if you do\n not accept this License.  Therefore, by modifying or propagating a\n covered work, you indicate your acceptance of this License to do so.\n\n   10. Automatic Licensing of Downstream Recipients.\n\n   Each time you convey a covered work, the recipient automatically\n receives a license from the original licensors, to run, modify and\n propagate that work, subject to this License.  You are not responsible\n for enforcing compliance by third parties with this License.\n\n   An \"entity transaction\" is a transaction transferring control of an\n organization, or substantially all assets of one, or subdividing an\n organization, or merging organizations.  If propagation of a covered\n work results from an entity transaction, each party to that\n transaction who receives a copy of the work also receives whatever\n licenses to the work the party's predecessor in interest had or could\n give under the previous paragraph, plus a right to possession of the\n Corresponding Source of the work from the predecessor in interest, if\n the predecessor has it or can get it with reasonable efforts.\n\n   You may not impose any further restrictions on the exercise of the\n rights granted or affirmed under this License.  For example, you may\n not impose a license fee, royalty, or other charge for exercise of\n rights granted under this License, and you may not initiate litigation\n (including a cross-claim or counterclaim in a lawsuit) alleging that\n any patent claim is infringed by making, using, selling, offering for\n sale, or importing the Program or any portion of it.\n\n   11. Patents.\n\n   A \"contributor\" is a copyright holder who authorizes use under this\n License of the Program or a work on which the Program is based.  The\n work thus licensed is called the contributor's \"contributor version\".\n\n   A contributor's \"essential patent claims\" are all patent claims\n owned or controlled by the contributor, whether already acquired or\n hereafter acquired, that would be infringed by some manner, permitted\n by this License, of making, using, or selling its contributor version,\n but do not include claims that would be infringed only as a\n consequence of further modification of the contributor version.  For\n purposes of this definition, \"control\" includes the right to grant\n patent sublicenses in a manner consistent with the requirements of\n this License.\n\n   Each contributor grants you a non-exclusive, worldwide, royalty-free\n patent license under the contributor's essential patent claims, to\n make, use, sell, offer for sale, import and otherwise run, modify and\n propagate the contents of its contributor version.\n\n   In the following three paragraphs, a \"patent license\" is any express\n agreement or commitment, however denominated, not to enforce a patent\n (such as an express permission to practice a patent or covenant not to\n sue for patent infringement).  To \"grant\" such a patent license to a\n party means to make such an agreement or commitment not to enforce a\n patent against the party.\n\n   If you convey a covered work, knowingly relying on a patent license,\n and the Corresponding Source of the work is not available for anyone\n to copy, free of charge and under the terms of this License, through a\n publicly available network server or other readily accessible means,\n then you must either (1) cause the Corresponding Source to be so\n available, or (2) arrange to deprive yourself of the benefit of the\n patent license for this particular work, or (3) arrange, in a manner\n consistent with the requirements of this License, to extend the patent\n license to downstream recipients.  \"Knowingly relying\" means you have\n actual knowledge that, but for the patent license, your conveying the\n covered work in a country, or your recipient's use of the covered work\n in a country, would infringe one or more identifiable patents in that\n country that you have reason to believe are valid.\n\n   If, pursuant to or in connection with a single transaction or\n arrangement, you convey, or propagate by procuring conveyance of, a\n covered work, and grant a patent license to some of the parties\n receiving the covered work authorizing them to use, propagate, modify\n or convey a specific copy of the covered work, then the patent license\n you grant is automatically extended to all recipients of the covered\n work and works based on it.\n\n   A patent license is \"discriminatory\" if it does not include within\n the scope of its coverage, prohibits the exercise of, or is\n conditioned on the non-exercise of one or more of the rights that are\n specifically granted under this License.  You may not convey a covered\n work if you are a party to an arrangement with a third party that is\n in the business of distributing software, under which you make payment\n to the third party based on the extent of your activity of conveying\n the work, and under which the third party grants, to any of the\n parties who would receive the covered work from you, a discriminatory\n patent license (a) in connection with copies of the covered work\n conveyed by you (or copies made from those copies), or (b) primarily\n for and in connection with specific products or compilations that\n contain the covered work, unless you entered into that arrangement,\n or that patent license was granted, prior to 28 March 2007.\n\n   Nothing in this License shall be construed as excluding or limiting\n any implied license or other defenses to infringement that may\n otherwise be available to you under applicable patent law.\n\n   12. No Surrender of Others' Freedom.\n\n   If conditions are imposed on you (whether by court order, agreement or\n otherwise) that contradict the conditions of this License, they do not\n excuse you from the conditions of this License.  If you cannot convey a\n covered work so as to satisfy simultaneously your obligations under this\n License and any other pertinent obligations, then as a consequence you may\n not convey it at all.  For example, if you agree to terms that obligate you\n to collect a royalty for further conveying from those to whom you convey\n the Program, the only way you could satisfy both those terms and this\n License would be to refrain entirely from conveying the Program.\n\n   13. Use with the GNU Affero General Public License.\n\n   Notwithstanding any other provision of this License, you have\n permission to link or combine any covered work with a work licensed\n under version 3 of the GNU Affero General Public License into a single\n combined work, and to convey the resulting work.  The terms of this\n License will continue to apply to the part which is the covered work,\n but the special requirements of the GNU Affero General Public License,\n section 13, concerning interaction through a network will apply to the\n combination as such.\n\n   14. Revised Versions of this License.\n\n   The Free Software Foundation may publish revised and/or new versions of\n the GNU General Public License from time to time.  Such new versions will\n be similar in spirit to the present version, but may differ in detail to\n address new problems or concerns.\n\n   Each version is given a distinguishing version number.  If the\n Program specifies that a certain numbered version of the GNU General\n Public License \"or any later version\" applies to it, you have the\n option of following the terms and conditions either of that numbered\n version or of any later version published by the Free Software\n Foundation.  If the Program does not specify a version number of the\n GNU General Public License, you may choose any version ever published\n by the Free Software Foundation.\n\n   If the Program specifies that a proxy can decide which future\n versions of the GNU General Public License can be used, that proxy's\n public statement of acceptance of a version permanently authorizes you\n to choose that version for the Program.\n\n   Later license versions may give you additional or different\n permissions.  However, no additional obligations are imposed on any\n author or copyright holder as a result of your choosing to follow a\n later version.\n\n   15. Disclaimer of Warranty.\n\n   THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY\n APPLICABLE LAW.  EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT\n HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM \"AS IS\" WITHOUT WARRANTY\n OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO,\n THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR\n PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM\n IS WITH YOU.  SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF\n ALL NECESSARY SERVICING, REPAIR OR CORRECTION.\n\n   16. Limitation of Liability.\n\n   IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING\n WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS\n THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY\n GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE\n USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF\n DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD\n PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS),\n EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF\n SUCH DAMAGES.\n\n   17. Interpretation of Sections 15 and 16.\n\n   If the disclaimer of warranty and limitation of liability provided\n above cannot be given local legal effect according to their terms,\n reviewing courts shall apply local law that most closely approximates\n an absolute waiver of all civil liability in connection with the\n Program, unless a warranty or assumption of liability accompanies a\n copy of the Program in return for a fee.\n\n                      END OF TERMS AND CONDITIONS\n\n             How to Apply These Terms to Your New Programs\n\n   If you develop a new program, and you want it to be of the greatest\n possible use to the public, the best way to achieve this is to make it\n free software which everyone can redistribute and change under these terms.\n\n   To do so, attach the following notices to the program.  It is safest\n to attach them to the start of each source file to most effectively\n state the exclusion of warranty; and each file should have at least\n the \"copyright\" line and a pointer to where the full notice is found.\n\n     <one line to give the program's name and a brief idea of what it does.>\n     Copyright (C) <year>  <name of author>\n\n     This program is free software: you can redistribute it and/or modify\n     it under the terms of the GNU General Public License as published by\n     the Free Software Foundation, either version 3 of the License, or\n     (at your option) any later version.\n\n     This program is distributed in the hope that it will be useful,\n     but WITHOUT ANY WARRANTY; without even the implied warranty of\n     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n     GNU General Public License for more details.\n\n     You should have received a copy of the GNU General Public License\n     along with this program.  If not, see <http://www.gnu.org/licenses/>.\n\n Also add information on how to contact you by electronic and paper mail.\n\n   If the program does terminal interaction, make it output a short\n notice like this when it starts in an interactive mode:\n\n     <program>  Copyright (C) <year>  <name of author>\n     This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.\n     This is free software, and you are welcome to redistribute it\n     under certain conditions; type `show c' for details.\n\n The hypothetical commands `show w' and `show c' should show the appropriate\n parts of the General Public License.  Of course, your program's commands\n might be different; for a GUI interface, you would use an \"about box\".\n\n   You should also get your employer (if you work as a programmer) or school,\n if any, to sign a \"copyright disclaimer\" for the program, if necessary.\n For more information on this, and how to apply and follow the GNU GPL, see\n <http://www.gnu.org/licenses/>.\n\n   The GNU General Public License does not permit incorporating your program\n into proprietary programs.  If your program is a subroutine library, you\n may consider it more useful to permit linking proprietary applications with\n the library.  If this is what you want to do, use the GNU Lesser General\n Public License instead of this License.  But first, please read\n <http://www.gnu.org/philosophy/why-not-lgpl.html>.\n\n\n Name: libquadmath\n Files: scipy.libs/libquadmath*.so\n Description: dynamically linked to files compiled with gcc\n Availability: https://gcc.gnu.org/git/?p=gcc.git;a=tree;f=libquadmath\n License: LGPL-2.1-or-later\n\n     GCC Quad-Precision Math Library\n     Copyright (C) 2010-2019 Free Software Foundation, Inc.\n     Written by Francois-Xavier Coudert  <fxcoudert@gcc.gnu.org>\n\n     This file is part of the libquadmath library.\n     Libquadmath is free software; you can redistribute it and/or\n     modify it under the terms of the GNU Library General Public\n     License as published by the Free Software Foundation; either\n     version 2.1 of the License, or (at your option) any later version.\n\n     Libquadmath is distributed in the hope that it will be useful,\n     but WITHOUT ANY WARRANTY; without even the implied warranty of\n     MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU\n     Lesser General Public License for more details.\n     https://www.gnu.org/licenses/old-licenses/lgpl-2.1.html\n",
+        "license_classifiers": [
+          "License :: OSI Approved :: BSD License"
+        ]
+      },
+      {
+        "name": "httpx2",
+        "version": "2.16.2",
+        "license": "BSD-3-Clause",
+        "license_classifiers": [
+          "License :: OSI Approved :: BSD License"
+        ]
+      },
+      {
+        "name": "hf-xet",
+        "version": "1.8.0",
+        "license": "Apache-2.0",
+        "license_classifiers": [
+          "License :: OSI Approved :: Apache Software License"
+        ]
+      },
+      {
+        "name": "click",
+        "version": "8.5.1",
+        "license": "BSD-3-Clause",
+        "license_classifiers": []
+      },
+      {
+        "name": "markdown-it-py",
+        "version": "4.3.0",
+        "license": "UNKNOWN",
+        "license_classifiers": [
+          "License :: OSI Approved :: MIT License"
+        ]
+      },
+      {
+        "name": "psutil",
+        "version": "7.0.0",
+        "license": "BSD-3-Clause",
+        "license_classifiers": [
+          "License :: OSI Approved :: BSD License"
+        ]
+      },
+      {
+        "name": "fsspec",
+        "version": "2026.9.0",
+        "license": "BSD-3-Clause",
+        "license_classifiers": []
+      },
+      {
+        "name": "torch",
+        "version": "2.13.0+cpu",
+        "license": "Apache-2.0 AND Apache-2.0 WITH LLVM-exception AND BSD-2-Clause AND BSD-3-Clause AND BSL-1.0 AND MIT",
+        "license_classifiers": []
+      },
+      {
+        "name": "sympy",
+        "version": "1.14.0",
+        "license": "BSD",
+        "license_classifiers": [
+          "License :: OSI Approved :: BSD License"
+        ]
+      },
+      {
+        "name": "tzdata",
+        "version": "2026.6",
+        "license": "Apache-2.0",
+        "license_classifiers": []
+      },
+      {
+        "name": "Jinja2",
+        "version": "3.1.6",
+        "license": "UNKNOWN",
+        "license_classifiers": [
+          "License :: OSI Approved :: BSD License"
+        ]
+      },
+      {
+        "name": "typer",
+        "version": "0.29.1",
+        "license": "MIT",
+        "license_classifiers": []
+      },
+      {
+        "name": "h11",
+        "version": "0.16.0",
+        "license": "MIT",
+        "license_classifiers": [
+          "License :: OSI Approved :: MIT License"
+        ]
+      },
+      {
+        "name": "opencv-python-headless",
+        "version": "4.13.0.92",
+        "license": "Apache 2.0",
+        "license_classifiers": [
+          "License :: OSI Approved :: Apache Software License"
+        ]
+      },
+      {
+        "name": "typing_extensions",
+        "version": "4.16.0",
+        "license": "PSF-2.0",
+        "license_classifiers": []
+      },
+      {
+        "name": "av",
+        "version": "19.0.2",
+        "license": "BSD-3-Clause",
+        "license_classifiers": []
+      },
+      {
+        "name": "mpmath",
+        "version": "1.3.0",
+        "license": "BSD",
+        "license_classifiers": [
+          "License :: OSI Approved :: BSD License"
+        ]
+      },
+      {
+        "name": "mdurl",
+        "version": "0.1.2",
+        "license": "UNKNOWN",
+        "license_classifiers": [
+          "License :: OSI Approved :: MIT License"
+        ]
+      },
+      {
+        "name": "tqdm",
+        "version": "4.70.1",
+        "license": "MPL-2.0 AND MIT",
+        "license_classifiers": []
+      },
+      {
+        "name": "httpcore2",
+        "version": "2.16.2",
+        "license": "BSD-3-Clause",
+        "license_classifiers": [
+          "License :: OSI Approved :: BSD License"
+        ]
+      },
+      {
+        "name": "pillow",
+        "version": "13.0.0",
+        "license": "MIT-CMU",
+        "license_classifiers": []
+      },
+      {
+        "name": "annotated-doc",
+        "version": "0.0.6",
+        "license": "MIT",
+        "license_classifiers": []
+      },
+      {
+        "name": "networkx",
+        "version": "3.7",
+        "license": "BSD-3-Clause",
+        "license_classifiers": []
+      },
+      {
+        "name": "regex",
+        "version": "2026.11.15",
+        "license": "Apache-2.0 AND CNRI-Python",
+        "license_classifiers": []
+      }
+    ],
+    "native_ffmpeg": [
+      {
+        "library": "libavcodec-d61378e8.so.63.1.102",
+        "license": "LGPL version 3 or later"
+      }
+    ],
+    "native_configuration_evidence_sha256": "3eaca5bf2fb5092a6c87b5cef87a586727320a3bc95046323555711c697317c3",
+    "limits": "Metadata declarations are evidence, not a legal clearance. PyAV FFmpeg self-reports LGPL version 3 or later; native codec linkage and distribution duties require separate review.",
+    "dataset": {
+      "manifest_sha256": "5a054d2788d0f1c43297a71b6a0ac007135ee6a4348ae67372d161b996ce7326",
+      "noncommercial_labels": 401,
+      "no_derivatives_labels": 198,
+      "labels_overlap": true,
+      "rights_cleared_for_commercial_training": false,
+      "note": "Historical COCO annotation license labels; verify individual current rights and attribution. Evaluation subset was not used for training; original model pretraining includes COCO training data."
+    },
+    "references": [
+      {
+        "file": "Solutions et ressources pour un système d’analytics de ventes et de commandes de coffee-shop.pdf",
+        "sha256": "82476ed4292795d191b1bc9dca0097ff475c22c947def307a2148e611c8af687",
+        "unchanged_from_published": true,
+        "rights_cleared": false,
+        "review": "See post-publication-20261115.md; no removal approved or performed"
+      },
+      {
+        "file": "Système analytique de ventes et commandes pour coffee shops _ jeux de données, architecture, APIs, E.docx",
+        "sha256": "9f831090cc2694fed95d68ac9e539b8d9d0b8f3bd2a5fe0bddfb66bdfc7b0913",
+        "unchanged_from_published": true,
+        "rights_cleared": false,
+        "review": "See post-publication-20261115.md; no removal approved or performed"
+      },
+      {
+        "file": "Système analytique de ventes et commandes pour coffee shops _ jeux de données, architecture, APIs, E.pdf",
+        "sha256": "36754dd13d51e44e9f4b055dd1d88b13ebc1fc2f4ceb766176bafcd8aef1cdd8",
+        "unchanged_from_published": true,
+        "rights_cleared": false,
+        "review": "See post-publication-20261115.md; no removal approved or performed"
+      },
+      {
+        "file": "docs/benchmarks/model_latency.png",
+        "sha256": "956585ecafaa5be6bd9f4c976e6212fba6da8628b0133919b40e780b15c76cf6",
+        "unchanged_from_published": true,
+        "rights_cleared": false,
+        "review": "See post-publication-20261115.md; no removal approved or performed"
+      }
+    ]
+  },
+  "workstation": {
+    "temporary_pause_authorized": true,
+    "previously_running_containers": 12,
+    "restored_running_healthy": 12,
+    "restored": true,
+    "phases": [
+      {
+        "name": "verified-native",
+        "exit_code": 0,
+        "seconds": 9.48288790002698
+      },
+      {
+        "name": "verified-pretrained-runtime",
+        "exit_code": 0,
+        "seconds": 24.626082799979486
+      },
+      {
+        "name": "verified-parity",
+        "exit_code": 0,
+        "seconds": 1.367130399972666
+      },
+      {
+        "name": "verified-permissive-quality",
+        "exit_code": 0,
+        "seconds": 65.20009639998898
+      },
+      {
+        "name": "verify-windows-cpu-verified",
+        "exit_code": 0,
+        "seconds": 69.49787990003824
+      },
+      {
+        "name": "verify-windows-video-verified",
+        "exit_code": 0,
+        "seconds": 109.88991369999712
+      },
+      {
+        "name": "verify-linux-cpu-verified",
+        "exit_code": 0,
+        "seconds": 72.34956120001152
+      },
+      {
+        "name": "verify-linux-video-verified",
+        "exit_code": 0,
+        "seconds": 112.18576379999286
+      },
+      {
+        "name": "verified-trivy",
+        "exit_code": 0,
+        "seconds": 20.79767180001363
+      },
+      {
+        "name": "verified-sbom",
+        "exit_code": 0,
+        "seconds": 0.11522729997523129
+      }
+    ],
+    "build_dns": "Explicit public DNS queries generated build-scoped host mappings only; TLS/wheel hashes retained; laptop DNS unchanged"
+  },
+  "cleanup": {
+    "superseded_docs_removed": 16,
+    "reference_documents_deleted": false,
+    "history_rewritten": false,
+    "generated_file_deletion_executed": false,
+    "reason": "Automatic tool policy rejected generated artifact removal despite owner authorization; no bypass attempted",
+    "dry_run_helper": "scripts/cleanup_workspace.ps1",
+    "estimated_reproducible_target_gib": 5.9,
+    "disk_space_change": "Increased externally; no claimed agent reclamation"
+  },
+  "historical_failures_retained": [
+    "16 November combined acceptance hit unchanged 180-second unit-suite deadline; timeouts now preserve partial logs and result JSON",
+    "Initial native smoke rejected ensurepip; production image now removes it and pip",
+    "Initial image scan found four HIGH and one MEDIUM Transformers vulnerabilities; dependency upgrade rescanned without suppressions",
+    "Docker engine/unpacking/container-start and network/DNS failures under shared workstation load; approved recovery and temporary project pause completed",
+    "HF v5 rejected one-layer tiny fixture shared-head configuration; corrected to two decoder layers",
+    "HF v5 default fast preprocessing failed parity at score delta 0.039478; explicit PIL processor passes unchanged score/IoU criteria",
+    "Initial one-second cooperative worker shutdown raced Windows interpreter teardown; revised 2+1-second budget passes all five final profiles"
+  ],
+  "remaining_production_blockers": [
+    "Source license undecided; strict root-LICENSE gate intentionally unsatisfied",
+    "Published reference rights and model/dataset/native-library attribution/distribution review pending",
+    "Public-test cup recall 42.1%; no real cafe ground truth, event/tracking accuracy or sustained end-to-end capacity evidence",
+    "No new CUDA environment/FP16 parity or full held-out AP validation after the 5.23.0 runtime upgrade",
+    "Owner approval required before publishing local changes; no deployment authorized"
+  ],
+  "secrets": {
+    "history_findings": 4,
+    "history_commits": 7,
+    "history_classification": "Four source-integrity digest false positives; exact same-commit source hashes recomputed; published Git history unchanged",
+    "current_source_files": 193,
+    "current_text_files_scanned": 186,
+    "current_source_findings": [
+      {
+        "file": "docs/audits/post-publication-20261115.json",
+        "line": 2691,
+        "classification": "False positive: recomputed source/evidence SHA-256, not a credential",
+        "hash_recomputed_matches": true,
+        "field": "candidate-secret-triage.json",
+        "historical_source_commit": null
+      },
+      {
+        "file": "docs/audits/release-verification-20261117.json",
+        "line": 1384,
+        "classification": "False positive: recomputed source/evidence SHA-256, not a credential",
+        "hash_recomputed_matches": true,
+        "field": "var/release-verification-20261117/tokenizers-pypi.json",
+        "historical_source_commit": null
+      },
+      {
+        "file": "docs/audits/release-verification-20261117.json",
+        "line": 1464,
+        "classification": "False positive: recomputed source/evidence SHA-256, not a credential",
+        "hash_recomputed_matches": true,
+        "field": "coffee_ops/api.py",
+        "historical_source_commit": null
+      },
+      {
+        "file": "docs/audits/release-verification-20261117.json",
+        "line": 1508,
+        "classification": "False positive: recomputed source/evidence SHA-256, not a credential",
+        "hash_recomputed_matches": true,
+        "field": "scripts/benchmark_api.py",
+        "historical_source_commit": null
+      },
+      {
+        "file": "docs/audits/release-verification-20261117.json",
+        "line": 1526,
+        "classification": "False positive: recomputed source/evidence SHA-256, not a credential",
+        "hash_recomputed_matches": true,
+        "field": "tests/test_api.py",
+        "historical_source_commit": null
+      },
+      {
+        "file": "docs/benchmarks/foundation_results.json",
+        "line": 1524,
+        "classification": "False positive: recomputed source/evidence SHA-256, not a credential",
+        "hash_recomputed_matches": true,
+        "field": "coffee_ops/api.py",
+        "historical_source_commit": "0a39057885047038c2ba5829426d397ec73a9fb5"
+      },
+      {
+        "file": "docs/benchmarks/foundation_results.json",
+        "line": 1555,
+        "classification": "False positive: recomputed source/evidence SHA-256, not a credential",
+        "hash_recomputed_matches": true,
+        "field": "tests/test_api.py",
+        "historical_source_commit": "0a39057885047038c2ba5829426d397ec73a9fb5"
+      },
+      {
+        "file": "docs/benchmarks/video_prototype_results.json",
+        "line": 227,
+        "classification": "False positive: recomputed source/evidence SHA-256, not a credential",
+        "hash_recomputed_matches": true,
+        "field": "coffee_ops/api.py",
+        "historical_source_commit": "0a39057885047038c2ba5829426d397ec73a9fb5"
+      },
+      {
+        "file": "docs/benchmarks/video_prototype_results.json",
+        "line": 266,
+        "classification": "False positive: recomputed source/evidence SHA-256, not a credential",
+        "hash_recomputed_matches": true,
+        "field": "tests/test_api.py",
+        "historical_source_commit": "0a39057885047038c2ba5829426d397ec73a9fb5"
+      }
+    ],
+    "unresolved_findings": 0,
+    "credential_identified": false,
+    "suppression_used": false,
+    "scanner_raw_exit_codes": {
+      "history": 1,
+      "current_source": 1
+    },
+    "limits": "A reviewed scan is not proof that all secrets or personal content are absent; binaries/reference rights reviewed separately",
+    "history_fresh_scan_sha256": "27f08aeebc849376fc057457ce5b98526012c7afccdee80d8fb72e22d551f54c"
+  },
+  "current_path_redaction": {
+    "file": "docs/benchmarks/benchmark-environment.txt",
+    "before_sha256": "6b2c08723a9ad88ac02da48bebd766395caf1725e20de757edcdf54a9b2e7c1d",
+    "after_sha256": "009fb0c578589a0f2f049d1bb9b766af4f154170095bd3692d440974fba2cc09",
+    "change": "Removed account-specific local wheel URL; retained exact Torch version and wheel hash",
+    "history_rewritten": false
+  },
+  "documentation_links": {
+    "candidate_files": 193,
+    "local_markdown_targets": 142,
+    "missing": []
+  },
+  "raw_evidence_sha256": {
+    "var/release-verification-20261117/approved-native.log": "f9e9ffd324eb7c354b1919ea1265a1ddec04dbf0374df60d2360dda1cb105200",
+    "var/release-verification-20261117/approved-parity.log": "da809a0716bac5f66aea68dcdb9234af37fbd5eb473942e1961d31d9ea56a870",
+    "var/release-verification-20261117/approved-pause-verification.json": "6d013b1edc40cfd94526972ce2692716d8470b8712a89f9d6c7f61c8858686f8",
+    "var/release-verification-20261117/approved-permissive-quality.log": "07cc672a392d64f008cce794a6b5f02a962545271ca7c03df76985935cca1634",
+    "var/release-verification-20261117/approved-pretrained-runtime.log": "7c53832f29998a016949d812b06dc22cb003b2490f6392d3089c777c46143cc6",
+    "var/release-verification-20261117/approved-sbom.log": "6fa02f06548f8b7e43557070f2dad283c6364d4fdf5040df98abadb2591ed087",
+    "var/release-verification-20261117/approved-trivy.log": "c6534015e8a39094063fe9f9c156b4ecd74a913da92c70ce77370f44b949f37d",
+    "var/release-verification-20261117/approved-verification.log": "a9e67ee530d6419ad8726f479ba6faf6f0914591e7b3ef951bcebf642932054c",
+    "var/release-verification-20261117/build-dns-resolution-v2.json": "9823283f90d966d0dd7115668bc4794d4890d9cd7ccd37ed3a001a4c00d9b762",
+    "var/release-verification-20261117/build-dns-resolution.json": "c9c7fbd16ba587dc3fc73469377c8feaa801d42ed06152d38ff3b88aacf6ac00",
+    "var/release-verification-20261117/cdn-probes.json": "b385dfd06cb3d6ece62a2484898e6aa7cd131ac8bdb0041610ccc37e66802aba",
+    "var/release-verification-20261117/clean-source-acceptance.log": "42bbe5b97f8f7cf925f85947b05f8ac4651abfe821953e2429d79de74ff03d3e",
+    "var/release-verification-20261117/clean-source-manifest.json": "d6be53cc6b041bc4dd044945da7cb6534d925fa9f43dc27dbf59be6ec0426493",
+    "var/release-verification-20261117/container-check-approved.json": "2baa637b8b5b1795445d841baf27e113b553d12fbaa95e05dd1b5b1f01832e9b",
+    "var/release-verification-20261117/container-check-final.json": "575877df030a3f737c92522180ce2f6885936c72182237242d8b4b3febcfe257",
+    "var/release-verification-20261117/container-check-patched.json": "aa146c83c75553178b83721b91ae98c60ea72dca63fb7afb6db2038e23818024",
+    "var/release-verification-20261117/container-check-patched.log": "b570934f37613967847cdfc1a203fb668e0585f6b251e8258b806b271b530df5",
+    "var/release-verification-20261117/container-check-verified.json": "628fd8f5c1ce176a80e6264b82531e0809c30ca66e6ec429d61d8ba7c8e08c09",
+    "var/release-verification-20261117/container-check.json": "6c79d357990515525ef345f92e757d185bd034b7f929523d6f670f04a83034d8",
+    "var/release-verification-20261117/container-check.log": "c3d2c37ae4227e14206571efa0e15368c163125decf23846a815a85920da5b1f",
+    "var/release-verification-20261117/dependency-notices.json": "02b0bc65ff358d309832efaf6d7794e28d52aae43d76fd19f2d7f31adcf7b705",
+    "var/release-verification-20261117/docker-recovery-after-build.log": "92401b13d631f182d6ca6e43b596b018c87e671cf40e3014026c35e84f2aaf30",
+    "var/release-verification-20261117/document-links.json": "61fe258dc50e41256322c1b14b3724fcc42d1ba5c155fe7a2812f639d99a5367",
+    "var/release-verification-20261117/engine-recovery-probe.json": "6071b45258bdf43402260dfc86161dbd13a4bcf55d395689acb7c1483527dd82",
+    "var/release-verification-20261117/ffmpeg-build-license.json": "3eaca5bf2fb5092a6c87b5cef87a586727320a3bc95046323555711c697317c3",
+    "var/release-verification-20261117/final-native.log": "6559aa6973a5551ecb5344f7c02dfe062fcc78f1d5da3bf36fb4c0d5b2780364",
+    "var/release-verification-20261117/final-parity.log": "98f680298c0fd2bdc804e55b07adc938d6d0d7506277d39e9c97162bdcc97f42",
+    "var/release-verification-20261117/final-pause-verification.json": "db23de13f1bff1960a3ebf5f71211536d7553b725263cca7bc901500631f4ff9",
+    "var/release-verification-20261117/final-permissive-quality.log": "a8208017d4961b379cc274dc11b6b175cd9f856cc7baac526f83280431ad1850",
+    "var/release-verification-20261117/final-pretrained-runtime.log": "01e9ce6d8e00808ee83ef4d7be60334dd2d020b585bc70724c4686a14d369da3",
+    "var/release-verification-20261117/final-review-checks.json": "d85b3f1ab106bac96a36154f668f03e530e5e0a4c24cdc832b79d52c32fbef4e",
+    "var/release-verification-20261117/final-runtime-inventory.json": "bff7254a9d49ca6594044e9125cd14a32c279278c26bcb0c70fa1fe34e8a4069",
+    "var/release-verification-20261117/final-sbom.log": "425987f809cc12cc5cd7039b60e15aa39e56d220869f848e021c3b33139b5e00",
+    "var/release-verification-20261117/final-trivy.log": "d108f3d0a6b2d042a4aee91cdac2cf2d6965f533f52795a033db8f8c46b517b9",
+    "var/release-verification-20261117/final-verification.log": "a58d77f115789fceab8811ac653a23699f7e2dbbb4bc60443a084ea717feafae",
+    "var/release-verification-20261117/gitleaks-candidate-scope.json": "13440ecf7f41dd07b3085ae5c1af057eebc22718f4880d6dd6a47928513c8376",
+    "var/release-verification-20261117/gitleaks-candidate.json": "bfc50124031d8f743ccd87c85d6b23a0d0e38b2575fc90c959c1b3db1117ce64",
+    "var/release-verification-20261117/gitleaks-candidate.log": "e75b7f1a256cff392842f60feb515b2d22123c40c256aa28857053cdb1e136c1",
+    "var/release-verification-20261117/gitleaks-current-source-final-triage.json": "eaa3c1a53720a02fc59a8794ad71e2ca64fb4f1587e31fb8d78c4800ad17c609",
+    "var/release-verification-20261117/gitleaks-current-source-final.json": "a701c83073b2883ce221c83f6c719d42e92c92f214c17a8d343b0b9aefb198bd",
+    "var/release-verification-20261117/gitleaks-current-source-final.log": "4b9a0058e6d94904fe50ec808e0dd46b2fd3d3d3fd581787410d78721047fa0b",
+    "var/release-verification-20261117/gitleaks-history-verified.json": "27f08aeebc849376fc057457ce5b98526012c7afccdee80d8fb72e22d551f54c",
+    "var/release-verification-20261117/gitleaks-history-verified.log": "e8252ce86754274304608668c2c94409b78cce46ac703538dfbb65127cdac508",
+    "var/release-verification-20261117/gitleaks-history.json": "27f08aeebc849376fc057457ce5b98526012c7afccdee80d8fb72e22d551f54c",
+    "var/release-verification-20261117/gitleaks-history.log": "b2cd6393497a3996ec567ade2a4fd45fe65af76782057d29638b792d7e7b0b9c",
+    "var/release-verification-20261117/gitleaks-triage-pending.json": "768d0228563f591cac31688b8c49896edac04e7ad1f1b8bbb440cd9301412287",
+    "var/release-verification-20261117/gitleaks-triage.json": "38b9afa0afda1a4ba73bf52eaa09ea0864241b82cd2e2c08140a36284ed68447",
+    "var/release-verification-20261117/huggingface-hub-pypi.json": "9166f7567c66e50dd4445b9d5875d5b3579f3669815a0719a0b0e0f8e28972ed",
+    "var/release-verification-20261117/image-metadata-final.json": "3c6bc30b5fd1ba94ed6467256cf5d74aaa221aa4c193d8c2d51d6c78fd0e4725",
+    "var/release-verification-20261117/image-metadata-verified.json": "ca3fdb1b0e13dd5f093d6d15f01b12949708cc5ca1a9ac01ae4c5800e785eaf4",
+    "var/release-verification-20261117/image-metadata.json": "d0ac601d05314c86d0aec76978db87d21324d51dd56b3167aa5b10a0e12ee4f7",
+    "var/release-verification-20261117/legacy-shutdown-timing.json": "6fb63ccde4a0734ec28302909c8d527e2a4b652b6b4c51e16099ee38d78b5c1a",
+    "var/release-verification-20261117/legacy-shutdown-timing.log": "eb726e9332f73384580416f8c396bde8d57ea18383c0645ba1b9c83a0dba43c4",
+    "var/release-verification-20261117/licenses.json": "bc0bc7c4f6cd928152938b807a785951f703da1d72945ecc901f8c5f133caf3b",
+    "var/release-verification-20261117/licenses.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "var/release-verification-20261117/linux-cpu-verified/acceptance/acceptance.json": "1e45717326e6dfc0233be73b24842fc3521f62e4348fc82ac762e4311fa8fd36",
+    "var/release-verification-20261117/linux-cpu-verified/acceptance/daily-report.json": "e765099726e62a59ef5d3cf3d6d244e5bc0082c6e4658431930a0e0b587ec3e9",
+    "var/release-verification-20261117/linux-cpu-verified/acceptance/fixture-evaluation.json": "a9c7b8a07c81c9f08e1e5a342bd774b2fc3edc51001f82a99176bd6cefa9d2c7",
+    "var/release-verification-20261117/linux-cpu-verified/acceptance/runtime.json": "3dd0d99c90cd270073d15fafb7ce546eea7c52060b7eed25b3a4d8c222df8f16",
+    "var/release-verification-20261117/linux-cpu-verified/acceptance/traffic-workflow.json": "20a5ea58d035ad00797fe4b0d7441cdfed4e829c4ba56faa8c6607f3baf021fa",
+    "var/release-verification-20261117/linux-cpu-verified/acceptance/unit-suite.json": "cf5053a5e9ad975327e68c18305e9604bc6efd1e2c6d1ba1d82895779ee4d695",
+    "var/release-verification-20261117/linux-cpu-verified/acceptance.log": "0ec4b8d146a1267ef45c0b150550168b236557fdd938ca1f724e492e20d80341",
+    "var/release-verification-20261117/linux-cpu-verified/checks.json": "b9e9f5760a11b3f3e0a9b0c6152c848f76ab4bc92a27afd8091158ff42e2c08d",
+    "var/release-verification-20261117/linux-cpu-verified/config.log": "d5c86b408c52b67862116ad39a1a672d86027eaf007ab38431d581ccdb15f415",
+    "var/release-verification-20261117/linux-cpu-verified/coverage-json.log": "37c4d97f70f50cd1ac2b79ecd64f2ee7c5f1975d7b2c6438ec4e9eed884a6a25",
+    "var/release-verification-20261117/linux-cpu-verified/coverage-report.log": "0c4ff516de2febb2f301136ed795a8a30842ed9c98a9d16b03d7f69854be925a",
+    "var/release-verification-20261117/linux-cpu-verified/coverage.json": "7258a12e407e2eb4a65f97b670569ecd05e13b8d80330720a8944188ba26a067",
+    "var/release-verification-20261117/linux-cpu-verified/doctor.log": "d2b3e11b4ce74dda850ed5f782c3a80f3727a7e8fbe1e63e3dcecdbacc23dced",
+    "var/release-verification-20261117/linux-cpu-verified/mypy.log": "60f28b94716a9681d0ca533e2fe42680ae0961635c17d3110675fc53df4ea115",
+    "var/release-verification-20261117/linux-cpu-verified/pip-check.log": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09",
+    "var/release-verification-20261117/linux-cpu-verified/pytest-coverage.log": "124a3bf2fd6f289a3e963e5686d0be58959615e72eb0f3e5d91a8665b5afb70b",
+    "var/release-verification-20261117/linux-cpu-verified/ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "var/release-verification-20261117/linux-cpu.log": "5b20db7ede60eb962d1d4356c6ae70e2f0635ce74588e3d0b8f5b9fcb8a3b9e5",
+    "var/release-verification-20261117/linux-final-targeted.log": "e71a5f006527d86ce8e01c08c04d7d7b65249ad6ec2c74ea3565b10d99c7ff7b",
+    "var/release-verification-20261117/linux-permissive-verified/acceptance/acceptance.json": "a2cafc62fcfc6ee722ff675960a47f1f95fd7507c7daf7aeeb34828ab295d59b",
+    "var/release-verification-20261117/linux-permissive-verified/acceptance/daily-report.json": "e765099726e62a59ef5d3cf3d6d244e5bc0082c6e4658431930a0e0b587ec3e9",
+    "var/release-verification-20261117/linux-permissive-verified/acceptance/fixture-evaluation.json": "c4aaa11e525a1a19563e5a53d30d55d0f8bf1a5780924c78deb1bd99d8a467ac",
+    "var/release-verification-20261117/linux-permissive-verified/acceptance/runtime.json": "329f600880974490bdf55901698c4501be4f43886ce4c9a0a8045979bdc87321",
+    "var/release-verification-20261117/linux-permissive-verified/acceptance/traffic-workflow.json": "c561fd173f45101c210b97a3881c92c976cf9f48eceaee20af9a303861cfe896",
+    "var/release-verification-20261117/linux-permissive-verified/acceptance/unit-suite.json": "cf5053a5e9ad975327e68c18305e9604bc6efd1e2c6d1ba1d82895779ee4d695",
+    "var/release-verification-20261117/linux-permissive-verified/acceptance.log": "8491329f100f13ef4b45eb1c7ad29414d9eaa11e6508af0b5b7b358cadb44bc8",
+    "var/release-verification-20261117/linux-permissive-verified/checks.json": "ea43bff11b007f3ab964353e7c9214ab2ae11b7190539d7e232fbf98650364f7",
+    "var/release-verification-20261117/linux-permissive-verified/config.log": "d5c86b408c52b67862116ad39a1a672d86027eaf007ab38431d581ccdb15f415",
+    "var/release-verification-20261117/linux-permissive-verified/coverage-json.log": "7efc96735ff0d5a2567bb7cc5d1ab440c4887ed7d91ee40242656e41011faa4d",
+    "var/release-verification-20261117/linux-permissive-verified/coverage-report.log": "1480a20d201dd043d9f8c8cc756c1ec4b4abbe22ff62cd4a11d06dfaa12469de",
+    "var/release-verification-20261117/linux-permissive-verified/coverage.json": "4d231ad7481f8956b67b022b434dc0fd246ced622a48d36c602e60c255c7179b",
+    "var/release-verification-20261117/linux-permissive-verified/doctor.log": "d2b3e11b4ce74dda850ed5f782c3a80f3727a7e8fbe1e63e3dcecdbacc23dced",
+    "var/release-verification-20261117/linux-permissive-verified/mypy.log": "60f28b94716a9681d0ca533e2fe42680ae0961635c17d3110675fc53df4ea115",
+    "var/release-verification-20261117/linux-permissive-verified/pip-check.log": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09",
+    "var/release-verification-20261117/linux-permissive-verified/pytest-coverage.log": "125783a4137e0528a79ce45f7618542d472d8da3033873aba4c6acf55f890f6a",
+    "var/release-verification-20261117/linux-permissive-verified/ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "var/release-verification-20261117/linux-permissive.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "var/release-verification-20261117/linux-pil-contract.log": "3ad85b8e97386855ac33d65d91996c90e00aecf17bfccafe8105044e9e55f3e3",
+    "var/release-verification-20261117/linux-video-runner-regression.log": "0c05ae59a1dafd11b6c396cda2194bc4dbc6c4f98e6ee05cecc1635fcc5afbac",
+    "var/release-verification-20261117/linux-video-verified/acceptance/acceptance.json": "31e302491b143da2a9bddd6a526c67240e85d26ce0f13bb7651179f57227b936",
+    "var/release-verification-20261117/linux-video-verified/acceptance/daily-report.json": "e765099726e62a59ef5d3cf3d6d244e5bc0082c6e4658431930a0e0b587ec3e9",
+    "var/release-verification-20261117/linux-video-verified/acceptance/fixture-evaluation.json": "02fdb8646251ef8fd609b82c321d2f68f55bcff56e022ae4d133b97774b4911e",
+    "var/release-verification-20261117/linux-video-verified/acceptance/runtime.json": "a005dbbbc690542b9b4a1abc91d381edb00b7834797ad545764dce745fb55937",
+    "var/release-verification-20261117/linux-video-verified/acceptance/traffic-workflow.json": "ba2e184e5ec52f8476f5015e7c3faa43972c0908becb9906c2ebf12e5b6e7dc0",
+    "var/release-verification-20261117/linux-video-verified/acceptance/unit-suite.json": "cf5053a5e9ad975327e68c18305e9604bc6efd1e2c6d1ba1d82895779ee4d695",
+    "var/release-verification-20261117/linux-video-verified/acceptance.log": "5906b9f09b79a994d912430a472dc58390c3ccd1043218d1922ca0a5d0ea9e1e",
+    "var/release-verification-20261117/linux-video-verified/checks.json": "30522c90dd92770bb68367bd6f74724e113d0db34a587f4b11e5008f066c905b",
+    "var/release-verification-20261117/linux-video-verified/config.log": "d5c86b408c52b67862116ad39a1a672d86027eaf007ab38431d581ccdb15f415",
+    "var/release-verification-20261117/linux-video-verified/coverage-json.log": "a7bba975802430b8ad99576af4560cd1b69c89f646547b8210010ed18abae81c",
+    "var/release-verification-20261117/linux-video-verified/coverage-report.log": "d76b9d0d1d3c95d723e92ffdeb04bc668bbc56316c1d1a44e19ba1c621f8c731",
+    "var/release-verification-20261117/linux-video-verified/coverage.json": "ae5893327f7ac2099ab495e575a6155ed264cdb30fe98fed176212b8eb20edaa",
+    "var/release-verification-20261117/linux-video-verified/doctor.log": "d2b3e11b4ce74dda850ed5f782c3a80f3727a7e8fbe1e63e3dcecdbacc23dced",
+    "var/release-verification-20261117/linux-video-verified/mypy.log": "60f28b94716a9681d0ca533e2fe42680ae0961635c17d3110675fc53df4ea115",
+    "var/release-verification-20261117/linux-video-verified/pip-check.log": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09",
+    "var/release-verification-20261117/linux-video-verified/pytest-coverage.log": "fcf04549d4ebbff71999dfbb331ce7cad371cf429d236193fcf3896be16f81b4",
+    "var/release-verification-20261117/linux-video-verified/ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "var/release-verification-20261117/linux-video.log": "d6c7196154d17cb89fdfef5606d5a739da013dccb1c69bd5c5f7d030879319e1",
+    "var/release-verification-20261117/lock-hash-provenance.json": "e2246ba68ca1611a198862ce26628b80712e0c969a0980c343bc85627e5e97c2",
+    "var/release-verification-20261117/mypy-corrected-source.log": "e512091d8bf60cde36f4ac585106853246be5f3c0634bafa6ed8606ee012d473",
+    "var/release-verification-20261117/mypy-final-source.log": "25daa561f2e79ac2f51f900a152eadf72cd290f94bb28f01206e52b54fa2d793",
+    "var/release-verification-20261117/native-failure.log": "97140fcc6511d7f003e1ffc5d495dfebc8a2fe8542bf1dd26c89cfb7973aa0a5",
+    "var/release-verification-20261117/patched-resolution.json": "0942faa693f15721fc379aeb1641ce00824d0c5a00d4a203346ed03886f2b6e7",
+    "var/release-verification-20261117/patched-resolution.log": "27c97a50d2596881a4a23af0d6f07b770ac5c571dac568bc954b9e417cdcbbfa",
+    "var/release-verification-20261117/production-build.log": "e5ddbdf1bc493931648760e8e0a701a719117ca72efe28487bc5333f61788b8c",
+    "var/release-verification-20261117/production-final-build.log": "9d43c96fbdbd505206ac550b00863bc9d53f8f1900ef9b0c5c1da7fa737f9870",
+    "var/release-verification-20261117/production-patched-build.log": "a7463598c283790654c85361c11ffb35cbe085066940952161b2bb9973cfc241",
+    "var/release-verification-20261117/production-patched-dns-build.log": "772561c1e59677d53b09f99b6d2d5ace8df91321c36ece3d32249f2e1d71c022",
+    "var/release-verification-20261117/production-patched-dns-v2-build.log": "0dd861782dd3e6459e4dac31737e024cb05e9bb5a37793f512eff387fd85f97e",
+    "var/release-verification-20261117/production-patched-retry-build.log": "7bb8b5b21b3402dd3ee4b0634c46fe10f8595d2f5c05f57cadcd19aa587d8696",
+    "var/release-verification-20261117/production-release-build.log": "90c7a237f5669e0c53fe888d608fe815bb571e02a86447212610c00bdb95e8a4",
+    "var/release-verification-20261117/production-verified-build.log": "78d6f7e3672eb4dab48d78f4e6b8f5f83b50e1bd7bbe034f4ddf20304972d222",
+    "var/release-verification-20261117/remote-verification.json": "bbbf0699506686a2bf10cf6dc18e24bdc4463235dde3b2eabb06fa53bd2ef927",
+    "var/release-verification-20261117/runtime-after-pil-fix.log": "9dd63cdbcdae74035a89fee64454c33093bf039ed3dee8c551faa90c7e7091c3",
+    "var/release-verification-20261117/runtime-before-upgrade-v2.log": "c170abe68efaf1bb6999ae8d54e2b78b5446ebce5cb9a1fef347edf872d32fc2",
+    "var/release-verification-20261117/runtime-before-upgrade-v3.log": "47401a2d1d13911bd476f5c363cc7566d0d5fd1789a3e27e836c25c799360f7a",
+    "var/release-verification-20261117/runtime-before-upgrade.log": "f4baa27fc87ebb0f23be5c97f8ff3b6861e2700aa545ef09215cd51308659ff4",
+    "var/release-verification-20261117/runtime-inventory-verified.json": "d801a129c53d52142a770bb2d19a01b27a7020e3b4195987c348c2f47abd9ad8",
+    "var/release-verification-20261117/runtime-parity-final.json": "88e06977299d7bb16ae0769dab5611b4938f2a62cc4d6eed9559f4e61821f936",
+    "var/release-verification-20261117/runtime-parity-pil.json": "88e06977299d7bb16ae0769dab5611b4938f2a62cc4d6eed9559f4e61821f936",
+    "var/release-verification-20261117/runtime-parity-pil.log": "66f0e3fc2c42eacf39f1585b9d8ff4568c110fe81564e6e8194544d9533e83c6",
+    "var/release-verification-20261117/runtime-parity-verified.json": "88e06977299d7bb16ae0769dab5611b4938f2a62cc4d6eed9559f4e61821f936",
+    "var/release-verification-20261117/runtime-parity.json": "6380cbd002def7d5881fa662639249cd962e6500c79e6bd9e92d52e77f7dd0dc",
+    "var/release-verification-20261117/sbom-approved.cdx.json": "bf6b1bd9c5582861486c0ad4797d18f5ebe43595fc8bf9f21928ae9107c7763f",
+    "var/release-verification-20261117/sbom-before-upgrade.cdx.json": "e27a507fed20dcb685c517931506df536d36f77d70be986edb9de633b466cc86",
+    "var/release-verification-20261117/sbom-before-upgrade.log": "83bee1084316861e5148f2dc51b03df32c3c2c0811070ef4700cd745cef79c45",
+    "var/release-verification-20261117/sbom-final.cdx.json": "d7a2466a73d4f712d21dbd72b10f627896e9c806f095f881b89a3d58b414593e",
+    "var/release-verification-20261117/sbom-verified.cdx.json": "6eb38edf466f14aacc91d21c601b03ae259cc24aad206014dc318416858f65c4",
+    "var/release-verification-20261117/security-gate-before-upgrade.json": "11d1c206d95449ef6a947eb5019f621d9c6b164766b07e40cd76af9144abdb02",
+    "var/release-verification-20261117/source-path-redaction.json": "bc80b4a471c6b1f196f639d0f4a80255febf62eaa567ac2b1e1b208b24e5ca82",
+    "var/release-verification-20261117/test-build.log": "5e8b0d3e351a175bd8e49f83833b57689d8cf0ae43de6f7635707ad017d86802",
+    "var/release-verification-20261117/test-patched-build.log": "ac49c165b18a5c815e72e52f31362bcdc20a54ea53726d10d1d3e16b41a3a7dc",
+    "var/release-verification-20261117/test-release-build.log": "74dcb1f737397b26ee6fd7939d08d0006f29d4918d4fb2eb47de1aaebba2632c",
+    "var/release-verification-20261117/test-release-final-build.log": "241c38050ca3d18b4e899a9e1e4d8f2367c72d28fe921daf3497d3cd7c1a8c32",
+    "var/release-verification-20261117/test-verified-build.log": "85af6d610d7596ad371e828bf2e37bcf69ee56aa8ec586297baab4378c4248a8",
+    "var/release-verification-20261117/tokenizers-pypi.json": "a7c9f8ce2b6537e35bd73aed2bb90ebcdf1835b29f9fd17c74afaa4399ad3f7a",
+    "var/release-verification-20261117/transformers-pypi.json": "58bdd00e8aeac5a4405926cd751a7980040a626454facb845d2e76d3fe37c1e3",
+    "var/release-verification-20261117/trivy-approved.json": "fb2f9d98de7ae9282e4bc5228fab0853faba788572bcbdc2eea097c755186863",
+    "var/release-verification-20261117/trivy-final.json": "933b4822c6be650544e58a0f381f3da944382ff6963822a7ff7e95af2b2d6b9c",
+    "var/release-verification-20261117/trivy-patched.log": "de3f606a444529ba42bff8e378aef61970d718a15c50215f3e5f83d9ce2bbae2",
+    "var/release-verification-20261117/trivy-verified.json": "e2ecdf20173dae556d3b49c4e1bad05af0d29f3a7dde0fc3920520f0ce8afb35",
+    "var/release-verification-20261117/trivy.json": "094f84c9f5e6016d5e08b18ebb67d6134781c74eee7b7ecb0189e98882344c5e",
+    "var/release-verification-20261117/trivy.log": "577487c452ca864864690fb5da847d07cde20136fbe1159176e9864019966660",
+    "var/release-verification-20261117/vendor/cve-2026-4372-advisory.json": "d783753acc3a8a4f2666c03126aab79e42ac2f5daac0f21d818ae5bf0463b56a",
+    "var/release-verification-20261117/vendor/cve-2026-5241-advisory.json": "dcd1acc23bd19cc80d47ff2b5d6c490c13f86c8d4afe97fbd949eee3ec9bc890",
+    "var/release-verification-20261117/vendor/cve-2026-80047-advisory.json": "bc4712803a51fbcbe3aa35f03a67536eebeda7956b01f60da22ad145f3eeb87c",
+    "var/release-verification-20261117/vendor/cve-2026-80047-fix.diff": "c830d1708e6ca08c6de5b5c88a9e07eb8181c793d43ac4901a4e9521c40271e3",
+    "var/release-verification-20261117/vendor/cve-2026-9856-advisory.json": "e688943e98cd6b8504dc9487d209d3b7423098ca564a9e2b02d9cf93075ac1c0",
+    "var/release-verification-20261117/vendor/generation-utils-5.23.0.py": "01f7d1d68c9fd501ae12d516df408f3c098215ef53d8d8cbbe8104cab79e94b7",
+    "var/release-verification-20261117/vendor/transformers-fix-ancestry.json": "815fcf1e07fab57882147d53985f331582cb45a5e44576dedb1ee5adcf966813",
+    "var/release-verification-20261117/verified-native.log": "044a568f565419725bd30cefa04f34091de1e7b17f46c0cc063a131e201c8b25",
+    "var/release-verification-20261117/verified-parity.log": "98f680298c0fd2bdc804e55b07adc938d6d0d7506277d39e9c97162bdcc97f42",
+    "var/release-verification-20261117/verified-pause-verification.json": "a0e0bd69febd6a594021ebfbcd3f5a58fdcda2c6ff368b71efa1d85fd2304fba",
+    "var/release-verification-20261117/verified-permissive-quality.log": "748b93f5c580d0307f106eaad82eb8738003bd192b702648951e91d10f60f3a6",
+    "var/release-verification-20261117/verified-pretrained-runtime.log": "c3925612468eae7fc5a988902601b4ea1b2d0e0b9547246727b53bb03a517a84",
+    "var/release-verification-20261117/verified-sbom.log": "56d4428615b39bce707d97e1be481499eb44cf2e2f5ef078bb1ba38aafef5b0c",
+    "var/release-verification-20261117/verified-source-manifest.json": "dac994247b61c613e7921af7749085d7f622939b8f0e30865f847ccdd238d355",
+    "var/release-verification-20261117/verified-trivy.log": "27826e71541f0c7abcb6afc2c3567592f2a08bb0781eedb4eb17ae96e9436986",
+    "var/release-verification-20261117/verified-verification.log": "b9086756ff10a300fa8abeee8b35455f1333f9413cccdbc686c9f1a0f2f7816d",
+    "var/release-verification-20261117/verify-linux-cpu-final.log": "bdf8ec1f242a5611314785d1b3c866564c3c88cb796f42f4cf55ec23d1a1699a",
+    "var/release-verification-20261117/verify-linux-cpu-verified.log": "f7bd777a80f49a453841058f4de88e23c9bd904a8ffd1cf9f3df4138a603a8f6",
+    "var/release-verification-20261117/verify-linux-video-final.log": "27995099673d9b44c532efdb03c626da77892d8ca4b50a2b59d392a2f73d1ba5",
+    "var/release-verification-20261117/verify-linux-video-verified.log": "6b065eef4ed48b3a53396e2ec0976f307a21264bfbaf57031ed5a2b935d0719a",
+    "var/release-verification-20261117/verify-windows-cpu-final.log": "97dc2ca48b8f2130221be1f5040f2f8339161d8f840c4c1e459370f43c5aa244",
+    "var/release-verification-20261117/verify-windows-cpu-verified.log": "23126996225e31a6cdd9856bc5a1afa731148610031d77f2db400a555ac34a95",
+    "var/release-verification-20261117/verify-windows-video-final.log": "83d99b136aed635393c72a0d5cc7386332cfe991559a89f48c6c29ac5a3bbd76",
+    "var/release-verification-20261117/verify-windows-video-verified.log": "a1e78922536b987ff960abbb60ecf4d41112811b2d8e86958e2a55806ec8ec98",
+    "var/release-verification-20261117/windows-cpu-setup.log": "eb3882b51d41611cfc37c2e756498f618dda39d296878d36dd487ca31620e5d7",
+    "var/release-verification-20261117/windows-cpu-verified/acceptance/acceptance.json": "7f386defec2efc264361222884a37066f88f70f11451cb9ba592ba7b7ab2455f",
+    "var/release-verification-20261117/windows-cpu-verified/acceptance/daily-report.json": "c18afbbf7760d30b39645cc7da2e6d2dba610ccdc00c03295568177f887e543d",
+    "var/release-verification-20261117/windows-cpu-verified/acceptance/fixture-evaluation.json": "a0c3556c563d014dbf27101a299c696efccbfa586b93d4f107031623fd784b85",
+    "var/release-verification-20261117/windows-cpu-verified/acceptance/runtime.json": "6509b8368451f36e57100a0fbad2f82ba69afc415de5989e3a6361b52f2bfefb",
+    "var/release-verification-20261117/windows-cpu-verified/acceptance/traffic-workflow.json": "12ebb5998a88d84cb25913d120abcda4717c215a95a32ed87854fea9ce246169",
+    "var/release-verification-20261117/windows-cpu-verified/acceptance/unit-suite.json": "56ae5061e48cc2d2eef66b326fb3922ecffc18461c64ce50d25ab56fbc4b0be3",
+    "var/release-verification-20261117/windows-cpu-verified/acceptance.log": "58e86e73f8f4ed9d80d84556c0634d9be119404b0ff79b24b44ae19444ba0e6f",
+    "var/release-verification-20261117/windows-cpu-verified/checks.json": "86825454ca260c6fd2417b6cd1642393cde0c4f7bd45afc3c62c4dd4c6da8ce4",
+    "var/release-verification-20261117/windows-cpu-verified/config.log": "0d357d94b0821f1d66a526f45f8634323b8c4a3c9a21f72363ca8661ccbf2e98",
+    "var/release-verification-20261117/windows-cpu-verified/coverage-json.log": "1edf43af6b3a696ca5d753122fb2d6a00ed83add531fc9a558d5633de3d2ca69",
+    "var/release-verification-20261117/windows-cpu-verified/coverage-report.log": "88aa073d551b93bbe045218a235f79c8f5a60c3d53d24dbdf159bbe66ebfa4ea",
+    "var/release-verification-20261117/windows-cpu-verified/coverage.json": "3b7912e1a60318cd1b803c34cb12af0d36f27ff3edb32f9f076eb17ad2f9d42f",
+    "var/release-verification-20261117/windows-cpu-verified/doctor.log": "c3abd895f15531ec2610de30019347ad7da46f0f352d7845f37cb4065915d0af",
+    "var/release-verification-20261117/windows-cpu-verified/mypy.log": "dabfe9cda912714cdc654091ac8afe8d42fa03311ac477b1adc45f41fe1610c6",
+    "var/release-verification-20261117/windows-cpu-verified/pip-check.log": "672aec65a45bed50e70229c70934a7eebf0462595c459b83023027645d57cccf",
+    "var/release-verification-20261117/windows-cpu-verified/pytest-coverage.log": "5d5ad3c27064520134c3734bb8295df374061a2ef6019915660b0aeff2e281bc",
+    "var/release-verification-20261117/windows-cpu-verified/ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "var/release-verification-20261117/windows-cpu.log": "3c52ff11593625ee271c6e6148b982a14308e544c001b113265e90b0ecd6a9b0",
+    "var/release-verification-20261117/windows-pil-contract.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "var/release-verification-20261117/windows-shutdown-corrected.log": "2e88e0666006d64c5852a9b23aef9b3c019c024eb46e662966fa34a7d16b3cb1",
+    "var/release-verification-20261117/windows-video-verified/acceptance/acceptance.json": "deddecbc286cd51674268fdc09f87de20d194f4bd98baa55be8acb39e6380204",
+    "var/release-verification-20261117/windows-video-verified/acceptance/daily-report.json": "c18afbbf7760d30b39645cc7da2e6d2dba610ccdc00c03295568177f887e543d",
+    "var/release-verification-20261117/windows-video-verified/acceptance/fixture-evaluation.json": "c0184b956941e0121c66b479b6dd64998324134423864a5f2085197ada47fd8b",
+    "var/release-verification-20261117/windows-video-verified/acceptance/runtime.json": "895604c8dc16669c77f6bf31c1ec74eede63e79cd0899530f79c8cb753667dde",
+    "var/release-verification-20261117/windows-video-verified/acceptance/traffic-workflow.json": "9f2a371a0de808404cd223de09260d62590d95953496b23f045a01efc496c85f",
+    "var/release-verification-20261117/windows-video-verified/acceptance/unit-suite.json": "56ae5061e48cc2d2eef66b326fb3922ecffc18461c64ce50d25ab56fbc4b0be3",
+    "var/release-verification-20261117/windows-video-verified/acceptance.log": "7fc229a42f3aaf2e858b03abe0e9527a656680ab3e8fd158e7aa5b11053fc165",
+    "var/release-verification-20261117/windows-video-verified/checks.json": "09325f13c441a4fd67a9619d89bdbc8ff2edf0df290ec7fcf3b53fc81df5ecc8",
+    "var/release-verification-20261117/windows-video-verified/config.log": "0d357d94b0821f1d66a526f45f8634323b8c4a3c9a21f72363ca8661ccbf2e98",
+    "var/release-verification-20261117/windows-video-verified/coverage-json.log": "4cf62c1420a99ba8372258d8ba8745c117dee8d62398bfe553cf68f973b0a776",
+    "var/release-verification-20261117/windows-video-verified/coverage-report.log": "f515592883cf736f6655627a317b5cf379c230b3f11d9f78fe55a2b02e9d4419",
+    "var/release-verification-20261117/windows-video-verified/coverage.json": "6dcbc534a16f92546ffde901bbc6a47829affec2feca9d973d7a173cbe02b412",
+    "var/release-verification-20261117/windows-video-verified/doctor.log": "c3abd895f15531ec2610de30019347ad7da46f0f352d7845f37cb4065915d0af",
+    "var/release-verification-20261117/windows-video-verified/mypy.log": "dabfe9cda912714cdc654091ac8afe8d42fa03311ac477b1adc45f41fe1610c6",
+    "var/release-verification-20261117/windows-video-verified/pip-check.log": "672aec65a45bed50e70229c70934a7eebf0462595c459b83023027645d57cccf",
+    "var/release-verification-20261117/windows-video-verified/pytest-coverage.log": "abea144f1e48a651b3543bc479a2df9c7c87903d20c43ade9b47b4f66ea178b4",
+    "var/release-verification-20261117/windows-video-verified/ruff.log": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "var/release-verification-20261117/windows-video.log": "b25c36e1c3d4eb03f29ae3fe2818283b92a2a599b5d0959a761e73dcb82f5090"
+  },
+  "tested_runtime_and_tooling_source_sha256": {
+    ".dockerignore": "b1158b0b3f3e622e7fd1088add49b1f395d76319cd52778440936ca3fde9719d",
+    ".github/workflows/tests.yml": "033a709bae07bcd7a1302146efb080596eb72dab63e837737dcf69875927dcef",
+    "Dockerfile": "53627f768d8e5e3085cbd91b40946efeae6bea451568dc92874c4a8e3fc36035",
+    "Dockerfile.permissive": "9bda40d85dbbde573a4b0c7f5ee9faabc0ee4c8401c28dd879e0372a32ba6a73",
+    "coffee_ops/__init__.py": "6aef8f11cf9d1feadb75cf3d07003c09ca7079ba99d5bed041be8d3053be601d",
+    "coffee_ops/__main__.py": "4b7a57a7aa4f3547718185e9873832d5de12a5962f821438881299ec19a6cef4",
+    "coffee_ops/alerts.py": "03db4aebbaeceaf5f0a5616a0b7690290a2f25b9f30ac3b3ab4cb60f0814161a",
+    "coffee_ops/api.py": "cdddb86e112f60cd84ec4cb3346a4acf099c4df0c91c63cbb2fb3729eff71d4e",
+    "coffee_ops/business_reporting.py": "0df4f48e1fff97ef486cbdc7f8a7e855efa02e93d8020e1bb804547da636e07b",
+    "coffee_ops/cli.py": "08a9938ff74cd6f4b484b8d2ded83dc7f4ac805ccfd2da5ef44a9b0273bd1feb",
+    "coffee_ops/config.py": "a80ff8ea9132d6b35167c6af0cfcc8524059c798027f88cb0858616e10690447",
+    "coffee_ops/dataset.py": "ce8832748f036a74c47d75ad2b60508904b9044057660d5a697654ce71bf4798",
+    "coffee_ops/demo.py": "94ef23e0cfaa47e76a98a9209bde8a698483769c7f666f0557c765db4b056d1a",
+    "coffee_ops/detector.py": "2f3368173c7cd8e2451c4f377b222a7cdbb374d1ef0e75720a65d1cdde380696",
+    "coffee_ops/detector_startup.py": "7bb275a89fb59bbce4b686a912c9c2ef63fcff49514c47aaa8dd0b52e05e8f30",
+    "coffee_ops/evaluation.py": "a4c1f1556fb86c0933980f76ac7aa713345a96eaa863b3a466b2a8f31043138f",
+    "coffee_ops/event_engine.py": "fd82604b4b092187919b53726bb3983bd909f8b878300ec14145805055d69346",
+    "coffee_ops/event_evaluation.py": "b7a2ffd03528bcba9753502063621e12a8e9b6bf52847edf607a0b68fa933357",
+    "coffee_ops/exports.py": "36c7f1749fdb62868da227a12ff098bff34050817e61d22c126d25e5e68f5043",
+    "coffee_ops/health.py": "1a03cb66fa8e41eecca0a64ff6ae41041e36778629369963158ab760780171f4",
+    "coffee_ops/inventory.py": "fa9953b6f918367d93380961fbfdaa09f94690c21f2b93296a1206f55ced7a53",
+    "coffee_ops/mlops.py": "04e3831cb09db04e921ea65836249aa6bf7291daab4b7b98b76747f8612abd15",
+    "coffee_ops/pipeline.py": "0bc2a035946c96b1f2f7b8cd1f30cfa819606c0eae489752bf833f6f7e3f93da",
+    "coffee_ops/pos_adapter.py": "6e046b8b5c3db450f5dd8d233180ab3c0d8eef74b1d80571450d1d2edd5d7840",
+    "coffee_ops/product_evidence.py": "d3bc978fd27c03d06c108c4be5ce79a83cbabc3983b5334e35b7196370f1705f",
+    "coffee_ops/reconciliation.py": "380689640757a646932995d3bdffc453deea5930e704dfd2218709e92f3f7ce6",
+    "coffee_ops/reporting.py": "fcee338affa2cc07cd8b2a8b266a6af1de9a9013ac6673824c4ea21fb25d48c9",
+    "coffee_ops/resources.py": "a6f420eb06ce3a0c5d7b49fbc6fa9b5aa8842a63606749478cd70071e6bacc2e",
+    "coffee_ops/review_exports.py": "f238910a08153785b8b0b4d2ba8b99521b31a3ea009e25442cc95e792f90d687",
+    "coffee_ops/review_labels.py": "8a8f3ce6481adbd5dc9730e2c67801deaf21a7732834810a23c04aebf3ef21c9",
+    "coffee_ops/runtime.py": "86d7c3fe443c3c02ee0989305d50cea665a63299f2a25a9076ec2b1066583bb8",
+    "coffee_ops/schema.py": "1218cafc80ae39c1239cf134d7eb0eefaad3f04b8026de97c1babb069ffc0d7a",
+    "coffee_ops/storage.py": "3c3129beb0f9abc0645b182faab009f24335cac82ef27adcc240d7889f3b9870",
+    "coffee_ops/tracker.py": "2fb52e17a473bf3cb9ad2e9349818debb90b5b4c0c8cc7794ad0e4f98e98dac4",
+    "coffee_ops/traffic.py": "4d647237b1760c8646d7903daec3372556d1b4f24b9059e0745acc5f7aacd2d1",
+    "coffee_ops/video_input.py": "a8bc1d91218b6fa6c2f56b64d77ed4671e8bcbec7ff7f335b14ff61decb1cabb",
+    "coffee_ops/video_io.py": "4973fb27ea6eb941d4fc73475aa90c7c0d51a80b5f8bf70ff1bfd5f94061da80",
+    "coffee_ops/video_overlay.py": "99c45376a9d1fddeb630da300e162584a0a7adc4079d88722563afe4706d9c35",
+    "coffee_ops/video_review.py": "a722d0a4283783f9c386d0ac71fcd4d90c19ccf02f23fefb4796ca06b3ad26cd",
+    "coffee_ops/zones.py": "2ddabc0a78c2d848649cd0b206ec6615371d8a1b44bf1a715b43428888c1e855",
+    "requirements-benchmark.txt": "37cc6b77b41edcea2abfc7cc42d8722b755b8a3bc4fe704ca39cc3d418262837",
+    "requirements-dev.txt": "0c35e714748cf260aaed4361b4aa7e2fb2431c60e25ab73746348cdc469cde5b",
+    "requirements-lock-linux.txt": "1e290f8f3473acbdf108745efb3eb040638c6b60c2a71c0bc763d67534351480",
+    "requirements-lock-permissive-linux.txt": "347095414687c8c135c21180da84322ccefc7ea49a05e2e6750c06147ebe92c2",
+    "requirements-lock-windows.txt": "07feed8323a42ae7008c1f17d9a4cd1470422295cda72174f5dc997a25447480",
+    "requirements-notebook.txt": "403df1b27e55fa1e16f08f79c16068cc0a88086c0f9f206d69a3983795584caa",
+    "requirements-permissive.txt": "52d9225e35864f3804fddbc3bba40b7f810416194ec9a7bc93fd454370334f2a",
+    "requirements-video.txt": "eaddd9ef728e007c5c5f51d0d07b95da4b3ff23530e390b9c0e21d7287e61b27",
+    "requirements.txt": "a8c5367c1b01f346b966b96d1713943f039cf48cd9b8df0cf918c8a875bf655b",
+    "scripts/apply_cache_cleanup.ps1": "c168ddef3a014660cc6c9dd5a84fd22c6322fd7927ff4b109b7862d99a1bd7ac",
+    "scripts/audit_repository.py": "38c6e0e6577d6c9260aaa846f36ac34a41118aecca2a66e469a779a8e0dcbfc2",
+    "scripts/benchmark_api.py": "38611dddc871fa502bb415ee79014d9b9863965bc84f8b3ad9b7c57702bb19a6",
+    "scripts/benchmark_events.py": "0cf36b8e739129ce1fd62696dabacb9e03c2989a945677fea96801e33653ff3b",
+    "scripts/benchmark_models.py": "8cf0c4e8090de6637639596b72b78c4eaa2dfc881e8370868dcfc60483363215",
+    "scripts/benchmark_mvp.py": "6c0ffd11de0ac9859812ff4eee297ba1f1b84329e6f7ca961d19e2c94179e51a",
+    "scripts/benchmark_public.py": "5043d454187ee36d18282ca5ac1475bee38691670a4b14cec7eebb151666ae09",
+    "scripts/benchmark_suite.py": "2cbd150a83315c551eacb0011d641945cf91ad0ab2b7c6b05d62b4eaf4de1697",
+    "scripts/check_docs.py": "a2c3dd08818f85344852953ac23f33f61ffe56ae53dfe6d97416228ec9d91ad9",
+    "scripts/check_quality.py": "b5e073eccac1bd9cb41eed8606928274c278730f1eb8eeb61d386aa9e1feceb8",
+    "scripts/cleanup_workspace.ps1": "b20f54e5dce50b5c915cc41caacdbee1ef4a723c972d97a5a2012b2ff65583e1",
+    "scripts/lock_requirements.py": "bd191286380078497fe3725e3aaad81ab695fff97bdab9f206f177369b9d01c6",
+    "scripts/plan_cache_cleanup.py": "c8814997f4763ffee4c82e3100b1acf019c035abdd599053a555a584182a2223",
+    "scripts/review_publication.py": "ad79f9694530540a664a7ce20715d3ef30c3aa2480e1b84c645f3b20b1da0f90",
+    "scripts/setup_environment.py": "e6258aa35546175348e99216cad649b01f3e2884e11d554447d8289d93f9e322",
+    "scripts/verify_container.py": "7b629d9129e5eb75ceb96eda11ca535e1a397169891f0b35dd435e346471d025",
+    "scripts/verify_egress.py": "711f515be0fbad2bc2c8f91d4466e38168981af84aef3dba2ab0a15e82100761",
+    "scripts/verify_mvp.py": "55a2c0ada7c58931ea05b86f244812caca75fb386d943f3848243a30071f6991",
+    "scripts/verify_training_notebook.py": "a323f3ca639ae7055611153fa137128643b455faeb03422433f269d501a565d8",
+    "scripts/verify_video_prototype.py": "3a3398f1f6c3297bee4f1ab304cdca2aabfae6396770c007f05a6bd7ea2b776c",
+    "tests/test_api.py": "ac5b93c5d59c930ae443c1f049734d2e01112f491d636bb81fbbd2d03020aff9",
+    "tests/test_business_reporting.py": "eb3f9d4695ed63ad8dd57fb82d89186e562bacf79ece45df18886e5cb6379d76",
+    "tests/test_detector_backend.py": "fa9b864e0e4d03cf5e19b4c3f063d0a30a3d33d5da6e58e01574cad9ef86da50",
+    "tests/test_detector_startup.py": "46c45ba2562518feaa7d5b6a6f81c5c942877aa61778ddf98da55ee08215b9ea",
+    "tests/test_entrypoint.py": "1632c9397e5c20bce0b78b5a7a224dece3cf2fbc8cfe30a5b187ca6404416d82",
+    "tests/test_evaluation_and_data.py": "0aa515766cb04841225df46c7f960a34e188fe9d64d6dc852632a09e651fb280",
+    "tests/test_event_scoring.py": "9305549fa2fb3218e2e7e73906757ff4cc8b08e72eba2d0b56c07c139bc267bb",
+    "tests/test_failure_boundaries.py": "1c90c683046faf8a02cec4683fda4b71ec002bda4defbfc3008b2c4c59227944",
+    "tests/test_model_benchmark.py": "0072d945cfdae8a9c65c5dff3de300481c8e79803c63269ed23b4ff65ef4179c",
+    "tests/test_operations.py": "e85ea45c2d3a953b9df8ef923499b3608227d2210b555f8f9ff5adea0232d307",
+    "tests/test_product_evidence.py": "6a1092b8a37401f66f279eab59263f587ec9fa22aff16539b8da6fa7b44918a7",
+    "tests/test_public_benchmark.py": "e79392319bffe9b100b5cef868b97ab72b0b06dcc3f70c6156be6718ee30634d",
+    "tests/test_review_labels.py": "7a6a2408bd2e704627a3e63ccc0bb2e909863071dd04b90625467e79cd267448",
+    "tests/test_rtdetr_backend.py": "92741eba89b29a25071643618383c63d1fe87668d7fa9658dc5469b97a880bdb",
+    "tests/test_storage_resilience.py": "f4abec3e88cdf0566ac8234a29d6e0c059d1080321a0565c464fd54c4e626c21",
+    "tests/test_traffic.py": "64840dfde928859fb6b13487016036df32efe2a63ea77180aa4aeecd46dff796",
+    "tests/test_training_notebook.py": "38f243ce5b748d3de309822da94b72dfd8f8963c59b928a4a2e755d2d84078d3",
+    "tests/test_verification_runner.py": "f485c50e76d06d18d3ba150b227ea51e5b4c9654564f1b887893d7008056ef70",
+    "tests/test_video_integration.py": "5a6f9cbca7b715e17302e23903511beb4aee7f8bfd005bd50c0c453d93e5bdcb",
+    "tests/test_video_review.py": "77baff446fda6b2d606c4f3a142baf39122e70a5c9adc3099e8f42382a177455"
+  },
+  "final_review_checks": {
+    "git_diff_check": "Passed",
+    "current_source_account_specific_paths": [],
+    "local_markdown_links": {
+      "checked": 142,
+      "missing": []
+    },
+    "root_license_gate": "Intentionally unsatisfied; owner decision pending",
+    "workflow_strict_vulnerability_and_license_gates_retained": true,
+    "legacy_dockerfile_retained": true,
+    "no_additional_publication": true,
+    "workflow_yaml_parse": "Passed",
+    "docker_services_restored_current_recheck": {
+      "running": 12,
+      "healthy": 12
+    }
+  },
+  "read_only_remote_verification": {
+    "command": "git ls-remote origin refs/heads/audit/deep-clean-20261115",
+    "exit_code": 0,
+    "remote_branch": "097c1bd76d6c37efeb43fdab41dde9d6076596e7\trefs/heads/audit/deep-clean-20261115",
+    "local_HEAD": "097c1bd76d6c37efeb43fdab41dde9d6076596e7",
+    "github_jobs": [
+      {
+        "name": "image-security",
+        "status": "completed",
+        "conclusion": "failure",
+        "head_sha": "097c1bd76d6c37efeb43fdab41dde9d6076596e7"
+      },
+      {
+        "name": "test (ubuntu-latest, video)",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "097c1bd76d6c37efeb43fdab41dde9d6076596e7"
+      },
+      {
+        "name": "test (ubuntu-latest, cpu)",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "097c1bd76d6c37efeb43fdab41dde9d6076596e7"
+      },
+      {
+        "name": "test (windows-latest, cpu)",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "097c1bd76d6c37efeb43fdab41dde9d6076596e7"
+      },
+      {
+        "name": "test (windows-latest, video)",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "097c1bd76d6c37efeb43fdab41dde9d6076596e7"
+      }
+    ]
+  }
+}

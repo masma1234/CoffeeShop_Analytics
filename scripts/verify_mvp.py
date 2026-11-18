@@ -11,6 +11,26 @@ import tempfile
 from pathlib import Path
 
 
+def run_unit_suite(root: Path, output: Path) -> int:
+    """Preserve partial evidence on timeout and keep the existing 180s gate."""
+    command = [sys.executable, "-m", "unittest", "discover", "-s", "tests", "-v"]
+    timed_out = False
+    try:
+        tests = subprocess.run(command, cwd=root, text=True, capture_output=True, timeout=180)
+        code, stdout, stderr = tests.returncode, tests.stdout, tests.stderr
+    except subprocess.TimeoutExpired as exc:
+        code, stdout, stderr, timed_out = 124, exc.stdout or "", exc.stderr or "", True
+    def decoded(value: str | bytes) -> str:
+        return value.decode("utf-8", errors="replace") if isinstance(value, bytes) else value
+    log = decoded(stdout) + decoded(stderr)
+    (output / "tests.txt").write_text(log, encoding="utf-8")
+    (output / "unit-suite.json").write_text(json.dumps({"exit_code": code,
+        "timed_out": timed_out, "deadline_seconds": 180}, indent=2) + "\n", encoding="utf-8")
+    if code:
+        print("Unit suite exceeded its 180s deadline" if timed_out else log)
+    return code
+
+
 def main() -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument("--output", required=True, help="New evidence directory; never overwritten")
@@ -18,11 +38,9 @@ def main() -> int:
     root = Path(__file__).resolve().parents[1]
     output = Path(args.output).resolve()
     output.mkdir(parents=True, exist_ok=False)
-    tests = subprocess.run([sys.executable, "-m", "unittest", "discover", "-s", "tests", "-v"], cwd=root, text=True, capture_output=True, timeout=180)
-    (output / "tests.txt").write_text(tests.stdout+tests.stderr, encoding="utf-8")
-    if tests.returncode:
-        print(tests.stderr)
-        return tests.returncode
+    test_code = run_unit_suite(root, output)
+    if test_code:
+        return test_code
     commands = []
     with tempfile.TemporaryDirectory() as directory:
         work = Path(directory)
@@ -99,10 +117,17 @@ def main() -> int:
         (output/"traffic-workflow.json").write_text(json.dumps({"fixture_only":True,"before_review":local,
             "after_review":corrected,"event_evaluation":event_score,"review_revision":review["revision"],
             "repeated_replay_identical":True},indent=2),encoding="utf-8")
-    evidence = {"test_exit_code": tests.returncode, "commands": commands,
+    packages = {}
+    for package in ("ultralytics", "opencv-python", "opencv-python-headless", "transformers",
+                    "numpy", "scipy", "PyYAML", "psutil", "torch", "torchvision"):
+        try:
+            packages[package] = importlib.metadata.version(package)
+        except importlib.metadata.PackageNotFoundError:
+            packages[package] = None
+    evidence = {"test_exit_code": test_code, "commands": commands,
                 "repeated_replay_identical_daily_report": True, "backend": backend,
                 "environment": {"python": platform.python_version(), "platform": platform.platform(),
-                    "packages": {p: importlib.metadata.version(p) for p in ("ultralytics", "opencv-python", "numpy", "scipy", "PyYAML", "psutil", "torch", "torchvision")}},
+                    "packages": packages},
                 "verified": ["unit/integration/failure/concurrency rules", "actual CPU model adapter with untrained test weights", "MJPG video replay with explicit fixture detections", "POS reconciliation", "persistent daily aggregates", "repeat replay idempotence", "failure exit codes"],
                 "unverified": ["real trained-model accuracy", "real CPU model inference throughput", "live cameras/RTSP", "GPU acceleration", "long-duration deployment"]}
     (output / "acceptance.json").write_text(json.dumps(evidence, indent=2), encoding="utf-8")

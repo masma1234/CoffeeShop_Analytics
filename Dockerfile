@@ -1,4 +1,5 @@
-# Offline pilot image. The default command validates config and exits.
+# Legacy YOLO compatibility image; its known Debian findings remain unresolved.
+# Use Dockerfile.permissive for the reviewed RT-DETR runtime profile.
 FROM python:3.13-slim@sha256:e48f59cdba69a3cbd9ed2cf0f348d90d45a8d350d98134cf1070bc106ee9ed90 AS dependencies
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 PIP_NO_CACHE_DIR=1 \
     HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 YOLO_CONFIG_DIR=/tmp/ultralytics \

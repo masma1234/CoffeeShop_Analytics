@@ -1,0 +1,1887 @@
+{
+  "date": "2026-11-16",
+  "published_commit": "097c1bd76d6c37efeb43fdab41dde9d6076596e7",
+  "branch": "audit/deep-clean-20261115",
+  "publication_performed": false,
+  "production_ready": false,
+  "published_files": 194,
+  "candidate_source_files": 204,
+  "document_links": {
+    "markdown_local_targets": 181,
+    "missing": [],
+    "scope": "Tracked and untracked nonignored candidate files; local link targets only, fragments not validated"
+  },
+  "provisional_choice": {
+    "model": "rtdetr-v2-r18",
+    "device": "cuda:0",
+    "precision": "fp16",
+    "image_size": 512,
+    "thresholds": {
+      "person": 0.55,
+      "bottle": 0.45,
+      "cup": 0.55
+    },
+    "reason": "Cup/bottle operating point and existing isolated runtime adapter; not a production promotion"
+  },
+  "dataset": {
+    "manifest_sha256": "5a054d2788d0f1c43297a71b6a0ac007135ee6a4348ae67372d161b996ce7326",
+    "annotations_sha256": "e8c7f7908f1d7278341fae127d0da654f102f11bd7b21d8aeefa635b8c810b6f",
+    "images": 600,
+    "splits": {
+      "calibration": 300,
+      "test": 300
+    },
+    "classes": {
+      "1": "person",
+      "44": "bottle",
+      "47": "cup"
+    },
+    "selection": "equal cup/bottle/person/negative strata; target-crowd images excluded",
+    "limitations": [
+      "Public COCO validation, not cafe validation or official full COCO score",
+      "No recording-session provenance; near-duplicate leakage is not excluded",
+      "Publisher model selection/pretraining overlap cannot be ruled out"
+    ],
+    "training_performed": false,
+    "reason_no_training": "No representative cafe labels; evaluation set frozen; disk below 0.5 GB"
+  },
+  "models": [
+    {
+      "model": "dfine-nano",
+      "precision": "fp16",
+      "image_size": 512,
+      "device": "cuda:0",
+      "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+      "torch": "2.9.0+cu128",
+      "provenance": {
+        "repository": "ustc-community/dfine-nano-coco",
+        "revision": "066438d3d8f0da137a37b38fdf3368fd4afceced",
+        "checkpoint_files_sha256": {
+          "config.json": "7edf2d96d3deb10aa4ec920be0e8e444b617454545bb58093e32bd8e2b96fa2f",
+          "model.safetensors": "19e06bdc873da819920a8d373b879721a5b9759d822f8213220bb09abbdab58b",
+          "preprocessor_config.json": "cd38cd59999e7a95d68e487fbe5132df3d4e5c32a0836add57e6126ba0c4eaf1"
+        },
+        "class_mapping": "explicit COCO synonym validation; complete one-to-one catalog",
+        "parameters": 3770421,
+        "processor_size": {
+          "height": 512,
+          "width": 512
+        }
+      },
+      "dataset_sha256": "5a054d2788d0f1c43297a71b6a0ac007135ee6a4348ae67372d161b996ce7326",
+      "load_seconds": 3.942595300031826,
+      "thresholds": {
+        "1": 0.5,
+        "44": 0.45,
+        "47": 0.5
+      },
+      "results": {
+        "clean-calibration": {
+          "images": 300,
+          "ap": {
+            "map": 0.3897708058357239,
+            "map_50": 0.5895035862922668,
+            "map_75": 0.41895943880081177,
+            "map_small": 0.11317139863967896,
+            "map_medium": 0.42477381229400635,
+            "map_large": 0.6791394352912903,
+            "mar_1": 0.2651810348033905,
+            "mar_10": 0.5110905170440674,
+            "mar_100": 0.5585420727729797,
+            "mar_small": 0.2692919075489044,
+            "mar_medium": 0.6278483271598816,
+            "mar_large": 0.8127762079238892,
+            "map_per_class": [
+              0.5362637042999268,
+              0.3302060663700104,
+              0.3028426766395569
+            ],
+            "mar_100_per_class": [
+              0.6482993364334106,
+              0.49426230788230896,
+              0.5330645442008972
+            ],
+            "classes": [
+              1,
+              44,
+              47
+            ]
+          },
+          "operating_point": {
+            "person": {
+              "tp": 319,
+              "fp": 61,
+              "fn": 122,
+              "precision": 0.8394736842105263,
+              "recall": 0.7233560090702947,
+              "f1": 0.7771010962241169
+            },
+            "bottle": {
+              "tp": 115,
+              "fp": 77,
+              "fn": 129,
+              "precision": 0.5989583333333334,
+              "recall": 0.4713114754098361,
+              "f1": 0.5275229357798165
+            },
+            "cup": {
+              "tp": 56,
+              "fp": 41,
+              "fn": 68,
+              "precision": 0.5773195876288659,
+              "recall": 0.45161290322580644,
+              "f1": 0.5067873303167421
+            }
+          },
+          "inference_ms": {
+            "mean": 42.132082333943494,
+            "p95": 60.28030002489686
+          },
+          "image_pipeline_p95_ms": 63.805859960848466
+        },
+        "clean-test": {
+          "images": 300,
+          "ap": {
+            "map": 0.3777851462364197,
+            "map_50": 0.5827106833457947,
+            "map_75": 0.3996996283531189,
+            "map_small": 0.10425326228141785,
+            "map_medium": 0.401434987783432,
+            "map_large": 0.7007724046707153,
+            "mar_1": 0.21327656507492065,
+            "mar_10": 0.4740477502346039,
+            "mar_100": 0.5275415182113647,
+            "mar_small": 0.2800697684288025,
+            "mar_medium": 0.5884373188018799,
+            "mar_large": 0.794685959815979,
+            "map_per_class": [
+              0.5303570628166199,
+              0.29659026861190796,
+              0.3064080774784088
+            ],
+            "mar_100_per_class": [
+              0.6455855965614319,
+              0.45289257168769836,
+              0.4841463267803192
+            ],
+            "classes": [
+              1,
+              44,
+              47
+            ]
+          },
+          "operating_point": {
+            "person": {
+              "tp": 402,
+              "fp": 78,
+              "fn": 153,
+              "precision": 0.8375,
+              "recall": 0.7243243243243244,
+              "f1": 0.7768115942028986
+            },
+            "bottle": {
+              "tp": 107,
+              "fp": 61,
+              "fn": 135,
+              "precision": 0.6369047619047619,
+              "recall": 0.44214876033057854,
+              "f1": 0.5219512195121951
+            },
+            "cup": {
+              "tp": 59,
+              "fp": 26,
+              "fn": 105,
+              "precision": 0.6941176470588235,
+              "recall": 0.3597560975609756,
+              "f1": 0.4738955823293173
+            }
+          },
+          "inference_ms": {
+            "mean": 41.32098533174334,
+            "p95": 63.80988501186949
+          },
+          "image_pipeline_p95_ms": 67.04797998536378
+        },
+        "dim-test": {
+          "images": 300,
+          "ap": {
+            "map": 0.3551454544067383,
+            "map_50": 0.5639183521270752,
+            "map_75": 0.36213022470474243,
+            "map_small": 0.08802330493927002,
+            "map_medium": 0.37889212369918823,
+            "map_large": 0.6747575402259827,
+            "mar_1": 0.20481619238853455,
+            "mar_10": 0.4496188759803772,
+            "mar_100": 0.5070688128471375,
+            "mar_small": 0.252642422914505,
+            "mar_medium": 0.5725750923156738,
+            "mar_large": 0.7751334309577942,
+            "map_per_class": [
+              0.5039013028144836,
+              0.27131786942481995,
+              0.29021722078323364
+            ],
+            "mar_100_per_class": [
+              0.6255855560302734,
+              0.41818180680274963,
+              0.4774390161037445
+            ],
+            "classes": [
+              1,
+              44,
+              47
+            ]
+          },
+          "operating_point": {
+            "person": {
+              "tp": 389,
+              "fp": 76,
+              "fn": 166,
+              "precision": 0.8365591397849462,
+              "recall": 0.7009009009009008,
+              "f1": 0.7627450980392156
+            },
+            "bottle": {
+              "tp": 96,
+              "fp": 48,
+              "fn": 146,
+              "precision": 0.6666666666666666,
+              "recall": 0.39669421487603307,
+              "f1": 0.49740932642487046
+            },
+            "cup": {
+              "tp": 58,
+              "fp": 24,
+              "fn": 106,
+              "precision": 0.7073170731707317,
+              "recall": 0.35365853658536583,
+              "f1": 0.4715447154471545
+            }
+          },
+          "inference_ms": {
+            "mean": 42.21838333411142,
+            "p95": 61.84730495733675
+          },
+          "image_pipeline_p95_ms": 67.32290500658564
+        },
+        "blur-test": {
+          "images": 300,
+          "ap": {
+            "map": 0.3235293924808502,
+            "map_50": 0.4917396605014801,
+            "map_75": 0.34131911396980286,
+            "map_small": 0.06373517215251923,
+            "map_medium": 0.3220035433769226,
+            "map_large": 0.6710799336433411,
+            "mar_1": 0.19845238327980042,
+            "mar_10": 0.4192115068435669,
+            "mar_100": 0.4657441973686218,
+            "mar_small": 0.18144774436950684,
+            "mar_medium": 0.5367051959037781,
+            "mar_large": 0.778317928314209,
+            "map_per_class": [
+              0.4981032609939575,
+              0.22161655128002167,
+              0.2508683502674103
+            ],
+            "mar_100_per_class": [
+              0.6214414238929749,
+              0.36115702986717224,
+              0.4146341383457184
+            ],
+            "classes": [
+              1,
+              44,
+              47
+            ]
+          },
+          "operating_point": {
+            "person": {
+              "tp": 371,
+              "fp": 60,
+              "fn": 184,
+              "precision": 0.8607888631090487,
+              "recall": 0.6684684684684684,
+              "f1": 0.7525354969574036
+            },
+            "bottle": {
+              "tp": 70,
+              "fp": 35,
+              "fn": 172,
+              "precision": 0.6666666666666666,
+              "recall": 0.2892561983471074,
+              "f1": 0.4034582132564842
+            },
+            "cup": {
+              "tp": 50,
+              "fp": 15,
+              "fn": 114,
+              "precision": 0.7692307692307693,
+              "recall": 0.3048780487804878,
+              "f1": 0.4366812227074236
+            }
+          },
+          "inference_ms": {
+            "mean": 43.02275867007362,
+            "p95": 63.634370002546355
+          },
+          "image_pipeline_p95_ms": 67.36063500866294
+        }
+      },
+      "gpu_peak_allocated_mib": 34.435546875,
+      "limitations": [
+        "Public COCO validation, not cafe validation or official full COCO score",
+        "No recording-session provenance; near-duplicate leakage is not excluded",
+        "Publisher model selection/pretraining overlap cannot be ruled out",
+        "Image pipeline timing excludes tracking, SQLite, IPC and video decoding",
+        "Synthetic brightness/blur are stress probes, not naturally labeled low-light data"
+      ],
+      "promotion_eligible": false
+    },
+    {
+      "model": "dfine-small",
+      "precision": "fp16",
+      "image_size": 512,
+      "device": "cuda:0",
+      "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+      "torch": "2.9.0+cu128",
+      "provenance": {
+        "repository": "ustc-community/dfine-small-coco",
+        "revision": "f79e65b5fbb33ceb9d3ebba042955d7410c608f8",
+        "checkpoint_files_sha256": {
+          "config.json": "9f206c4c935c67c957af2f15c3333b4ff224e72b1881bc7bbde9f873edf4448e",
+          "model.safetensors": "a144baff3a27bfd538fe37b11fa8d4fca5744b8c054b5301e7c699a1379cd18f",
+          "preprocessor_config.json": "7e9e2245806aa3ef068a5321f5eebee3116fa4cec560173231954ffaca930eca"
+        },
+        "class_mapping": "explicit COCO synonym validation; complete one-to-one catalog",
+        "parameters": 10309605,
+        "processor_size": {
+          "height": 512,
+          "width": 512
+        }
+      },
+      "dataset_sha256": "5a054d2788d0f1c43297a71b6a0ac007135ee6a4348ae67372d161b996ce7326",
+      "load_seconds": 5.8211878999718465,
+      "thresholds": {
+        "1": 0.55,
+        "44": 0.45,
+        "47": 0.55
+      },
+      "results": {
+        "clean-calibration": {
+          "images": 300,
+          "ap": {
+            "map": 0.4918527901172638,
+            "map_50": 0.6871315240859985,
+            "map_75": 0.5159399509429932,
+            "map_small": 0.20911438763141632,
+            "map_medium": 0.5311632752418518,
+            "map_large": 0.759281575679779,
+            "mar_1": 0.30788370966911316,
+            "mar_10": 0.6259382963180542,
+            "mar_100": 0.6814565062522888,
+            "mar_small": 0.4569051265716553,
+            "mar_medium": 0.7379661202430725,
+            "mar_large": 0.8641078472137451,
+            "map_per_class": [
+              0.6052148938179016,
+              0.46578171849250793,
+              0.4045617878437042
+            ],
+            "mar_100_per_class": [
+              0.7240362763404846,
+              0.6606557369232178,
+              0.6596774458885193
+            ],
+            "classes": [
+              1,
+              44,
+              47
+            ]
+          },
+          "operating_point": {
+            "person": {
+              "tp": 331,
+              "fp": 50,
+              "fn": 110,
+              "precision": 0.868766404199475,
+              "recall": 0.7505668934240363,
+              "f1": 0.805352798053528
+            },
+            "bottle": {
+              "tp": 151,
+              "fp": 82,
+              "fn": 93,
+              "precision": 0.648068669527897,
+              "recall": 0.6188524590163934,
+              "f1": 0.6331236897274634
+            },
+            "cup": {
+              "tp": 63,
+              "fp": 30,
+              "fn": 61,
+              "precision": 0.6774193548387096,
+              "recall": 0.5080645161290323,
+              "f1": 0.5806451612903226
+            }
+          },
+          "inference_ms": {
+            "mean": 60.1848323342468,
+            "p95": 80.52713997894898
+          },
+          "image_pipeline_p95_ms": 84.93506999802776
+        },
+        "clean-test": {
+          "images": 300,
+          "ap": {
+            "map": 0.4645988643169403,
+            "map_50": 0.6560798287391663,
+            "map_75": 0.5074412822723389,
+            "map_small": 0.19431985914707184,
+            "map_medium": 0.500254213809967,
+            "map_large": 0.765617311000824,
+            "mar_1": 0.2543412148952484,
+            "mar_10": 0.5932931303977966,
+            "mar_100": 0.6560268998146057,
+            "mar_small": 0.4535495638847351,
+            "mar_medium": 0.7026345133781433,
+            "mar_large": 0.8573614358901978,
+            "map_per_class": [
+              0.6084097027778625,
+              0.3968868851661682,
+              0.3884999454021454
+            ],
+            "mar_100_per_class": [
+              0.7162162065505981,
+              0.589669406414032,
+              0.6621951460838318
+            ],
+            "classes": [
+              1,
+              44,
+              47
+            ]
+          },
+          "operating_point": {
+            "person": {
+              "tp": 422,
+              "fp": 49,
+              "fn": 133,
+              "precision": 0.8959660297239915,
+              "recall": 0.7603603603603604,
+              "f1": 0.8226120857699805
+            },
+            "bottle": {
+              "tp": 130,
+              "fp": 74,
+              "fn": 112,
+              "precision": 0.6372549019607843,
+              "recall": 0.5371900826446281,
+              "f1": 0.5829596412556054
+            },
+            "cup": {
+              "tp": 64,
+              "fp": 25,
+              "fn": 100,
+              "precision": 0.7191011235955056,
+              "recall": 0.3902439024390244,
+              "f1": 0.5059288537549407
+            }
+          },
+          "inference_ms": {
+            "mean": 59.36626733338926,
+            "p95": 81.88606999174226
+          },
+          "image_pipeline_p95_ms": 86.03154997399542
+        },
+        "dim-test": {
+          "images": 300,
+          "ap": {
+            "map": 0.44082164764404297,
+            "map_50": 0.6247316002845764,
+            "map_75": 0.47947168350219727,
+            "map_small": 0.173926442861557,
+            "map_medium": 0.4749608635902405,
+            "map_large": 0.7430955767631531,
+            "mar_1": 0.24197369813919067,
+            "mar_10": 0.5603363513946533,
+            "mar_100": 0.6276659965515137,
+            "mar_small": 0.41679319739341736,
+            "mar_medium": 0.6784737706184387,
+            "mar_large": 0.8391594886779785,
+            "map_per_class": [
+              0.5856861472129822,
+              0.3838859498500824,
+              0.35289284586906433
+            ],
+            "mar_100_per_class": [
+              0.7050450444221497,
+              0.5566115975379944,
+              0.6213414669036865
+            ],
+            "classes": [
+              1,
+              44,
+              47
+            ]
+          },
+          "operating_point": {
+            "person": {
+              "tp": 393,
+              "fp": 41,
+              "fn": 162,
+              "precision": 0.9055299539170507,
+              "recall": 0.7081081081081081,
+              "f1": 0.7947421638018201
+            },
+            "bottle": {
+              "tp": 122,
+              "fp": 60,
+              "fn": 120,
+              "precision": 0.6703296703296703,
+              "recall": 0.5041322314049587,
+              "f1": 0.5754716981132075
+            },
+            "cup": {
+              "tp": 57,
+              "fp": 19,
+              "fn": 107,
+              "precision": 0.75,
+              "recall": 0.3475609756097561,
+              "f1": 0.475
+            }
+          },
+          "inference_ms": {
+            "mean": 61.78143566454916,
+            "p95": 84.15892501652708
+          },
+          "image_pipeline_p95_ms": 90.35387001058554
+        },
+        "blur-test": {
+          "images": 300,
+          "ap": {
+            "map": 0.3809707462787628,
+            "map_50": 0.5497903227806091,
+            "map_75": 0.4077947735786438,
+            "map_small": 0.10687261074781418,
+            "map_medium": 0.39935946464538574,
+            "map_large": 0.716228187084198,
+            "mar_1": 0.2227722555398941,
+            "mar_10": 0.49786511063575745,
+            "mar_100": 0.5599155426025391,
+            "mar_small": 0.30654627084732056,
+            "mar_medium": 0.6233932971954346,
+            "mar_large": 0.8311853408813477,
+            "map_per_class": [
+              0.5623812079429626,
+              0.29578906297683716,
+              0.28474196791648865
+            ],
+            "mar_100_per_class": [
+              0.6875675916671753,
+              0.46900826692581177,
+              0.5231707096099854
+            ],
+            "classes": [
+              1,
+              44,
+              47
+            ]
+          },
+          "operating_point": {
+            "person": {
+              "tp": 386,
+              "fp": 36,
+              "fn": 169,
+              "precision": 0.9146919431279621,
+              "recall": 0.6954954954954955,
+              "f1": 0.7901740020470829
+            },
+            "bottle": {
+              "tp": 88,
+              "fp": 51,
+              "fn": 154,
+              "precision": 0.6330935251798561,
+              "recall": 0.36363636363636365,
+              "f1": 0.46194225721784776
+            },
+            "cup": {
+              "tp": 47,
+              "fp": 18,
+              "fn": 117,
+              "precision": 0.7230769230769231,
+              "recall": 0.2865853658536585,
+              "f1": 0.4104803493449782
+            }
+          },
+          "inference_ms": {
+            "mean": 65.30761333337675,
+            "p95": 75.55363501305692
+          },
+          "image_pipeline_p95_ms": 78.91277999151498
+        }
+      },
+      "gpu_peak_allocated_mib": 60.22314453125,
+      "limitations": [
+        "Public COCO validation, not cafe validation or official full COCO score",
+        "No recording-session provenance; near-duplicate leakage is not excluded",
+        "Publisher model selection/pretraining overlap cannot be ruled out",
+        "Image pipeline timing excludes tracking, SQLite, IPC and video decoding",
+        "Synthetic brightness/blur are stress probes, not naturally labeled low-light data"
+      ],
+      "promotion_eligible": false
+    },
+    {
+      "model": "rtdetr-v2-r18",
+      "precision": "fp16",
+      "image_size": 512,
+      "device": "cuda:0",
+      "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+      "torch": "2.9.0+cu128",
+      "provenance": {
+        "repository": "PekingU/rtdetr_v2_r18vd",
+        "revision": "5650961749fa93567c0d46fc7f43ea4f9e914107",
+        "checkpoint_files_sha256": {
+          "config.json": "ed051ec77cb41c5d9d5e3af21a979b1e890599dfd68434d7636ff82ded4c1527",
+          "model.safetensors": "d18309d0d7ea57048138885c4c6ecfcb1e24506fc6153b94ad484f8ab62c7115",
+          "preprocessor_config.json": "cd38cd59999e7a95d68e487fbe5132df3d4e5c32a0836add57e6126ba0c4eaf1"
+        },
+        "class_mapping": "explicit COCO synonym validation; complete one-to-one catalog",
+        "parameters": 20174608,
+        "processor_size": {
+          "height": 512,
+          "width": 512
+        }
+      },
+      "dataset_sha256": "5a054d2788d0f1c43297a71b6a0ac007135ee6a4348ae67372d161b996ce7326",
+      "load_seconds": 65.24101260001771,
+      "thresholds": {
+        "1": 0.55,
+        "44": 0.45,
+        "47": 0.55
+      },
+      "results": {
+        "clean-calibration": {
+          "images": 300,
+          "ap": {
+            "map": 0.47430068254470825,
+            "map_50": 0.6808326244354248,
+            "map_75": 0.5246644020080566,
+            "map_small": 0.2265593558549881,
+            "map_medium": 0.5139971971511841,
+            "map_large": 0.6967286467552185,
+            "mar_1": 0.29448869824409485,
+            "mar_10": 0.6147796511650085,
+            "mar_100": 0.6639907360076904,
+            "mar_small": 0.47367560863494873,
+            "mar_medium": 0.7014224529266357,
+            "mar_large": 0.8268980979919434,
+            "map_per_class": [
+              0.5911325216293335,
+              0.4637836515903473,
+              0.36798587441444397
+            ],
+            "mar_100_per_class": [
+              0.7086167931556702,
+              0.6430327892303467,
+              0.6403225660324097
+            ],
+            "classes": [
+              1,
+              44,
+              47
+            ]
+          },
+          "operating_point": {
+            "person": {
+              "tp": 325,
+              "fp": 43,
+              "fn": 116,
+              "precision": 0.8831521739130435,
+              "recall": 0.7369614512471655,
+              "f1": 0.8034610630407911
+            },
+            "bottle": {
+              "tp": 154,
+              "fp": 66,
+              "fn": 90,
+              "precision": 0.7,
+              "recall": 0.6311475409836066,
+              "f1": 0.6637931034482759
+            },
+            "cup": {
+              "tp": 58,
+              "fp": 31,
+              "fn": 66,
+              "precision": 0.651685393258427,
+              "recall": 0.46774193548387094,
+              "f1": 0.5446009389671361
+            }
+          },
+          "inference_ms": {
+            "mean": 52.77116766665131,
+            "p95": 68.68829000450205
+          },
+          "image_pipeline_p95_ms": 72.48814003251027
+        },
+        "clean-test": {
+          "images": 300,
+          "ap": {
+            "map": 0.46250665187835693,
+            "map_50": 0.6782482862472534,
+            "map_75": 0.5024956464767456,
+            "map_small": 0.1982973963022232,
+            "map_medium": 0.5002776980400085,
+            "map_large": 0.7318324446678162,
+            "mar_1": 0.24918079376220703,
+            "mar_10": 0.57891446352005,
+            "mar_100": 0.6350074410438538,
+            "mar_small": 0.45234107971191406,
+            "mar_medium": 0.6709274053573608,
+            "mar_large": 0.8260067701339722,
+            "map_per_class": [
+              0.5918338298797607,
+              0.39510902762413025,
+              0.40057703852653503
+            ],
+            "mar_100_per_class": [
+              0.6951351165771484,
+              0.5830578804016113,
+              0.6268292665481567
+            ],
+            "classes": [
+              1,
+              44,
+              47
+            ]
+          },
+          "operating_point": {
+            "person": {
+              "tp": 421,
+              "fp": 62,
+              "fn": 134,
+              "precision": 0.8716356107660456,
+              "recall": 0.7585585585585586,
+              "f1": 0.8111753371868978
+            },
+            "bottle": {
+              "tp": 134,
+              "fp": 54,
+              "fn": 108,
+              "precision": 0.7127659574468085,
+              "recall": 0.5537190082644629,
+              "f1": 0.6232558139534884
+            },
+            "cup": {
+              "tp": 69,
+              "fp": 21,
+              "fn": 95,
+              "precision": 0.7666666666666667,
+              "recall": 0.42073170731707316,
+              "f1": 0.5433070866141733
+            }
+          },
+          "inference_ms": {
+            "mean": 50.882552333835825,
+            "p95": 67.68885501660407
+          },
+          "image_pipeline_p95_ms": 72.85626998345833
+        },
+        "dim-test": {
+          "images": 300,
+          "ap": {
+            "map": 0.42829006910324097,
+            "map_50": 0.6316341757774353,
+            "map_75": 0.47051572799682617,
+            "map_small": 0.17285525798797607,
+            "map_medium": 0.45962515473365784,
+            "map_large": 0.7006261944770813,
+            "mar_1": 0.2382587045431137,
+            "mar_10": 0.5456370711326599,
+            "mar_100": 0.6024321913719177,
+            "mar_small": 0.4059297740459442,
+            "mar_medium": 0.6404168605804443,
+            "mar_large": 0.811572253704071,
+            "map_per_class": [
+              0.5742778778076172,
+              0.35695138573646545,
+              0.35364094376564026
+            ],
+            "mar_100_per_class": [
+              0.6890090107917786,
+              0.5371900796890259,
+              0.5810975432395935
+            ],
+            "classes": [
+              1,
+              44,
+              47
+            ]
+          },
+          "operating_point": {
+            "person": {
+              "tp": 412,
+              "fp": 48,
+              "fn": 143,
+              "precision": 0.8956521739130435,
+              "recall": 0.7423423423423423,
+              "f1": 0.8118226600985222
+            },
+            "bottle": {
+              "tp": 113,
+              "fp": 45,
+              "fn": 129,
+              "precision": 0.7151898734177216,
+              "recall": 0.4669421487603306,
+              "f1": 0.565
+            },
+            "cup": {
+              "tp": 58,
+              "fp": 14,
+              "fn": 106,
+              "precision": 0.8055555555555556,
+              "recall": 0.35365853658536583,
+              "f1": 0.4915254237288136
+            }
+          },
+          "inference_ms": {
+            "mean": 56.72840133328767,
+            "p95": 70.46340997330846
+          },
+          "image_pipeline_p95_ms": 78.46741497342009
+        },
+        "blur-test": {
+          "images": 300,
+          "ap": {
+            "map": 0.36884427070617676,
+            "map_50": 0.5540691614151001,
+            "map_75": 0.40313735604286194,
+            "map_small": 0.10707557946443558,
+            "map_medium": 0.3862307369709015,
+            "map_large": 0.6812271475791931,
+            "mar_1": 0.21005909144878387,
+            "mar_10": 0.4846338629722595,
+            "mar_100": 0.5411904454231262,
+            "mar_small": 0.2981650233268738,
+            "mar_medium": 0.6108411550521851,
+            "mar_large": 0.7982409596443176,
+            "map_per_class": [
+              0.5541132092475891,
+              0.27758079767227173,
+              0.27483877539634705
+            ],
+            "mar_100_per_class": [
+              0.6812612414360046,
+              0.4520661234855652,
+              0.49024391174316406
+            ],
+            "classes": [
+              1,
+              44,
+              47
+            ]
+          },
+          "operating_point": {
+            "person": {
+              "tp": 383,
+              "fp": 43,
+              "fn": 172,
+              "precision": 0.8990610328638498,
+              "recall": 0.69009009009009,
+              "f1": 0.780835881753313
+            },
+            "bottle": {
+              "tp": 85,
+              "fp": 39,
+              "fn": 157,
+              "precision": 0.6854838709677419,
+              "recall": 0.3512396694214876,
+              "f1": 0.4644808743169399
+            },
+            "cup": {
+              "tp": 42,
+              "fp": 16,
+              "fn": 122,
+              "precision": 0.7241379310344828,
+              "recall": 0.25609756097560976,
+              "f1": 0.3783783783783784
+            }
+          },
+          "inference_ms": {
+            "mean": 50.69750199870517,
+            "p95": 63.981219971901744
+          },
+          "image_pipeline_p95_ms": 69.60176000429783
+        }
+      },
+      "gpu_peak_allocated_mib": 79.94775390625,
+      "limitations": [
+        "Public COCO validation, not cafe validation or official full COCO score",
+        "No recording-session provenance; near-duplicate leakage is not excluded",
+        "Publisher model selection/pretraining overlap cannot be ruled out",
+        "Image pipeline timing excludes tracking, SQLite, IPC and video decoding",
+        "Synthetic brightness/blur are stress probes, not naturally labeled low-light data"
+      ],
+      "promotion_eligible": false
+    },
+    {
+      "model": "rtdetr-v2-r18",
+      "precision": "fp32",
+      "image_size": 512,
+      "device": "cuda:0",
+      "gpu": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+      "torch": "2.9.0+cu128",
+      "provenance": {
+        "repository": "PekingU/rtdetr_v2_r18vd",
+        "revision": "5650961749fa93567c0d46fc7f43ea4f9e914107",
+        "checkpoint_files_sha256": {
+          "config.json": "ed051ec77cb41c5d9d5e3af21a979b1e890599dfd68434d7636ff82ded4c1527",
+          "model.safetensors": "d18309d0d7ea57048138885c4c6ecfcb1e24506fc6153b94ad484f8ab62c7115",
+          "preprocessor_config.json": "cd38cd59999e7a95d68e487fbe5132df3d4e5c32a0836add57e6126ba0c4eaf1"
+        },
+        "class_mapping": "explicit COCO synonym validation; complete one-to-one catalog",
+        "parameters": 20174608,
+        "processor_size": {
+          "height": 512,
+          "width": 512
+        }
+      },
+      "dataset_sha256": "5a054d2788d0f1c43297a71b6a0ac007135ee6a4348ae67372d161b996ce7326",
+      "load_seconds": 4.117684600001667,
+      "thresholds": {
+        "1": 0.55,
+        "44": 0.45,
+        "47": 0.55
+      },
+      "results": {
+        "clean-test": {
+          "images": 300,
+          "ap": {
+            "map": 0.4629165232181549,
+            "map_50": 0.678406834602356,
+            "map_75": 0.5086253881454468,
+            "map_small": 0.1977006047964096,
+            "map_medium": 0.49960365891456604,
+            "map_large": 0.7325695753097534,
+            "mar_1": 0.24960492551326752,
+            "mar_10": 0.578499972820282,
+            "mar_100": 0.6335026621818542,
+            "mar_small": 0.44852080941200256,
+            "mar_medium": 0.6681545972824097,
+            "mar_large": 0.8260406255722046,
+            "map_per_class": [
+              0.5920487642288208,
+              0.3950040936470032,
+              0.40169671177864075
+            ],
+            "mar_100_per_class": [
+              0.6935135126113892,
+              0.5801652669906616,
+              0.6268292665481567
+            ],
+            "classes": [
+              1,
+              44,
+              47
+            ]
+          },
+          "operating_point": {
+            "person": {
+              "tp": 422,
+              "fp": 63,
+              "fn": 133,
+              "precision": 0.8701030927835052,
+              "recall": 0.7603603603603604,
+              "f1": 0.8115384615384615
+            },
+            "bottle": {
+              "tp": 134,
+              "fp": 54,
+              "fn": 108,
+              "precision": 0.7127659574468085,
+              "recall": 0.5537190082644629,
+              "f1": 0.6232558139534884
+            },
+            "cup": {
+              "tp": 69,
+              "fp": 21,
+              "fn": 95,
+              "precision": 0.7666666666666667,
+              "recall": 0.42073170731707316,
+              "f1": 0.5433070866141733
+            }
+          },
+          "inference_ms": {
+            "mean": 37.42420099908486,
+            "p95": 51.03184503968805
+          },
+          "image_pipeline_p95_ms": 54.994634972536005
+        },
+        "clean-calibration": {
+          "images": 300,
+          "ap": {
+            "map": 0.4747501313686371,
+            "map_50": 0.6820710301399231,
+            "map_75": 0.520468533039093,
+            "map_small": 0.22701914608478546,
+            "map_medium": 0.5146113634109497,
+            "map_large": 0.6984976530075073,
+            "mar_1": 0.29384222626686096,
+            "mar_10": 0.6139020323753357,
+            "mar_100": 0.6642829179763794,
+            "mar_small": 0.4704403579235077,
+            "mar_medium": 0.7041750550270081,
+            "mar_large": 0.8292482495307922,
+            "map_per_class": [
+              0.5909289121627808,
+              0.46625661849975586,
+              0.36706480383872986
+            ],
+            "mar_100_per_class": [
+              0.7090702652931213,
+              0.6442623138427734,
+              0.6395161151885986
+            ],
+            "classes": [
+              1,
+              44,
+              47
+            ]
+          },
+          "operating_point": {
+            "person": {
+              "tp": 325,
+              "fp": 43,
+              "fn": 116,
+              "precision": 0.8831521739130435,
+              "recall": 0.7369614512471655,
+              "f1": 0.8034610630407911
+            },
+            "bottle": {
+              "tp": 155,
+              "fp": 63,
+              "fn": 89,
+              "precision": 0.7110091743119266,
+              "recall": 0.6352459016393442,
+              "f1": 0.670995670995671
+            },
+            "cup": {
+              "tp": 58,
+              "fp": 31,
+              "fn": 66,
+              "precision": 0.651685393258427,
+              "recall": 0.46774193548387094,
+              "f1": 0.5446009389671361
+            }
+          },
+          "inference_ms": {
+            "mean": 36.68693566636648,
+            "p95": 49.217490004957654
+          },
+          "image_pipeline_p95_ms": 52.42964001954533
+        },
+        "dim-test": {
+          "images": 300,
+          "ap": {
+            "map": 0.427972674369812,
+            "map_50": 0.6325688362121582,
+            "map_75": 0.4688798189163208,
+            "map_small": 0.1737099140882492,
+            "map_medium": 0.457576721906662,
+            "map_large": 0.701620876789093,
+            "mar_1": 0.238941952586174,
+            "mar_10": 0.5474676489830017,
+            "mar_100": 0.6033137440681458,
+            "mar_small": 0.407358318567276,
+            "mar_medium": 0.6412562727928162,
+            "mar_large": 0.8130736947059631,
+            "map_per_class": [
+              0.5750159621238708,
+              0.3577161431312561,
+              0.3511858880519867
+            ],
+            "mar_100_per_class": [
+              0.6906306147575378,
+              0.5376033186912537,
+              0.5817072987556458
+            ],
+            "classes": [
+              1,
+              44,
+              47
+            ]
+          },
+          "operating_point": {
+            "person": {
+              "tp": 413,
+              "fp": 48,
+              "fn": 142,
+              "precision": 0.89587852494577,
+              "recall": 0.7441441441441441,
+              "f1": 0.812992125984252
+            },
+            "bottle": {
+              "tp": 115,
+              "fp": 44,
+              "fn": 127,
+              "precision": 0.7232704402515723,
+              "recall": 0.47520661157024796,
+              "f1": 0.57356608478803
+            },
+            "cup": {
+              "tp": 57,
+              "fp": 14,
+              "fn": 107,
+              "precision": 0.8028169014084507,
+              "recall": 0.3475609756097561,
+              "f1": 0.4851063829787234
+            }
+          },
+          "inference_ms": {
+            "mean": 37.16971599807342,
+            "p95": 47.509829991031445
+          },
+          "image_pipeline_p95_ms": 53.5324299853528
+        },
+        "blur-test": {
+          "images": 300,
+          "ap": {
+            "map": 0.36916813254356384,
+            "map_50": 0.5534658432006836,
+            "map_75": 0.40346184372901917,
+            "map_small": 0.10666385293006897,
+            "map_medium": 0.386294960975647,
+            "map_large": 0.6824495792388916,
+            "mar_1": 0.21050257980823517,
+            "mar_10": 0.48558956384658813,
+            "mar_100": 0.5420454144477844,
+            "mar_small": 0.3015543222427368,
+            "mar_medium": 0.609333336353302,
+            "mar_large": 0.8001282811164856,
+            "map_per_class": [
+              0.5526289343833923,
+              0.2795618772506714,
+              0.2753136157989502
+            ],
+            "mar_100_per_class": [
+              0.6805405616760254,
+              0.45413222908973694,
+              0.49146342277526855
+            ],
+            "classes": [
+              1,
+              44,
+              47
+            ]
+          },
+          "operating_point": {
+            "person": {
+              "tp": 382,
+              "fp": 44,
+              "fn": 173,
+              "precision": 0.8967136150234741,
+              "recall": 0.6882882882882883,
+              "f1": 0.7787971457696228
+            },
+            "bottle": {
+              "tp": 85,
+              "fp": 40,
+              "fn": 157,
+              "precision": 0.68,
+              "recall": 0.3512396694214876,
+              "f1": 0.46321525885558584
+            },
+            "cup": {
+              "tp": 42,
+              "fp": 16,
+              "fn": 122,
+              "precision": 0.7241379310344828,
+              "recall": 0.25609756097560976,
+              "f1": 0.3783783783783784
+            }
+          },
+          "inference_ms": {
+            "mean": 39.66214333059421,
+            "p95": 51.45070995495189
+          },
+          "image_pipeline_p95_ms": 56.01553497253917
+        }
+      },
+      "gpu_peak_allocated_mib": 146.9189453125,
+      "limitations": [
+        "Public COCO validation, not cafe validation or official full COCO score",
+        "No recording-session provenance; near-duplicate leakage is not excluded",
+        "Publisher model selection/pretraining overlap cannot be ruled out",
+        "Image pipeline timing excludes tracking, SQLite, IPC and video decoding",
+        "Synthetic brightness/blur are stress probes, not naturally labeled low-light data"
+      ],
+      "promotion_eligible": false
+    }
+  ],
+  "bulk_transfer_equivalence": {
+    "rtdetr-v2-r18": {
+      "clean": {
+        "images": 600,
+        "changed_predictions": 0
+      },
+      "dim": {
+        "images": 300,
+        "changed_predictions": 0
+      },
+      "blur": {
+        "images": 300,
+        "changed_predictions": 0
+      }
+    },
+    "dfine-small": {
+      "clean": {
+        "images": 600,
+        "changed_predictions": 0
+      },
+      "dim": {
+        "images": 300,
+        "changed_predictions": 0
+      },
+      "blur": {
+        "images": 300,
+        "changed_predictions": 0
+      }
+    },
+    "dfine-nano": {
+      "clean": {
+        "images": 600,
+        "changed_predictions": 0
+      },
+      "dim": {
+        "images": 300,
+        "changed_predictions": 0
+      },
+      "blur": {
+        "images": 300,
+        "changed_predictions": 0
+      }
+    }
+  },
+  "paired_precision": {
+    "images": [
+      776,
+      2149,
+      2157,
+      2685,
+      8844,
+      13729,
+      14007,
+      14038,
+      15335,
+      17899,
+      18575,
+      23126,
+      25057,
+      25096,
+      27982,
+      31620,
+      34760,
+      35279,
+      37670,
+      39785,
+      40083,
+      40471,
+      41888,
+      42102,
+      42889,
+      46497,
+      46872,
+      47121,
+      50811,
+      51598,
+      52413,
+      52591,
+      56127,
+      57232,
+      60090,
+      61471,
+      62025,
+      63965,
+      64084,
+      65485
+    ],
+    "split": "calibration",
+    "repeats": 3,
+    "image_size": 512,
+    "method": "Two resident models, alternating order per image; 10 warmups; no IO in timing",
+    "limitations": [
+      "Detector-only microbenchmark; two resident models; not a full pipeline guarantee"
+    ],
+    "timings": {
+      "fp32": {
+        "mean": 138.1577733331748,
+        "p95": 144.7131299850298,
+        "samples_ms": [
+          142.37899996805936,
+          135.8153999899514,
+          143.88409996172413,
+          143.50060001015663,
+          138.93600000301376,
+          143.35580001352355,
+          139.92899999720976,
+          142.24899996770546,
+          144.9375000083819,
+          136.59159996313974,
+          145.41330002248287,
+          140.23120002821088,
+          143.3627000078559,
+          136.51500002015382,
+          135.47179999295622,
+          138.92340002348647,
+          141.8413000064902,
+          142.98569998936728,
+          134.41110000712797,
+          132.7457000152208,
+          138.6639999691397,
+          138.4992000530474,
+          140.75859996955842,
+          132.92769994586706,
+          139.61090001976117,
+          136.6584000061266,
+          132.52829998964444,
+          138.73509998666123,
+          135.69630001438782,
+          137.25849997717887,
+          135.2578999940306,
+          137.6087000244297,
+          144.86759999999776,
+          140.19940001890063,
+          137.31369999004528,
+          135.9364000381902,
+          136.74320001155138,
+          133.8493999792263,
+          137.97239999985322,
+          138.98280001012608,
+          134.56749997567385,
+          135.69399999687448,
+          137.71849998738617,
+          144.43089999258518,
+          135.82820002920926,
+          136.8689999799244,
+          138.1044000154361,
+          137.460199999623,
+          135.9699000022374,
+          139.71129996934906,
+          145.7014000043273,
+          140.00479999231175,
+          136.2125999876298,
+          137.18449999578297,
+          137.39749998785555,
+          140.5490000033751,
+          139.5195999648422,
+          141.97300001978874,
+          143.43639998696744,
+          134.28559998283163,
+          131.97059999220073,
+          135.18159999512136,
+          141.33569999830797,
+          134.11149999592453,
+          139.27280000643805,
+          134.93790000211447,
+          133.88719997601584,
+          138.16959998803213,
+          145.2673000167124,
+          140.21650003269315,
+          138.74229998327792,
+          140.20650001475587,
+          144.70499998424202,
+          142.98359997337684,
+          137.576800014358,
+          133.03839997388422,
+          134.53119999030605,
+          132.20520003233105,
+          135.55790000827983,
+          134.12369997240603,
+          134.2294000205584,
+          136.89329999033362,
+          141.72170002711937,
+          137.55659997696057,
+          131.9923999835737,
+          131.98950001969934,
+          139.18330002343282,
+          138.48700001835823,
+          135.9713000128977,
+          135.1685999543406,
+          139.93040000787005,
+          137.15060002868995,
+          135.64340001903474,
+          135.78300003428012,
+          136.14770001731813,
+          134.07299999380484,
+          134.14330000523478,
+          145.78070002608,
+          138.40689999051392,
+          137.71059998543933,
+          135.15199994435534,
+          137.21040001837537,
+          142.07940001506358,
+          136.6596999578178,
+          141.8804000131786,
+          139.6713000140153,
+          135.6050000176765,
+          142.98439997946844,
+          141.00010000402108,
+          137.32599996728823,
+          133.2051000208594,
+          132.01589998789132,
+          143.76510004512966,
+          135.36569999996573,
+          136.83590001892298,
+          139.24970000516623,
+          134.50240000383928,
+          140.92000003438443,
+          141.62579999538139,
+          139.72849998390302
+        ]
+      },
+      "fp16": {
+        "mean": 80.97695166701062,
+        "p95": 87.6852299523307,
+        "samples_ms": [
+          86.29789995029569,
+          88.68889999575913,
+          86.62129996810108,
+          87.32120000058785,
+          82.74320000782609,
+          85.67479997873306,
+          82.01650000410154,
+          84.48840002529323,
+          85.05140000488609,
+          86.98540000477806,
+          88.55779998702928,
+          78.27719999477267,
+          86.46459999727085,
+          83.454699954018,
+          79.96429997729138,
+          87.68139994936064,
+          86.76689997082576,
+          86.84389997506514,
+          82.05899997847155,
+          76.91910001449287,
+          80.73679998051375,
+          81.05549996253103,
+          83.47220002906397,
+          77.78599997982383,
+          80.15700004762039,
+          74.86429996788502,
+          75.11969999177381,
+          77.81759998761117,
+          85.60240000952035,
+          78.76270002452657,
+          75.85779996588826,
+          79.4593999744393,
+          88.92620005644858,
+          89.5920000039041,
+          78.27429997269064,
+          82.59020000696182,
+          80.45970002422109,
+          80.31119999941438,
+          81.65659999940544,
+          79.68510000500828,
+          82.38300000084564,
+          76.73739996971563,
+          75.53850003750995,
+          82.45929999975488,
+          78.57090001925826,
+          82.72270002635196,
+          79.56569996895269,
+          84.07199999783188,
+          76.20909996330738,
+          77.12590001756325,
+          82.1882999734953,
+          77.2937000147067,
+          81.58800000092015,
+          80.1035999902524,
+          74.7315000044182,
+          77.66959996661171,
+          83.45320000080392,
+          85.8565999660641,
+          81.99179999064654,
+          82.47040002606809,
+          77.24279997637495,
+          82.93989999219775,
+          84.79920000536367,
+          79.79640003759414,
+          78.25690001482144,
+          78.20470002479851,
+          80.55479999165982,
+          78.37240002118051,
+          90.44070000527427,
+          81.37169998371974,
+          81.4503000001423,
+          77.56359997438267,
+          80.67980001214892,
+          80.2549000363797,
+          77.50319998012856,
+          79.04830004554242,
+          81.85889996821061,
+          77.63030001660809,
+          82.15470000868663,
+          79.59609996760264,
+          80.93500003451481,
+          75.72150003397837,
+          77.80569995520636,
+          86.71509998384863,
+          75.76570002129301,
+          77.80919998185709,
+          80.54430002812296,
+          82.64660002896562,
+          76.97720004944131,
+          82.33230002224445,
+          82.4514000560157,
+          78.58600001782179,
+          80.74060000944883,
+          79.43620003061369,
+          75.36489999620244,
+          82.11149997077882,
+          74.93830000748858,
+          77.97510002274066,
+          81.14980004029348,
+          78.12749996082857,
+          78.66449997527525,
+          82.21320004668087,
+          79.92250000825152,
+          80.16439998755231,
+          81.04670001193881,
+          83.2255000132136,
+          82.1138999890536,
+          76.3635000330396,
+          87.75800000876188,
+          75.07640001131222,
+          78.95599998300895,
+          74.73220000974834,
+          78.58670002315193,
+          80.67850000225008,
+          80.81379998475313,
+          81.68790000490844,
+          77.50810001743957,
+          84.61389999138191,
+          84.9883999908343,
+          82.47079997090623
+        ]
+      }
+    }
+  },
+  "quality": {
+    "windows-video": {
+      "checks": [
+        {
+          "check": "pip-check",
+          "exit_code": 0,
+          "seconds": 6.466671000001952
+        },
+        {
+          "check": "doctor",
+          "exit_code": 0,
+          "seconds": 87.51903150003636
+        },
+        {
+          "check": "config",
+          "exit_code": 0,
+          "seconds": 1.2133613000041805
+        },
+        {
+          "check": "pytest-coverage",
+          "exit_code": 0,
+          "seconds": 252.55658330000006
+        },
+        {
+          "check": "coverage-report",
+          "exit_code": 0,
+          "seconds": 1.9426696000155061
+        },
+        {
+          "check": "coverage-json",
+          "exit_code": 0,
+          "seconds": 0.6731530000106432
+        },
+        {
+          "check": "ruff",
+          "exit_code": 0,
+          "seconds": 0.8024770999909379
+        },
+        {
+          "check": "mypy",
+          "exit_code": 0,
+          "seconds": 52.2098832000047
+        },
+        {
+          "check": "acceptance",
+          "exit_code": 0,
+          "seconds": 128.3537676000269
+        }
+      ],
+      "pytest_summary": "214 passed, 51 subtests passed in 245.11s (0:04:05)",
+      "coverage": {
+        "covered_lines": 2838,
+        "num_statements": 3343,
+        "percent_covered": 84.89380795692492,
+        "percent_covered_display": "85",
+        "missing_lines": 505,
+        "excluded_lines": 15,
+        "percent_statements_covered": 84.89380795692492,
+        "percent_statements_covered_display": "85"
+      },
+      "acceptance_commands": 21
+    },
+    "linux-cpu": {
+      "checks": [
+        {
+          "check": "pip-check",
+          "exit_code": 0,
+          "seconds": 2.580438350996701
+        },
+        {
+          "check": "doctor",
+          "exit_code": 0,
+          "seconds": 40.146785179997096
+        },
+        {
+          "check": "config",
+          "exit_code": 0,
+          "seconds": 0.5780576989927795
+        },
+        {
+          "check": "pytest-coverage",
+          "exit_code": 0,
+          "seconds": 70.07199588799267
+        },
+        {
+          "check": "coverage-report",
+          "exit_code": 0,
+          "seconds": 2.0468057809921447
+        },
+        {
+          "check": "coverage-json",
+          "exit_code": 0,
+          "seconds": 8.070617710007355
+        },
+        {
+          "check": "ruff",
+          "exit_code": 0,
+          "seconds": 0.6365628660132643
+        },
+        {
+          "check": "mypy",
+          "exit_code": 0,
+          "seconds": 127.5822039390041
+        },
+        {
+          "check": "acceptance",
+          "exit_code": 0,
+          "seconds": 50.48484983900562
+        }
+      ],
+      "pytest_summary": "194 passed, 20 skipped, 44 subtests passed in 64.66s (0:01:04)",
+      "coverage": {
+        "covered_lines": 2480,
+        "num_statements": 3343,
+        "percent_covered": 74.18486389470536,
+        "percent_covered_display": "74",
+        "missing_lines": 863,
+        "excluded_lines": 15,
+        "percent_statements_covered": 74.18486389470536,
+        "percent_statements_covered_display": "74"
+      },
+      "acceptance_commands": 21
+    }
+  },
+  "candidate_image": {
+    "build_passed": true,
+    "pip_check_passed_during_build": true,
+    "tag": "coffee-ops-permissive:20261116",
+    "built_index_digest": "sha256:4296db40777cb25e73605543c0930e7f3bd6148870a7ee19b4fbea17c8f76fb8",
+    "runtime_check": {
+      "image": "coffee-ops-permissive:20261116",
+      "synthetic_only": true,
+      "passed": false,
+      "error": "CalledProcessError: Command '['docker', 'image', 'inspect', 'coffee-ops-permissive:20261116', '--format', '{{.Id}}']' returned non-zero exit status 1."
+    },
+    "vulnerability_scan_completed": false,
+    "sbom_generated": false,
+    "dependency_license_inventory_completed": false,
+    "failure": "Docker Desktop HTTP 500 on image inspect and version endpoint",
+    "default_production_stage_and_test_directory_followup_rebuild": "pending; stage ordering and test write directory corrected after build"
+  },
+  "secrets": {
+    "history_commits": 7,
+    "history_raw_exit_code": 1,
+    "history_findings": 4,
+    "changed_source_raw_exit_code": 1,
+    "changed_source_findings": 1,
+    "triage_hash_recomputed_matches": true,
+    "interpretation": "Reviewed SHA-256 false positives; no suppression, no raw clean-scan claim; historical identifying paths retained"
+  },
+  "remaining_gates": [
+    "Source license undecided by owner",
+    "Reference publication rights unresolved",
+    "Original 62 Debian high/critical findings still open; candidate scan incomplete",
+    "New candidate native runtime/SBOM/license checks incomplete",
+    "Fresh four-profile matrix and clean candidate checkout incomplete",
+    "No cafe detection/event accuracy or sustained multi-camera throughput validation",
+    "Disk space and Docker availability block remaining image/training work"
+  ],
+  "source_sha256": {
+    "coffee_ops/detector.py": "42ab13c2d96694c3faa738bafc6cebdcb845ccac705982c05c6132535a562d8f",
+    "scripts/benchmark_models.py": "6994200cc0396cd8fbee838a415820b8eccc9b65cd9710f3d5910c6d496cc565",
+    "scripts/benchmark_public.py": "5043d454187ee36d18282ca5ac1475bee38691670a4b14cec7eebb151666ae09",
+    "scripts/verify_container.py": "4457b7983b409cd1d5c9d8649db6cd36df0617f8d74c0364673ff58c474fff4f",
+    "scripts/verify_mvp.py": "50611b96cd06cdd4278383f2d9dfd5b564b2265a2ec4c17add2e3f0b2cec8000",
+    "tests/test_public_benchmark.py": "5bf6414a54a6ff262d97a8806c6a6cb52970b9b0128386ab59a146d5b9634350",
+    "tests/test_rtdetr_backend.py": "a654d8e14863cf5d2090e6e0143e13ce84718f4863ba4038a020fd44ebb1f6b0",
+    "tests/test_detector_backend.py": "ed5bbb4b537afe4f5390e1322ad0e2f1e157dfd374a3955f37be5dbb3c42b27e",
+    "Dockerfile.permissive": "e8768b637a97d3f9dcb22fafd2fd6895484fc327722972fc5fcd081d4ba40603",
+    "requirements-permissive.txt": "eaf3ff72ccd6eced19e362ed9cb43ca15f1b1013dd3a9a6e919f6cd8b6db2a19",
+    "requirements-lock-permissive-linux.txt": "7a542f692af2e3dce56fa371f7217bd905f838c1b1db784fdd4c67af7e48d720"
+  },
+  "raw_evidence_sha256": {
+    "var/model-validation-20261116/dfine-nano-fp16-bulk/result.json": "89e4181c9991afca0c4887518c9e4d7d05d9116c4eddd4632aa84eabac0f19ad",
+    "var/model-validation-20261116/dfine-small-fp16-bulk/result.json": "6bb92893d2c385552568eec0bc30556ebf249d085b3a304467e10f0b9bb9979d",
+    "var/model-validation-20261116/rtdetr-v2-r18-fp16-bulk/result.json": "8e2964b7556679eae136f3afd81854231a3040c7cdfb1eb53861e86bf038ff0a",
+    "var/model-validation-20261116/rtdetr-v2-r18-fp32-bulk/result.json": "d4199e408d1b5a3bd61bab9afb1d3fd1cedead6b9030f0a84aaf3f4c1ee178a0",
+    "var/model-validation-20261116/dfine-nano-fp16-v2/result.json": "68a9e6ae26ae473da2642569358b33f074dfea64673405bd8d9c2938d08d86c6",
+    "var/model-validation-20261116/dfine-small-fp16-v2/result.json": "437dbf03360927e1e00fa31dd6bcfaf27232ae9a9a1d8015255da8529806778e",
+    "var/model-validation-20261116/rtdetr-v2-r18-fp16-v2/result.json": "ba907f778e255e9f5fe6f286e764bec7cf706a5d62ff7cd7a8b2c4755f4113a0",
+    "var/model-validation-20261116/paired-precision.json": "396be64bde90d38a0c173f95f6ba87cd70247226af5fc77b8b9fd9dc20c64d42",
+    "var/model-validation-20261116/container-check.json": "3325877c4e214b17629a671494ed812e4c3b23223c61e04a8f21814d3c11ed5b",
+    "var/model-validation-20261116/permissive-build.log": "c0d4a6210db6e763812d1edf034d80599ba0d3f1ba2a008bf394301bb603ef3e",
+    "var/model-validation-20261116/trivy-permissive.log": "ce35fd810891093ef7a6d9600f0ad4e8cdf726bb808e101b0376697a7a1713bd",
+    "var/model-validation-20261116/gitleaks-history.json": "27f08aeebc849376fc057457ce5b98526012c7afccdee80d8fb72e22d551f54c",
+    "var/model-validation-20261116/gitleaks-changes.json": "2a6d3551a6e8115daa17ea48b67e97acbd525b0d459d2070ea5a768500c324ff",
+    "var/model-validation-20261116/calibrated-prototype/verification.json": "930360679446dedc3a27316d175de02f4ad0c05c6f1c59afa3fcea87b145e87f"
+  },
+  "calibrated_video_smoke": {
+    "exit_code": 0,
+    "config_sha256": "bce1fe1915e6e7cc069fa45dffd02c1f64cba3218c22e99be77fcfc828976410",
+    "benchmark_result_sha256": "8e2964b7556679eae136f3afd81854231a3040c7cdfb1eb53861e86bf038ff0a",
+    "weights_match": true,
+    "thresholds": {
+      "person": 0.55,
+      "bottle": 0.45,
+      "cup": 0.55
+    },
+    "image_size": 512,
+    "half": true,
+    "accuracy_claims": false,
+    "source": "Eight repeats of one public photo, not independently labeled cafe video",
+    "summary": {
+      "status": "completed",
+      "error": null,
+      "fixture_only": false,
+      "decoded_frames": 8,
+      "inferred_frames": 8,
+      "sample_every": 1,
+      "wall_seconds": 7.250976499984972,
+      "processed_inference_fps": 1.103299672811873,
+      "decoded_output_fps": 1.103299672811873,
+      "processed_media_span_seconds": 0.7,
+      "source_video": {
+        "width": 640,
+        "height": 480,
+        "rate": "10/1",
+        "time_base": "1/10000",
+        "declared_frames": 8,
+        "declared_duration_seconds": 0.8,
+        "first_pts": 0,
+        "first_time_base": "1/10000",
+        "timestamp_policy": "Exact original PTS retained in frame journal; capture offsets relative to first decoded PTS"
+      },
+      "source_sha256": "8f09c44d70c9f02c6bf6bc0ada878b0ee6b5f534850a0cb9c026846206789863",
+      "outputs_directory": "<repo>\\var\\model-validation-20261116\\calibrated-prototype\\review",
+      "database": "<repo>\\var\\model-validation-20261116\\calibrated-prototype\\configuration\\operations.sqlite3",
+      "event_counts_by_kind": {},
+      "prepared_drinks": null,
+      "confirmed_handovers": null,
+      "customer_pickups": null,
+      "semantic_notice": "Detector/zone motion supports visible transitions and advisory candidates, not validated preparation completion, transfer, customer role or paid sales.",
+      "resources": {
+        "sampled_process_tree_cpu_percent_one_core": 83.11359305126908,
+        "sampled_process_tree_peak_rss_bytes": 1958076416,
+        "gpu_device_samples": 8,
+        "gpu_device_peak_utilization_percent": 76.0,
+        "gpu_device_peak_memory_used_mib": 225.0,
+        "scope": "Sampled process tree; CPU can exceed 100%; RSS sums shared pages. NVIDIA utilization/memory are whole-device, not exclusive to this job; fast child exits may be undercounted."
+      },
+      "model_worker_metrics": {
+        "proposal_confidence_floor": 0.001,
+        "gpu_peak_allocated_bytes": 90803200
+      },
+      "detector_startup": {
+        "status": "ready",
+        "deadline_seconds": 60,
+        "total_seconds": 5.444993499957491,
+        "phases": [
+          {
+            "phase": "spawn",
+            "elapsed_seconds": 0.0
+          },
+          {
+            "phase": "checkpoint_validation",
+            "elapsed_seconds": 0.10409539996180683
+          },
+          {
+            "phase": "torch_import",
+            "elapsed_seconds": 0.10487849998753518
+          },
+          {
+            "phase": "transformers_import",
+            "elapsed_seconds": 1.8356697999988683
+          },
+          {
+            "phase": "model_load",
+            "elapsed_seconds": 4.636975299974438
+          },
+          {
+            "phase": "class_validation",
+            "elapsed_seconds": 4.724790000007488
+          },
+          {
+            "phase": "processor_load",
+            "elapsed_seconds": 4.724917199986521
+          },
+          {
+            "phase": "device_setup",
+            "elapsed_seconds": 4.725343799975235
+          },
+          {
+            "phase": "ready",
+            "elapsed_seconds": 5.444889299978968
+          }
+        ],
+        "scope": "Parent-observed process start through ready; excludes parent checkpoint hashing. Phase times mark operation starts, not isolated operation durations."
+      },
+      "timestamp_notice": "Original PTS journal preserved. MP4 offsets quantized to 1/60000 second; audio omitted; odd dimensions padded at right/bottom.",
+      "max_output_pts_rounding_error_seconds": 0.0,
+      "latency_scope": "Parent receipt through detector/tracker/storage/overlay/encoder enqueue; excludes asynchronous decode/mux completion. Total wall time includes worker load/flush.",
+      "metric_availability": {
+        "detection_AP": null,
+        "tracking_IDF1": null,
+        "table_accuracy": null,
+        "event_accuracy": null
+      },
+      "frame_turnaround_ms": {
+        "p50": 92.5029999925755,
+        "p95": 411.72130003105826,
+        "p99": 539.22210003715
+      }
+    },
+    "encoded_frame_count": 8,
+    "encoded_pts_seconds": [
+      0.0,
+      0.1,
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7
+    ],
+    "encoded_frame_count_and_pts_passed": true
+  }
+}

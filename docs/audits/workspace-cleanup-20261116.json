@@ -1,0 +1,733 @@
+{
+  "updated": "2026-11-17",
+  "current_storage_cleanup": {
+    "date": "2026-11-17",
+    "before_regular_file_bytes": 16120033963,
+    "after_regular_file_bytes": 1963546567,
+    "content_bytes_reduced": 14156487396,
+    "before_regular_files": 141337,
+    "after_regular_files": 37913,
+    "final_scan_errors": [],
+    "source_files_preserved": 193,
+    "retained_host_environment": ".venv-candidate",
+    "retained_environment_bytes": 1281060275,
+    "GPU_training_requires_fresh_environment": true,
+    "runtime_bytecode": "Compiled runtime imports retained; publisher test/benchmark bytecode removed; no source or gate changes",
+    "preserved_data": {
+      "checkpoints": [
+        {
+          "model": "models--PekingU--rtdetr_v2_r18vd",
+          "revision": "5650961749fa93567c0d46fc7f43ea4f9e914107",
+          "sha256": "d18309d0d7ea57048138885c4c6ecfcb1e24506fc6153b94ad484f8ab62c7115"
+        },
+        {
+          "model": "models--ustc-community--dfine-nano-coco",
+          "revision": "066438d3d8f0da137a37b38fdf3368fd4afceced",
+          "sha256": "19e06bdc873da819920a8d373b879721a5b9759d822f8213220bb09abbdab58b"
+        },
+        {
+          "model": "models--ustc-community--dfine-small-coco",
+          "revision": "f79e65b5fbb33ceb9d3ebba042955d7410c608f8",
+          "sha256": "a144baff3a27bfd538fe37b11fa8d4fca5744b8c054b5301e7c699a1379cd18f"
+        }
+      ],
+      "all_600_dataset_images_sha256_match": true,
+      "application_files_unchanged": 36,
+      "reference_assets_unchanged": 4,
+      "powershell_script_parse": "Passed",
+      "process_path_boundary_checks": 5
+    },
+    "validation": {
+      "pytest_summary": "218 passed, 51 subtests passed in 112.84s (0:01:52)",
+      "coverage_percent": 84.8349687778769,
+      "original_quality_run": [
+        {
+          "check": "pip-check",
+          "exit_code": 0,
+          "seconds": 1.0492755000013858
+        },
+        {
+          "check": "doctor",
+          "exit_code": 0,
+          "seconds": 55.99704829999246
+        },
+        {
+          "check": "config",
+          "exit_code": 0,
+          "seconds": 0.14421020000008866
+        },
+        {
+          "check": "pytest-coverage",
+          "exit_code": 0,
+          "seconds": 118.85304869996617
+        },
+        {
+          "check": "coverage-report",
+          "exit_code": 0,
+          "seconds": 1.3851416999823414
+        },
+        {
+          "check": "coverage-json",
+          "exit_code": 0,
+          "seconds": 1.208846200024709
+        },
+        {
+          "check": "ruff",
+          "exit_code": 0,
+          "seconds": 0.3380361999734305
+        },
+        {
+          "check": "mypy",
+          "exit_code": 0,
+          "seconds": 166.2395811000024
+        },
+        {
+          "check": "acceptance",
+          "exit_code": 124,
+          "seconds": 192.69753499998478
+        }
+      ],
+      "original_quality_run_fully_passed": false,
+      "initial_acceptance_exit_code": 124,
+      "paused_services_acceptance_exit_code": 124,
+      "final_acceptance_exit_code": 0,
+      "final_acceptance_commands": 21,
+      "final_unit_suite": {
+        "exit_code": 0,
+        "timed_out": false,
+        "deadline_seconds": 180
+      },
+      "final_unittest_summary": "218 tests in 107.817s, OK",
+      "resolved_checks": "All eight original non-acceptance checks pass; separate final acceptance rerun passes the unchanged gate",
+      "gates_relaxed": false,
+      "initial_failures_preserved": true
+    },
+    "docker_services_restored_running_healthy": 12,
+    "publication_performed": false,
+    "project_license_selected": false,
+    "blocked_actions": {
+      "retired_evidence_originals": "Automatic tool policy rejected deletion; retained",
+      "redundant_evidence_archive": "Automatic tool policy rejected deletion; retained",
+      "original_bytes": 232674705,
+      "archive_bytes": 50180109,
+      "bypass_attempted": false
+    },
+    "measure_scope": "Regular file content bytes; symlinks not double-counted. Subsequent small evidence writes can slightly change totals; not filesystem allocation or Docker/user-wide storage."
+  },
+  "historical_document_cleanup_20261116": {
+    "date": "2026-11-16",
+    "authorization": "Owner requested removal of obsolete versions and generated workspace files",
+    "baseline_commit": "097c1bd76d6c37efeb43fdab41dde9d6076596e7",
+    "initial_inventory": [
+      {
+        "path": "var",
+        "bytes": 9455712449,
+        "files": 31310,
+        "children": {
+          "model-benchmark": 4403002004,
+          "post-publication-20261115": 3830149651,
+          "model-validation-20261116": 606570379,
+          "engineering-audit-20261112": 589715802,
+          "deep-clean-20261115": 15102409,
+          "release-audit-20261111": 8391812,
+          "detector-startup-20261115": 1998112,
+          "video-prototype-current": 782280
+        }
+      },
+      {
+        "path": ".venv-bench",
+        "bytes": 4813675024,
+        "files": 16936,
+        "children": {
+          "Lib": 4811612975,
+          "Scripts": 2061569,
+          "pyvenv.cfg": 409,
+          ".gitignore": 71
+        }
+      },
+      {
+        "path": ".venv-candidate",
+        "bytes": 1122480070,
+        "files": 27663,
+        "children": {
+          "Lib": 1090399919,
+          "Scripts": 32067451,
+          "share": 12260,
+          "pyvenv.cfg": 440
+        }
+      },
+      {
+        "path": ".venv",
+        "bytes": 887832241,
+        "files": 23011,
+        "children": {
+          "Lib": 885327536,
+          "Scripts": 2492019,
+          "share": 12260,
+          "pyvenv.cfg": 355,
+          ".gitignore": 71
+        }
+      },
+      {
+        "path": ".venv-notebook",
+        "bytes": 248683026,
+        "files": 10402,
+        "children": {
+          "Lib": 246061275,
+          "Scripts": 2605804,
+          "share": 15199,
+          "pyvenv.cfg": 412,
+          "docs.txt": 129,
+          "tests.txt": 81,
+          ".gitignore": 71,
+          "extra.txt": 48,
+          "runtime.txt": 7
+        }
+      },
+      {
+        "path": ".git",
+        "bytes": 5275054,
+        "files": 355,
+        "children": {
+          "objects": 5223775,
+          "hooks": 25827,
+          "index": 20149,
+          "logs": 4096,
+          "config": 354,
+          "info": 240,
+          "gk": 223,
+          "refs": 205,
+          "description": 73,
+          "COMMIT_EDITMSG": 70,
+          "HEAD": 42
+        }
+      },
+      {
+        "path": "docs",
+        "bytes": 5229475,
+        "files": 99,
+        "children": {
+          "audits": 4010449,
+          "benchmarks": 926677,
+          "history": 101782,
+          "research": 53123,
+          "validation-current": 27145,
+          "VIDEO_PROTOTYPE.md": 16215,
+          "architecture": 12204,
+          "VERIFICATION.md": 10308,
+          "DATA_AND_EVALUATION.md": 9764,
+          "final_recommendations.md": 9044,
+          "deployment_runbook.md": 8530,
+          "annotation_guidelines.md": 7824,
+          "implementation_roadmap.md": 7698,
+          "SCHEMAS.md": 7607,
+          "ADR-001.md": 6685,
+          "benchmark_protocol.md": 6459,
+          "PRIVACY.md": 4120,
+          "ADR-002.md": 2987,
+          "PROJECT_STATUS.md": 854
+        }
+      },
+      {
+        "path": "coffee_ops",
+        "bytes": 580800,
+        "files": 67,
+        "children": {
+          "__pycache__": 345386,
+          "storage.py": 22417,
+          "video_review.py": 19504,
+          "cli.py": 17973,
+          "pipeline.py": 15540,
+          "detector.py": 13074,
+          "evaluation.py": 13053,
+          "config.py": 12576,
+          "business_reporting.py": 10709,
+          "event_evaluation.py": 8792,
+          "review_labels.py": 7152,
+          "api.py": 7005,
+          "product_evidence.py": 6587,
+          "dataset.py": 6514,
+          "video_io.py": 6419,
+          "event_engine.py": 6254,
+          "traffic.py": 5528,
+          "reconciliation.py": 5131,
+          "tracker.py": 4616,
+          "reporting.py": 4265,
+          "video_input.py": 3902,
+          "zones.py": 3880,
+          "detector_startup.py": 3737,
+          "alerts.py": 3629,
+          "demo.py": 3578,
+          "pos_adapter.py": 3372,
+          "runtime.py": 3327,
+          "mlops.py": 3090,
+          "resources.py": 2924,
+          "video_overlay.py": 2748
+        }
+      },
+      {
+        "path": "tests",
+        "bytes": 162880,
+        "files": 20,
+        "children": {
+          "__pycache__": 23298,
+          "test_operations.py": 22604,
+          "test_training_notebook.py": 12281,
+          "test_storage_resilience.py": 10897,
+          "test_video_review.py": 10538,
+          "test_evaluation_and_data.py": 10366,
+          "test_detector_startup.py": 8711,
+          "test_business_reporting.py": 7465,
+          "test_failure_boundaries.py": 7220,
+          "test_traffic.py": 7006,
+          "test_video_integration.py": 6355,
+          "test_event_scoring.py": 5424,
+          "test_api.py": 5411,
+          "test_review_labels.py": 5377,
+          "test_public_benchmark.py": 4444,
+          "test_product_evidence.py": 4158,
+          "test_model_benchmark.py": 4000,
+          "test_rtdetr_backend.py": 3160,
+          "test_detector_backend.py": 3155,
+          "test_entrypoint.py": 1010
+        }
+      },
+      {
+        "path": "scripts",
+        "bytes": 150443,
+        "files": 21,
+        "children": {
+          "__pycache__": 37941,
+          "benchmark_models.py": 18824,
+          "benchmark_public.py": 14304,
+          "audit_repository.py": 10099,
+          "verify_container.py": 8265,
+          "verify_mvp.py": 8193,
+          "benchmark_api.py": 7326,
+          "benchmark_mvp.py": 6078,
+          "verify_training_notebook.py": 4834,
+          "verify_video_prototype.py": 4530,
+          "plan_cache_cleanup.py": 4333,
+          "benchmark_events.py": 4150,
+          "review_publication.py": 3855,
+          "apply_cache_cleanup.ps1": 3697,
+          "lock_requirements.py": 2867,
+          "verify_egress.py": 2418,
+          "benchmark_suite.py": 2363,
+          "check_quality.py": 2336,
+          "setup_environment.py": 2219,
+          "check_docs.py": 1811
+        }
+      },
+      {
+        "path": "notebooks",
+        "bytes": 69849,
+        "files": 2,
+        "children": {
+          "cafe_model_benchmark.ipynb": 62936,
+          "README.md": 6913
+        }
+      },
+      {
+        "path": "schemas",
+        "bytes": 4459,
+        "files": 1,
+        "children": {
+          "event_annotations.v1.schema.json": 4459
+        }
+      },
+      {
+        "path": ".ruff_cache",
+        "bytes": 4258,
+        "files": 5,
+        "children": {
+          "0.17.4": 4180,
+          "CACHEDIR.TAG": 43,
+          ".gitignore": 35
+        }
+      },
+      {
+        "path": ".github",
+        "bytes": 4000,
+        "files": 1,
+        "children": {
+          "workflows": 4000
+        }
+      },
+      {
+        "path": "config",
+        "bytes": 3803,
+        "files": 1,
+        "children": {
+          "example.json": 3803
+        }
+      },
+      {
+        "path": ".pytest_cache",
+        "bytes": 2603,
+        "files": 4,
+        "children": {
+          "v": 2073,
+          "README.md": 302,
+          "CACHEDIR.TAG": 191,
+          ".gitignore": 37
+        }
+      },
+      {
+        "path": "models",
+        "bytes": 219,
+        "files": 1,
+        "children": {
+          "metadata.example.json": 219
+        }
+      }
+    ],
+    "document_removals_planned": [
+      {
+        "path": "CLEANUP_MANIFEST.md",
+        "bytes": 4607,
+        "sha256": "e062417489a527a715b1ebc83c352c596b29624dd9e71b4cfc435439a2d4352f",
+        "baseline_blob": "c66e7f2a638a4498beeeac9157f1db6cef3369f3"
+      },
+      {
+        "path": "DEPLOYMENT_READINESS.md",
+        "bytes": 5267,
+        "sha256": "a8aa9d9ba1335c8e62af2f690245874209e20c5f3d44a5ac086a85606a97c59c",
+        "baseline_blob": "d5242b7233b7cdb519bdbb1b44a606e1fe8a9e2a"
+      },
+      {
+        "path": "FINAL_ENGINEERING_AUDIT.md",
+        "bytes": 12926,
+        "sha256": "ab604846554fdc146bc903601e863e6cd272ca43fec22332c956e48361caf1b8",
+        "baseline_blob": "932de8b977fe94d79e748b5770115fc817b77b66"
+      },
+      {
+        "path": "RELEASE_AUDIT.md",
+        "bytes": 226,
+        "sha256": "d92aff72c8bd03e1a8b3b4066d267e6307241063c88761f2a844a3dcf4966718",
+        "baseline_blob": "f70570b506744eed358f8346e0d5066cb1b39113"
+      },
+      {
+        "path": "RELEASE_EVIDENCE.md",
+        "bytes": 12718,
+        "sha256": "beeab1c155b4a7eca1512795d70b773a977207391fc95f6437a9c12e1509b84a",
+        "baseline_blob": "a59b0d7c632ea9729387d96de3aac7e9d7dc5522"
+      },
+      {
+        "path": "docs/VERIFICATION.md",
+        "bytes": 10308,
+        "sha256": "746ce28f4d6df4be11d30ba2daf7c28acc754f09c4c9c6da9d262d767c0e8f19",
+        "baseline_blob": "3ab740b662a8810cde2cde97440aede8d5b89afa"
+      },
+      {
+        "path": "docs/audits/current_system_audit.md",
+        "bytes": 8623,
+        "sha256": "4b7d698547db1439dd7fdc3c6d828ed47a3b7a3c81ae31433a06fbcbf5a05472",
+        "baseline_blob": "1f0c9ddf3cdec541f40509be5764944fa1661260"
+      },
+      {
+        "path": "docs/audits/disk-inventory-20261112.md",
+        "bytes": 40497,
+        "sha256": "6ed143c39b814a1293c66936a57e2c54c8cc065f1c8e94e397fd589c6eb70825",
+        "baseline_blob": "30b27c0b5d4d92b6f875b1d962f6290687edb8f7"
+      },
+      {
+        "path": "docs/audits/security-20261112.md",
+        "bytes": 43014,
+        "sha256": "0d5da85d29913806fcf836c9a226f4498defc755e9aee0ea1827ede35638454c",
+        "baseline_blob": "5343581becf07091c27a9e8636efb1835b980003"
+      },
+      {
+        "path": "docs/benchmarks/model_comparison.md",
+        "bytes": 8357,
+        "sha256": "f26802b3cb3f64b7b5edd70485c98b81de9bd5c53d07a1a8b173ab38ddaf7a48",
+        "baseline_blob": "34246ab69206edb5973ca6b4ea89b8ee18b3c96b"
+      },
+      {
+        "path": "docs/history/release-20261111/CLEANUP_MANIFEST.md",
+        "bytes": 7690,
+        "sha256": "709a08957b9d525de602cc14c9cb541336becb78c07e7909b5a46ba1a1c82601",
+        "baseline_blob": "ab52827fdb7acefbb303b84476efcceb9961dce1"
+      },
+      {
+        "path": "docs/history/release-20261111/DEPLOYMENT_READINESS.md",
+        "bytes": 11707,
+        "sha256": "8ce1e3363eb5081135c2a827b71f3f7c5c9e691a8fcf541545e124fa5d2b4523",
+        "baseline_blob": "a824af03b10f50a2fa99fad417493a43a7982afa"
+      },
+      {
+        "path": "docs/history/release-20261111/README-history.md",
+        "bytes": 391,
+        "sha256": "861055823ffa7addee0783d56ed8d061f17a1c43bf1c2d2dfab48a9233ae9a96",
+        "baseline_blob": "751712da2f0c41bf228eb0f438cd1833df731ae4"
+      },
+      {
+        "path": "docs/history/release-20261111/README.md",
+        "bytes": 16300,
+        "sha256": "7cccf910e2ab52ef823bb81d062f60453c279071cc45908f6bd372de4b85cd38",
+        "baseline_blob": "77e83066294d49f0d566813bd70978db0377938b"
+      },
+      {
+        "path": "docs/history/release-20261111/RELEASE_AUDIT.md",
+        "bytes": 25417,
+        "sha256": "460700066e038a11080c12c08e326117224e1798d2074406066af5789a6a56a2",
+        "baseline_blob": "bb72775a9982b9fea2fc759bdba0c46030866f1e"
+      },
+      {
+        "path": "docs/history/release-20261111/RELEASE_EVIDENCE.md",
+        "bytes": 40277,
+        "sha256": "ddb1bb87f7eb2b52b59686c45537f259e1b6d734534ae2d7b013eec1a9215c32",
+        "baseline_blob": "2912682f276115de3359257c3ee73ffe92d84b08"
+      }
+    ],
+    "removed_documents": true,
+    "replacement_guides": [
+      "README.md",
+      "GITHUB_READINESS.md",
+      "docs/PROJECT_STATUS.md",
+      "docs/audits/post-publication-20261115.md",
+      "docs/benchmarks/model_validation_20261116.md"
+    ],
+    "large_file_cleanup": {
+      "executed": false,
+      "tool_rejections": [
+        "Audit production.tar removal: blocked by policy",
+        "Unused SmolVLM cache removal: blocked by policy"
+      ],
+      "preview_passed": true,
+      "apply_executed": false,
+      "targets": [
+        {
+          "path": "var/post-publication-20261115/production.tar",
+          "regular_file_bytes": 550016000,
+          "files": 1,
+          "removed": false
+        },
+        {
+          "path": "var/post-publication-20261115/clean-env",
+          "regular_file_bytes": 1122480112,
+          "files": 27644,
+          "removed": false
+        },
+        {
+          "path": "var/post-publication-20261115/trivy-cache",
+          "regular_file_bytes": 1775444119,
+          "files": 3,
+          "removed": false
+        },
+        {
+          "path": "var/model-benchmark/huggingface/hub/models--HuggingFaceTB--SmolVLM2-500M-Video-Instruct",
+          "regular_file_bytes": 2034845205,
+          "files": 17,
+          "removed": false
+        },
+        {
+          "path": "var/model-validation-20261116/annotations_trainval2017.zip",
+          "regular_file_bytes": 252907541,
+          "files": 1,
+          "removed": false
+        },
+        {
+          "path": "var/engineering-audit-20261112/tools/trivy_0.76.2_windows-64bit.zip",
+          "regular_file_bytes": 53905616,
+          "files": 1,
+          "removed": false
+        },
+        {
+          "path": "var/post-publication-20261115/tools/gitleaks_8.30.1_windows_x64.zip",
+          "regular_file_bytes": 8438883,
+          "files": 1,
+          "removed": false
+        },
+        {
+          "path": "var/engineering-audit-20261112/inventory-before.json",
+          "regular_file_bytes": 34474769,
+          "files": 1,
+          "removed": false
+        },
+        {
+          "path": "var/engineering-audit-20261112/inventory-complete.json",
+          "regular_file_bytes": 55248036,
+          "files": 1,
+          "removed": false
+        },
+        {
+          "path": "var/engineering-audit-20261112/inventory-handoff.json",
+          "regular_file_bytes": 55247904,
+          "files": 1,
+          "removed": false
+        },
+        {
+          "path": "var/post-publication-20261115/windows-video/.mypy_cache",
+          "regular_file_bytes": 88887525,
+          "files": 18,
+          "removed": false
+        },
+        {
+          "path": "var/post-publication-20261115/windows-cpu/.mypy_cache",
+          "regular_file_bytes": 42619109,
+          "files": 18,
+          "removed": false
+        },
+        {
+          "path": "var/post-publication-20261115/linux-video/.mypy_cache",
+          "regular_file_bytes": 88080608,
+          "files": 18,
+          "removed": false
+        },
+        {
+          "path": "var/post-publication-20261115/linux-cpu/.mypy_cache",
+          "regular_file_bytes": 42250464,
+          "files": 18,
+          "removed": false
+        },
+        {
+          "path": "var/model-validation-20261116/windows-video/.mypy_cache",
+          "regular_file_bytes": 88641765,
+          "files": 18,
+          "removed": false
+        },
+        {
+          "path": "var/model-validation-20261116/linux-cpu/.mypy_cache",
+          "regular_file_bytes": 42250464,
+          "files": 18,
+          "removed": false
+        },
+        {
+          "path": ".pytest_cache",
+          "regular_file_bytes": 2603,
+          "files": 4,
+          "removed": false
+        },
+        {
+          "path": ".ruff_cache",
+          "regular_file_bytes": 4258,
+          "files": 5,
+          "removed": false
+        }
+      ],
+      "total_regular_file_bytes": 6335744981,
+      "required_next_step": "Owner execution of scripts/cleanup_workspace.ps1 -Apply; agent deletion blocked by tool policy"
+    },
+    "preserved": [
+      "All three tested detector checkpoints",
+      "Frozen benchmark dataset and measured results",
+      "Active runtime and linked GPU/notebook environments",
+      "Latest security evidence and unresolved gates",
+      "Reference PDFs/DOCX and benchmark PNG",
+      "Git history"
+    ],
+    "recovery": "git show 097c1bd76d6c37efeb43fdab41dde9d6076596e7:<path> recovers published historical document contents; no history rewrite or push",
+    "regular_file_inventory": [
+      {
+        "path": ".git",
+        "regular_file_bytes": 5275054,
+        "files": 355,
+        "links_excluded": 0
+      },
+      {
+        "path": ".github",
+        "regular_file_bytes": 4000,
+        "files": 1,
+        "links_excluded": 0
+      },
+      {
+        "path": ".pytest_cache",
+        "regular_file_bytes": 2603,
+        "files": 4,
+        "links_excluded": 0
+      },
+      {
+        "path": ".ruff_cache",
+        "regular_file_bytes": 4258,
+        "files": 5,
+        "links_excluded": 0
+      },
+      {
+        "path": ".venv",
+        "regular_file_bytes": 887832241,
+        "files": 23011,
+        "links_excluded": 0
+      },
+      {
+        "path": ".venv-bench",
+        "regular_file_bytes": 4813675024,
+        "files": 16936,
+        "links_excluded": 0
+      },
+      {
+        "path": ".venv-candidate",
+        "regular_file_bytes": 1122480070,
+        "files": 27663,
+        "links_excluded": 0
+      },
+      {
+        "path": ".venv-notebook",
+        "regular_file_bytes": 248683026,
+        "files": 10402,
+        "links_excluded": 0
+      },
+      {
+        "path": "coffee_ops",
+        "regular_file_bytes": 580800,
+        "files": 67,
+        "links_excluded": 0
+      },
+      {
+        "path": "config",
+        "regular_file_bytes": 3803,
+        "files": 1,
+        "links_excluded": 0
+      },
+      {
+        "path": "docs",
+        "regular_file_bytes": 5029096,
+        "files": 89,
+        "links_excluded": 0
+      },
+      {
+        "path": "models",
+        "regular_file_bytes": 219,
+        "files": 1,
+        "links_excluded": 0
+      },
+      {
+        "path": "notebooks",
+        "regular_file_bytes": 69849,
+        "files": 2,
+        "links_excluded": 0
+      },
+      {
+        "path": "schemas",
+        "regular_file_bytes": 4459,
+        "files": 1,
+        "links_excluded": 0
+      },
+      {
+        "path": "scripts",
+        "regular_file_bytes": 154769,
+        "files": 22,
+        "links_excluded": 0
+      },
+      {
+        "path": "tests",
+        "regular_file_bytes": 162880,
+        "files": 20,
+        "links_excluded": 0
+      },
+      {
+        "path": "var",
+        "regular_file_bytes": 7283182555,
+        "files": 31291,
+        "links_excluded": 21
+      }
+    ],
+    "initial_inventory_note": "Initial inventory followed file symlinks and overcounted cached model bytes; use regular_file_inventory instead",
+    "candidate_source_files": 191,
+    "validation": {
+      "local_markdown_targets": 131,
+      "missing": [],
+      "scope": "Local targets only, not remote URLs or heading fragments"
+    }
+  }
+}

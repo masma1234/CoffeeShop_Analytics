@@ -166,7 +166,7 @@ failures/timeouts produce logs/status rather than fabricated measurements.
 - [Publisher-verified large downloads](results/verified-downloads.json)
 - [Research environment snapshot](benchmark-environment.txt)
 - [Direct-package security lookup](../audits/dependency_advisories.json)
-- [Selection and next steps](model_comparison.md), [real counting protocol](counting_evaluation.md)
+- [Current selection and next steps](model_validation_20261116.md), [real counting protocol](counting_evaluation.md)
 
 No trained cafe model was produced or promoted. No model has verified coffee
 preparation, handover, queue-wait or real table-occupancy accuracy here. Security-

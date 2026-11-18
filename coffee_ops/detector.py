@@ -40,11 +40,33 @@ def validate_metadata(config: Config) -> dict:
     return data
 
 
-def _worker(connection: Any, weights: str, names: dict[int, str], device: str, threshold: float) -> None:
+def yolo_inference_options(device: str, threshold: float, image_size: int, half: bool) -> dict:
+    """Explicit preprocessing/precision contract shared with measured YOLO runs."""
+    return {"device": device, "conf": threshold, "imgsz": image_size,
+            "half": half and device.startswith("cuda"), "rect": False,
+            "iou": 0.7, "max_det": 300, "verbose": False}
+
+
+def rtdetr_image_processor_class():
+    """Retain measured PIL resizing across Transformers 4.x and 5.x.
+
+    In 5.x RTDetrImageProcessor became the Torchvision implementation. Explicit
+    PIL selection prevents a dependency upgrade changing pixel interpolation.
+    """
+    import transformers
+    pil_class = getattr(transformers, "RTDetrImageProcessorPil", None)
+    return pil_class if pil_class is not None else transformers.RTDetrImageProcessor
+
+
+def _worker(connection: Any, weights: str, names: dict[int, str], device: str, threshold: float,
+            image_size: int = 640, half: bool = False) -> None:
     # A broad catch is intentional only at this process boundary: preserve type and
     # message for the parent, which records failure and exits nonzero.
     try:
+        import os
         import sys
+        os.environ["YOLO_OFFLINE"] = "true"
+        os.environ["YOLO_AUTOINSTALL"] = "false"
         sys.stdout = sys.stderr  # Third-party model diagnostics must not corrupt CLI JSON.
         connection.send(("loading", "backend_validation"))
         from .health import backend_health
@@ -62,7 +84,7 @@ def _worker(connection: Any, weights: str, names: dict[int, str], device: str, t
             frame = connection.recv()
             if frame is None:
                 break
-            result = model.predict(frame, device=device, conf=threshold, verbose=False)[0]
+            result = model.predict(frame, **yolo_inference_options(device, threshold, image_size, half))[0]
             output = []
             for b in result.boxes:
                 x1, y1, x2, y2 = map(float, b.xyxy[0].tolist())
@@ -82,14 +104,17 @@ def _validate_rtdetr_checkpoint(directory: str, weights: str, names: dict[int, s
     if configuration.get("model_type") != "rt_detr_v2" or configuration.get("id2label") != {str(cid): name for cid, name in names.items()}:
         raise ValueError("RT-DETR architecture or embedded catalog differs from configuration")
     processor = json.loads((root / "preprocessor_config.json").read_text(encoding="utf-8"))
-    if processor.get("image_processor_type") != "RTDetrImageProcessor":
+    if processor.get("image_processor_type") not in {"RTDetrImageProcessor", "RTDetrImageProcessorPil"}:
         raise ValueError("RT-DETR requires the supported RTDetrImageProcessor checkpoint")
 
 
 def _rtdetr_worker(connection: Any, directory: str, weights: str, names: dict, enabled: set,
                    device: str, threshold: float, acceptance: dict, image_size: int, half: bool) -> None:
     try:
+        import os
         import sys
+        os.environ["HF_HUB_OFFLINE"] = "1"
+        os.environ["HF_HUB_DISABLE_TELEMETRY"] = "1"
         sys.stdout=sys.stderr
         connection.send(("loading", "checkpoint_validation"))
         _validate_rtdetr_checkpoint(directory, weights, names)
@@ -97,7 +122,7 @@ def _rtdetr_worker(connection: Any, directory: str, weights: str, names: dict, e
         import torch
         from PIL import Image
         connection.send(("loading", "transformers_import"))
-        from transformers import RTDetrImageProcessor,RTDetrV2ForObjectDetection
+        from transformers import RTDetrV2ForObjectDetection
         root=Path(directory)
         connection.send(("loading", "model_load"))
         model=RTDetrV2ForObjectDetection.from_pretrained(root,local_files_only=True,use_safetensors=True)
@@ -105,10 +130,12 @@ def _rtdetr_worker(connection: Any, directory: str, weights: str, names: dict, e
         if model.config.model_type!="rt_detr_v2" or model.config.id2label!=names:
             raise ValueError("RT-DETR architecture or embedded catalog differs from configuration")
         connection.send(("loading", "processor_load"))
-        processor=RTDetrImageProcessor.from_pretrained(root,local_files_only=True)
+        processor=rtdetr_image_processor_class().from_pretrained(root,local_files_only=True)
         processor.size={"height":image_size,"width":image_size}
         connection.send(("loading", "device_setup"))
-        model=model.to(device).eval()
+        # The explicit receiver preserves HF's device-transfer guards and avoids
+        # its 5.x decorator exposing an unbound "self" to static type checkers.
+        model=RTDetrV2ForObjectDetection.to(model,device=device).eval()
         half=half and device.startswith("cuda")
         if half:model.half()
         connection.send(("ready",None))
@@ -143,6 +170,7 @@ class YOLODetector:
         self.timeout = cfg["inference_timeout_seconds"]
         self.last_model_metrics: dict[str, Any] = {}
         self.last_raw_detections: list[Detection] = []
+        self._idle = False
         ctx = mp.get_context("spawn")
         self.connection, child = ctx.Pipe()
         thresholds = list(config.camera(camera_id).get("thresholds", {}).values())
@@ -160,7 +188,8 @@ class YOLODetector:
                        cfg.get("image_size",512),cfg.get("half",False))
             target=_rtdetr_worker
         else:
-            arguments=(child,str(config.path(cfg["weights"])),names,cfg["device"],min(thresholds,default=.25))
+            arguments=(child,str(config.path(cfg["weights"])),names,cfg["device"],min(thresholds,default=.25),
+                       cfg.get("image_size",640),cfg.get("half",False))
             target=_worker
         self.process = ctx.Process(target=target,args=arguments,daemon=True)
         startup = StartupDeadline(cfg["load_timeout_seconds"])
@@ -169,6 +198,7 @@ class YOLODetector:
             self.process.start()
             child.close()
             startup.wait(self.connection)
+            self._idle = True
         except BaseException:
             self.close()
             raise
@@ -188,6 +218,7 @@ class YOLODetector:
         return payload
 
     def detect(self, frame: Any, frame_index: int) -> list[Detection]:
+        self._idle = False
         deadline = time.monotonic()+self.timeout
         sent = threading.Event()
         errors: list[BaseException] = []
@@ -213,6 +244,7 @@ class YOLODetector:
             self.close()
             raise RuntimeError(f"Detector input transfer failed: {errors[0]}") from errors[0]
         payload=self._receive(max(0, deadline-time.monotonic()))
+        self._idle = True
         if isinstance(payload,dict) and "detections" in payload:
             self.last_raw_detections=cast(list[Detection], payload.get("proposals",payload["detections"]))
             self.last_model_metrics={k:v for k,v in payload.items() if k not in {"detections","proposals"}}
@@ -222,9 +254,19 @@ class YOLODetector:
 
     def close(self) -> None:
         if self.process.pid is not None:
+            if self.process.is_alive() and getattr(self, "_idle", False):
+                # Only send while idle: never race an in-flight/blocked frame write.
+                # A normal interpreter exit releases third-party semaphore locks.
+                try:
+                    self.connection.send(None)
+                except (OSError, EOFError, ValueError):
+                    pass
+                # Windows ML-library finalization can take about one second.
+                # Keep the total close budget at three seconds, including force.
+                self.process.join(timeout=2)
             if self.process.is_alive():
                 self.process.terminate()
-            self.process.join(timeout=3)
+            self.process.join(timeout=1)
         self.connection.close()
 
 

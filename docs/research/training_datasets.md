@@ -1,5 +1,21 @@
 # Datasets for the training notebook
 
+**16 November follow-up:** downloaded the original COCO 2017 annotations and a
+frozen 600-image person/bottle/cup/negative subset into ignored local storage.
+The 300 calibration and 300 test images are evaluation data, never training data.
+The Kaggle cup download endpoints returned HTTP 404 during this follow-up, so
+their earlier availability below is historical. No authentication or access gate
+was bypassed. See [actual measurements and download instructions](../benchmarks/model_validation_20261116.md).
+No representative overhead cafe recording is available; domain training and a
+final production model selection remain dependent on independently labeled clips.
+
+The retained COCO annotations label **401 of the 600 evaluation photos as
+noncommercial** and **198 as no-derivatives**; these groups overlap. They are
+local evaluation material, not an approved commercial training dataset. These
+annotation-era labels do not establish current publication rights. No photos or
+trained weights from this subset are being published. Review image-specific
+rights separately from any model-card or uploader license.
+
 Reviewed **7 November 2026** against publisher pages, Hugging Face repository metadata
 and Kaggle's public view/file-list APIs. [Compact evidence](training-datasets.json)
 records versions, sizes, declared licenses and example filenames. Availability and

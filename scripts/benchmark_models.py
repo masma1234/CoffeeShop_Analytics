@@ -155,14 +155,15 @@ def build_detector(args, names):
         if model.names != names:
             raise ValueError("COCO class catalog mismatch")
         def predict(image):
-            result = model.predict(image, imgsz=args.imgsz, conf=args.confidence, iou=.7,
-                                   device=args.device, rect=False, half=args.precision == "fp16", verbose=False)[0]
+            from coffee_ops.detector import yolo_inference_options
+            result = model.predict(image, **yolo_inference_options(
+                args.device, args.confidence, args.imgsz, args.precision == "fp16"))[0]
             return [{"class_id": int(box.cls.item()), "confidence": float(box.conf.item()),
                      "bbox": box.xyxy[0].tolist()} for box in result.boxes]
         return predict, {"weights_sha256": digest(path), "source": ASSET_BASE + path.name,
                          "parameters": sum(p.numel() for p in model.model.parameters())}
     from huggingface_hub import HfApi
-    from transformers import AutoImageProcessor, AutoModelForObjectDetection
+    from coffee_ops.detector import rtdetr_image_processor_class
     repo = {"rtdetr-v2-r18": "PekingU/rtdetr_v2_r18vd", "dfine-nano": "ustc-community/dfine-nano-coco",
             "dfine-small": "ustc-community/dfine-small-coco"}[args.model]
     revision = args.revision
@@ -170,11 +171,18 @@ def build_detector(args, names):
         if not args.download:
             raise ValueError("Specify a cached --revision or use --download to resolve it")
         revision = HfApi().model_info(repo).sha
-    model = AutoModelForObjectDetection.from_pretrained(repo, revision=revision, trust_remote_code=False,
+    if args.model == "rtdetr-v2-r18":
+        from transformers import RTDetrV2ForObjectDetection
+        model_class = RTDetrV2ForObjectDetection
+    else:
+        from transformers import DFineForObjectDetection
+        model_class = DFineForObjectDetection
+    model = model_class.from_pretrained(repo, revision=revision, trust_remote_code=False,
         use_safetensors=True, local_files_only=not args.download).to(device=args.device,
         dtype=torch.float16 if args.precision == "fp16" else torch.float32).eval()
-    processor = AutoImageProcessor.from_pretrained(repo, revision=revision, trust_remote_code=False,
+    processor = rtdetr_image_processor_class().from_pretrained(repo, revision=revision, trust_remote_code=False,
         local_files_only=not args.download, use_fast=False)
+    processor.size = {"height": args.imgsz, "width": args.imgsz}
     class_ids = coco_class_map(model.config.id2label, names)
     def predict(image):
         from PIL import Image
@@ -186,12 +194,19 @@ def build_detector(args, names):
         result = processor.post_process_object_detection(output, threshold=args.confidence,
             target_sizes=torch.tensor([image.shape[:2]], device=args.device))[0]
         detections = []
-        for cid, score, box in zip(result["labels"], result["scores"], result["boxes"]):
-            clipped = clip_box(box.tolist(), image.shape[1], image.shape[0])
+        # Transfer each tensor once, matching the isolated production adapter.
+        # Per-scalar CUDA conversions serialize hundreds of device synchronizations.
+        for cid, score, box in zip(result["labels"].cpu().tolist(),
+                                   result["scores"].cpu().tolist(), result["boxes"].cpu().tolist()):
+            clipped = clip_box(box, image.shape[1], image.shape[0])
             if clipped is not None:
                 detections.append({"class_id": class_ids[int(cid)], "confidence": float(score), "bbox": clipped})
         return detections
-    return predict, {"repository": repo, "revision": revision,
+    from huggingface_hub import snapshot_download
+    snapshot = Path(snapshot_download(repo, revision=revision, local_files_only=True))
+    checkpoint_hashes = {p.name: digest(p) for p in sorted(snapshot.iterdir())
+                         if p.name in {"model.safetensors", "config.json", "preprocessor_config.json"}}
+    return predict, {"repository": repo, "revision": revision, "checkpoint_files_sha256": checkpoint_hashes,
                      "class_mapping": "explicit COCO synonym validation; complete one-to-one catalog",
                      "parameters": sum(p.numel() for p in model.parameters()), "processor_size": processor.size}
 

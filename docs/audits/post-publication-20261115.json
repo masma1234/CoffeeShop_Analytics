@@ -1,0 +1,2757 @@
+{
+  "audit_date": "2026-11-15",
+  "audit_completed_date": "2026-11-16",
+  "published_branch": "audit/deep-clean-20261115",
+  "published_commit": "097c1bd76d6c37efeb43fdab41dde9d6076596e7",
+  "parent_commit": "ef598c0bcabcd49289ce3f67aef600a274b54df3",
+  "published_files": 194,
+  "cleanup_inventory_before_two_report_additions": 192,
+  "github_run": 43731027661,
+  "security_artifact_id": 14168039662,
+  "artifact_zip_sha256": "e34b8c6a493d34ed1c6ba818021742a92f68805731a82d5bb6eeba5ff71d0436",
+  "source_manifest_matches": 194,
+  "published_scan": {
+    "os": {
+      "Family": "debian",
+      "Name": "13.7"
+    },
+    "scanner": {
+      "Version": "0.76.2"
+    },
+    "severities": {
+      "HIGH": 61,
+      "CRITICAL": 1
+    },
+    "unique_advisories": 24,
+    "binary_packages": 23,
+    "sbom_components": 177,
+    "findings": [
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libacl1",
+        "installed_version": "2.3.2-2+b1",
+        "source_package": "acl",
+        "cve": "CVE-2026-54369",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-54369",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libexpat1",
+        "installed_version": "2.9.0-1~deb13u1",
+        "source_package": "expat",
+        "cve": "CVE-2026-113351",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-113351",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libexpat1",
+        "installed_version": "2.9.0-1~deb13u1",
+        "source_package": "expat",
+        "cve": "CVE-2026-115506",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-115506",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libexpat1",
+        "installed_version": "2.9.0-1~deb13u1",
+        "source_package": "expat",
+        "cve": "CVE-2026-117610",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-117610",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libexpat1",
+        "installed_version": "2.9.0-1~deb13u1",
+        "source_package": "expat",
+        "cve": "CVE-2026-118370",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-118370",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libx11-6",
+        "installed_version": "2:1.8.12-1",
+        "source_package": "libx11",
+        "cve": "CVE-2026-88806",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-88806",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libx11-data",
+        "installed_version": "2:1.8.12-1",
+        "source_package": "libx11",
+        "cve": "CVE-2026-88806",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-88806",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libx11-xcb1",
+        "installed_version": "2:1.8.12-1",
+        "source_package": "libx11",
+        "cve": "CVE-2026-88806",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-88806",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libxml2",
+        "installed_version": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+        "source_package": "libxml2",
+        "cve": "CVE-2026-6653",
+        "severity": "CRITICAL",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-6653",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libxml2",
+        "installed_version": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+        "source_package": "libxml2",
+        "cve": "CVE-2026-74860",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-74860",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libxml2",
+        "installed_version": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+        "source_package": "libxml2",
+        "cve": "CVE-2026-86138",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-86138",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libxml2",
+        "installed_version": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+        "source_package": "libxml2",
+        "cve": "CVE-2026-86139",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-86139",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libxml2",
+        "installed_version": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+        "source_package": "libxml2",
+        "cve": "CVE-2026-86140",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-86140",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libxml2",
+        "installed_version": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+        "source_package": "libxml2",
+        "cve": "CVE-2026-86142",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-86142",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libxml2",
+        "installed_version": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+        "source_package": "libxml2",
+        "cve": "CVE-2026-86143",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-86143",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libxml2",
+        "installed_version": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+        "source_package": "libxml2",
+        "cve": "CVE-2026-86144",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-86144",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libncursesw6",
+        "installed_version": "6.5+20250216-2",
+        "source_package": "ncurses",
+        "cve": "CVE-2025-69720",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2025-69720",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libtinfo6",
+        "installed_version": "6.5+20250216-2",
+        "source_package": "ncurses",
+        "cve": "CVE-2025-69720",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2025-69720",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "ncurses-base",
+        "installed_version": "6.5+20250216-2",
+        "source_package": "ncurses",
+        "cve": "CVE-2025-69720",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2025-69720",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "ncurses-bin",
+        "installed_version": "6.5+20250216-2",
+        "source_package": "ncurses",
+        "cve": "CVE-2025-69720",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2025-69720",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "perl-base",
+        "installed_version": "5.40.1-6+deb13u1",
+        "source_package": "perl",
+        "cve": "CVE-2026-9538",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-9538",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libsqlite3-0",
+        "installed_version": "3.46.1-7+deb13u2",
+        "source_package": "sqlite3",
+        "cve": "CVE-2026-119373",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-119373",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libsqlite3-0",
+        "installed_version": "3.46.1-7+deb13u2",
+        "source_package": "sqlite3",
+        "cve": "CVE-2026-119374",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-119374",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libsqlite3-0",
+        "installed_version": "3.46.1-7+deb13u2",
+        "source_package": "sqlite3",
+        "cve": "CVE-2026-119379",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-119379",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libsystemd0",
+        "installed_version": "257.13-1~deb13u1",
+        "source_package": "systemd",
+        "cve": "CVE-2026-16742",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-16742",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libudev1",
+        "installed_version": "257.13-1~deb13u1",
+        "source_package": "systemd",
+        "cve": "CVE-2026-16742",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-16742",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "bsdutils",
+        "installed_version": "1:2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-76642",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-76642",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "bsdutils",
+        "installed_version": "1:2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-78408",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-78408",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "bsdutils",
+        "installed_version": "1:2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-78409",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-78409",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "bsdutils",
+        "installed_version": "1:2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-78410",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-78410",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libblkid1",
+        "installed_version": "2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-76642",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-76642",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libblkid1",
+        "installed_version": "2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-78408",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-78408",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libblkid1",
+        "installed_version": "2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-78409",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-78409",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libblkid1",
+        "installed_version": "2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-78410",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-78410",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "liblastlog2-2",
+        "installed_version": "2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-76642",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-76642",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "liblastlog2-2",
+        "installed_version": "2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-78408",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-78408",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "liblastlog2-2",
+        "installed_version": "2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-78409",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-78409",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "liblastlog2-2",
+        "installed_version": "2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-78410",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-78410",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libmount1",
+        "installed_version": "2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-76642",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-76642",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libmount1",
+        "installed_version": "2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-78408",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-78408",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libmount1",
+        "installed_version": "2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-78409",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-78409",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libmount1",
+        "installed_version": "2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-78410",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-78410",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libsmartcols1",
+        "installed_version": "2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-76642",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-76642",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libsmartcols1",
+        "installed_version": "2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-78408",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-78408",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libsmartcols1",
+        "installed_version": "2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-78409",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-78409",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libsmartcols1",
+        "installed_version": "2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-78410",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-78410",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libuuid1",
+        "installed_version": "2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-76642",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-76642",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libuuid1",
+        "installed_version": "2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-78408",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-78408",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libuuid1",
+        "installed_version": "2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-78409",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-78409",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "libuuid1",
+        "installed_version": "2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-78410",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-78410",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "login",
+        "installed_version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-76642",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-76642",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "login",
+        "installed_version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-78408",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-78408",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "login",
+        "installed_version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-78409",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-78409",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "login",
+        "installed_version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-78410",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-78410",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "mount",
+        "installed_version": "2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-76642",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-76642",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "mount",
+        "installed_version": "2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-78408",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-78408",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "mount",
+        "installed_version": "2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-78409",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-78409",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "mount",
+        "installed_version": "2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-78410",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-78410",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "util-linux",
+        "installed_version": "2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-76642",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-76642",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "util-linux",
+        "installed_version": "2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-78408",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-78408",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "util-linux",
+        "installed_version": "2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-78409",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-78409",
+        "remediation_status": "unresolved"
+      },
+      {
+        "target": "runtime.tar (debian 13.7)",
+        "package": "util-linux",
+        "installed_version": "2.41.5-0+deb13u1",
+        "source_package": "util-linux",
+        "cve": "CVE-2026-78410",
+        "severity": "HIGH",
+        "scanner_fixed_version": null,
+        "vendor_reference": "CVE-2026-78410",
+        "remediation_status": "unresolved"
+      }
+    ]
+  },
+  "advisories": {
+    "CVE-2026-76642": {
+      "advisory_title_from_ci_report": "util-linux: util-linux: failed external mount helper still runs privileged X-mount post-hooks",
+      "source_package": "util-linux",
+      "vendor_url": "https://security-tracker.debian.org/tracker/CVE-2026-76642",
+      "checked_utc": "2026-11-15T20:49:08.705137+00:00",
+      "trixie_rows": [
+        [
+          "",
+          "trixie (security), trixie",
+          "2.41.5-0+deb13u1",
+          "vulnerable"
+        ]
+      ],
+      "first_fixed_debian_unstable_versions": [
+        "2.42.3-1"
+      ],
+      "upstream_references": [
+        "https://github.com/util-linux/util-linux/security/advisories/GHSA-m25x-3hj9-m26f"
+      ],
+      "component_assessment": "Privileged mount helpers, mount options and nsenter cgroup descriptor handling. Non-root, dropped capabilities and no-new-privileges reduce exposure; do not remove Essential packages blindly.",
+      "recommended_remediation": "Prefer stable vendor updates; upstream stable-series fixes exist but are not Debian trixie candidates. Do not mix sid with stable or purge Essential login/mount/util-linux packages to erase findings.",
+      "fixed_in_deployed_image": false,
+      "supported_stable_upgrade_available": false,
+      "disposition": "Unresolved; Debian trixie marked vulnerable. No severity override or suppression."
+    },
+    "CVE-2026-78408": {
+      "advisory_title_from_ci_report": "util-linux: util-linux: nsenter --join-cgroup leaks root cgroup migration authority",
+      "source_package": "util-linux",
+      "vendor_url": "https://security-tracker.debian.org/tracker/CVE-2026-78408",
+      "checked_utc": "2026-11-15T20:49:08.973178+00:00",
+      "trixie_rows": [
+        [
+          "",
+          "trixie (security), trixie",
+          "2.41.5-0+deb13u1",
+          "vulnerable"
+        ]
+      ],
+      "first_fixed_debian_unstable_versions": [
+        "2.42.4-1"
+      ],
+      "upstream_references": [
+        "https://github.com/util-linux/util-linux/security/advisories/GHSA-55fx-f4gg-cfhj",
+        "https://github.com/util-linux/util-linux/commit/286dd3ff41526b582ef48830de239dffbaa61f90"
+      ],
+      "component_assessment": "Privileged mount helpers, mount options and nsenter cgroup descriptor handling. Non-root, dropped capabilities and no-new-privileges reduce exposure; do not remove Essential packages blindly.",
+      "recommended_remediation": "Prefer stable vendor updates; upstream stable-series fixes exist but are not Debian trixie candidates. Do not mix sid with stable or purge Essential login/mount/util-linux packages to erase findings.",
+      "fixed_in_deployed_image": false,
+      "supported_stable_upgrade_available": false,
+      "disposition": "Unresolved; Debian trixie marked vulnerable. No severity override or suppression."
+    },
+    "CVE-2026-78409": {
+      "advisory_title_from_ci_report": "util-linux: util-linux: X-mount.subdir detached-tree resolution can escape via intermediate symlinks",
+      "source_package": "util-linux",
+      "vendor_url": "https://security-tracker.debian.org/tracker/CVE-2026-78409",
+      "checked_utc": "2026-11-15T20:49:09.032889+00:00",
+      "trixie_rows": [
+        [
+          "",
+          "trixie (security), trixie",
+          "2.41.5-0+deb13u1",
+          "vulnerable"
+        ]
+      ],
+      "first_fixed_debian_unstable_versions": [
+        "2.42.3-1"
+      ],
+      "upstream_references": [
+        "https://github.com/util-linux/util-linux/security/advisories/GHSA-8f2p-47x3-43mv"
+      ],
+      "component_assessment": "Privileged mount helpers, mount options and nsenter cgroup descriptor handling. Non-root, dropped capabilities and no-new-privileges reduce exposure; do not remove Essential packages blindly.",
+      "recommended_remediation": "Prefer stable vendor updates; upstream stable-series fixes exist but are not Debian trixie candidates. Do not mix sid with stable or purge Essential login/mount/util-linux packages to erase findings.",
+      "fixed_in_deployed_image": false,
+      "supported_stable_upgrade_available": false,
+      "disposition": "Unresolved; Debian trixie marked vulnerable. No severity override or suppression.",
+      "version_uncertainty": "Upstream/introduction range and Debian stable tracking require source-patch investigation. No backport false-positive claim is established; retain the finding."
+    },
+    "CVE-2026-78410": {
+      "advisory_title_from_ci_report": "util-linux: util-linux: restricted bind mounts do not pin the source, allowing X-mount.owner/group/mode redirection",
+      "source_package": "util-linux",
+      "vendor_url": "https://security-tracker.debian.org/tracker/CVE-2026-78410",
+      "checked_utc": "2026-11-15T20:49:09.035637+00:00",
+      "trixie_rows": [
+        [
+          "",
+          "trixie (security), trixie",
+          "2.41.5-0+deb13u1",
+          "vulnerable"
+        ]
+      ],
+      "first_fixed_debian_unstable_versions": [
+        "2.42.3-1"
+      ],
+      "upstream_references": [
+        "https://github.com/util-linux/util-linux/security/advisories/GHSA-rh77-686x-2f2m"
+      ],
+      "component_assessment": "Privileged mount helpers, mount options and nsenter cgroup descriptor handling. Non-root, dropped capabilities and no-new-privileges reduce exposure; do not remove Essential packages blindly.",
+      "recommended_remediation": "Prefer stable vendor updates; upstream stable-series fixes exist but are not Debian trixie candidates. Do not mix sid with stable or purge Essential login/mount/util-linux packages to erase findings.",
+      "fixed_in_deployed_image": false,
+      "supported_stable_upgrade_available": false,
+      "disposition": "Unresolved; Debian trixie marked vulnerable. No severity override or suppression."
+    },
+    "CVE-2026-54369": {
+      "advisory_title_from_ci_report": "acl: Symlink traversal privilege escalation via libacl functions",
+      "source_package": "acl",
+      "vendor_url": "https://security-tracker.debian.org/tracker/CVE-2026-54369",
+      "checked_utc": "2026-11-15T20:49:07.758513+00:00",
+      "trixie_rows": [
+        [
+          "",
+          "trixie",
+          "2.3.2-2",
+          "vulnerable"
+        ]
+      ],
+      "first_fixed_debian_unstable_versions": [
+        "2.4.0-1"
+      ],
+      "upstream_references": [
+        "https://bugs.debian.org/1141146"
+      ],
+      "component_assessment": "Path-based ACL operations: local symlink races require a privileged caller. Runtime is non-root; this is not a package fix.",
+      "recommended_remediation": "Wait for a supported Debian stable security backport or test a complete supported base migration. Upstream 2.4.0 adds symbols with documented collision/regression risks; do not drop in a foreign .deb.",
+      "fixed_in_deployed_image": false,
+      "supported_stable_upgrade_available": false,
+      "disposition": "Unresolved; Debian trixie marked vulnerable. No severity override or suppression."
+    },
+    "CVE-2026-113351": {
+      "advisory_title_from_ci_report": "expat: expat: Denial of Service via improper memory tracking in XML_ParserReset",
+      "source_package": "expat",
+      "vendor_url": "https://security-tracker.debian.org/tracker/CVE-2026-113351",
+      "checked_utc": "2026-11-15T20:49:05.369783+00:00",
+      "trixie_rows": [
+        [
+          "",
+          "trixie",
+          "2.8.3-1~deb13u1",
+          "vulnerable"
+        ],
+        [
+          "",
+          "trixie (security)",
+          "2.9.0-1~deb13u1",
+          "vulnerable"
+        ]
+      ],
+      "first_fixed_debian_unstable_versions": [
+        "2.10.0-1"
+      ],
+      "upstream_references": [
+        "https://github.com/libexpat/libexpat/pull/1431"
+      ],
+      "component_assessment": "XML parser: reset accounting, entity amplification, empty external-entity parsing and extreme attribute counts. Rebuilt production Python reports Expat 2.9.0, so this is a loaded parser, not solely an installed OS package.",
+      "recommended_remediation": "A supported stable backport of the 2.10.0 fixes is preferred. If changing the Python base, verify both system Expat and Python's actual linked/bundled parser, then rerun XML and native compatibility checks.",
+      "fixed_in_deployed_image": false,
+      "supported_stable_upgrade_available": false,
+      "disposition": "Unresolved; Debian trixie marked vulnerable. No severity override or suppression."
+    },
+    "CVE-2026-115506": {
+      "advisory_title_from_ci_report": "expat: expat: Denial of Service via delayed entity amplification detection",
+      "source_package": "expat",
+      "vendor_url": "https://security-tracker.debian.org/tracker/CVE-2026-115506",
+      "checked_utc": "2026-11-15T20:49:04.940766+00:00",
+      "trixie_rows": [
+        [
+          "",
+          "trixie",
+          "2.8.3-1~deb13u1",
+          "vulnerable"
+        ],
+        [
+          "",
+          "trixie (security)",
+          "2.9.0-1~deb13u1",
+          "vulnerable"
+        ]
+      ],
+      "first_fixed_debian_unstable_versions": [
+        "2.10.0-1"
+      ],
+      "upstream_references": [
+        "https://github.com/libexpat/libexpat/pull/1433"
+      ],
+      "component_assessment": "XML parser: reset accounting, entity amplification, empty external-entity parsing and extreme attribute counts. Rebuilt production Python reports Expat 2.9.0, so this is a loaded parser, not solely an installed OS package.",
+      "recommended_remediation": "A supported stable backport of the 2.10.0 fixes is preferred. If changing the Python base, verify both system Expat and Python's actual linked/bundled parser, then rerun XML and native compatibility checks.",
+      "fixed_in_deployed_image": false,
+      "supported_stable_upgrade_available": false,
+      "disposition": "Unresolved; Debian trixie marked vulnerable. No severity override or suppression."
+    },
+    "CVE-2026-117610": {
+      "advisory_title_from_ci_report": "expat: expat: Denial of Service via NULL pointer dereference in external entity parsing",
+      "source_package": "expat",
+      "vendor_url": "https://security-tracker.debian.org/tracker/CVE-2026-117610",
+      "checked_utc": "2026-11-15T20:49:06.197666+00:00",
+      "trixie_rows": [
+        [
+          "",
+          "trixie",
+          "2.8.3-1~deb13u1",
+          "vulnerable"
+        ],
+        [
+          "",
+          "trixie (security)",
+          "2.9.0-1~deb13u1",
+          "vulnerable"
+        ]
+      ],
+      "first_fixed_debian_unstable_versions": [
+        "2.10.0-1"
+      ],
+      "upstream_references": [
+        "https://github.com/libexpat/libexpat/pull/1444"
+      ],
+      "component_assessment": "XML parser: reset accounting, entity amplification, empty external-entity parsing and extreme attribute counts. Rebuilt production Python reports Expat 2.9.0, so this is a loaded parser, not solely an installed OS package.",
+      "recommended_remediation": "A supported stable backport of the 2.10.0 fixes is preferred. If changing the Python base, verify both system Expat and Python's actual linked/bundled parser, then rerun XML and native compatibility checks.",
+      "fixed_in_deployed_image": false,
+      "supported_stable_upgrade_available": false,
+      "disposition": "Unresolved; Debian trixie marked vulnerable. No severity override or suppression."
+    },
+    "CVE-2026-118370": {
+      "advisory_title_from_ci_report": "expat: expat: Denial of Service via integer overflow during XML attribute parsing",
+      "source_package": "expat",
+      "vendor_url": "https://security-tracker.debian.org/tracker/CVE-2026-118370",
+      "checked_utc": "2026-11-15T20:49:06.203995+00:00",
+      "trixie_rows": [
+        [
+          "",
+          "trixie",
+          "2.8.3-1~deb13u1",
+          "vulnerable"
+        ],
+        [
+          "",
+          "trixie (security)",
+          "2.9.0-1~deb13u1",
+          "vulnerable"
+        ]
+      ],
+      "first_fixed_debian_unstable_versions": [
+        "2.10.0-1"
+      ],
+      "upstream_references": [
+        "https://github.com/libexpat/libexpat/pull/1450"
+      ],
+      "component_assessment": "XML parser: reset accounting, entity amplification, empty external-entity parsing and extreme attribute counts. Rebuilt production Python reports Expat 2.9.0, so this is a loaded parser, not solely an installed OS package.",
+      "recommended_remediation": "A supported stable backport of the 2.10.0 fixes is preferred. If changing the Python base, verify both system Expat and Python's actual linked/bundled parser, then rerun XML and native compatibility checks.",
+      "fixed_in_deployed_image": false,
+      "supported_stable_upgrade_available": false,
+      "disposition": "Unresolved; Debian trixie marked vulnerable. No severity override or suppression."
+    },
+    "CVE-2025-69720": {
+      "advisory_title_from_ci_report": "ncurses: ncurses: Buffer overflow vulnerability may lead to arbitrary code execution.",
+      "source_package": "ncurses",
+      "vendor_url": "https://security-tracker.debian.org/tracker/CVE-2025-69720",
+      "checked_utc": "2026-11-15T20:49:05.316541+00:00",
+      "trixie_rows": [
+        [
+          "",
+          "trixie",
+          "6.5+20250216-2",
+          "vulnerable"
+        ]
+      ],
+      "first_fixed_debian_unstable_versions": [
+        "6.6+20251231-1"
+      ],
+      "upstream_references": [
+        "https://github.com/Cao-Wuhui/CVE-2025-69720",
+        "https://invisible-island.net/ncurses/NEWS.html#index-t20251213"
+      ],
+      "component_assessment": "infocmp command-line parser. Scanner propagates source-package status to libraries and terminfo data; installed package presence alone does not establish a vulnerable call path.",
+      "recommended_remediation": "Prefer the stable vendor backport. A minimal runtime that excludes CLI tools is a possible separately tested image design; retain all matches until rescanning that actual image.",
+      "fixed_in_deployed_image": false,
+      "supported_stable_upgrade_available": false,
+      "disposition": "Unresolved; Debian trixie marked vulnerable. No severity override or suppression."
+    },
+    "CVE-2026-119373": {
+      "advisory_title_from_ci_report": "sqlite: sqlite: Denial of service via heap-based buffer overflow in FTS5",
+      "source_package": "sqlite3",
+      "vendor_url": "https://security-tracker.debian.org/tracker/CVE-2026-119373",
+      "checked_utc": "2026-11-15T20:49:06.498049+00:00",
+      "trixie_rows": [
+        [
+          "",
+          "trixie",
+          "3.46.1-7+deb13u2",
+          "vulnerable"
+        ]
+      ],
+      "first_fixed_debian_unstable_versions": [
+        "3.54.1-1"
+      ],
+      "upstream_references": [
+        "https://sqlite.org/bugs/info/2026-08-04T08:49:27Z",
+        "https://sqlite.org/src/info/a7f8c92f62",
+        "https://github.com/sqlite/sqlite/commit/e1c9934f9f11a499029abb020ea715a08970da80"
+      ],
+      "component_assessment": "FTS5 index operations and session changeset parsing. Production Python uses SQLite 3.46.1 with ENABLE_FTS5 and ENABLE_SESSION. No FTS5/session API use was found in application source. Do not open untrusted databases or changesets.",
+      "recommended_remediation": "Prefer a stable backport. Upstream fixes are in 3.54.0; Debian first marks unstable 3.54.1-1 fixed. A manual libsqlite swap needs ABI, database migration, backup/restore and corruption-regression tests.",
+      "fixed_in_deployed_image": false,
+      "supported_stable_upgrade_available": false,
+      "disposition": "Unresolved; Debian trixie marked vulnerable. No severity override or suppression."
+    },
+    "CVE-2026-119374": {
+      "advisory_title_from_ci_report": "sqlite: sqlite: Arbitrary code execution via corrupted FTS5 index",
+      "source_package": "sqlite3",
+      "vendor_url": "https://security-tracker.debian.org/tracker/CVE-2026-119374",
+      "checked_utc": "2026-11-15T20:49:06.557201+00:00",
+      "trixie_rows": [
+        [
+          "",
+          "trixie",
+          "3.46.1-7+deb13u2",
+          "vulnerable"
+        ]
+      ],
+      "first_fixed_debian_unstable_versions": [
+        "3.54.1-1"
+      ],
+      "upstream_references": [
+        "https://sqlite.org/src/info/9cd4f9e920",
+        "https://github.com/sqlite/sqlite/commit/d9de6eedbe918c074c7556400fa21df5960704d9"
+      ],
+      "component_assessment": "FTS5 index operations and session changeset parsing. Production Python uses SQLite 3.46.1 with ENABLE_FTS5 and ENABLE_SESSION. No FTS5/session API use was found in application source. Do not open untrusted databases or changesets.",
+      "recommended_remediation": "Prefer a stable backport. Upstream fixes are in 3.54.0; Debian first marks unstable 3.54.1-1 fixed. A manual libsqlite swap needs ABI, database migration, backup/restore and corruption-regression tests.",
+      "fixed_in_deployed_image": false,
+      "supported_stable_upgrade_available": false,
+      "disposition": "Unresolved; Debian trixie marked vulnerable. No severity override or suppression."
+    },
+    "CVE-2026-119379": {
+      "advisory_title_from_ci_report": "sqlite: sqlite: Arbitrary code execution via crafted session changesets",
+      "source_package": "sqlite3",
+      "vendor_url": "https://security-tracker.debian.org/tracker/CVE-2026-119379",
+      "checked_utc": "2026-11-15T20:49:07.370430+00:00",
+      "trixie_rows": [
+        [
+          "",
+          "trixie",
+          "3.46.1-7+deb13u2",
+          "vulnerable"
+        ]
+      ],
+      "first_fixed_debian_unstable_versions": [
+        "3.54.1-1"
+      ],
+      "upstream_references": [
+        "https://sqlite.org/bugs/info/2026-08-16T10:15:25Z",
+        "https://sqlite.org/src/info/3f57024aecea0f3b",
+        "https://github.com/sqlite/sqlite/commit/64459c87cc702d600704fb77ee40ca1782398a52"
+      ],
+      "component_assessment": "FTS5 index operations and session changeset parsing. Production Python uses SQLite 3.46.1 with ENABLE_FTS5 and ENABLE_SESSION. No FTS5/session API use was found in application source. Do not open untrusted databases or changesets.",
+      "recommended_remediation": "Prefer a stable backport. Upstream fixes are in 3.54.0; Debian first marks unstable 3.54.1-1 fixed. A manual libsqlite swap needs ABI, database migration, backup/restore and corruption-regression tests.",
+      "fixed_in_deployed_image": false,
+      "supported_stable_upgrade_available": false,
+      "disposition": "Unresolved; Debian trixie marked vulnerable. No severity override or suppression."
+    },
+    "CVE-2026-16742": {
+      "advisory_title_from_ci_report": "systemd: systemd-homed: Local privilege escalation via missing home-record signature verification",
+      "source_package": "systemd",
+      "vendor_url": "https://security-tracker.debian.org/tracker/CVE-2026-16742",
+      "checked_utc": "2026-11-15T20:49:07.493725+00:00",
+      "trixie_rows": [
+        [
+          "",
+          "trixie",
+          "257.13-1~deb13u1",
+          "vulnerable"
+        ]
+      ],
+      "first_fixed_debian_unstable_versions": [
+        "261.2-1"
+      ],
+      "upstream_references": [
+        "https://github.com/systemd/systemd/security/advisories/GHSA-jm29-p7hh-vjhv",
+        "https://github.com/systemd/systemd/commit/d392d17143423e7af0cdb5bd0f64b43da8952662",
+        "https://github.com/systemd/systemd/commit/a7bce5b2052bdb098ad0729768c72e1df9a86adc",
+        "https://github.com/systemd/systemd/commit/8735bb63b7902b6824f4d171bca994252eb04a71",
+        "https://github.com/systemd/systemd/commit/04cba0a78da9d161c2f6426751d0460fb8193263"
+      ],
+      "component_assessment": "systemd-homed account authentication. Findings are on libsystemd0/libudev1; the rebuilt runtime has no systemd-homed executable at the checked standard locations. No vulnerable homed service path is established. The installed library packages are not patched.",
+      "recommended_remediation": "Prefer stable vendor library updates. Homed absence can qualify reachability, not mark these library packages patched. Avoid removing libraries required by the native dependency closure.",
+      "fixed_in_deployed_image": false,
+      "supported_stable_upgrade_available": false,
+      "disposition": "Unresolved; Debian trixie marked vulnerable. No severity override or suppression."
+    },
+    "CVE-2026-88806": {
+      "advisory_title_from_ci_report": "libX11: libX11: Heap-based buffer overflow via malicious X server",
+      "source_package": "libx11",
+      "vendor_url": "https://security-tracker.debian.org/tracker/CVE-2026-88806",
+      "checked_utc": "2026-11-15T20:49:11.400871+00:00",
+      "trixie_rows": [
+        [
+          "",
+          "trixie",
+          "2:1.8.12-1",
+          "vulnerable"
+        ]
+      ],
+      "first_fixed_debian_unstable_versions": [
+        "2:1.8.14-1"
+      ],
+      "upstream_references": [
+        "https://lists.x.org/archives/xorg-announce/2026-October/003752.html",
+        "https://gitlab.freedesktop.org/xorg/lib/libx11/-/merge_requests/309",
+        "https://gitlab.freedesktop.org/xorg/lib/libx11/-/commit/6d4432b13c0b3b6a644c13de9c793a14db48d545"
+      ],
+      "component_assessment": "XKB reply parsing from a malicious X server. GUI dependencies are present, but the supported container has no configured X display or forwarded X socket.",
+      "recommended_remediation": "Prefer a supported stable backport of 1.8.14. A separately tested headless OpenCV dependency profile could eliminate X dependencies; do not install competing cv2 distributions or use --no-deps to fake compatibility.",
+      "fixed_in_deployed_image": false,
+      "supported_stable_upgrade_available": false,
+      "disposition": "Unresolved; Debian trixie marked vulnerable. No severity override or suppression."
+    },
+    "CVE-2026-6653": {
+      "advisory_title_from_ci_report": "libxml2: mingw-libxml2: libxml2: Denial of Service via crafted XML input due to use-after-free",
+      "source_package": "libxml2",
+      "vendor_url": "https://security-tracker.debian.org/tracker/CVE-2026-6653",
+      "checked_utc": "2026-11-15T20:49:07.783523+00:00",
+      "trixie_rows": [
+        [
+          "",
+          "trixie",
+          "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+          "vulnerable"
+        ],
+        [
+          "",
+          "trixie (security)",
+          "2.12.7+dfsg+really2.9.14-2.1+deb13u1",
+          "vulnerable"
+        ]
+      ],
+      "first_fixed_debian_unstable_versions": [
+        "2.14.5+dfsg-0.1"
+      ],
+      "upstream_references": [
+        "https://www.openwall.com/lists/oss-security/2026/06/22/3",
+        "https://gitlab.gnome.org/GNOME/libxml2/-/work_items/1058",
+        "https://gitlab.gnome.org/GNOME/libxml2/-/commit/463bbeeca1805b5c4828f50d0fefc4eebaf620df"
+      ],
+      "component_assessment": "XML parsing, dictionaries, URI escaping, validation, XPointer, output callbacks and XInclude. The SAX binding advisory additionally requires libxml2 Python bindings; other advisories concern native functions.",
+      "recommended_remediation": "Prefer stable vendor backports of all relevant fixes. Moving to >=2.15.4 requires a complete compatible dependency/base evaluation; changing a version label is not remediation. A headless OpenCV profile could remove some GUI dependencies, but must have a valid dependency graph and regenerated locks.",
+      "fixed_in_deployed_image": false,
+      "supported_stable_upgrade_available": false,
+      "disposition": "Unresolved; Debian trixie marked vulnerable. No severity override or suppression."
+    },
+    "CVE-2026-74860": {
+      "advisory_title_from_ci_report": "libxml2: double-free/UAF in libxml2 Python bindings",
+      "source_package": "libxml2",
+      "vendor_url": "https://security-tracker.debian.org/tracker/CVE-2026-74860",
+      "checked_utc": "2026-11-15T20:49:08.267239+00:00",
+      "trixie_rows": [
+        [
+          "",
+          "trixie",
+          "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+          "vulnerable"
+        ],
+        [
+          "",
+          "trixie (security)",
+          "2.12.7+dfsg+really2.9.14-2.1+deb13u1",
+          "vulnerable"
+        ]
+      ],
+      "first_fixed_debian_unstable_versions": [
+        "2.15.3+dfsg-1"
+      ],
+      "upstream_references": [
+        "https://bugzilla.redhat.com/show_bug.cgi?id=2529697",
+        "https://gitlab.gnome.org/GNOME/libxml2/-/work_items/1076",
+        "https://gitlab.gnome.org/GNOME/libxml2/-/merge_requests/397",
+        "https://gitlab.gnome.org/GNOME/libxml2/-/commit/f41e1865781f74d1cadfe2fbdfeefed946026f12"
+      ],
+      "component_assessment": "This advisory requires the libxml2 Python SAX binding. The production Python probe cannot locate the libxml2 module. Native libxml2 remains present and has other unresolved advisories; binding absence does not patch it.",
+      "recommended_remediation": "Prefer stable vendor backports of all relevant fixes. Moving to >=2.15.4 requires a complete compatible dependency/base evaluation; changing a version label is not remediation. A headless OpenCV profile could remove some GUI dependencies, but must have a valid dependency graph and regenerated locks.",
+      "fixed_in_deployed_image": false,
+      "supported_stable_upgrade_available": false,
+      "disposition": "Unresolved; Debian trixie marked vulnerable. No severity override or suppression."
+    },
+    "CVE-2026-86138": {
+      "advisory_title_from_ci_report": "libxml2: libxml2: Arbitrary code execution via heap-based buffer overflow",
+      "source_package": "libxml2",
+      "vendor_url": "https://security-tracker.debian.org/tracker/CVE-2026-86138",
+      "checked_utc": "2026-11-15T20:49:09.776441+00:00",
+      "trixie_rows": [
+        [
+          "",
+          "trixie",
+          "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+          "vulnerable"
+        ],
+        [
+          "",
+          "trixie (security)",
+          "2.12.7+dfsg+really2.9.14-2.1+deb13u1",
+          "vulnerable"
+        ]
+      ],
+      "first_fixed_debian_unstable_versions": [
+        "2.15.4+dfsg-1"
+      ],
+      "upstream_references": [
+        "https://gitlab.gnome.org/GNOME/libxml2/-/commit/a4cba4b5b5a8c42e155ed42d2d2a44955465a2e4"
+      ],
+      "component_assessment": "XML parsing, dictionaries, URI escaping, validation, XPointer, output callbacks and XInclude. The SAX binding advisory additionally requires libxml2 Python bindings; other advisories concern native functions.",
+      "recommended_remediation": "Prefer stable vendor backports of all relevant fixes. Moving to >=2.15.4 requires a complete compatible dependency/base evaluation; changing a version label is not remediation. A headless OpenCV profile could remove some GUI dependencies, but must have a valid dependency graph and regenerated locks.",
+      "fixed_in_deployed_image": false,
+      "supported_stable_upgrade_available": false,
+      "disposition": "Unresolved; Debian trixie marked vulnerable. No severity override or suppression."
+    },
+    "CVE-2026-86139": {
+      "advisory_title_from_ci_report": "libxml2: libxml2: Integer overflow in xmlURIEscapeStr may lead to arbitrary code execution",
+      "source_package": "libxml2",
+      "vendor_url": "https://security-tracker.debian.org/tracker/CVE-2026-86139",
+      "checked_utc": "2026-11-15T20:49:10.202148+00:00",
+      "trixie_rows": [
+        [
+          "",
+          "trixie",
+          "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+          "vulnerable"
+        ],
+        [
+          "",
+          "trixie (security)",
+          "2.12.7+dfsg+really2.9.14-2.1+deb13u1",
+          "vulnerable"
+        ]
+      ],
+      "first_fixed_debian_unstable_versions": [
+        "2.15.4+dfsg-1"
+      ],
+      "upstream_references": [
+        "https://gitlab.gnome.org/GNOME/libxml2/-/commit/8edbbdb09f24d26a2f900141fddc2b9d014f53b0"
+      ],
+      "component_assessment": "XML parsing, dictionaries, URI escaping, validation, XPointer, output callbacks and XInclude. The SAX binding advisory additionally requires libxml2 Python bindings; other advisories concern native functions.",
+      "recommended_remediation": "Prefer stable vendor backports of all relevant fixes. Moving to >=2.15.4 requires a complete compatible dependency/base evaluation; changing a version label is not remediation. A headless OpenCV profile could remove some GUI dependencies, but must have a valid dependency graph and regenerated locks.",
+      "fixed_in_deployed_image": false,
+      "supported_stable_upgrade_available": false,
+      "disposition": "Unresolved; Debian trixie marked vulnerable. No severity override or suppression.",
+      "version_uncertainty": "Upstream/introduction range and Debian stable tracking require source-patch investigation. No backport false-positive claim is established; retain the finding."
+    },
+    "CVE-2026-86140": {
+      "advisory_title_from_ci_report": "libxml2: libxml2: Arbitrary code execution via stack-based buffer overflow in xmlSnprintfElements",
+      "source_package": "libxml2",
+      "vendor_url": "https://security-tracker.debian.org/tracker/CVE-2026-86140",
+      "checked_utc": "2026-11-15T20:49:10.199005+00:00",
+      "trixie_rows": [
+        [
+          "",
+          "trixie",
+          "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+          "vulnerable"
+        ],
+        [
+          "",
+          "trixie (security)",
+          "2.12.7+dfsg+really2.9.14-2.1+deb13u1",
+          "vulnerable"
+        ]
+      ],
+      "first_fixed_debian_unstable_versions": [
+        "2.15.4+dfsg-1"
+      ],
+      "upstream_references": [
+        "https://gitlab.gnome.org/GNOME/libxml2/-/commit/d1686f91dbda141a752200419d35639fd6b38340"
+      ],
+      "component_assessment": "XML parsing, dictionaries, URI escaping, validation, XPointer, output callbacks and XInclude. The SAX binding advisory additionally requires libxml2 Python bindings; other advisories concern native functions.",
+      "recommended_remediation": "Prefer stable vendor backports of all relevant fixes. Moving to >=2.15.4 requires a complete compatible dependency/base evaluation; changing a version label is not remediation. A headless OpenCV profile could remove some GUI dependencies, but must have a valid dependency graph and regenerated locks.",
+      "fixed_in_deployed_image": false,
+      "supported_stable_upgrade_available": false,
+      "disposition": "Unresolved; Debian trixie marked vulnerable. No severity override or suppression."
+    },
+    "CVE-2026-86142": {
+      "advisory_title_from_ci_report": "libxml2: libxml2: Heap-based buffer overflow in xmlXPtrEval due to xpointer length saturation",
+      "source_package": "libxml2",
+      "vendor_url": "https://security-tracker.debian.org/tracker/CVE-2026-86142",
+      "checked_utc": "2026-11-15T20:49:10.270949+00:00",
+      "trixie_rows": [
+        [
+          "",
+          "trixie",
+          "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+          "vulnerable"
+        ],
+        [
+          "",
+          "trixie (security)",
+          "2.12.7+dfsg+really2.9.14-2.1+deb13u1",
+          "vulnerable"
+        ]
+      ],
+      "first_fixed_debian_unstable_versions": [
+        "2.15.4+dfsg-1"
+      ],
+      "upstream_references": [
+        "https://gitlab.gnome.org/GNOME/libxml2/-/work_items/1113",
+        "https://gitlab.gnome.org/GNOME/libxml2/-/commit/6b3a736c0edc74ceec3d82f5252499d7911b3a58"
+      ],
+      "component_assessment": "XML parsing, dictionaries, URI escaping, validation, XPointer, output callbacks and XInclude. The SAX binding advisory additionally requires libxml2 Python bindings; other advisories concern native functions.",
+      "recommended_remediation": "Prefer stable vendor backports of all relevant fixes. Moving to >=2.15.4 requires a complete compatible dependency/base evaluation; changing a version label is not remediation. A headless OpenCV profile could remove some GUI dependencies, but must have a valid dependency graph and regenerated locks.",
+      "fixed_in_deployed_image": false,
+      "supported_stable_upgrade_available": false,
+      "disposition": "Unresolved; Debian trixie marked vulnerable. No severity override or suppression."
+    },
+    "CVE-2026-86143": {
+      "advisory_title_from_ci_report": "libxml2: libxml2: Data integrity issues due to integer overflow in write callbacks",
+      "source_package": "libxml2",
+      "vendor_url": "https://security-tracker.debian.org/tracker/CVE-2026-86143",
+      "checked_utc": "2026-11-15T20:49:10.816715+00:00",
+      "trixie_rows": [
+        [
+          "",
+          "trixie",
+          "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+          "vulnerable"
+        ],
+        [
+          "",
+          "trixie (security)",
+          "2.12.7+dfsg+really2.9.14-2.1+deb13u1",
+          "vulnerable"
+        ]
+      ],
+      "first_fixed_debian_unstable_versions": [
+        "2.15.4+dfsg-1"
+      ],
+      "upstream_references": [
+        "https://gitlab.gnome.org/GNOME/libxml2/-/work_items/1111",
+        "https://gitlab.gnome.org/GNOME/libxml2/-/commit/90f293ba74d28b1d570920382e707586f68ebf35"
+      ],
+      "component_assessment": "XML parsing, dictionaries, URI escaping, validation, XPointer, output callbacks and XInclude. The SAX binding advisory additionally requires libxml2 Python bindings; other advisories concern native functions.",
+      "recommended_remediation": "Prefer stable vendor backports of all relevant fixes. Moving to >=2.15.4 requires a complete compatible dependency/base evaluation; changing a version label is not remediation. A headless OpenCV profile could remove some GUI dependencies, but must have a valid dependency graph and regenerated locks.",
+      "fixed_in_deployed_image": false,
+      "supported_stable_upgrade_available": false,
+      "disposition": "Unresolved; Debian trixie marked vulnerable. No severity override or suppression."
+    },
+    "CVE-2026-86144": {
+      "advisory_title_from_ci_report": "libxml2: libxml2: Information disclosure, SSRF, or denial of service due to improper parseFlags propagation.",
+      "source_package": "libxml2",
+      "vendor_url": "https://security-tracker.debian.org/tracker/CVE-2026-86144",
+      "checked_utc": "2026-11-15T20:49:11.348833+00:00",
+      "trixie_rows": [
+        [
+          "",
+          "trixie",
+          "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+          "vulnerable"
+        ],
+        [
+          "",
+          "trixie (security)",
+          "2.12.7+dfsg+really2.9.14-2.1+deb13u1",
+          "vulnerable"
+        ]
+      ],
+      "first_fixed_debian_unstable_versions": [
+        "2.15.4+dfsg-1"
+      ],
+      "upstream_references": [
+        "https://gitlab.gnome.org/GNOME/libxml2/-/commit/b63cd517afecb76582dd9488c55e54ceaf50de61"
+      ],
+      "component_assessment": "XML parsing, dictionaries, URI escaping, validation, XPointer, output callbacks and XInclude. The SAX binding advisory additionally requires libxml2 Python bindings; other advisories concern native functions.",
+      "recommended_remediation": "Prefer stable vendor backports of all relevant fixes. Moving to >=2.15.4 requires a complete compatible dependency/base evaluation; changing a version label is not remediation. A headless OpenCV profile could remove some GUI dependencies, but must have a valid dependency graph and regenerated locks.",
+      "fixed_in_deployed_image": false,
+      "supported_stable_upgrade_available": false,
+      "disposition": "Unresolved; Debian trixie marked vulnerable. No severity override or suppression."
+    },
+    "CVE-2026-9538": {
+      "advisory_title_from_ci_report": "perl-Archive-Tar: perl-Archive-Tar: Denial of Service via crafted tar header with large entry size",
+      "source_package": "perl",
+      "vendor_url": "https://security-tracker.debian.org/tracker/CVE-2026-9538",
+      "checked_utc": "2026-11-15T20:49:15.339722+00:00",
+      "trixie_rows": [
+        [
+          "",
+          "trixie",
+          "5.40.1-6+deb13u1",
+          "vulnerable"
+        ]
+      ],
+      "first_fixed_debian_unstable_versions": [
+        "5.42.3-1"
+      ],
+      "upstream_references": [
+        "https://lists.security.metacpan.org/cve-announce/msg/40396448/",
+        "https://github.com/jib/archive-tar-new/commit/f9af01426038e29d9578825a0cd3626946ab08c7"
+      ],
+      "component_assessment": "Archive::Tar tar-entry allocation. Production Perl cannot load Archive::Tar; only perl-base is installed. This source-package match does not establish the vulnerable module is present. The package version is not patched.",
+      "recommended_remediation": "Wait for the stable vendor fix: Debian explicitly postpones while upstream regressions are resolved. Archive::Tar 3.10 is the upstream fix; module absence is a reachability observation, not an installed-version upgrade.",
+      "fixed_in_deployed_image": false,
+      "supported_stable_upgrade_available": false,
+      "disposition": "Unresolved; Debian trixie marked vulnerable. No severity override or suppression."
+    }
+  },
+  "python_license_inventory": [
+    {
+      "name": "packaging",
+      "version": "26.3",
+      "metadata_license_first_line": "Apache-2.0 OR BSD-2-Clause"
+    },
+    {
+      "name": "fsspec",
+      "version": "2026.9.0",
+      "metadata_license_first_line": "BSD-3-Clause"
+    },
+    {
+      "name": "charset-normalizer",
+      "version": "3.5.2",
+      "metadata_license_first_line": "MIT"
+    },
+    {
+      "name": "pyparsing",
+      "version": "3.3.3",
+      "metadata_license_first_line": "MIT"
+    },
+    {
+      "name": "mpmath",
+      "version": "1.3.0",
+      "metadata_license_first_line": "BSD"
+    },
+    {
+      "name": "psutil",
+      "version": "7.0.0",
+      "metadata_license_first_line": "BSD-3-Clause"
+    },
+    {
+      "name": "networkx",
+      "version": "3.7",
+      "metadata_license_first_line": "BSD-3-Clause"
+    },
+    {
+      "name": "torchvision",
+      "version": "0.28.0+cpu",
+      "metadata_license_first_line": "BSD"
+    },
+    {
+      "name": "opencv-python",
+      "version": "4.11.0.86",
+      "metadata_license_first_line": "Apache 2.0"
+    },
+    {
+      "name": "ultralytics",
+      "version": "8.3.163",
+      "metadata_license_first_line": "AGPL-3.0"
+    },
+    {
+      "name": "pandas",
+      "version": "3.1.1",
+      "metadata_license_first_line": "BSD-3-Clause"
+    },
+    {
+      "name": "python-dateutil",
+      "version": "4.0.0",
+      "metadata_license_first_line": "BSD-3-Clause"
+    },
+    {
+      "name": "tzdata",
+      "version": "2026.6",
+      "metadata_license_first_line": "Apache-2.0"
+    },
+    {
+      "name": "idna",
+      "version": "3.20",
+      "metadata_license_first_line": "BSD-3-Clause"
+    },
+    {
+      "name": "certifi",
+      "version": "2026.10.23",
+      "metadata_license_first_line": "MPL-2.0"
+    },
+    {
+      "name": "typing_extensions",
+      "version": "4.16.0",
+      "metadata_license_first_line": "PSF-2.0"
+    },
+    {
+      "name": "py-cpuinfo",
+      "version": "9.0.0",
+      "metadata_license_first_line": "MIT"
+    },
+    {
+      "name": "scipy",
+      "version": "1.15.2",
+      "metadata_license_first_line": "Copyright (c) 2001-2002 Enthought, Inc. 2003-2024, SciPy Developers."
+    },
+    {
+      "name": "ultralytics-thop",
+      "version": "2.2.5",
+      "metadata_license_first_line": "AGPL-3.0"
+    },
+    {
+      "name": "requests",
+      "version": "2.34.2",
+      "metadata_license_first_line": "Apache-2.0"
+    },
+    {
+      "name": "kiwisolver",
+      "version": "1.5.1",
+      "metadata_license_first_line": "========================="
+    },
+    {
+      "name": "setuptools",
+      "version": "84.2.1",
+      "metadata_license_first_line": "MIT"
+    },
+    {
+      "name": "PyYAML",
+      "version": "6.0.2",
+      "metadata_license_first_line": "MIT"
+    },
+    {
+      "name": "Jinja2",
+      "version": "3.1.6",
+      "metadata_license_first_line": "UNKNOWN"
+    },
+    {
+      "name": "fonttools",
+      "version": "4.68.0",
+      "metadata_license_first_line": "MIT"
+    },
+    {
+      "name": "urllib3",
+      "version": "2.8.0",
+      "metadata_license_first_line": "MIT"
+    },
+    {
+      "name": "MarkupSafe",
+      "version": "3.0.4",
+      "metadata_license_first_line": "BSD-3-Clause"
+    },
+    {
+      "name": "matplotlib",
+      "version": "3.11.2",
+      "metadata_license_first_line": "License agreement for matplotlib versions 1.3.0 and later"
+    },
+    {
+      "name": "tqdm",
+      "version": "4.70.1",
+      "metadata_license_first_line": "MPL-2.0 AND MIT"
+    },
+    {
+      "name": "numpy",
+      "version": "2.2.5",
+      "metadata_license_first_line": "Copyright (c) 2005-2024, NumPy Developers."
+    },
+    {
+      "name": "pillow",
+      "version": "13.0.0",
+      "metadata_license_first_line": "MIT-CMU"
+    },
+    {
+      "name": "contourpy",
+      "version": "1.4.0",
+      "metadata_license_first_line": "BSD-3-Clause"
+    },
+    {
+      "name": "sympy",
+      "version": "1.14.0",
+      "metadata_license_first_line": "BSD"
+    },
+    {
+      "name": "filelock",
+      "version": "4.2.10",
+      "metadata_license_first_line": "MIT"
+    },
+    {
+      "name": "cycler",
+      "version": "0.12.1",
+      "metadata_license_first_line": "Copyright (c) 2015, matplotlib project"
+    },
+    {
+      "name": "torch",
+      "version": "2.13.0+cpu",
+      "metadata_license_first_line": "Apache-2.0 AND Apache-2.0 WITH LLVM-exception AND BSD-2-Clause AND BSD-3-Clause AND BSL-1.0 AND MIT"
+    }
+  ],
+  "decisions": {
+    "source_license": "owner decision pending; no LICENSE created",
+    "reference_removal": "owner decision pending; unchanged",
+    "publication": "not authorized; no push",
+    "production": "blocked"
+  },
+  "container_check": {
+    "image": "coffee-ops-postpublication:20261115",
+    "synthetic_only": true,
+    "passed": true,
+    "image_id": "sha256:b4ac8c8245dab6565e74692f3f57d942934bb1d22fcfb75d13eb58f3b378df4d",
+    "runtime": {
+      "non_root": true,
+      "root_read_only": true,
+      "private_health_auth": true,
+      "events": 0
+    },
+    "egress": {
+      "interfaces": [
+        "lo"
+      ],
+      "loopback": "passed",
+      "blocked": [
+        {
+          "destination": "public",
+          "protocol": "tcp",
+          "errno": 101
+        },
+        {
+          "destination": "public",
+          "protocol": "udp",
+          "errno": 101
+        },
+        {
+          "destination": "metadata",
+          "protocol": "tcp",
+          "errno": 101
+        },
+        {
+          "destination": "metadata",
+          "protocol": "udp",
+          "errno": 101
+        },
+        {
+          "destination": "private",
+          "protocol": "tcp",
+          "errno": 101
+        },
+        {
+          "destination": "private",
+          "protocol": "udp",
+          "errno": 101
+        },
+        {
+          "destination": "public_ipv6",
+          "protocol": "tcp",
+          "errno": 101
+        },
+        {
+          "destination": "public_ipv6",
+          "protocol": "udp",
+          "errno": 101
+        }
+      ]
+    },
+    "native_smoke": {
+      "health": {
+        "status": "ok",
+        "torch": "2.13.0+cpu",
+        "torchvision": "0.28.0+cpu",
+        "cpu_nms": "passed",
+        "cuda_available": false,
+        "scope": "Native backend compatibility only; no model accuracy tested"
+      },
+      "untrained_architecture_inference": true,
+      "model_accuracy_validated": false
+    },
+    "stop_seconds": 9.856588900031056,
+    "runtime_limits": {
+      "NetworkMode": "none",
+      "ReadonlyRootfs": true,
+      "NanoCpus": 1000000000,
+      "Memory": 1073741824,
+      "CapDrop": [
+        "ALL"
+      ],
+      "SecurityOpt": [
+        "no-new-privileges"
+      ],
+      "Tmpfs": {
+        "/tmp": "rw,nosuid,nodev,size=128m"
+      }
+    },
+    "exit_code": 0,
+    "published_ports": {},
+    "stdout": "{\n  \"status\": \"stopped\"\n}"
+  },
+  "package_probe": {
+    "sqlite_version": "3.46.1",
+    "sqlite_options": [
+      "ALLOW_ROWID_IN_VIEW",
+      "ATOMIC_INTRINSICS=1",
+      "COMPILER=gcc-14.2.0",
+      "DEFAULT_AUTOVACUUM",
+      "DEFAULT_CACHE_SIZE=-2000",
+      "DEFAULT_FILE_FORMAT=4",
+      "DEFAULT_JOURNAL_SIZE_LIMIT=-1",
+      "DEFAULT_MMAP_SIZE=0",
+      "DEFAULT_PAGE_SIZE=4096",
+      "DEFAULT_PCACHE_INITSZ=20",
+      "DEFAULT_RECURSIVE_TRIGGERS",
+      "DEFAULT_SECTOR_SIZE=4096",
+      "DEFAULT_SYNCHRONOUS=2",
+      "DEFAULT_WAL_AUTOCHECKPOINT=1000",
+      "DEFAULT_WAL_SYNCHRONOUS=2",
+      "DEFAULT_WORKER_THREADS=0",
+      "DIRECT_OVERFLOW_READ",
+      "ENABLE_COLUMN_METADATA",
+      "ENABLE_DBPAGE_VTAB",
+      "ENABLE_DBSTAT_VTAB",
+      "ENABLE_FTS3",
+      "ENABLE_FTS3_PARENTHESIS",
+      "ENABLE_FTS3_TOKENIZER",
+      "ENABLE_FTS4",
+      "ENABLE_FTS5",
+      "ENABLE_LOAD_EXTENSION",
+      "ENABLE_MATH_FUNCTIONS",
+      "ENABLE_PREUPDATE_HOOK",
+      "ENABLE_RTREE",
+      "ENABLE_SESSION",
+      "ENABLE_STMTVTAB",
+      "ENABLE_UNLOCK_NOTIFY",
+      "ENABLE_UPDATE_DELETE_LIMIT",
+      "HAVE_ISNAN",
+      "LIKE_DOESNT_MATCH_BLOBS",
+      "MALLOC_SOFT_LIMIT=1024",
+      "MAX_ATTACHED=10",
+      "MAX_COLUMN=2000",
+      "MAX_COMPOUND_SELECT=500",
+      "MAX_DEFAULT_PAGE_SIZE=32768",
+      "MAX_EXPR_DEPTH=1000",
+      "MAX_FUNCTION_ARG=127",
+      "MAX_LENGTH=1000000000",
+      "MAX_LIKE_PATTERN_LENGTH=50000",
+      "MAX_MMAP_SIZE=0x7fff0000",
+      "MAX_PAGE_COUNT=0xfffffffe",
+      "MAX_PAGE_SIZE=65536",
+      "MAX_SCHEMA_RETRY=25",
+      "MAX_SQL_LENGTH=1000000000",
+      "MAX_TRIGGER_DEPTH=1000",
+      "MAX_VARIABLE_NUMBER=250000",
+      "MAX_VDBE_OP=250000000",
+      "MAX_WORKER_THREADS=8",
+      "MUTEX_PTHREADS",
+      "SECURE_DELETE",
+      "SOUNDEX",
+      "SYSTEM_MALLOC",
+      "TEMP_STORE=1",
+      "THREADSAFE=1",
+      "USE_URI"
+    ],
+    "python_expat": "expat_2.9.0",
+    "libxml2_python_binding": false,
+    "homed_present": false,
+    "infocmp_present": true,
+    "archive_tar": false
+  },
+  "apt_candidates": [
+    {
+      "package": "bsdutils",
+      "installed": "1:2.41.5-0+deb13u1",
+      "candidate": "1:2.41.5-0+deb13u1",
+      "upgrade_available": false
+    },
+    {
+      "package": "libacl1",
+      "installed": "2.3.2-2+b1",
+      "candidate": "2.3.2-2+b1",
+      "upgrade_available": false
+    },
+    {
+      "package": "libblkid1",
+      "installed": "2.41.5-0+deb13u1",
+      "candidate": "2.41.5-0+deb13u1",
+      "upgrade_available": false
+    },
+    {
+      "package": "libexpat1",
+      "installed": "2.9.0-1~deb13u1",
+      "candidate": "2.9.0-1~deb13u1",
+      "upgrade_available": false
+    },
+    {
+      "package": "liblastlog2-2",
+      "installed": "2.41.5-0+deb13u1",
+      "candidate": "2.41.5-0+deb13u1",
+      "upgrade_available": false
+    },
+    {
+      "package": "libmount1",
+      "installed": "2.41.5-0+deb13u1",
+      "candidate": "2.41.5-0+deb13u1",
+      "upgrade_available": false
+    },
+    {
+      "package": "libncursesw6",
+      "installed": "6.5+20250216-2",
+      "candidate": "6.5+20250216-2",
+      "upgrade_available": false
+    },
+    {
+      "package": "libsmartcols1",
+      "installed": "2.41.5-0+deb13u1",
+      "candidate": "2.41.5-0+deb13u1",
+      "upgrade_available": false
+    },
+    {
+      "package": "libsqlite3-0",
+      "installed": "3.46.1-7+deb13u2",
+      "candidate": "3.46.1-7+deb13u2",
+      "upgrade_available": false
+    },
+    {
+      "package": "libsystemd0",
+      "installed": "257.13-1~deb13u1",
+      "candidate": "257.13-1~deb13u1",
+      "upgrade_available": false
+    },
+    {
+      "package": "libtinfo6",
+      "installed": "6.5+20250216-2",
+      "candidate": "6.5+20250216-2",
+      "upgrade_available": false
+    },
+    {
+      "package": "libudev1",
+      "installed": "257.13-1~deb13u1",
+      "candidate": "257.13-1~deb13u1",
+      "upgrade_available": false
+    },
+    {
+      "package": "libuuid1",
+      "installed": "2.41.5-0+deb13u1",
+      "candidate": "2.41.5-0+deb13u1",
+      "upgrade_available": false
+    },
+    {
+      "package": "libx11-6",
+      "installed": "2:1.8.12-1",
+      "candidate": "2:1.8.12-1",
+      "upgrade_available": false
+    },
+    {
+      "package": "libx11-data",
+      "installed": "2:1.8.12-1",
+      "candidate": "2:1.8.12-1",
+      "upgrade_available": false
+    },
+    {
+      "package": "libx11-xcb1",
+      "installed": "2:1.8.12-1",
+      "candidate": "2:1.8.12-1",
+      "upgrade_available": false
+    },
+    {
+      "package": "libxml2",
+      "installed": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+      "candidate": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+      "upgrade_available": false
+    },
+    {
+      "package": "login",
+      "installed": "1:4.16.0-2+really2.41.5-0+deb13u1",
+      "candidate": "1:4.16.0-2+really2.41.5-0+deb13u1",
+      "upgrade_available": false
+    },
+    {
+      "package": "mount",
+      "installed": "2.41.5-0+deb13u1",
+      "candidate": "2.41.5-0+deb13u1",
+      "upgrade_available": false
+    },
+    {
+      "package": "ncurses-base",
+      "installed": "6.5+20250216-2",
+      "candidate": "6.5+20250216-2",
+      "upgrade_available": false
+    },
+    {
+      "package": "ncurses-bin",
+      "installed": "6.5+20250216-2",
+      "candidate": "6.5+20250216-2",
+      "upgrade_available": false
+    },
+    {
+      "package": "perl-base",
+      "installed": "5.40.1-6+deb13u1",
+      "candidate": "5.40.1-6+deb13u1",
+      "upgrade_available": false
+    },
+    {
+      "package": "util-linux",
+      "installed": "2.41.5-0+deb13u1",
+      "candidate": "2.41.5-0+deb13u1",
+      "upgrade_available": false
+    }
+  ],
+  "gitleaks_triage": [
+    {
+      "rule": "generic-api-key",
+      "file": "docs/benchmarks/foundation_results.json",
+      "line": 1524,
+      "commit": "0a39057885047038c2ba5829426d397ec73a9fb5",
+      "source_path": "coffee_ops/api.py",
+      "64_hex_digest": true,
+      "matches_same_commit_source_sha256": true,
+      "disposition": "source integrity hash, not credential"
+    },
+    {
+      "rule": "generic-api-key",
+      "file": "docs/benchmarks/foundation_results.json",
+      "line": 1555,
+      "commit": "0a39057885047038c2ba5829426d397ec73a9fb5",
+      "source_path": "tests/test_api.py",
+      "64_hex_digest": true,
+      "matches_same_commit_source_sha256": true,
+      "disposition": "source integrity hash, not credential"
+    },
+    {
+      "rule": "generic-api-key",
+      "file": "docs/benchmarks/video_prototype_results.json",
+      "line": 227,
+      "commit": "0a39057885047038c2ba5829426d397ec73a9fb5",
+      "source_path": "coffee_ops/api.py",
+      "64_hex_digest": true,
+      "matches_same_commit_source_sha256": true,
+      "disposition": "source integrity hash, not credential"
+    },
+    {
+      "rule": "generic-api-key",
+      "file": "docs/benchmarks/video_prototype_results.json",
+      "line": 266,
+      "commit": "0a39057885047038c2ba5829426d397ec73a9fb5",
+      "source_path": "tests/test_api.py",
+      "64_hex_digest": true,
+      "matches_same_commit_source_sha256": true,
+      "disposition": "source integrity hash, not credential"
+    }
+  ],
+  "docs_final": {
+    "markdown_files": 46,
+    "local_targets": 174,
+    "missing": [],
+    "scope": "Local target existence only; fragments, external URLs and fenced examples are not validated"
+  },
+  "release_gates": {
+    "high_critical_count": 62,
+    "security_exit_code": 1,
+    "license_exit_code": 1,
+    "threshold": "all HIGH/CRITICAL; no ignore-unfixed or severity overrides",
+    "license_file_created": false
+  },
+  "identifying_content": [
+    {
+      "file": "FINAL_ENGINEERING_AUDIT.md",
+      "kind": "windows_user_path",
+      "count": 1,
+      "line_numbers": [
+        16
+      ]
+    },
+    {
+      "file": "docs/benchmarks/benchmark-environment.txt",
+      "kind": "windows_user_path",
+      "count": 1,
+      "line_numbers": [
+        43
+      ]
+    },
+    {
+      "file": "docs/history/release-20261111/RELEASE_EVIDENCE.md",
+      "kind": "windows_user_path",
+      "count": 17,
+      "line_numbers": [
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        164,
+        165,
+        166,
+        168
+      ]
+    },
+    {
+      "file": "scripts/verify_egress.py",
+      "kind": "private_ipv4",
+      "count": 1,
+      "line_numbers": [
+        32
+      ]
+    },
+    {
+      "file": "tests/test_traffic.py",
+      "kind": "email",
+      "count": 1,
+      "line_numbers": [
+        134
+      ]
+    }
+  ],
+  "clean_source_verification": {
+    "head": "097c1bd76d6c37efeb43fdab41dde9d6076596e7",
+    "status": "",
+    "files_compared": 194,
+    "all_archive_clone_bytes_equal": true,
+    "fresh_environment_setup_log": "clean-setup.log",
+    "environment_setup_source": "clean-checkout (git archive of published HEAD)",
+    "hardlinks": false
+  },
+  "candidate_secret_triage": {
+    "candidate_files": 196,
+    "scanner_exit_code": 1,
+    "findings": [
+      {
+        "file": "docs/benchmarks/foundation_results.json",
+        "line": 1524,
+        "disposition": "same verified source-integrity hash as history scan",
+        "historical_commit": "0a39057885047038c2ba5829426d397ec73a9fb5"
+      },
+      {
+        "file": "docs/benchmarks/foundation_results.json",
+        "line": 1555,
+        "disposition": "same verified source-integrity hash as history scan",
+        "historical_commit": "0a39057885047038c2ba5829426d397ec73a9fb5"
+      },
+      {
+        "file": "docs/benchmarks/video_prototype_results.json",
+        "line": 227,
+        "disposition": "same verified source-integrity hash as history scan",
+        "historical_commit": "0a39057885047038c2ba5829426d397ec73a9fb5"
+      },
+      {
+        "file": "docs/benchmarks/video_prototype_results.json",
+        "line": 266,
+        "disposition": "same verified source-integrity hash as history scan",
+        "historical_commit": "0a39057885047038c2ba5829426d397ec73a9fb5"
+      },
+      {
+        "file": "docs/audits/post-publication-20261115.json",
+        "json_pointer": "/evidence_hashes/candidate-secret-triage.json",
+        "disposition": "SHA-256 of local triage evidence, independently recomputed; not a credential"
+      }
+    ],
+    "new_unresolved_secret_findings": 0,
+    "scope": "Gitleaks defaults, redacted, archive depth 2; bounded detection",
+    "scan_history": {
+      "initial_candidate_matches": 4,
+      "final_candidate_matches": 5,
+      "additional_match": "hash of candidate-secret-triage.json in new audit evidence"
+    }
+  },
+  "local_quality": {
+    "windows-cpu": [
+      {
+        "check": "pip-check",
+        "exit_code": 0,
+        "seconds": 2.152681900013704
+      },
+      {
+        "check": "doctor",
+        "exit_code": 0,
+        "seconds": 13.03675019997172
+      },
+      {
+        "check": "config",
+        "exit_code": 0,
+        "seconds": 0.18879919999744743
+      },
+      {
+        "check": "pytest-coverage",
+        "exit_code": 0,
+        "seconds": 129.7880495999707
+      },
+      {
+        "check": "coverage-report",
+        "exit_code": 0,
+        "seconds": 1.4319152000243776
+      },
+      {
+        "check": "coverage-json",
+        "exit_code": 0,
+        "seconds": 0.9078690000460483
+      },
+      {
+        "check": "ruff",
+        "exit_code": 0,
+        "seconds": 1.142097600037232
+      },
+      {
+        "check": "mypy",
+        "exit_code": 0,
+        "seconds": 31.84333639999386
+      },
+      {
+        "check": "acceptance",
+        "exit_code": 0,
+        "seconds": 189.62388739996823
+      }
+    ],
+    "windows-video": [
+      {
+        "check": "pip-check",
+        "exit_code": 0,
+        "seconds": 5.518421499989927
+      },
+      {
+        "check": "doctor",
+        "exit_code": 0,
+        "seconds": 30.511585500033107
+      },
+      {
+        "check": "config",
+        "exit_code": 0,
+        "seconds": 0.2977030999609269
+      },
+      {
+        "check": "pytest-coverage",
+        "exit_code": 0,
+        "seconds": 201.06641569995554
+      },
+      {
+        "check": "coverage-report",
+        "exit_code": 0,
+        "seconds": 0.5891190000111237
+      },
+      {
+        "check": "coverage-json",
+        "exit_code": 0,
+        "seconds": 0.795338099997025
+      },
+      {
+        "check": "ruff",
+        "exit_code": 0,
+        "seconds": 0.43561349995434284
+      },
+      {
+        "check": "mypy",
+        "exit_code": 0,
+        "seconds": 50.361702500027604
+      },
+      {
+        "check": "acceptance",
+        "exit_code": 0,
+        "seconds": 315.9619475000072
+      }
+    ],
+    "linux-cpu": [
+      {
+        "check": "pip-check",
+        "exit_code": 0,
+        "seconds": 2.269497728004353
+      },
+      {
+        "check": "doctor",
+        "exit_code": 0,
+        "seconds": 10.959950878997915
+      },
+      {
+        "check": "config",
+        "exit_code": 0,
+        "seconds": 0.2764798459975282
+      },
+      {
+        "check": "pytest-coverage",
+        "exit_code": 0,
+        "seconds": 101.96510749000299
+      },
+      {
+        "check": "coverage-report",
+        "exit_code": 0,
+        "seconds": 9.759371837004437
+      },
+      {
+        "check": "coverage-json",
+        "exit_code": 0,
+        "seconds": 1.2603171469963854
+      },
+      {
+        "check": "ruff",
+        "exit_code": 0,
+        "seconds": 3.4693656390008982
+      },
+      {
+        "check": "mypy",
+        "exit_code": 0,
+        "seconds": 152.58575887899497
+      },
+      {
+        "check": "acceptance",
+        "exit_code": 0,
+        "seconds": 230.4667127080029
+      }
+    ],
+    "linux-video": [
+      {
+        "check": "pip-check",
+        "exit_code": 0,
+        "seconds": 10.878878426010488
+      },
+      {
+        "check": "doctor",
+        "exit_code": 0,
+        "seconds": 35.71110067999689
+      },
+      {
+        "check": "config",
+        "exit_code": 0,
+        "seconds": 0.6722516660083784
+      },
+      {
+        "check": "pytest-coverage",
+        "exit_code": 0,
+        "seconds": 98.24951193200832
+      },
+      {
+        "check": "coverage-report",
+        "exit_code": 0,
+        "seconds": 3.5949480529961875
+      },
+      {
+        "check": "coverage-json",
+        "exit_code": 0,
+        "seconds": 4.485526543998276
+      },
+      {
+        "check": "ruff",
+        "exit_code": 0,
+        "seconds": 0.7407608560024528
+      },
+      {
+        "check": "mypy",
+        "exit_code": 0,
+        "seconds": 688.5651522789994
+      },
+      {
+        "check": "acceptance",
+        "exit_code": 0,
+        "seconds": 162.47474712500116
+      }
+    ]
+  },
+  "rebuilt_scan": {
+    "image_id": "sha256:7b107d37aa137ff51ab116d4b7c26b01cfa8881411045e891b0b3a057ac2dd7f",
+    "created": "2026-11-15T22:07:53.4504342+01:00",
+    "scanner": {
+      "Version": "0.76.2"
+    },
+    "os": {
+      "Family": "debian",
+      "Name": "13.7"
+    },
+    "severities": {
+      "HIGH": 61,
+      "CRITICAL": 1
+    },
+    "findings": [
+      {
+        "package": "bsdutils",
+        "version": "1:2.41.5-0+deb13u1",
+        "cve": "CVE-2026-76642",
+        "severity": "HIGH"
+      },
+      {
+        "package": "bsdutils",
+        "version": "1:2.41.5-0+deb13u1",
+        "cve": "CVE-2026-78408",
+        "severity": "HIGH"
+      },
+      {
+        "package": "bsdutils",
+        "version": "1:2.41.5-0+deb13u1",
+        "cve": "CVE-2026-78409",
+        "severity": "HIGH"
+      },
+      {
+        "package": "bsdutils",
+        "version": "1:2.41.5-0+deb13u1",
+        "cve": "CVE-2026-78410",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libacl1",
+        "version": "2.3.2-2+b1",
+        "cve": "CVE-2026-54369",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libblkid1",
+        "version": "2.41.5-0+deb13u1",
+        "cve": "CVE-2026-76642",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libblkid1",
+        "version": "2.41.5-0+deb13u1",
+        "cve": "CVE-2026-78408",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libblkid1",
+        "version": "2.41.5-0+deb13u1",
+        "cve": "CVE-2026-78409",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libblkid1",
+        "version": "2.41.5-0+deb13u1",
+        "cve": "CVE-2026-78410",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libexpat1",
+        "version": "2.9.0-1~deb13u1",
+        "cve": "CVE-2026-113351",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libexpat1",
+        "version": "2.9.0-1~deb13u1",
+        "cve": "CVE-2026-115506",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libexpat1",
+        "version": "2.9.0-1~deb13u1",
+        "cve": "CVE-2026-117610",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libexpat1",
+        "version": "2.9.0-1~deb13u1",
+        "cve": "CVE-2026-118370",
+        "severity": "HIGH"
+      },
+      {
+        "package": "liblastlog2-2",
+        "version": "2.41.5-0+deb13u1",
+        "cve": "CVE-2026-76642",
+        "severity": "HIGH"
+      },
+      {
+        "package": "liblastlog2-2",
+        "version": "2.41.5-0+deb13u1",
+        "cve": "CVE-2026-78408",
+        "severity": "HIGH"
+      },
+      {
+        "package": "liblastlog2-2",
+        "version": "2.41.5-0+deb13u1",
+        "cve": "CVE-2026-78409",
+        "severity": "HIGH"
+      },
+      {
+        "package": "liblastlog2-2",
+        "version": "2.41.5-0+deb13u1",
+        "cve": "CVE-2026-78410",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libmount1",
+        "version": "2.41.5-0+deb13u1",
+        "cve": "CVE-2026-76642",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libmount1",
+        "version": "2.41.5-0+deb13u1",
+        "cve": "CVE-2026-78408",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libmount1",
+        "version": "2.41.5-0+deb13u1",
+        "cve": "CVE-2026-78409",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libmount1",
+        "version": "2.41.5-0+deb13u1",
+        "cve": "CVE-2026-78410",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libncursesw6",
+        "version": "6.5+20250216-2",
+        "cve": "CVE-2025-69720",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libsmartcols1",
+        "version": "2.41.5-0+deb13u1",
+        "cve": "CVE-2026-76642",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libsmartcols1",
+        "version": "2.41.5-0+deb13u1",
+        "cve": "CVE-2026-78408",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libsmartcols1",
+        "version": "2.41.5-0+deb13u1",
+        "cve": "CVE-2026-78409",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libsmartcols1",
+        "version": "2.41.5-0+deb13u1",
+        "cve": "CVE-2026-78410",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libsqlite3-0",
+        "version": "3.46.1-7+deb13u2",
+        "cve": "CVE-2026-119373",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libsqlite3-0",
+        "version": "3.46.1-7+deb13u2",
+        "cve": "CVE-2026-119374",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libsqlite3-0",
+        "version": "3.46.1-7+deb13u2",
+        "cve": "CVE-2026-119379",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libsystemd0",
+        "version": "257.13-1~deb13u1",
+        "cve": "CVE-2026-16742",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libtinfo6",
+        "version": "6.5+20250216-2",
+        "cve": "CVE-2025-69720",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libudev1",
+        "version": "257.13-1~deb13u1",
+        "cve": "CVE-2026-16742",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libuuid1",
+        "version": "2.41.5-0+deb13u1",
+        "cve": "CVE-2026-76642",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libuuid1",
+        "version": "2.41.5-0+deb13u1",
+        "cve": "CVE-2026-78408",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libuuid1",
+        "version": "2.41.5-0+deb13u1",
+        "cve": "CVE-2026-78409",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libuuid1",
+        "version": "2.41.5-0+deb13u1",
+        "cve": "CVE-2026-78410",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libx11-6",
+        "version": "2:1.8.12-1",
+        "cve": "CVE-2026-88806",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libx11-data",
+        "version": "2:1.8.12-1",
+        "cve": "CVE-2026-88806",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libx11-xcb1",
+        "version": "2:1.8.12-1",
+        "cve": "CVE-2026-88806",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libxml2",
+        "version": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+        "cve": "CVE-2026-6653",
+        "severity": "CRITICAL"
+      },
+      {
+        "package": "libxml2",
+        "version": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+        "cve": "CVE-2026-74860",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libxml2",
+        "version": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+        "cve": "CVE-2026-86138",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libxml2",
+        "version": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+        "cve": "CVE-2026-86139",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libxml2",
+        "version": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+        "cve": "CVE-2026-86140",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libxml2",
+        "version": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+        "cve": "CVE-2026-86142",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libxml2",
+        "version": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+        "cve": "CVE-2026-86143",
+        "severity": "HIGH"
+      },
+      {
+        "package": "libxml2",
+        "version": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+        "cve": "CVE-2026-86144",
+        "severity": "HIGH"
+      },
+      {
+        "package": "login",
+        "version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+        "cve": "CVE-2026-76642",
+        "severity": "HIGH"
+      },
+      {
+        "package": "login",
+        "version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+        "cve": "CVE-2026-78408",
+        "severity": "HIGH"
+      },
+      {
+        "package": "login",
+        "version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+        "cve": "CVE-2026-78409",
+        "severity": "HIGH"
+      },
+      {
+        "package": "login",
+        "version": "1:4.16.0-2+really2.41.5-0+deb13u1",
+        "cve": "CVE-2026-78410",
+        "severity": "HIGH"
+      },
+      {
+        "package": "mount",
+        "version": "2.41.5-0+deb13u1",
+        "cve": "CVE-2026-76642",
+        "severity": "HIGH"
+      },
+      {
+        "package": "mount",
+        "version": "2.41.5-0+deb13u1",
+        "cve": "CVE-2026-78408",
+        "severity": "HIGH"
+      },
+      {
+        "package": "mount",
+        "version": "2.41.5-0+deb13u1",
+        "cve": "CVE-2026-78409",
+        "severity": "HIGH"
+      },
+      {
+        "package": "mount",
+        "version": "2.41.5-0+deb13u1",
+        "cve": "CVE-2026-78410",
+        "severity": "HIGH"
+      },
+      {
+        "package": "ncurses-base",
+        "version": "6.5+20250216-2",
+        "cve": "CVE-2025-69720",
+        "severity": "HIGH"
+      },
+      {
+        "package": "ncurses-bin",
+        "version": "6.5+20250216-2",
+        "cve": "CVE-2025-69720",
+        "severity": "HIGH"
+      },
+      {
+        "package": "perl-base",
+        "version": "5.40.1-6+deb13u1",
+        "cve": "CVE-2026-9538",
+        "severity": "HIGH"
+      },
+      {
+        "package": "util-linux",
+        "version": "2.41.5-0+deb13u1",
+        "cve": "CVE-2026-76642",
+        "severity": "HIGH"
+      },
+      {
+        "package": "util-linux",
+        "version": "2.41.5-0+deb13u1",
+        "cve": "CVE-2026-78408",
+        "severity": "HIGH"
+      },
+      {
+        "package": "util-linux",
+        "version": "2.41.5-0+deb13u1",
+        "cve": "CVE-2026-78409",
+        "severity": "HIGH"
+      },
+      {
+        "package": "util-linux",
+        "version": "2.41.5-0+deb13u1",
+        "cve": "CVE-2026-78410",
+        "severity": "HIGH"
+      }
+    ],
+    "database": {
+      "Version": 2,
+      "NextUpdate": "2026-11-16T18:56:37.733847354Z",
+      "UpdatedAt": "2026-11-15T18:56:37.733847835Z",
+      "DownloadedAt": "2026-11-15T20:55:19.5044199Z"
+    },
+    "gate_passed": false,
+    "export_sha256": "0a93136e6d00a0bbc05e9441d62b0640098c86a7c80a4b32179ec0a19a2e0e60",
+    "sbom_components": 177,
+    "identical_high_critical_finding_set": true
+  },
+  "external_links": {
+    "checked": 272,
+    "http_200": 268,
+    "unverified": [
+      {
+        "url": "https://figshare.com/articles/dataset/Images_and_Label_7z/29470079",
+        "files": [
+          "docs/research/resource_inventory.md"
+        ],
+        "status": 202,
+        "final_url": "https://figshare.com/articles/dataset/Images_and_Label_7z/29470079"
+      },
+      {
+        "url": "https://universe.roboflow.com/wasila/coffee-cup-detection",
+        "files": [
+          "docs/research/resource_inventory.md"
+        ],
+        "status": 403,
+        "final_url": "https://universe.roboflow.com/wasila/coffee-cup-detection"
+      },
+      {
+        "url": "https://universe.roboflow.com/yai-teh0x/cup-detector-in-cafe",
+        "files": [
+          "docs/research/resource_inventory.md"
+        ],
+        "status": 403,
+        "final_url": "https://universe.roboflow.com/yai-teh0x/cup-detector-in-cafe"
+      },
+      {
+        "url": "https://doi.org/10.7910/DVN/CY24UB",
+        "files": [
+          "docs/research/resource_inventory.md"
+        ],
+        "status": 202,
+        "final_url": "https://dataverse.harvard.edu/citation?persistentId=doi:10.7910/DVN/CY24UB"
+      }
+    ]
+  },
+  "evidence_hashes": {
+    "apt-candidates.json": "80c5a62a84e48e349440610484a6eec540446a81bba7dcdb6f5fd100b58de611",
+    "artifacts.json": "749b2f513a144cc623c59ad175daf6c9f550bb6b2072e8d359fb6d56c20c2c99",
+    "candidate-secret-triage.json": "713a27a61e23d0cc8324cfb38cf1b8b802e0e5dc2902f05108c7f1ff23a7ea5e",
+    "clean-source-verification.json": "0b73cf4edd8e50a109c9d7d10e0a6422f8b272ec0385b39a0fe930885978e213",
+    "container-check.json": "0e1dd5bb2541dc4bfe7140cfaba5b0c8f5712bcfd77c90f0bdcfbf4ef2a55964",
+    "content-inspection.json": "53d1e0b51ab38c127764bc396fdf209a38c8470ba1bd8c14028b9f2002f579c0",
+    "docs-after-edit.json": "d9bfd5649cbfed4f95692ea7ed51b868ee5bbdc93576b2a4da20cc83d553df63",
+    "docs-before.json": "b2a99ad22eff9d9b6a46aa93ea383aa76bef26052aee0f805b86b9660269a141",
+    "docs-final-confirmation.json": "d9bfd5649cbfed4f95692ea7ed51b868ee5bbdc93576b2a4da20cc83d553df63",
+    "docs-final.json": "d9bfd5649cbfed4f95692ea7ed51b868ee5bbdc93576b2a4da20cc83d553df63",
+    "docx-extracted.json": "f5ad1f3d7cfcde35f717360ae3d1e1e9c7ee1f16a049db0b9496c9bbd0b1db2c",
+    "external-links-final.json": "8ef8d2bafe65f05a85485555df181e89bf9d30ace4f506e2003648d7d4b7c1b0",
+    "external-links.json": "5618a5bb0d655a99c68cba35eeed97f28441334a5832c08a52add75110b27e6c",
+    "gitleaks-candidate-final.json": "071d2644a26a5b2925765f13ae674fabf39bdf22c780d758943b875941bf3b40",
+    "gitleaks-candidate.json": "36490e2622881a5795dab326a3c6bca70af89a2cf9db02d96d477581a93ff263",
+    "gitleaks-history.json": "27f08aeebc849376fc057457ce5b98526012c7afccdee80d8fb72e22d551f54c",
+    "gitleaks-triage.json": "bf9dcbb004ef5f920c5da1e240644c8438c91592ff6a55aa622fd140d8ffe5b9",
+    "identifying-content.json": "483f6ad6f37e859253a4e0ddff8db8b3cca6f925d955f5993bdc8522925ff67e",
+    "image-metadata.json": "97cda9baa0a38759376c1a006e08c5c4b3ed679141df4e42f29cdbaec6c31bc9",
+    "jobs.json": "9f033912914cfa16c89e440e13422cee04a5d51ce4a6d0cf2d1c1de19c45f443",
+    "license-details.json": "30926f21c17506c87a90c0f2e8dba075d6c46bb81df06bf5ef16a31a46a26eca",
+    "linux-exits.json": "3d444ea47a175b5548d0c678ceeeb6224deed79ab2e096aeea4c5aaae8e0357b",
+    "package-probe.json": "1946b75893a6d3407a3d0bc378c912b1e39844b36a18edb13a1ec1e06fd3c4a6",
+    "publication-review.json": "e04d1b4d994d70748c8e68345bd7c867e3c0727340d9be2c1c6332136db01b38",
+    "published-source-integrity.json": "9f3a79efefee920b83cab4d0888d687372222a82c7344a9245b9030076a185d1",
+    "release-gates.json": "43a55c5b6f65ee56f486fcf3661b4430ccfd027491fb05ebe543eac418bd35c1",
+    "run.json": "03d595c26a132fab4b5265cc660655c5402cefa5ef49e330c93e330255c4ae18",
+    "sbom.cdx.json": "f64453c4745005c4230c68a5d0affab051c8458e455b2cc33f533135c2e2935e",
+    "trivy.json": "f10fc64625110c7695c7e190b025691a4768d4d91fa2d5ee17b66c97a3f5bec8",
+    "vendor-status.json": "077e907149c3ac1f33c7ac62d2ed6a9c9b2fe8fcbb2a432c5f5c3de0560b8b61",
+    "github-artifact/container-check.json": "de16a76d36ecdfc951c19a074c49eabad89ff809db7905a657a4d7c7c9992926",
+    "github-artifact/image-metadata.json": "2a39488e0cee4a9ecc4ab37a52b24b5ed426d03e3a30f0d5955d6f92ce39a78c",
+    "github-artifact/licenses.json": "bde9a48c8563d744261f713107dba5b0211cd57c1e296b1f37e2ce95528e4a93",
+    "github-artifact/sbom.cdx.json": "9b332dee3cecede148db7d3ddfd0ad75844a663def4abd008e0e347edba323bb",
+    "github-artifact/trivy.json": "79a6b5a648a27bf14728f573163df7069c154a08c015d7b2723e6c48cbc68e8f",
+    "linux-cpu/checks.json": "706ff54be93d24b087c2a26833fe92566ab6e192f0b024e7c1084b3380d3b62d",
+    "linux-cpu/coverage.json": "f95585c8900e24c989a6cf9c307fa6f6c09ebbf6f2ae1fc58c9f31d8d7cef028",
+    "linux-video/checks.json": "fabc18b431c6abb386885f3f635f9d64353ce32f1c83e1956d8956f9c42d326f",
+    "linux-video/coverage.json": "27143c8252374f02de249d4430a27973428ece24b9fe2b46f9a8b0c77e7c6dd5",
+    "tools/gitleaks-provenance.json": "cacdc4e8baa4442bcc6875b1e2166ca5a76b114fd721c07a3c7c2611902eed06",
+    "vendor/mount-advisory.json": "c030334a5b2c66209b73ce2521425c1b7d565bbea865be3ec3c3ab9cb6f35d18",
+    "vendor/primary-sources.json": "2dc9c17c683f60c3b7180d9f238a6d1b4622c3884b92dfaf5cda6f60fae5e6b6",
+    "vendor/systemd-advisory.json": "0772911817a6d649948b560eab50256e768872c66e2e63646d5e6dfd2da3ed85",
+    "windows-cpu/checks.json": "1e0cd6850cc2efab8b9dcc5a75e16bdc322d95ff267c38da5c9e0d049709d635",
+    "windows-cpu/coverage.json": "41a2001a81e47bd52d8c2d64775eaa56f72be6afa9be5057cc1fc0f6b4fb1607",
+    "windows-video/checks.json": "40c32e9797e5ae9f9cc78d8918edd72c91245b0f3476d83143e386810e2df74f",
+    "windows-video/coverage.json": "f42ef8c022d3c9bb0588f82fd392ea21060404eaea29e7d98aec2178fe0c1bf7",
+    "windows-video/acceptance/acceptance.json": "d44bac5b131cd23a56ced20b55b72a71f7701bf2d965889d4d38f41bdf035d32",
+    "windows-video/acceptance/daily-report.json": "c18afbbf7760d30b39645cc7da2e6d2dba610ccdc00c03295568177f887e543d",
+    "windows-video/acceptance/fixture-evaluation.json": "c2cb08c19aef879a1e5019769fdac2af956a7763619f7123bfeb71f0d97aaf3c",
+    "windows-video/acceptance/runtime.json": "7803016d9c04cc361f127e2d2e9a374758ce3ed2963df75d12601c37f81f75e1",
+    "windows-video/acceptance/traffic-workflow.json": "29ee02af2aaa41a4a718de6aca7a2c8fff9815ce38490982d35b61f1ca6c687c",
+    "windows-cpu/acceptance/acceptance.json": "d44bac5b131cd23a56ced20b55b72a71f7701bf2d965889d4d38f41bdf035d32",
+    "windows-cpu/acceptance/daily-report.json": "c18afbbf7760d30b39645cc7da2e6d2dba610ccdc00c03295568177f887e543d",
+    "windows-cpu/acceptance/fixture-evaluation.json": "36ca81ae8f0c94741ea319de64044a6fefe3d3c0183abad54e61eea3ac4b2262",
+    "windows-cpu/acceptance/runtime.json": "8f1f33c253546b67ca231d030bb11d283bc57019781e3b072b8a770f8744c5c0",
+    "windows-cpu/acceptance/traffic-workflow.json": "40fe062d13ed5f84466557c9f468678f392900a243ea307d39bebec60bd2d57c",
+    "linux-video/acceptance/acceptance.json": "8365594d54bdfcfacbfd27962bfc5bae65a0ab834c70fb5b8c74b8c5c555ac90",
+    "linux-video/acceptance/daily-report.json": "e765099726e62a59ef5d3cf3d6d244e5bc0082c6e4658431930a0e0b587ec3e9",
+    "linux-video/acceptance/fixture-evaluation.json": "2748b9d93271ac4d8f7e19a9a9c29def2c69917460cdeaa3819250ab70638e64",
+    "linux-video/acceptance/runtime.json": "e1d4e20fa41f8043f04f9fd1cdb44db775684140f2a838aeeb98b61c5bfd6cab",
+    "linux-video/acceptance/traffic-workflow.json": "0d7296dccb8829c91899bd34869a92a2be495057a2550a04184605106501d8fa",
+    "linux-cpu/acceptance/acceptance.json": "8365594d54bdfcfacbfd27962bfc5bae65a0ab834c70fb5b8c74b8c5c555ac90",
+    "linux-cpu/acceptance/daily-report.json": "e765099726e62a59ef5d3cf3d6d244e5bc0082c6e4658431930a0e0b587ec3e9",
+    "linux-cpu/acceptance/fixture-evaluation.json": "8b75d2a62a116ac4736e390dcc60548f598c0fc9c3eab20c7b54f72294d67d54",
+    "linux-cpu/acceptance/runtime.json": "9084277d1b39acf18df1f76cf77ef473cf62d9fe1a461495aba5b3d8f9d86392",
+    "linux-cpu/acceptance/traffic-workflow.json": "4375134a8ac271fb8c66ad47c4f2497d29d684e8a53655bac65b0d0b2b3640d8"
+  }
+}

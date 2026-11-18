@@ -37,13 +37,18 @@ jobs:
           docker build --target video-test -t coffee-ops-tests .
           docker run --rm --network none --cap-drop ALL --security-opt no-new-privileges coffee-ops-tests
           docker run --rm --network none --cap-drop ALL --security-opt no-new-privileges coffee-ops-tests python scripts/verify_egress.py
+      - name: Verify the RT-DETR runtime profile
+        run: |
+          docker build -f Dockerfile.permissive --target test -t coffee-ops-rtdetr-tests .
+          mkdir -p var/permissive-ci
+          docker run --rm --network none --cap-drop ALL --security-opt no-new-privileges --cpus 2 --memory 3g --user "$(id -u):$(id -g)" --mount type=bind,source="$PWD/var/permissive-ci",target=/app/var coffee-ops-rtdetr-tests python scripts/check_quality.py --output /app/var/quality
       - name: Build and record runtime artifact
         run: |
-          docker build --target runtime -t coffee-ops-runtime .
+          docker build -f Dockerfile.permissive --target production -t coffee-ops-runtime .
           docker image inspect coffee-ops-runtime > image-metadata.json
           docker image save --output runtime.tar coffee-ops-runtime
           sha256sum runtime.tar > runtime.tar.sha256
-          python scripts/verify_container.py --image coffee-ops-runtime --output container-check.json
+          python scripts/verify_container.py --image coffee-ops-runtime --backend rtdetr_v2 --output container-check.json
       - name: Inventory dependency licenses
         run: |
           docker run --rm --network none coffee-ops-runtime python -c 'import importlib.metadata as m,json; print(json.dumps([{"name":d.metadata["Name"],"version":d.version,"license":d.metadata.get("License-Expression") or d.metadata.get("License") or "UNKNOWN"} for d in m.distributions()],indent=2))' > licenses.json
@@ -74,3 +79,4 @@ jobs:
             trivy.json
             sbom.cdx.json
             container-check.json
+            var/permissive-ci

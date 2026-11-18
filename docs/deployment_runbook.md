@@ -33,7 +33,7 @@ and gap allowance using annotations. The default config has no crossing line;
 traffic zeros therefore mean no counted events, not verified zero customers.
 
 ```powershell
-$py = '.\.venv\Scripts\python.exe'
+$py = '.\.venv-candidate\Scripts\python.exe'
 & $py -m coffee_ops make-demo --directory var/demo-new
 & $py -m coffee_ops --db var/demo-new.sqlite3 replay --source var/demo-new/fixture.avi --camera shop --run-id demo --start 2026-01-01T09:00:00Z --fixture-detections var/demo-new/detections.json
 & $py -m coffee_ops --db var/demo-new.sqlite3 business-report --date 2026-01-01 --timezone Africa/Tunis --camera shop --run-id demo

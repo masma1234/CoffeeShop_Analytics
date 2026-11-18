@@ -1,0 +1,17 @@
+# RT-DETR inference profile. No Ultralytics/THOP or competing cv2 distributions.
+# Original project source licensing remains an owner decision.
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.13.0+cpu
+torchvision==0.28.0+cpu
+transformers==5.23.0
+huggingface-hub==2.4.0
+opencv-python-headless==4.13.0.92
+numpy==2.2.5
+scipy==1.15.2
+PyYAML==6.0.2
+psutil==7.0.0
+tzdata==2026.6
+Pillow==13.0.0
+av==19.0.2
+ijson==3.6.0
+setuptools==84.2.1
